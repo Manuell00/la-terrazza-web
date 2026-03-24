@@ -22,15 +22,15 @@ export default function Hero() {
       {/* Parallax background */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <Image
-          src="/images/struttura/struttura-4.jpg"
-          alt="La Terrazza Affittacamere — esterno della struttura"
+          src="/images/camera-stella/stella-3.jpg"
+          alt="La Terrazza Affittacamere — camera elegante e luminosa"
           fill
           priority
           quality={100}
           className="object-cover scale-[1.02]"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_32%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/72 via-stone-950/58 to-stone-950/82 md:from-stone-950/58 md:via-stone-950/42 md:to-stone-950/76" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent_34%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/76 via-stone-950/54 to-stone-950/84 md:from-stone-950/64 md:via-stone-950/38 md:to-stone-950/72" />
       </motion.div>
 
       {/* Content */}
