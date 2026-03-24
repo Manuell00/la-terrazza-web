@@ -28,10 +28,10 @@ export default function AnimatedSection({
   return (
     <motion.div
       className={className}
-      initial={initial}
+      initial={{ ...initial, filter: "blur(10px)" }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay, ease: "easeOut" }}
+      transition={{ duration: 0.78, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>

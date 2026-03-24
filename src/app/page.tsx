@@ -51,8 +51,9 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center max-w-6xl mx-auto">
             <AnimatedSection direction="left">
               <div className="relative">
-                <div className="relative h-72 md:h-[460px] rounded-2xl overflow-hidden shadow-2xl">
-                  <Image src="/images/struttura/struttura-3.jpg" alt="La Terrazza — struttura" fill className="object-cover" />
+                <div className="group relative h-72 md:h-[460px] rounded-2xl overflow-hidden shadow-2xl">
+                  <Image src="/images/struttura/struttura-3.jpg" alt="La Terrazza — struttura" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/18 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 </div>
                 <div className="absolute -bottom-5 -right-4 md:-bottom-6 md:-right-6 bg-white rounded-xl p-3.5 shadow-xl border border-stone-100">
                   <div className="flex items-center gap-2.5">
@@ -78,7 +79,7 @@ export default function HomePage() {
               </div>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/prenota"
-                  className="inline-flex items-center gap-2 rounded-full bg-stone-900 px-5 py-3 text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-stone-800 md:bg-transparent md:px-5 md:py-2.5 md:text-sm md:text-stone-700 md:shadow-none md:ring-1 md:ring-stone-300 md:hover:ring-stone-500">
+                  className="inline-flex items-center gap-2 rounded-full bg-stone-900 px-5 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-800 hover:shadow-lg md:bg-transparent md:px-5 md:py-2.5 md:text-sm md:text-stone-700 md:shadow-none md:ring-1 md:ring-stone-300 md:hover:bg-stone-100/70 md:hover:ring-stone-500">
                   Scopri le nostre camere →
                 </Link>
               </div>
@@ -100,7 +101,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
             {highlights.map((h, i) => (
               <AnimatedSection key={h.title} delay={i * 0.08}>
-                <div className="group h-full p-4 md:p-6 rounded-2xl border border-stone-100 hover:border-amber-200 hover:bg-amber-50/40 transition-all duration-300 flex flex-col items-center text-center">
+                <div className="group flex h-full flex-col items-center rounded-2xl border border-stone-100 p-4 text-center transition-all duration-300 hover:scale-[1.02] hover:border-amber-200 hover:bg-amber-50/40 hover:shadow-lg md:p-6">
                   <div className="text-3xl md:text-4xl mb-3">{h.icon}</div>
                   <h3 className="font-serif text-base md:text-xl text-stone-800 mb-1.5 leading-snug">{h.title}</h3>
                   <p className="text-stone-500 text-xs md:text-sm leading-relaxed">{h.desc}</p>

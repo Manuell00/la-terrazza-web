@@ -19,7 +19,7 @@ export default function RoomCard({ room, index }: Props) {
       transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
     >
       <Link href={`/camere/${room.slug}`} className="group block">
-        <div className="relative overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
+        <div className="relative overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-2xl">
           {/* Image */}
           <div className="relative h-72 overflow-hidden">
             <Image

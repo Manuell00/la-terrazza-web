@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/data/siteConfig";
+
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/camere/luna", label: "Camera Luna" },
@@ -22,15 +23,8 @@ const WA_ICON = (
 );
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Chiude il menu al cambio pagina
   useEffect(() => { setMenuOpen(false); }, [pathname]);
@@ -41,11 +35,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-white/92 backdrop-blur-xl shadow-sm border-b border-stone-200/70 py-3"
-            : "bg-white/78 backdrop-blur-xl shadow-sm border-b border-stone-200/60 py-4"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 border-b border-stone-200/80 bg-white/90 py-3.5 shadow-[0_10px_35px_-24px_rgba(28,25,23,0.45)] backdrop-blur-xl transition-all duration-300"
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
@@ -64,21 +54,23 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm font-medium tracking-wide px-3 py-1.5 rounded-full transition-all duration-200 ${
+                className={`group relative text-sm font-medium tracking-wide px-3 py-1.5 rounded-full transition-all duration-200 ${
                   isActive(link.href)
-                    ? "text-amber-700 bg-amber-50"
-                    : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
+                    ? "text-stone-900"
+                    : "text-stone-600 hover:text-stone-900 hover:bg-stone-100/80"
                 }`}
               >
-                {link.label}
-                {isActive(link.href) && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-amber-400" />
-                )}
+                <span>{link.label}</span>
+                <span
+                  className={`absolute inset-x-3 -bottom-[2px] h-[2px] origin-left rounded-full bg-amber-500 transition-transform duration-300 ${
+                    isActive(link.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
               </Link>
             ))}
           </nav>
@@ -88,7 +80,7 @@ export default function Header() {
             <a
               href={siteConfig.whatsapp}
               target="_blank" rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-full transition-all duration-200 shadow-md hover:shadow-lg"
+              className="hidden md:flex items-center gap-2 rounded-full bg-green-600 px-4 py-2 text-sm font-medium text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-500 hover:shadow-lg"
             >
               {WA_ICON}
               WhatsApp
@@ -97,7 +89,7 @@ export default function Header() {
             {/* Hamburger — si trasforma in X, NON c'è un secondo bottone nel menu */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden p-2 rounded-md text-stone-700 transition-colors hover:bg-stone-100"
+              className="lg:hidden rounded-md p-2 text-stone-700 transition-colors hover:bg-stone-100"
               aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
             >
               <div className="w-6 flex flex-col gap-1.5">

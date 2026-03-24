@@ -27,7 +27,7 @@ export default function ReviewCard({ review, index }: Props) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 border border-stone-100"
+      className="rounded-2xl border border-stone-100 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
     >
       {/* Stars */}
       <div className="flex gap-0.5 mb-3">

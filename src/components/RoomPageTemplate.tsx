@@ -233,7 +233,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
               </a>
               <a href={`tel:${siteConfig.phone}`}
                 className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/25 text-white font-medium px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 text-sm">
-                📞 {siteConfig.phone}
+                📞 Chiama ora
               </a>
               <a href={room.airbnbUrl} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/25 text-white/70 hover:text-white font-medium px-8 py-4 rounded-full transition-all text-sm">

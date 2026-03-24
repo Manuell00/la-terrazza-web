@@ -185,7 +185,7 @@ export default function PartnerPage() {
                   href={`tel:${siteConfig.phone}`}
                   className="inline-flex items-center gap-2 border border-stone-300 text-stone-700 hover:border-stone-500 px-5 py-2.5 rounded-full text-sm font-medium transition-all"
                 >
-                  📞 {siteConfig.phone}
+                  📞 Chiama ora
                 </a>
               </div>
             </AnimatedSection>

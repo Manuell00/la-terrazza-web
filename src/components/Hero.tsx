@@ -22,12 +22,15 @@ export default function Hero() {
       {/* Parallax background */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <Image
-          src="/images/struttura/struttura-2.jpg"
-          alt="La Terrazza Affittacamere — campagna piemontese"
-          fill priority quality={90}
-          className="object-cover"
+          src="/images/struttura/struttura-4.jpg"
+          alt="La Terrazza Affittacamere — esterno della struttura"
+          fill
+          priority
+          quality={100}
+          className="object-cover scale-[1.02]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/75 md:from-black/45 md:via-black/35 md:to-black/65" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_32%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/72 via-stone-950/58 to-stone-950/82 md:from-stone-950/58 md:via-stone-950/42 md:to-stone-950/76" />
       </motion.div>
 
       {/* Content */}
@@ -67,14 +70,14 @@ export default function Hero() {
           <a
             href={siteConfig.whatsapp}
             target="_blank" rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-400 text-white font-semibold text-base px-8 py-4 rounded-full shadow-2xl transition-all duration-300 hover:shadow-green-500/30 hover:-translate-y-0.5"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-8 py-4 text-base font-semibold text-white shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-green-400 hover:shadow-[0_20px_55px_-20px_rgba(34,197,94,0.7)]"
           >
             {WA_ICON}
             Contattaci su WhatsApp
           </a>
           <a
             href="/prenota"
-            className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-900 font-semibold text-base px-8 py-4 rounded-full shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-amber-500 px-8 py-4 text-base font-semibold text-stone-900 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-amber-400 hover:shadow-[0_18px_45px_-18px_rgba(245,158,11,0.8)]"
           >
             Controlla disponibilità
           </a>
