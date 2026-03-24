@@ -208,8 +208,11 @@ export default function HomePage() {
         <div className="relative z-10 container mx-auto px-4 text-center">
           <AnimatedSection>
             <p className="text-amber-300 text-xs font-semibold tracking-widest uppercase mb-4">Pronto a partire?</p>
-            <h2 className="font-serif text-4xl md:text-6xl text-white font-semibold leading-tight mb-5">
-              Il tuo relax<br />inizia qui.
+            <h2 className="font-serif text-4xl md:text-6xl text-white font-semibold leading-tight md:leading-none mb-5">
+              <span className="md:hidden">
+                Il tuo relax<br />inizia qui.
+              </span>
+              <span className="hidden md:inline">Il tuo relax inizia qui.</span>
             </h2>
             <p className="text-stone-300 text-base md:text-lg max-w-xl mx-auto mb-10">
               Scrivici su WhatsApp per disponibilità, domande o richieste speciali.

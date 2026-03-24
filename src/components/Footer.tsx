@@ -38,8 +38,8 @@ export default function Footer() {
           </div>
 
           {/* Camere */}
-          <div className="rounded-[24px] border border-white/6 bg-white/[0.03] px-4 py-4">
-            <div className="grid grid-cols-2 gap-5 text-center md:block md:text-left">
+          <div className="rounded-[24px] border border-white/6 bg-white/[0.03] px-4 py-4 md:px-5">
+            <div className="grid grid-cols-2 gap-5 text-center md:grid-cols-[0.9fr_1.1fr] md:gap-10 md:text-left">
             <div>
               <h4 className="text-white text-[11px] font-semibold tracking-widest uppercase mb-2.5">Camere</h4>
               <ul className="space-y-1.5">
