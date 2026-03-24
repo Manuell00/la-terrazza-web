@@ -60,4 +60,14 @@ export const reviews: Review[] = [
     avatar: "L",
     source: "airbnb",
   },
+  {
+    id: "6",
+    author: "Chiara & Paolo",
+    location: "Firenze",
+    rating: 5,
+    text: "Abbiamo scelto La Terrazza per il nostro anniversario e non potevamo fare scelta migliore. Atmosfera magica, cena romantica con vista sulle colline e una colazione che ricordiamo ancora. Grazie di cuore!",
+    date: "Settembre 2025",
+    avatar: "C",
+    source: "google",
+  },
 ];

@@ -27,7 +27,7 @@ export default function Hero() {
           fill priority quality={90}
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/35 to-black/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/75 md:from-black/45 md:via-black/35 md:to-black/65" />
       </motion.div>
 
       {/* Content */}
@@ -43,7 +43,7 @@ export default function Hero() {
         {/* Headline — più emotivo */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}
-          className="font-serif text-5xl md:text-7xl text-white font-semibold leading-tight mb-5"
+          className="font-serif text-4xl sm:text-5xl md:text-7xl text-white font-semibold leading-tight mb-5"
         >
           Un rifugio di relax
           <br />
@@ -59,12 +59,11 @@ export default function Hero() {
           lasciati coccolare — e torna a casa diverso.
         </motion.p>
 
-        {/* CTAs — WhatsApp PRIMO */}
+        {/* CTAs — hidden on mobile (floating WA button handles it), visible from sm */}
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="hidden sm:flex flex-row gap-4 justify-center"
         >
-          {/* PRIMARY: WhatsApp */}
           <a
             href={siteConfig.whatsapp}
             target="_blank" rel="noopener noreferrer"
@@ -73,27 +72,29 @@ export default function Hero() {
             {WA_ICON}
             Contattaci su WhatsApp
           </a>
-          {/* SECONDARY: Prenota */}
           <a
             href="/prenota"
             className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-900 font-semibold text-base px-8 py-4 rounded-full shadow-xl transition-all duration-300 hover:-translate-y-0.5"
           >
             Controlla disponibilità
-            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
           </a>
         </motion.div>
 
         {/* Trust signals */}
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-12 flex flex-wrap justify-center gap-5 text-white/70 text-sm"
+          className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-5"
         >
-          <span className="flex items-center gap-1.5"><span className="text-amber-300">★</span><strong className="text-white">{siteConfig.rating}/5</strong> rating</span>
-          <span className="flex items-center gap-1.5"><span className="text-amber-300">✓</span>Risposta veloce</span>
-          <span className="flex items-center gap-1.5"><span className="text-amber-300">🔒</span>Prenotazione sicura</span>
-          <span className="flex items-center gap-1.5"><span className="text-amber-300">🍳</span>Colazione inclusa</span>
+          {[
+            { icon: "★", text: `${siteConfig.rating}/5 rating` },
+            { icon: "✓", text: "Risposta veloce" },
+            { icon: "🔒", text: "Prenotazione sicura" },
+            { icon: "🍳", text: "Colazione inclusa" },
+          ].map((t) => (
+            <span key={t.text} className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-xs sm:text-sm px-3 py-1.5 rounded-full">
+              <span className="text-amber-300">{t.icon}</span>{t.text}
+            </span>
+          ))}
         </motion.div>
       </motion.div>
 

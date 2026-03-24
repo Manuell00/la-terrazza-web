@@ -104,7 +104,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
             {highlights.map((h, i) => (
               <AnimatedSection key={h.title} delay={i * 0.08}>
-                <div className="group h-full p-4 md:p-6 rounded-2xl border border-stone-100 hover:border-amber-200 hover:bg-amber-50/40 transition-all duration-300 flex flex-col">
+                <div className="group h-full p-4 md:p-6 rounded-2xl border border-stone-100 hover:border-amber-200 hover:bg-amber-50/40 transition-all duration-300 flex flex-col items-center text-center">
                   <div className="text-3xl md:text-4xl mb-3">{h.icon}</div>
                   <h3 className="font-serif text-base md:text-xl text-stone-800 mb-1.5 leading-snug">{h.title}</h3>
                   <p className="text-stone-500 text-xs md:text-sm leading-relaxed">{h.desc}</p>
@@ -160,8 +160,16 @@ export default function HomePage() {
               <span className="text-stone-400 text-sm">· {siteConfig.reviewCount}+ recensioni verificate</span>
             </div>
           </AnimatedSection>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+          {/* Mobile: horizontal scroll; Desktop: grid */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
             {reviews.map((review, i) => <ReviewCard key={review.id} review={review} index={i} />)}
+          </div>
+          <div className="flex md:hidden gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none -mx-4 px-4">
+            {reviews.map((review, i) => (
+              <div key={review.id} className="flex-none w-[85vw] snap-center">
+                <ReviewCard review={review} index={i} />
+              </div>
+            ))}
           </div>
         </div>
       </section>

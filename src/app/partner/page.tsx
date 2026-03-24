@@ -15,6 +15,15 @@ const WA_ICON = (
   </svg>
 );
 
+const marosaImages = [
+  "/images/partner/marosa/marosa-1.jpg",
+  "/images/partner/marosa/marosa-2.jpg",
+  "/images/partner/marosa/marosa-3.jpg",
+  "/images/partner/marosa/marosa-4.jpg",
+  "/images/partner/marosa/marosa-5.jpg",
+  "/images/partner/marosa/marosa-6.jpg",
+];
+
 export default function PartnerPage() {
   return (
     <main className="pt-20">
@@ -37,57 +46,92 @@ export default function PartnerPage() {
       {/* MaRoSa House */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Immagine / logo placeholder */}
-            <AnimatedSection direction="left">
-              <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl bg-amber-50 flex items-center justify-center border border-amber-100">
-                {/* Logo MaRoSa placeholder — sostituire con <Image> quando disponibile */}
-                <div className="text-center px-8">
-                  <div className="text-6xl mb-4">🏡</div>
-                  <p className="font-serif text-3xl text-amber-800 font-semibold tracking-wide">MaRoSa</p>
-                  <p className="text-amber-600 text-sm tracking-widest uppercase mt-1">House</p>
-                  <p className="text-stone-400 text-xs mt-4">
-                    Visita{" "}
-                    <a href="https://marosahouse.it" target="_blank" rel="noopener noreferrer"
-                      className="text-amber-600 underline hover:text-amber-800">marosahouse.it</a>
-                  </p>
+          {/* Header */}
+          <AnimatedSection className="mb-10">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div>
+                <div className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full border bg-amber-50 border-amber-200 text-amber-700 mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                  Casa vacanze
                 </div>
+                <h2 className="font-serif text-3xl md:text-4xl text-stone-800 font-semibold mb-1">
+                  MaRoSa House
+                </h2>
+                <p className="text-amber-600 font-medium">Il comfort di casa, il calore dell&apos;ospitalità</p>
               </div>
-            </AnimatedSection>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={siteConfig.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5"
+                >
+                  {WA_ICON} Contatta via WhatsApp
+                </a>
+                <a
+                  href="https://marosahouse.it"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-stone-300 text-stone-700 hover:border-amber-400 hover:text-amber-700 px-5 py-2.5 rounded-full text-sm font-medium transition-all"
+                >
+                  🌐 marosahouse.it
+                </a>
+              </div>
+            </div>
+          </AnimatedSection>
 
-            {/* Content */}
-            <AnimatedSection direction="right">
-              <div className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full border bg-amber-50 border-amber-200 text-amber-700 mb-5">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                Casa vacanze
-              </div>
-              <h2 className="font-serif text-3xl md:text-4xl text-stone-800 font-semibold mb-2">
-                MaRoSa House
-              </h2>
-              <p className="text-amber-600 font-medium mb-5">
-                Il comfort di casa, il calore dell&apos;ospitalità
-              </p>
+          {/* Description + Grid */}
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+            {/* Text */}
+            <AnimatedSection direction="left">
               <p className="text-stone-600 leading-relaxed mb-4">
                 MaRoSa House è una struttura partner selezionata per la qualità dell&apos;accoglienza
                 e la cura degli spazi. Un punto di riferimento per chi cerca un soggiorno autentico
                 e confortevole nel cuore del Piemonte.
               </p>
-              <p className="text-stone-500 leading-relaxed text-sm mb-8">
+              <p className="text-stone-500 leading-relaxed text-sm">
                 Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede —
                 e si sente. Un posto pensato per farti stare bene, dal primo all&apos;ultimo minuto.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5">
-                  {WA_ICON} Contatta via WhatsApp
-                </a>
-                <a href="https://marosahouse.it" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-stone-300 text-stone-700 hover:border-amber-400 hover:text-amber-700 px-5 py-2.5 rounded-full text-sm font-medium transition-all">
-                  🌐 marosahouse.it
-                </a>
+            </AnimatedSection>
+
+            {/* Image grid */}
+            <AnimatedSection direction="right">
+              <div className="grid grid-cols-2 gap-3">
+                {marosaImages.slice(0, 4).map((src, i) => (
+                  <div
+                    key={i}
+                    className={`relative overflow-hidden rounded-xl ${i === 0 ? "col-span-2 h-56" : "h-36"}`}
+                  >
+                    <Image
+                      src={src}
+                      alt={`MaRoSa House ${i + 1}`}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
               </div>
             </AnimatedSection>
           </div>
+
+          {/* Extra 2 images */}
+          {marosaImages.length > 4 && (
+            <AnimatedSection className="mt-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {marosaImages.slice(4).map((src, i) => (
+                  <div key={i} className="relative h-32 overflow-hidden rounded-xl">
+                    <Image
+                      src={src}
+                      alt={`MaRoSa House ${i + 5}`}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
+          )}
         </div>
       </section>
 
@@ -95,7 +139,7 @@ export default function PartnerPage() {
       <section className="py-16 md:py-20 bg-stone-50">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Content — invertito su desktop */}
+            {/* Content */}
             <AnimatedSection direction="left" className="order-2 md:order-1">
               <div className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full border bg-blue-50 border-blue-200 text-blue-700 mb-5">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
@@ -104,9 +148,7 @@ export default function PartnerPage() {
               <h2 className="font-serif text-3xl md:text-4xl text-stone-800 font-semibold mb-2">
                 Appartamento San Bartolomeo
               </h2>
-              <p className="text-amber-600 font-medium mb-5">
-                Tra storia e natura, un posto tutto per te
-              </p>
+              <p className="text-amber-600 font-medium mb-5">Tra storia e natura, un posto tutto per te</p>
               <p className="text-stone-600 leading-relaxed mb-4">
                 L&apos;Appartamento San Bartolomeo offre una soluzione indipendente per chi desidera
                 maggiore privacy e autonomia. Spazi ampi, arredi curati e la magia del paesaggio
@@ -117,28 +159,38 @@ export default function PartnerPage() {
                 senza rinunciare al comfort. La struttura parla da sola.
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5">
+                <a
+                  href={siteConfig.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5"
+                >
                   {WA_ICON} Contatta via WhatsApp
                 </a>
-                <a href={`tel:${siteConfig.phone}`}
-                  className="inline-flex items-center gap-2 border border-stone-300 text-stone-700 hover:border-stone-500 px-5 py-2.5 rounded-full text-sm font-medium transition-all">
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  className="inline-flex items-center gap-2 border border-stone-300 text-stone-700 hover:border-stone-500 px-5 py-2.5 rounded-full text-sm font-medium transition-all"
+                >
                   📞 {siteConfig.phone}
                 </a>
               </div>
             </AnimatedSection>
 
-            {/* Logo / immagine Casa Mare */}
+            {/* Casa Mare logo */}
             <AnimatedSection direction="right" className="order-1 md:order-2">
-              <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl bg-blue-50 flex items-center justify-center border border-blue-100">
-                {/* Logo "Casa Mare" per San Bartolomeo */}
+              <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center border border-blue-200">
                 <div className="text-center px-8">
-                  <div className="text-6xl mb-4">🌊</div>
+                  <div className="relative w-24 h-24 mx-auto mb-5">
+                    <Image
+                      src="/images/partner/marosa/logo.png"
+                      alt="Casa Mare - Appartamento San Bartolomeo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                   <p className="font-serif text-3xl text-blue-800 font-semibold tracking-wide">Casa</p>
                   <p className="font-serif text-3xl text-blue-600 font-semibold tracking-wide">Mare</p>
-                  <p className="text-stone-400 text-sm mt-3 leading-relaxed max-w-48 mx-auto">
-                    Appartamento San Bartolomeo
-                  </p>
+                  <p className="text-stone-500 text-sm mt-3 leading-relaxed">Appartamento San Bartolomeo</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -157,8 +209,12 @@ export default function PartnerPage() {
               Siamo aperti a collaborazioni con strutture che condividono la
               nostra filosofia di ospitalità autentica.
             </p>
-            <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-900 font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5">
+            <a
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-900 font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5"
+            >
               {WA_ICON} Scrivici su WhatsApp
             </a>
           </AnimatedSection>
