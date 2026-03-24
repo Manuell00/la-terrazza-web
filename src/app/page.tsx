@@ -6,6 +6,7 @@ import RoomCard from "@/components/RoomCard";
 import ReviewCard from "@/components/ReviewCard";
 import AnimatedSection from "@/components/AnimatedSection";
 import StructureCarousel from "@/components/StructureCarousel";
+import MobileReviewsCarousel from "@/components/MobileReviewsCarousel";
 import { rooms } from "@/data/rooms";
 import { reviews } from "@/data/reviews";
 import { siteConfig } from "@/data/siteConfig";
@@ -76,14 +77,9 @@ export default function HomePage() {
                 <p>Tre camere — Luna, Stella, Sole — tre caratteri diversi, una sola promessa: andartene con il sorriso.</p>
               </div>
               <div className="mt-7 flex flex-wrap gap-3">
-                {/* PRIMARY: WhatsApp */}
-                <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5 shadow-md">
-                  {WA_ICON} Scrivici su WhatsApp
-                </a>
                 <Link href="/prenota"
-                  className="inline-flex items-center gap-2 border border-stone-300 text-stone-700 hover:border-stone-500 px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5">
-                  Scopri le camere →
+                  className="inline-flex items-center gap-2 rounded-full bg-stone-900 px-5 py-3 text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-stone-800 md:bg-transparent md:px-5 md:py-2.5 md:text-sm md:text-stone-700 md:shadow-none md:ring-1 md:ring-stone-300 md:hover:ring-stone-500">
+                  Scopri le nostre camere →
                 </Link>
               </div>
             </AnimatedSection>
@@ -164,39 +160,16 @@ export default function HomePage() {
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
             {reviews.map((review, i) => <ReviewCard key={review.id} review={review} index={i} />)}
           </div>
-          <div className="flex md:hidden gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none -mx-4 px-4">
-            {reviews.map((review, i) => (
-              <div key={review.id} className="flex-none w-[85vw] snap-center">
-                <ReviewCard review={review} index={i} />
-              </div>
-            ))}
-          </div>
+          <MobileReviewsCarousel />
         </div>
       </section>
 
-      {/* Map — con badge visivi + bottone Google Maps */}
+      {/* Map — mobile simplified */}
       <section className="py-20 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center max-w-2xl mx-auto mb-10">
             <p className="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Come raggiungerci</p>
             <h2 className="font-serif text-3xl md:text-4xl text-stone-800 leading-tight mb-4">Nel cuore del Piemonte.</h2>
-            {/* Badge distanze */}
-            <div className="flex flex-wrap justify-center gap-3 mt-4">
-              {[
-                { icon: "🚗", label: "45 min", sub: "da Torino" },
-                { icon: "🚗", label: "1h", sub: "da Milano" },
-                { icon: "🚗", label: "30 min", sub: "da Asti" },
-                { icon: "🅿️", label: "Gratuito", sub: "Parcheggio" },
-              ].map((b) => (
-                <div key={b.sub} className="flex items-center gap-2 bg-stone-100 rounded-xl px-4 py-2.5">
-                  <span className="text-xl">{b.icon}</span>
-                  <div className="text-left">
-                    <p className="text-sm font-semibold text-stone-800 leading-none">{b.label}</p>
-                    <p className="text-xs text-stone-500">{b.sub}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </AnimatedSection>
 
           <AnimatedSection className="max-w-5xl mx-auto">
@@ -213,7 +186,7 @@ export default function HomePage() {
               <a
                 href={siteConfig.links.google}
                 target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium px-6 py-3 rounded-full transition-all hover:-translate-y-0.5 shadow-md"
+                className="inline-flex items-center gap-2 rounded-full bg-stone-800 px-5 py-2.5 text-sm font-medium text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-stone-700 sm:px-6 sm:py-3"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -241,18 +214,18 @@ export default function HomePage() {
               Scrivici su WhatsApp per disponibilità, domande o richieste speciali.
               Risposta garantita entro pochi minuti.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               {/* PRIMARY: WhatsApp */}
               <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-400 text-white font-semibold px-8 py-4 rounded-full text-base transition-all hover:-translate-y-0.5 shadow-2xl">
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-5 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-400 shadow-xl sm:px-8 sm:py-4 sm:text-base">
                 {WA_ICON} Scrivici su WhatsApp
               </a>
               <a href={`tel:${siteConfig.phone}`}
-                className="inline-flex items-center justify-center gap-2 bg-white/15 backdrop-blur-sm border border-white/30 text-white font-medium px-8 py-4 rounded-full text-base transition-all hover:-translate-y-0.5">
-                📞 {siteConfig.phone}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-3 text-sm font-medium text-white transition-all hover:-translate-y-0.5 sm:px-8 sm:py-4 sm:text-base">
+                📞 Chiama ora
               </a>
               <Link href="/prenota"
-                className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-900 font-semibold px-8 py-4 rounded-full text-base transition-all hover:-translate-y-0.5">
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-amber-500 px-5 py-3 text-sm font-semibold text-stone-900 transition-all hover:-translate-y-0.5 hover:bg-amber-400 sm:px-8 sm:py-4 sm:text-base">
                 Controlla disponibilità
               </Link>
             </div>

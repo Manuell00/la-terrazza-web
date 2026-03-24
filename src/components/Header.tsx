@@ -6,7 +6,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/data/siteConfig";
-
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/camere/luna", label: "Camera Luna" },
@@ -115,49 +114,48 @@ export default function Header() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.22 }}
-            className="fixed inset-0 z-40 bg-stone-900/98 backdrop-blur-sm flex flex-col items-center justify-center gap-6 lg:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.24 }}
+            className="fixed inset-0 z-40 bg-stone-950/55 backdrop-blur-[2px] lg:hidden"
           >
-            {navLinks.map((link, i) => (
-              <motion.div
-                key={link.href}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.06 }}
-              >
-                <Link
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`font-serif text-3xl transition-colors ${
-                    isActive(link.href) ? "text-amber-400" : "text-white hover:text-amber-300"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </motion.div>
-            ))}
-            <motion.a
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: navLinks.length * 0.06 }}
-              href={siteConfig.whatsapp}
-              target="_blank" rel="noopener noreferrer"
-              className="mt-4 flex items-center gap-2 bg-green-600 text-white px-7 py-3.5 rounded-full text-lg font-medium"
+            <motion.div
+              initial={{ opacity: 0, x: 36 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 36 }}
+              transition={{ duration: 0.28, ease: "easeOut" }}
+              className="ml-auto flex h-full w-[86vw] max-w-sm flex-col justify-center bg-stone-950 px-5 shadow-2xl"
             >
-              {WA_ICON}
-              Scrivici su WhatsApp
-            </motion.a>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="text-stone-500 text-sm mt-2"
-            >
-              {siteConfig.phone}
-            </motion.p>
+              <div className="rounded-[28px] border border-white/10 bg-white/[0.06] p-4 shadow-2xl">
+                <p className="mb-4 px-2 text-[11px] font-medium uppercase tracking-[0.28em] text-stone-500">
+                  Navigazione
+                </p>
+                <div className="space-y-2">
+                  {navLinks.map((link, i) => (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: 18 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 }}
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={() => setMenuOpen(false)}
+                        className={`flex items-center justify-between rounded-2xl px-4 py-4 font-serif text-2xl transition-all ${
+                          isActive(link.href)
+                            ? "bg-amber-400 text-stone-950 shadow-lg"
+                            : "bg-white/[0.03] text-white hover:bg-white/[0.08]"
+                        }`}
+                      >
+                        <span>{link.label}</span>
+                        <span className={isActive(link.href) ? "text-stone-800/70" : "text-stone-500"}>→</span>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

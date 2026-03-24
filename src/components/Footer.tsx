@@ -5,11 +5,11 @@ import { siteConfig } from "@/data/siteConfig";
 export default function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-300">
-      <div className="container mx-auto px-4 py-10 md:py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="grid grid-cols-1 gap-7 md:grid-cols-4 md:gap-8">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-3">
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2.5 mb-2.5">
               <div className="relative w-9 h-9 rounded-full overflow-hidden ring-2 ring-stone-600 flex-shrink-0">
                 <Image src="/images/logo/logo.jpg" alt="La Terrazza Logo" fill className="object-cover" />
               </div>
@@ -18,7 +18,7 @@ export default function Footer() {
                 <p className="text-[10px] text-stone-500 tracking-widest uppercase">Affittacamere</p>
               </div>
             </div>
-            <p className="text-xs text-stone-400 leading-relaxed mb-4">
+            <p className="max-w-xs text-xs text-stone-400 leading-relaxed mb-3">
               Tre camere tra i vigneti del Piemonte. Dove il tempo rallenta e l&apos;anima respira.
             </p>
             <div className="flex gap-3">
@@ -38,9 +38,10 @@ export default function Footer() {
           </div>
 
           {/* Camere */}
-          <div>
-            <h4 className="text-white text-xs font-semibold tracking-widest uppercase mb-3">Camere</h4>
-            <ul className="space-y-2">
+          <div className="grid grid-cols-2 gap-5 md:block">
+            <div>
+              <h4 className="text-white text-[11px] font-semibold tracking-widest uppercase mb-2.5">Camere</h4>
+              <ul className="space-y-1.5">
               {[
                 { href: "/camere/luna", label: "Camera Luna" },
                 { href: "/camere/stella", label: "Camera Stella" },
@@ -50,13 +51,13 @@ export default function Footer() {
                   <Link href={link.href} className="text-xs text-stone-400 hover:text-amber-400 transition-colors">{link.label}</Link>
                 </li>
               ))}
-            </ul>
-          </div>
+              </ul>
+            </div>
 
-          {/* Info */}
-          <div>
-            <h4 className="text-white text-xs font-semibold tracking-widest uppercase mb-3">Info</h4>
-            <ul className="space-y-2">
+            {/* Info */}
+            <div>
+              <h4 className="text-white text-[11px] font-semibold tracking-widest uppercase mb-2.5">Info</h4>
+              <ul className="space-y-1.5">
               {[
                 { href: "/", label: "Home" },
                 { href: "/prenota", label: "Prenota" },
@@ -66,20 +67,21 @@ export default function Footer() {
                   <Link href={link.href} className="text-xs text-stone-400 hover:text-amber-400 transition-colors">{link.label}</Link>
                 </li>
               ))}
-            </ul>
+              </ul>
+            </div>
           </div>
 
           {/* Contatti */}
           <div>
-            <h4 className="text-white text-xs font-semibold tracking-widest uppercase mb-3">Contatti</h4>
-            <ul className="space-y-2">
+            <h4 className="text-white text-[11px] font-semibold tracking-widest uppercase mb-2.5">Contatti</h4>
+            <ul className="space-y-1.5">
               <li className="flex items-start gap-1.5">
                 <span className="text-amber-400 text-xs mt-0.5">📍</span>
                 <span className="text-xs text-stone-400">Cantarana (Asti), Piemonte</span>
               </li>
               <li>
                 <a href={`tel:${siteConfig.phone}`} className="text-xs text-stone-400 hover:text-white transition-colors flex items-center gap-1.5">
-                  <span className="text-amber-400">📞</span>{siteConfig.phone}
+                  <span className="text-amber-400">📞</span>Chiama ora
                 </a>
               </li>
               <li>
@@ -88,7 +90,7 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            <div className="mt-4 flex flex-wrap gap-1.5">
+            <div className="mt-3 flex flex-wrap gap-1.5">
               <a href={siteConfig.links.booking} target="_blank" rel="noopener noreferrer"
                 className="text-[10px] bg-blue-700 text-white px-2 py-0.5 rounded-full hover:bg-blue-600 transition-colors">Booking</a>
               <a href="https://www.airbnb.it" target="_blank" rel="noopener noreferrer"
@@ -99,8 +101,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-5 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center gap-2">
-          <p className="text-[11px] text-stone-600">© {new Date().getFullYear()} La Terrazza Affittacamere. Tutti i diritti riservati.</p>
+        <div className="mt-6 pt-4 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center gap-1.5">
+          <p className="text-[11px] text-center sm:text-left text-stone-600">© {new Date().getFullYear()} La Terrazza Affittacamere. Tutti i diritti riservati.</p>
           <p className="text-[11px] text-stone-700">Palazzasso, Cantarana (AT)</p>
         </div>
       </div>
