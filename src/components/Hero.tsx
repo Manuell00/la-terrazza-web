@@ -38,7 +38,7 @@ export default function Hero() {
         {/* Location pill */}
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }}
-          className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 text-white/90 text-sm px-4 py-2 rounded-full mb-6"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/15 px-4 py-2 text-sm text-white/90 backdrop-blur-sm"
         >
           <span>📍</span><span>Cantarana, Asti — Piemonte</span>
         </motion.div>
@@ -46,7 +46,7 @@ export default function Hero() {
         {/* Headline — più emotivo */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}
-          className="font-serif text-4xl sm:text-5xl md:text-7xl text-white font-semibold leading-tight mb-5"
+          className="mb-5 font-serif text-[2.9rem] font-semibold leading-[0.92] tracking-[-0.03em] text-white drop-shadow-[0_12px_35px_rgba(0,0,0,0.3)] sm:text-5xl md:text-7xl"
         >
           Un rifugio di relax
           <br />
@@ -56,7 +56,7 @@ export default function Hero() {
         {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.7 }}
-          className="text-stone-200 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
+          className="mx-auto mb-10 max-w-[20rem] text-base leading-relaxed text-stone-200 sm:max-w-2xl sm:text-lg md:text-xl"
         >
           Tre camere esclusive tra i vigneti del Monferrato. Stacca la spina, respira,
           lasciati coccolare — e torna a casa diverso.
@@ -86,7 +86,7 @@ export default function Hero() {
         {/* Trust signals */}
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-5"
+          className="mt-10 hidden flex-wrap justify-center gap-3 sm:mt-12 sm:flex sm:gap-5"
         >
           {[
             { icon: "★", text: `${siteConfig.rating}/5 rating` },
@@ -104,7 +104,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+        className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 sm:flex"
       >
         <span className="text-white/50 text-xs tracking-widest uppercase">Scopri</span>
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}

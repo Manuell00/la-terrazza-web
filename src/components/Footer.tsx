@@ -6,10 +6,10 @@ export default function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-300">
       <div className="container mx-auto px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 gap-7 md:grid-cols-4 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:gap-8">
           {/* Brand */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-2.5">
+          <div className="text-center md:col-span-1 md:text-left">
+            <div className="mb-2.5 flex items-center justify-center gap-2.5 md:justify-start">
               <div className="relative w-9 h-9 rounded-full overflow-hidden ring-2 ring-stone-600 flex-shrink-0">
                 <Image src="/images/logo/logo.jpg" alt="La Terrazza Logo" fill className="object-cover" />
               </div>
@@ -18,10 +18,10 @@ export default function Footer() {
                 <p className="text-[10px] text-stone-500 tracking-widest uppercase">Affittacamere</p>
               </div>
             </div>
-            <p className="max-w-xs text-xs text-stone-400 leading-relaxed mb-3">
+            <p className="mx-auto mb-3 max-w-[17rem] text-xs leading-relaxed text-stone-400 md:mx-0 md:max-w-xs">
               Tre camere tra i vigneti del Piemonte. Dove il tempo rallenta e l&apos;anima respira.
             </p>
-            <div className="flex gap-3">
+            <div className="flex justify-center gap-3 md:justify-start">
               <a href={siteConfig.links.instagram} target="_blank" rel="noopener noreferrer"
                 className="w-8 h-8 bg-stone-800 hover:bg-amber-600 rounded-full flex items-center justify-center transition-colors" aria-label="Instagram">
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
@@ -38,7 +38,8 @@ export default function Footer() {
           </div>
 
           {/* Camere */}
-          <div className="grid grid-cols-2 gap-5 md:block">
+          <div className="rounded-[24px] border border-white/6 bg-white/[0.03] px-4 py-4">
+            <div className="grid grid-cols-2 gap-5 text-center md:block md:text-left">
             <div>
               <h4 className="text-white text-[11px] font-semibold tracking-widest uppercase mb-2.5">Camere</h4>
               <ul className="space-y-1.5">
@@ -69,28 +70,29 @@ export default function Footer() {
               ))}
               </ul>
             </div>
+            </div>
           </div>
 
           {/* Contatti */}
-          <div>
+          <div className="rounded-[24px] border border-white/6 bg-white/[0.03] px-4 py-4 text-center md:text-left">
             <h4 className="text-white text-[11px] font-semibold tracking-widest uppercase mb-2.5">Contatti</h4>
-            <ul className="space-y-1.5">
-              <li className="flex items-start gap-1.5">
+            <ul className="space-y-2">
+              <li className="flex items-start justify-center gap-1.5 md:justify-start">
                 <span className="text-amber-400 text-xs mt-0.5">📍</span>
                 <span className="text-xs text-stone-400">Cantarana (Asti), Piemonte</span>
               </li>
               <li>
-                <a href={`tel:${siteConfig.phone}`} className="text-xs text-stone-400 hover:text-white transition-colors flex items-center gap-1.5">
+                <a href={`tel:${siteConfig.phone}`} className="inline-flex items-center gap-1.5 text-xs text-stone-400 transition-colors hover:text-white">
                   <span className="text-amber-400">📞</span>Chiama ora
                 </a>
               </li>
               <li>
-                <a href={`mailto:${siteConfig.email}`} className="text-xs text-stone-400 hover:text-white transition-colors flex items-center gap-1.5 break-all">
+                <a href={`mailto:${siteConfig.email}`} className="inline-flex items-center gap-1.5 break-all text-xs text-stone-400 transition-colors hover:text-white">
                   <span className="text-amber-400">✉️</span>{siteConfig.email}
                 </a>
               </li>
             </ul>
-            <div className="mt-3 flex flex-wrap gap-1.5">
+            <div className="mt-3 flex flex-wrap justify-center gap-1.5 md:justify-start">
               <a href={siteConfig.links.booking} target="_blank" rel="noopener noreferrer"
                 className="text-[10px] bg-blue-700 text-white px-2 py-0.5 rounded-full hover:bg-blue-600 transition-colors">Booking</a>
               <a href="https://www.airbnb.it" target="_blank" rel="noopener noreferrer"
@@ -101,7 +103,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 pt-4 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center gap-1.5">
+        <div className="mt-5 flex flex-col items-center justify-between gap-1.5 border-t border-stone-800 pt-3.5 sm:flex-row">
           <p className="text-[11px] text-center sm:text-left text-stone-600">© {new Date().getFullYear()} La Terrazza Affittacamere. Tutti i diritti riservati.</p>
           <p className="text-[11px] text-stone-700">Palazzasso, Cantarana (AT)</p>
         </div>

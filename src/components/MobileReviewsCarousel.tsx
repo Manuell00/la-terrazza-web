@@ -23,30 +23,6 @@ export default function MobileReviewsCarousel() {
 
   return (
     <div className="md:hidden">
-      <div className="mb-4 flex items-center justify-between gap-3 px-1">
-        <p className="text-xs font-medium uppercase tracking-[0.24em] text-stone-400">
-          Scorri le recensioni
-        </p>
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => scrollByCard("left")}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 shadow-sm transition-colors hover:bg-stone-50"
-            aria-label="Recensione precedente"
-          >
-            ←
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollByCard("right")}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 shadow-sm transition-colors hover:bg-stone-50"
-            aria-label="Recensione successiva"
-          >
-            →
-          </button>
-        </div>
-      </div>
-
       <div
         ref={containerRef}
         className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none"
@@ -60,6 +36,30 @@ export default function MobileReviewsCarousel() {
             <ReviewCard review={review} index={i} />
           </div>
         ))}
+      </div>
+
+      <div className="mt-2 flex flex-col items-center gap-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-stone-400">
+          Scorri le recensioni
+        </p>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => scrollByCard("left")}
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-stone-200/80 bg-white text-sm text-stone-500 shadow-sm transition-all hover:bg-stone-50 hover:text-stone-700"
+            aria-label="Recensione precedente"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollByCard("right")}
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-stone-200/80 bg-white text-sm text-stone-500 shadow-sm transition-all hover:bg-stone-50 hover:text-stone-700"
+            aria-label="Recensione successiva"
+          >
+            →
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -29,6 +29,13 @@ export default function Header() {
   // Chiude il menu al cambio pagina
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -89,7 +96,7 @@ export default function Header() {
             {/* Hamburger — si trasforma in X, NON c'è un secondo bottone nel menu */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden rounded-md p-2 text-stone-700 transition-colors hover:bg-stone-100"
+              className="lg:hidden rounded-xl border border-stone-200/80 bg-white/85 p-2.5 text-stone-700 shadow-sm transition-all hover:bg-stone-100"
               aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
             >
               <div className="w-6 flex flex-col gap-1.5">
@@ -110,38 +117,47 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.24 }}
-            className="fixed inset-0 z-40 bg-stone-950/55 backdrop-blur-[2px] lg:hidden"
+            className="fixed inset-0 z-40 bg-stone-950/78 backdrop-blur-md lg:hidden"
           >
             <motion.div
-              initial={{ opacity: 0, x: 36 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 36 }}
-              transition={{ duration: 0.28, ease: "easeOut" }}
-              className="ml-auto flex h-full w-[86vw] max-w-sm flex-col justify-center bg-stone-950 px-5 shadow-2xl"
+              initial={{ opacity: 0, y: 18, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 18, scale: 0.98 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="flex h-full items-center justify-center px-4"
             >
-              <div className="rounded-[28px] border border-white/10 bg-white/[0.06] p-4 shadow-2xl">
-                <p className="mb-4 px-2 text-[11px] font-medium uppercase tracking-[0.28em] text-stone-500">
+              <div className="w-full max-w-sm rounded-[34px] border border-white/12 bg-[linear-gradient(180deg,rgba(28,25,23,0.98),rgba(17,24,39,0.96))] p-5 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.75)]">
+                <div className="mb-5 flex items-center justify-center">
+                  <span className="h-1 w-12 rounded-full bg-white/20" />
+                </div>
+                <p className="mb-5 text-center text-[11px] font-medium uppercase tracking-[0.34em] text-stone-500">
                   Navigazione
                 </p>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {navLinks.map((link, i) => (
                     <motion.div
                       key={link.href}
-                      initial={{ opacity: 0, x: 18 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0, y: 14 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.05 }}
                     >
                       <Link
                         href={link.href}
                         onClick={() => setMenuOpen(false)}
-                        className={`flex items-center justify-between rounded-2xl px-4 py-4 font-serif text-2xl transition-all ${
+                        className={`group flex items-center justify-center gap-3 rounded-[22px] px-5 py-4 text-center font-serif text-[1.7rem] leading-none tracking-tight transition-all active:scale-[0.985] ${
                           isActive(link.href)
-                            ? "bg-amber-400 text-stone-950 shadow-lg"
-                            : "bg-white/[0.03] text-white hover:bg-white/[0.08]"
+                            ? "bg-amber-400 text-stone-950 shadow-[0_16px_40px_-18px_rgba(251,191,36,0.8)]"
+                            : "bg-white/[0.05] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)] hover:bg-white/[0.09]"
                         }`}
                       >
                         <span>{link.label}</span>
-                        <span className={isActive(link.href) ? "text-stone-800/70" : "text-stone-500"}>→</span>
+                        <motion.span
+                          animate={{ x: [0, 3, 0] }}
+                          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+                          className={isActive(link.href) ? "text-stone-800/75" : "text-stone-400 group-hover:text-stone-300"}
+                        >
+                          →
+                        </motion.span>
                       </Link>
                     </motion.div>
                   ))}

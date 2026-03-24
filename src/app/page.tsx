@@ -46,9 +46,9 @@ export default function HomePage() {
       <Hero />
 
       {/* Presentation */}
-      <section className="py-20 md:py-24 bg-stone-50">
+      <section className="bg-stone-50 py-20 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center max-w-6xl mx-auto">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
             <AnimatedSection direction="left">
               <div className="relative">
                 <div className="group relative h-72 md:h-[460px] rounded-2xl overflow-hidden shadow-2xl">
@@ -67,17 +67,17 @@ export default function HomePage() {
               </div>
             </AnimatedSection>
 
-            <AnimatedSection direction="right">
-              <p className="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">La nostra storia</p>
-              <h2 className="font-serif text-3xl md:text-5xl text-stone-800 leading-tight mb-5">
+            <AnimatedSection direction="right" className="text-center">
+              <p className="mb-3 text-center text-xs font-semibold uppercase tracking-widest text-amber-600">La nostra storia</p>
+              <h2 className="mb-5 text-center font-serif text-3xl leading-tight text-stone-800 md:text-5xl">
                 Un posto che<br />si sente speciale.
               </h2>
-              <div className="space-y-3 text-stone-600 leading-relaxed text-sm md:text-base">
+              <div className="mx-auto max-w-xl space-y-4 text-center text-sm leading-relaxed text-stone-600 md:text-base">
                 <p>La Terrazza nasce dall&apos;amore per questa terra. Una proprietà familiare trasformata in un luogo di accoglienza autentica, dove ogni dettaglio è stato curato per farti sentire a casa — anzi, meglio di casa.</p>
                 <p>Siamo a Cantarana, nel cuore dell&apos;Astigiano, tra i vigneti del Monferrato. Un posto dove la natura detta i ritmi e il cielo la sera è uno spettacolo.</p>
                 <p>Tre camere — Luna, Stella, Sole — tre caratteri diversi, una sola promessa: andartene con il sorriso.</p>
               </div>
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-8 flex justify-center">
                 <Link href="/prenota"
                   className="inline-flex items-center gap-2 rounded-full bg-stone-900 px-5 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-800 hover:shadow-lg md:bg-transparent md:px-5 md:py-2.5 md:text-sm md:text-stone-700 md:shadow-none md:ring-1 md:ring-stone-300 md:hover:bg-stone-100/70 md:hover:ring-stone-500">
                   Scopri le nostre camere →
