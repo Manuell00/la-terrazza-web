@@ -39,6 +39,9 @@ const WA_ICON = (
   </svg>
 );
 
+const platformButtonBase =
+  "flex min-h-[52px] w-full items-center justify-center gap-3 rounded-xl border-2 px-5 py-3 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5";
+
 export default function RoomPageTemplate({ room, otherRooms }: Props) {
   return (
     <main className="pt-0">
@@ -135,7 +138,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
 
                     {/* 3. Airbnb — con logo */}
                     <a href={room.airbnbUrl} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 w-full border-2 border-rose-200 hover:border-rose-400 hover:bg-rose-50 text-rose-600 font-medium py-3 px-5 rounded-xl transition-all text-sm">
+                      className={`${platformButtonBase} border-rose-200 text-rose-600 hover:border-rose-400 hover:bg-rose-500 hover:text-white`}>
                       <svg className="w-5 h-5 flex-shrink-0" fill="#FF5A5F" viewBox="0 0 24 24">
                         <path d="M22.292 18.13c-.145-.387-.29-.724-.436-1.014-.144-.29-.37-.62-.623-.918l-7.02-9.468C13.6 6.04 12.86 5.6 12 5.6s-1.6.44-2.213 1.13L2.767 16.198c-.253.297-.48.627-.623.918-.145.29-.29.627-.436 1.014-.29.774-.27 1.477.073 1.99.387.59 1.06.892 1.95.892h15.54c.89 0 1.563-.302 1.95-.892.342-.513.362-1.216.072-1.99z"/>
                       </svg>
@@ -144,13 +147,13 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
 
                     {/* 4. Booking — con logo */}
                     <a href={siteConfig.links.booking} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 w-full border-2 border-blue-200 hover:border-blue-400 hover:bg-blue-50 py-3 px-5 rounded-xl transition-all text-sm">
+                      className={`${platformButtonBase} border-blue-200 text-blue-700 hover:border-blue-400 hover:bg-blue-600 hover:text-white`}>
                       <BookingLogo />
                     </a>
 
                     {/* 5. B&B.it */}
                     <a href={siteConfig.links.bedAndBreakfast} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 w-full border border-stone-200 hover:border-green-400 hover:bg-green-50 text-stone-500 hover:text-green-700 py-2.5 px-5 rounded-xl transition-all text-xs">
+                      className={`${platformButtonBase} border-green-200 text-green-700 hover:border-green-500 hover:bg-green-600 hover:text-white`}>
                       🏡 Bed-and-Breakfast.it
                     </a>
                   </div>

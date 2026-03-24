@@ -76,12 +76,11 @@ export default function PrenotaPage() {
                   </div>
                   <div className="p-5 flex flex-col flex-1">
                     <p className="text-stone-500 text-sm mb-4 flex-1">{room.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-5">
-                      {room.features.slice(0, 3).map((f) => (
-                        <span key={f.label} className="text-xs bg-stone-100 text-stone-600 px-2.5 py-1 rounded-full">
-                          {f.icon} {f.label}
-                        </span>
-                      ))}
+                    <div className="mb-5 border-t border-stone-100 pt-4">
+                      <p className="text-[11px] font-semibold tracking-[0.24em] uppercase text-stone-400 mb-1">
+                        Tariffa indicativa
+                      </p>
+                      <p className="font-serif text-2xl text-stone-800">{room.price}</p>
                     </div>
                     <div className="flex gap-3">
                       <a
@@ -120,20 +119,20 @@ export default function PrenotaPage() {
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Airbnb */}
             <AnimatedSection delay={0}>
-              <div className="bg-stone-50 rounded-2xl p-6 border border-stone-100">
-                <div className="text-4xl mb-3">🏠</div>
-                <h3 className="font-serif text-xl text-stone-800 mb-2">Airbnb</h3>
-                <p className="text-stone-500 text-sm mb-5">
+              <div className="flex h-full flex-col items-center rounded-[28px] border border-stone-200 bg-stone-50 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-300 hover:bg-rose-50/60 hover:shadow-lg">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white text-3xl shadow-sm">🏠</div>
+                <h3 className="font-serif text-2xl text-stone-800 mb-2">Airbnb</h3>
+                <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
                   Prenota Camera Luna, Stella o Sole direttamente su Airbnb. Pagamento sicuro e protezione ospiti.
                 </p>
-                <div className="space-y-2">
+                <div className="mt-auto w-full space-y-2.5">
                   {rooms.map((room) => (
                     <a
                       key={room.id}
                       href={room.airbnbUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-center border border-rose-200 text-rose-600 hover:bg-rose-50 text-sm font-medium py-2.5 px-4 rounded-lg transition-all"
+                      className="flex min-h-[48px] w-full items-center justify-center rounded-xl border-2 border-rose-200 px-4 py-3 text-center text-sm font-semibold text-rose-600 transition-all hover:border-rose-400 hover:bg-rose-500 hover:text-white"
                     >
                       {room.name}
                     </a>
@@ -144,17 +143,17 @@ export default function PrenotaPage() {
 
             {/* Booking */}
             <AnimatedSection delay={0.1}>
-              <div className="bg-stone-50 rounded-2xl p-6 border border-stone-100">
-                <div className="text-4xl mb-3">🏨</div>
-                <h3 className="font-serif text-xl text-stone-800 mb-2">Booking.com</h3>
-                <p className="text-stone-500 text-sm mb-5">
+              <div className="flex h-full flex-col items-center rounded-[28px] border border-stone-200 bg-stone-50 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50/60 hover:shadow-lg">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white text-3xl shadow-sm">🏨</div>
+                <h3 className="font-serif text-2xl text-stone-800 mb-2">Booking.com</h3>
+                <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
                   Prenota su Booking.com con cancellazione flessibile. Migliaia di recensioni verificate.
                 </p>
                 <a
                   href={siteConfig.links.booking}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center border border-blue-200 text-blue-600 hover:bg-blue-50 text-sm font-medium py-2.5 px-4 rounded-lg transition-all"
+                  className="mt-auto flex min-h-[48px] w-full items-center justify-center rounded-xl border-2 border-blue-200 px-4 py-3 text-center text-sm font-semibold text-blue-600 transition-all hover:border-blue-400 hover:bg-blue-600 hover:text-white"
                 >
                   Prenota su Booking
                 </a>
@@ -163,17 +162,17 @@ export default function PrenotaPage() {
 
             {/* B&B.it */}
             <AnimatedSection delay={0.2}>
-              <div className="bg-stone-50 rounded-2xl p-6 border border-stone-100">
-                <div className="text-4xl mb-3">🛏️</div>
-                <h3 className="font-serif text-xl text-stone-800 mb-2">Bed & Breakfast.it</h3>
-                <p className="text-stone-500 text-sm mb-5">
+              <div className="flex h-full flex-col items-center rounded-[28px] border border-stone-200 bg-stone-50 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-green-300 hover:bg-green-50/70 hover:shadow-lg">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white text-3xl shadow-sm">🛏️</div>
+                <h3 className="font-serif text-2xl text-stone-800 mb-2">Bed-and-Breakfast.it</h3>
+                <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
                   Il portale italiano dei B&B. Trova disponibilità e prenota in pochi click.
                 </p>
                 <a
                   href={siteConfig.links.bedAndBreakfast}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center border border-stone-300 text-stone-600 hover:bg-stone-100 text-sm font-medium py-2.5 px-4 rounded-lg transition-all"
+                  className="mt-auto flex min-h-[48px] w-full items-center justify-center rounded-xl border-2 border-green-200 px-4 py-3 text-center text-sm font-semibold text-green-700 transition-all hover:border-green-500 hover:bg-green-600 hover:text-white"
                 >
                   Vedi su B&B.it
                 </a>
@@ -217,7 +216,7 @@ export default function PrenotaPage() {
               <div className="w-10 h-10 rounded-full bg-stone-100 group-hover:bg-stone-200 flex items-center justify-center transition-colors">
                 <span className="text-lg">📞</span>
               </div>
-              <p className="font-semibold text-stone-800 text-sm">Telefono</p>
+              <p className="font-semibold text-stone-800 text-sm">Chiamaci</p>
               <p className="text-stone-500 text-xs">{siteConfig.phone}</p>
             </a>
 

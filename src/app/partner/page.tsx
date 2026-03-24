@@ -18,11 +18,52 @@ const WA_ICON = (
 const marosaImages = [
   "/images/partner/marosa/marosa-1.jpg",
   "/images/partner/marosa/marosa-2.jpg",
-  "/images/partner/marosa/marosa-3.jpg",
   "/images/partner/marosa/marosa-4.jpg",
   "/images/partner/marosa/marosa-5.jpg",
   "/images/partner/marosa/marosa-6.jpg",
 ];
+
+const sanBartolomeoImages = [
+  "/images/partner/san-bartolomeo/sb-1.jpg",
+  "/images/partner/san-bartolomeo/sb-2.jpg",
+  "/images/partner/san-bartolomeo/sb-3.jpg",
+  "/images/partner/san-bartolomeo/sb-4.jpg",
+];
+
+function PartnerGallery({
+  images,
+  alt,
+}: {
+  images: string[];
+  alt: string;
+}) {
+  const [featured, ...rest] = images;
+
+  return (
+    <div className="space-y-3">
+      <div className="relative h-72 overflow-hidden rounded-[28px] shadow-xl ring-1 ring-stone-200">
+        <Image
+          src={featured}
+          alt={`${alt} principale`}
+          fill
+          className="object-cover transition-transform duration-500 hover:scale-105"
+        />
+      </div>
+      <div className="grid grid-cols-3 gap-3">
+        {rest.map((src, i) => (
+          <div key={src} className="relative h-32 overflow-hidden rounded-2xl ring-1 ring-stone-200">
+            <Image
+              src={src}
+              alt={`${alt} ${i + 2}`}
+              fill
+              className="object-cover transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function PartnerPage() {
   return (
@@ -81,64 +122,35 @@ export default function PartnerPage() {
           </AnimatedSection>
 
           {/* Description + Grid */}
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+          <div className="grid md:grid-cols-[0.95fr_1.05fr] gap-8 md:gap-12 items-start">
             {/* Text */}
             <AnimatedSection direction="left">
-              <p className="text-stone-600 leading-relaxed mb-4">
-                MaRoSa House è una struttura partner selezionata per la qualità dell&apos;accoglienza
-                e la cura degli spazi. Un punto di riferimento per chi cerca un soggiorno autentico
-                e confortevole nel cuore del Piemonte.
-              </p>
-              <p className="text-stone-500 leading-relaxed text-sm">
-                Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede —
-                e si sente. Un posto pensato per farti stare bene, dal primo all&apos;ultimo minuto.
-              </p>
+              <div className="rounded-[28px] border border-stone-200 bg-stone-50 p-7 md:p-8 shadow-sm">
+                <p className="text-stone-600 leading-relaxed mb-4">
+                  MaRoSa House è una struttura partner selezionata per la qualità dell&apos;accoglienza
+                  e la cura degli spazi. Un punto di riferimento per chi cerca un soggiorno autentico
+                  e confortevole nel cuore del Piemonte.
+                </p>
+                <p className="text-stone-500 leading-relaxed text-sm">
+                  Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede
+                  e si sente. Un posto pensato per farti stare bene, dal primo all&apos;ultimo minuto.
+                </p>
+              </div>
             </AnimatedSection>
 
             {/* Image grid */}
             <AnimatedSection direction="right">
-              <div className="grid grid-cols-2 gap-3">
-                {marosaImages.slice(0, 4).map((src, i) => (
-                  <div
-                    key={i}
-                    className={`relative overflow-hidden rounded-xl ${i === 0 ? "col-span-2 h-56" : "h-36"}`}
-                  >
-                    <Image
-                      src={src}
-                      alt={`MaRoSa House ${i + 1}`}
-                      fill
-                      className="object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                ))}
-              </div>
+              <PartnerGallery images={marosaImages.slice(0, 4)} alt="MaRoSa House" />
             </AnimatedSection>
           </div>
 
-          {/* Extra 2 images */}
-          {marosaImages.length > 4 && (
-            <AnimatedSection className="mt-4">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {marosaImages.slice(4).map((src, i) => (
-                  <div key={i} className="relative h-32 overflow-hidden rounded-xl">
-                    <Image
-                      src={src}
-                      alt={`MaRoSa House ${i + 5}`}
-                      fill
-                      className="object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                ))}
-              </div>
-            </AnimatedSection>
-          )}
         </div>
       </section>
 
       {/* San Bartolomeo */}
       <section className="py-16 md:py-20 bg-stone-50">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <div className="grid md:grid-cols-[0.95fr_1.05fr] gap-8 md:gap-12 items-start">
             {/* Content */}
             <AnimatedSection direction="left" className="order-2 md:order-1">
               <div className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full border bg-blue-50 border-blue-200 text-blue-700 mb-5">
@@ -149,15 +161,17 @@ export default function PartnerPage() {
                 Appartamento San Bartolomeo
               </h2>
               <p className="text-amber-600 font-medium mb-5">Tra storia e natura, un posto tutto per te</p>
-              <p className="text-stone-600 leading-relaxed mb-4">
-                L&apos;Appartamento San Bartolomeo offre una soluzione indipendente per chi desidera
-                maggiore privacy e autonomia. Spazi ampi, arredi curati e la magia del paesaggio
-                piemontese a portata di mano.
-              </p>
-              <p className="text-stone-500 leading-relaxed text-sm mb-8">
-                Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri,
-                senza rinunciare al comfort. La struttura parla da sola.
-              </p>
+              <div className="rounded-[28px] border border-stone-200 bg-white p-7 md:p-8 shadow-sm mb-8">
+                <p className="text-stone-600 leading-relaxed mb-4">
+                  L&apos;Appartamento San Bartolomeo offre una soluzione indipendente per chi desidera
+                  maggiore privacy e autonomia. Spazi ampi, arredi curati e la magia del paesaggio
+                  piemontese a portata di mano.
+                </p>
+                <p className="text-stone-500 leading-relaxed text-sm">
+                  Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri,
+                  senza rinunciare al comfort. La struttura parla da sola.
+                </p>
+              </div>
               <div className="flex flex-wrap gap-3">
                 <a
                   href={siteConfig.whatsapp}
@@ -176,23 +190,9 @@ export default function PartnerPage() {
               </div>
             </AnimatedSection>
 
-            {/* Casa Mare logo */}
+            {/* Image gallery */}
             <AnimatedSection direction="right" className="order-1 md:order-2">
-              <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center border border-blue-200">
-                <div className="text-center px-8">
-                  <div className="relative w-24 h-24 mx-auto mb-5">
-                    <Image
-                      src="/images/partner/marosa/logo.png"
-                      alt="Casa Mare - Appartamento San Bartolomeo"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  <p className="font-serif text-3xl text-blue-800 font-semibold tracking-wide">Casa</p>
-                  <p className="font-serif text-3xl text-blue-600 font-semibold tracking-wide">Mare</p>
-                  <p className="text-stone-500 text-sm mt-3 leading-relaxed">Appartamento San Bartolomeo</p>
-                </div>
-              </div>
+              <PartnerGallery images={sanBartolomeoImages} alt="Appartamento San Bartolomeo" />
             </AnimatedSection>
           </div>
         </div>

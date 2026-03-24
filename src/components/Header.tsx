@@ -43,7 +43,9 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-white/92 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
+          scrolled
+            ? "bg-white/92 backdrop-blur-xl shadow-sm border-b border-stone-200/70 py-3"
+            : "bg-white/78 backdrop-blur-xl shadow-sm border-b border-stone-200/60 py-4"
         }`}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
@@ -53,10 +55,10 @@ export default function Header() {
               <Image src="/images/logo/logo.jpg" alt="La Terrazza Logo" fill className="object-cover" />
             </div>
             <div>
-              <span className={`font-serif text-lg font-semibold tracking-wide transition-colors ${scrolled ? "text-stone-800" : "text-white"}`}>
+              <span className="font-serif text-lg font-semibold tracking-wide text-stone-800 transition-colors">
                 La Terrazza
               </span>
-              <p className={`text-xs tracking-widest uppercase transition-colors ${scrolled ? "text-stone-500" : "text-stone-200"}`}>
+              <p className="text-xs tracking-widest uppercase text-stone-500 transition-colors">
                 Affittacamere
               </p>
             </div>
@@ -70,12 +72,8 @@ export default function Header() {
                 href={link.href}
                 className={`relative text-sm font-medium tracking-wide px-3 py-1.5 rounded-full transition-all duration-200 ${
                   isActive(link.href)
-                    ? scrolled
-                      ? "text-amber-700 bg-amber-50"
-                      : "text-amber-300 bg-white/10"
-                    : scrolled
-                    ? "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
-                    : "text-white/85 hover:text-white hover:bg-white/10"
+                    ? "text-amber-700 bg-amber-50"
+                    : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
                 }`}
               >
                 {link.label}
@@ -100,7 +98,7 @@ export default function Header() {
             {/* Hamburger — si trasforma in X, NON c'è un secondo bottone nel menu */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`lg:hidden p-2 rounded-md transition-colors ${scrolled ? "text-stone-700" : "text-white"}`}
+              className="lg:hidden p-2 rounded-md text-stone-700 transition-colors hover:bg-stone-100"
               aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
             >
               <div className="w-6 flex flex-col gap-1.5">

@@ -19,7 +19,7 @@ export default function RoomCard({ room, index }: Props) {
       transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
     >
       <Link href={`/camere/${room.slug}`} className="group block">
-        <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-500">
+        <div className="relative overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
           {/* Image */}
           <div className="relative h-72 overflow-hidden">
             <Image
@@ -36,7 +36,7 @@ export default function RoomCard({ room, index }: Props) {
             </div>
 
             {/* Room name overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-5">
+            <div className="absolute bottom-0 left-0 right-0 p-6">
               <h3 className="font-serif text-white text-2xl font-semibold">
                 {room.name}
               </h3>
@@ -45,28 +45,20 @@ export default function RoomCard({ room, index }: Props) {
           </div>
 
           {/* Card body */}
-          <div className="bg-white p-5">
-            <p className="text-stone-600 text-sm leading-relaxed mb-4">
+          <div className="bg-white p-6">
+            <p className="min-h-[96px] text-stone-600 text-sm leading-relaxed mb-6">
               {room.description}
             </p>
 
-            {/* Features */}
-            <div className="flex flex-wrap gap-2 mb-5">
-              {room.features.slice(0, 4).map((f) => (
-                <span
-                  key={f.label}
-                  className="flex items-center gap-1 bg-stone-100 text-stone-600 text-xs px-2.5 py-1 rounded-full"
-                >
-                  <span>{f.icon}</span>
-                  <span>{f.label}</span>
-                </span>
-              ))}
-            </div>
-
             {/* Footer */}
-            <div className="flex items-center justify-between">
-              <span className="text-stone-400 text-xs">{room.price}</span>
-              <span className="flex items-center gap-1 text-amber-600 text-sm font-medium group-hover:gap-2 transition-all">
+            <div className="flex items-end justify-between gap-4 border-t border-stone-100 pt-5">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.24em] text-stone-400">
+                  Tariffa indicativa
+                </p>
+                <span className="font-serif text-2xl text-stone-800">{room.price}</span>
+              </div>
+              <span className="inline-flex items-center gap-1 text-amber-700 text-sm font-semibold group-hover:gap-2 transition-all">
                 Scopri di più
                 <svg
                   className="w-4 h-4"
