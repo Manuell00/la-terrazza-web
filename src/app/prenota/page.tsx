@@ -82,7 +82,7 @@ export default function PrenotaPage() {
                       <p className="text-[11px] font-semibold tracking-[0.24em] uppercase text-stone-400 mb-1">
                         Tariffa indicativa
                       </p>
-                      <p className="font-serif text-2xl text-stone-800">{room.price}</p>
+                      <p className="text-[1.9rem] font-semibold tracking-[-0.03em] text-stone-800">{room.price}</p>
                     </div>
                     <div className="flex gap-3">
                       <a
@@ -148,7 +148,9 @@ export default function PrenotaPage() {
             {/* Booking */}
             <AnimatedSection delay={0.1}>
               <div className="flex h-full flex-col items-center rounded-[28px] border border-stone-200 bg-stone-50 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50/60 hover:shadow-lg">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white text-3xl shadow-sm">🏨</div>
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
+                  <Image src="/images/brands/booking-icon.png" alt="Booking.com" width={26} height={26} className="h-[26px] w-[26px] rounded-md" />
+                </div>
                 <h3 className={platformLabelClass}>Booking.com</h3>
                 <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
                   Prenota su Booking.com con cancellazione flessibile. Migliaia di recensioni verificate.
@@ -177,7 +179,9 @@ export default function PrenotaPage() {
             {/* B&B.it */}
             <AnimatedSection delay={0.2}>
               <div className="flex h-full flex-col items-center rounded-[28px] border border-stone-200 bg-stone-50 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-green-300 hover:bg-green-50/70 hover:shadow-lg">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white text-3xl shadow-sm">🛏️</div>
+                <div className="mb-4 flex h-14 items-center justify-center rounded-[18px] bg-white px-3 shadow-sm">
+                  <Image src="/images/brands/bnb-logo.svg" alt="Bed-and-Breakfast.it" width={84} height={10} className="h-[12px] w-auto" />
+                </div>
                 <h3 className={platformLabelClass}>Bed-and-Breakfast.it</h3>
                 <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
                   Il portale italiano dei B&B. Trova disponibilità e prenota in pochi click.

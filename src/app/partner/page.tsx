@@ -16,6 +16,7 @@ const WA_ICON = (
 );
 
 const marosaImages = [
+  "/images/partner/marosa/logo.png",
   "/images/partner/marosa/marosa-1.jpg",
   "/images/partner/marosa/marosa-2.jpg",
   "/images/partner/marosa/marosa-4.jpg",
@@ -105,7 +106,13 @@ export default function PartnerPage() {
 
             {/* Image grid */}
             <AnimatedSection direction="right">
-              <PartnerGallery images={marosaImages.slice(0, 4)} alt="MaRoSa House" />
+              <PartnerGallery
+                featuredImage={marosaImages[0]}
+                gridImages={marosaImages.slice(1, 4)}
+                lightboxImages={marosaImages.slice(1)}
+                alt="MaRoSa House"
+                featuredMode="contain"
+              />
             </AnimatedSection>
           </div>
 
@@ -157,7 +164,13 @@ export default function PartnerPage() {
 
             {/* Image gallery */}
             <AnimatedSection direction="right" className="order-1 md:order-2">
-              <PartnerGallery images={sanBartolomeoImages} alt="Appartamento San Bartolomeo" featuredMode="contain" />
+              <PartnerGallery
+                featuredImage={sanBartolomeoImages[0]}
+                gridImages={sanBartolomeoImages.slice(1)}
+                lightboxImages={sanBartolomeoImages.slice(1)}
+                alt="Appartamento San Bartolomeo"
+                featuredMode="contain"
+              />
             </AnimatedSection>
           </div>
         </div>

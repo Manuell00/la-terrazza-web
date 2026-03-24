@@ -34,9 +34,18 @@ const AirbnbLogo = () => (
 );
 
 const BookingLogo = () => (
-  <span className={platformLabelClass}>
-    Booking<span className="opacity-60">.com</span>
-  </span>
+  <div className="flex items-center gap-2">
+    <Image src="/images/brands/booking-icon.png" alt="Booking.com" width={18} height={18} className="h-[18px] w-[18px] rounded-[4px]" />
+    <span className={platformLabelClass}>
+      Booking<span className="opacity-60">.com</span>
+    </span>
+  </div>
+);
+
+const BedAndBreakfastLogo = () => (
+  <div className="flex items-center gap-2">
+    <Image src="/images/brands/bnb-logo.svg" alt="Bed-and-Breakfast.it" width={84} height={10} className="h-[12px] w-auto" />
+  </div>
 );
 
 const WA_ICON = (
@@ -158,7 +167,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                     {/* 5. B&B.it */}
                     <a href={siteConfig.links.bedAndBreakfast} target="_blank" rel="noopener noreferrer"
                       className={platformButtonBase}>
-                      <span className={platformLabelClass}>Bed-and-Breakfast.it</span>
+                      <BedAndBreakfastLogo />
                     </a>
                   </div>
 

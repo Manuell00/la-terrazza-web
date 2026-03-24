@@ -212,7 +212,7 @@ export default function HomePage() {
       {/* Final CTA — "Il tuo relax inizia qui" */}
       <section className="relative py-28 md:py-36 overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/struttura/struttura-4.jpg" alt="La Terrazza" fill className="object-cover" />
+          <Image src="/images/struttura/struttura-3.jpg" alt="La Terrazza" fill className="object-cover" />
           <div className="absolute inset-0 bg-stone-900/80" />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center">

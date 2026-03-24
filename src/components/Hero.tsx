@@ -22,7 +22,7 @@ export default function Hero() {
       {/* Parallax background */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <Image
-          src="/images/struttura/struttura-4.jpg"
+          src="/images/struttura/struttura-2.jpg"
           alt="La Terrazza Affittacamere — panorama e natura del Monferrato"
           fill
           priority
