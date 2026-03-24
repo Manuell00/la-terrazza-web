@@ -16,20 +16,10 @@ interface Props {
   otherRooms: Room[];
 }
 
-// Logo ufficiale Airbnb (SVG)
-const AirbnbLogo = () => (
-  <svg className="w-16 h-5" viewBox="0 0 102 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path d="M29.1 22.8c-.4 1-1 1.8-1.8 2.5-.8.6-1.7.9-2.7.9-1.3 0-2.4-.4-3.3-1.3-.4-.4-.7-.9-.9-1.5l-.1-.4h-.1l-.1.4c-.2.6-.5 1.1-.9 1.5-.9.9-2 1.3-3.3 1.3-1 0-1.9-.3-2.7-.9-.8-.7-1.4-1.5-1.8-2.5-.4-1.1-.6-2.3-.6-3.6 0-1.3.2-2.5.6-3.6.4-1 1-1.8 1.8-2.5.8-.6 1.7-.9 2.7-.9 1.3 0 2.4.4 3.3 1.3.4.4.7.9.9 1.5l.1.4h.1l.1-.4c.2-.6.5-1.1.9-1.5.9-.9 2-1.3 3.3-1.3 1 0 1.9.3 2.7.9.8.7 1.4 1.5 1.8 2.5.4 1.1.6 2.3.6 3.6 0 1.3-.2 2.5-.6 3.6zm-8.3-.5c.4.5.9.8 1.5.8.6 0 1.1-.3 1.5-.8.4-.5.6-1.3.6-2.3 0-.9-.2-1.7-.6-2.3-.4-.5-.9-.8-1.5-.8-.6 0-1.1.3-1.5.8-.4.5-.6 1.3-.6 2.3 0 .9.2 1.7.6 2.3zm-6.2 0c.4.5.9.8 1.5.8.6 0 1.1-.3 1.5-.8.4-.5.6-1.3.6-2.3 0-.9-.2-1.7-.6-2.3-.4-.5-.9-.8-1.5-.8-.6 0-1.1.3-1.5.8-.4.5-.6 1.3-.6 2.3 0 .9.2 1.7.6 2.3z"/>
-    <path d="M20.5 0C9.2 0 0 9.2 0 20.5S9.2 41 20.5 41 41 31.8 41 20.5 31.8 0 20.5 0zm0 37.5C11.1 37.5 3.5 29.9 3.5 20.5S11.1 3.5 20.5 3.5 37.5 11.1 37.5 20.5 29.9 37.5 20.5 37.5z" opacity="0"/>
-    <text x="35" y="23" fontSize="14" fontFamily="Arial, sans-serif" fontWeight="bold" fill="currentColor">airbnb</text>
-  </svg>
-);
-
-// Logo Booking.com (testo stilizzato)
+// Logo Booking.com — neutral
 const BookingLogo = () => (
-  <span className="font-bold text-base tracking-tight">
-    <span className="text-blue-600">Booking</span>
-    <span className="text-stone-500">.com</span>
+  <span className="font-semibold text-sm tracking-tight">
+    Booking<span className="opacity-60">.com</span>
   </span>
 );
 
@@ -39,8 +29,9 @@ const WA_ICON = (
   </svg>
 );
 
+// Uniform neutral style — platform identity comes from logo/name, not color
 const platformButtonBase =
-  "flex min-h-[52px] w-full items-center justify-center gap-3 rounded-xl border-2 px-5 py-3 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5";
+  "group flex min-h-[48px] w-full items-center justify-center gap-3 rounded-xl border border-stone-200 bg-white px-5 py-3 text-sm font-medium text-stone-600 transition-all duration-200 hover:-translate-y-0.5 hover:border-stone-300 hover:bg-stone-800 hover:text-white shadow-sm";
 
 export default function RoomPageTemplate({ room, otherRooms }: Props) {
   return (
@@ -136,25 +127,25 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                       <div className="flex-1 h-px bg-stone-200" />
                     </div>
 
-                    {/* 3. Airbnb — con logo */}
+                    {/* 3. Airbnb */}
                     <a href={room.airbnbUrl} target="_blank" rel="noopener noreferrer"
-                      className={`${platformButtonBase} border-rose-200 text-rose-600 hover:border-rose-400 hover:bg-rose-500 hover:text-white`}>
-                      <svg className="w-5 h-5 flex-shrink-0" fill="#FF5A5F" viewBox="0 0 24 24">
+                      className={platformButtonBase}>
+                      <svg className="w-4 h-4 flex-shrink-0 group-hover:text-white/80" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M22.292 18.13c-.145-.387-.29-.724-.436-1.014-.144-.29-.37-.62-.623-.918l-7.02-9.468C13.6 6.04 12.86 5.6 12 5.6s-1.6.44-2.213 1.13L2.767 16.198c-.253.297-.48.627-.623.918-.145.29-.29.627-.436 1.014-.29.774-.27 1.477.073 1.99.387.59 1.06.892 1.95.892h15.54c.89 0 1.563-.302 1.95-.892.342-.513.362-1.216.072-1.99z"/>
                       </svg>
-                      <span className="font-bold text-[#FF5A5F]">airbnb</span>
+                      airbnb
                     </a>
 
-                    {/* 4. Booking — con logo */}
+                    {/* 4. Booking */}
                     <a href={siteConfig.links.booking} target="_blank" rel="noopener noreferrer"
-                      className={`${platformButtonBase} border-blue-200 text-blue-700 hover:border-blue-400 hover:bg-blue-600 hover:text-white`}>
+                      className={platformButtonBase}>
                       <BookingLogo />
                     </a>
 
                     {/* 5. B&B.it */}
                     <a href={siteConfig.links.bedAndBreakfast} target="_blank" rel="noopener noreferrer"
-                      className={`${platformButtonBase} border-green-200 text-green-700 hover:border-green-500 hover:bg-green-600 hover:text-white`}>
-                      🏡 Bed-and-Breakfast.it
+                      className={platformButtonBase}>
+                      Bed-and-Breakfast.it
                     </a>
                   </div>
 
