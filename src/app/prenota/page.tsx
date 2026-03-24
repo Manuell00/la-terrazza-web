@@ -149,6 +149,16 @@ export default function PrenotaPage() {
                 <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
                   Prenota su Booking.com con cancellazione flessibile. Migliaia di recensioni verificate.
                 </p>
+                <div className="mb-6 flex w-full flex-wrap justify-center gap-2">
+                  {rooms.map((room) => (
+                    <span
+                      key={room.id}
+                      className="rounded-full border border-blue-100 bg-white px-3 py-1 text-xs font-medium text-blue-700"
+                    >
+                      {room.name.replace("Camera ", "")}
+                    </span>
+                  ))}
+                </div>
                 <a
                   href={siteConfig.links.booking}
                   target="_blank"
@@ -168,6 +178,16 @@ export default function PrenotaPage() {
                 <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
                   Il portale italiano dei B&B. Trova disponibilità e prenota in pochi click.
                 </p>
+                <div className="mb-6 flex w-full flex-wrap justify-center gap-2">
+                  {rooms.map((room) => (
+                    <span
+                      key={room.id}
+                      className="rounded-full border border-green-100 bg-white px-3 py-1 text-xs font-medium text-green-700"
+                    >
+                      {room.name.replace("Camera ", "")}
+                    </span>
+                  ))}
+                </div>
                 <a
                   href={siteConfig.links.bedAndBreakfast}
                   target="_blank"

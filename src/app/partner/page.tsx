@@ -24,7 +24,7 @@ const marosaImages = [
 ];
 
 const sanBartolomeoImages = [
-  "/images/partner/san-bartolomeo/sb-1.jpg",
+  "/images/partner/san-bartolomeo/casa-mare-logo.jpg",
   "/images/partner/san-bartolomeo/sb-2.jpg",
   "/images/partner/san-bartolomeo/sb-3.jpg",
   "/images/partner/san-bartolomeo/sb-4.jpg",
@@ -89,7 +89,7 @@ export default function PartnerPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Header */}
           <AnimatedSection className="mb-10">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div className="flex flex-col gap-4">
               <div>
                 <div className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full border bg-amber-50 border-amber-200 text-amber-700 mb-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
@@ -99,24 +99,6 @@ export default function PartnerPage() {
                   MaRoSa House
                 </h2>
                 <p className="text-amber-600 font-medium">Il comfort di casa, il calore dell&apos;ospitalità</p>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href={siteConfig.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5"
-                >
-                  {WA_ICON} Contatta via WhatsApp
-                </a>
-                <a
-                  href="https://marosahouse.it"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-stone-300 text-stone-700 hover:border-amber-400 hover:text-amber-700 px-5 py-2.5 rounded-full text-sm font-medium transition-all"
-                >
-                  🌐 marosahouse.it
-                </a>
               </div>
             </div>
           </AnimatedSection>
@@ -135,6 +117,24 @@ export default function PartnerPage() {
                   Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede
                   e si sente. Un posto pensato per farti stare bene, dal primo all&apos;ultimo minuto.
                 </p>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <a
+                    href={siteConfig.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5"
+                  >
+                    {WA_ICON} Contatta via WhatsApp
+                  </a>
+                  <a
+                    href="https://marosahouse.it"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 border border-stone-300 text-stone-700 hover:border-amber-400 hover:text-amber-700 px-5 py-2.5 rounded-full text-sm font-medium transition-all"
+                  >
+                    🌐 marosahouse.it
+                  </a>
+                </div>
               </div>
             </AnimatedSection>
 
