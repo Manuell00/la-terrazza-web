@@ -191,16 +191,18 @@ export default function HomePage() {
               />
             </div>
             {/* Bottone Google Maps */}
-            <div className="mt-4 text-center">
+            <div className="mt-5 text-center">
               <a
                 href={siteConfig.links.google}
                 target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-stone-800 px-5 py-2.5 text-sm font-medium text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-stone-700 sm:px-6 sm:py-3"
+                className="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-[linear-gradient(180deg,#ffffff,#f5f5f4)] px-5 py-2.5 text-sm font-semibold text-stone-800 shadow-[0_16px_40px_-24px_rgba(28,25,23,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:border-stone-400 hover:shadow-[0_20px_44px_-24px_rgba(28,25,23,0.55)] sm:px-6 sm:py-3"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                Apri su Google Maps
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-white shadow-sm">
+                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                </span>
+                <span>Apri su Google Maps</span>
               </a>
             </div>
           </AnimatedSection>

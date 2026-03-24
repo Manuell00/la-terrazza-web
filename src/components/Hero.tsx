@@ -35,11 +35,11 @@ export default function Hero() {
 
       {/* Content */}
       <motion.div className="relative z-10 mx-auto max-w-4xl px-4 text-center" style={{ opacity }}>
-        <div className="mx-auto max-w-3xl rounded-[32px] border border-white/14 bg-stone-950/26 px-5 py-7 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.72)] backdrop-blur-lg sm:px-8 sm:py-9 md:px-10">
+        <div className="mx-auto max-w-3xl rounded-[34px] border border-white/16 bg-[linear-gradient(180deg,rgba(17,24,39,0.8),rgba(28,25,23,0.68))] px-5 py-7 shadow-[0_32px_90px_-34px_rgba(0,0,0,0.82)] ring-1 ring-black/10 sm:px-8 sm:py-9 md:px-10">
           {/* Location pill */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/12 px-4 py-2 text-sm text-white/90 backdrop-blur-sm"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/90"
           >
             <span>📍</span><span>Cantarana, Asti — Piemonte</span>
           </motion.div>
@@ -47,11 +47,11 @@ export default function Hero() {
           {/* Headline — più emotivo */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}
-            className="mb-5 font-serif text-[2.9rem] font-semibold leading-[0.92] tracking-[-0.03em] text-white drop-shadow-[0_16px_38px_rgba(0,0,0,0.5)] sm:text-5xl md:text-7xl"
+            className="mb-5 font-serif text-[2.9rem] font-semibold leading-[0.92] tracking-[-0.03em] text-white [text-shadow:0_18px_44px_rgba(0,0,0,0.55),0_3px_10px_rgba(0,0,0,0.75)] sm:text-5xl md:text-7xl"
           >
             Un rifugio di relax
             <br />
-            <span className="text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.5)] sm:text-amber-200">
+            <span className="text-stone-100 [text-shadow:0_18px_44px_rgba(0,0,0,0.55),0_3px_10px_rgba(0,0,0,0.75)]">
               tra natura e comfort.
             </span>
           </motion.h1>
@@ -59,7 +59,7 @@ export default function Hero() {
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.7 }}
-            className="mx-auto mb-10 max-w-[20rem] text-base leading-relaxed text-stone-100 [text-shadow:0_2px_18px_rgba(0,0,0,0.45)] sm:max-w-2xl sm:text-lg md:text-xl"
+            className="mx-auto mb-10 max-w-[20rem] text-base leading-relaxed text-stone-100 [text-shadow:0_3px_16px_rgba(0,0,0,0.55)] sm:max-w-2xl sm:text-lg md:text-xl"
           >
             Tre camere esclusive tra i vigneti del Monferrato. Stacca la spina, respira,
             lasciati coccolare — e torna a casa diverso.
@@ -80,7 +80,7 @@ export default function Hero() {
             </a>
             <a
               href="/prenota"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-amber-500 px-8 py-4 text-base font-semibold text-stone-900 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-amber-400 hover:shadow-[0_18px_45px_-18px_rgba(245,158,11,0.8)]"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white px-8 py-4 text-base font-semibold text-stone-900 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-stone-100 hover:shadow-[0_18px_45px_-18px_rgba(255,255,255,0.35)]"
             >
               Controlla disponibilità
             </a>
@@ -97,7 +97,7 @@ export default function Hero() {
               { icon: "🔒", text: "Prenotazione sicura" },
               { icon: "🍳", text: "Colazione inclusa" },
             ].map((t) => (
-              <span key={t.text} className="inline-flex items-center gap-1.5 rounded-full border border-white/18 bg-white/10 px-3 py-1.5 text-xs text-white/90 backdrop-blur-sm sm:text-sm">
+              <span key={t.text} className="inline-flex items-center gap-1.5 rounded-full border border-white/18 bg-white/10 px-3 py-1.5 text-xs text-white/90 sm:text-sm">
                 <span className="text-amber-300">{t.icon}</span>{t.text}
               </span>
             ))}

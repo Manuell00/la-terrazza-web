@@ -36,29 +36,29 @@ export default function RoomCard({ room, index }: Props) {
             </div>
 
             {/* Room name overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6">
+            <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
               <h3 className="font-serif text-white text-2xl font-semibold">
                 {room.name}
               </h3>
-              <p className="text-stone-200 text-sm mt-1">{room.subtitle}</p>
+              <p className="mt-1 text-sm text-stone-200">{room.subtitle}</p>
             </div>
           </div>
 
           {/* Card body */}
-          <div className="bg-white p-6">
-            <p className="min-h-[96px] text-stone-600 text-sm leading-relaxed mb-6">
+          <div className="bg-white p-6 text-center">
+            <p className="mb-6 min-h-[96px] text-sm leading-relaxed text-stone-600">
               {room.description}
             </p>
 
             {/* Footer */}
-            <div className="flex items-end justify-between gap-4 border-t border-stone-100 pt-5">
-              <div>
+            <div className="flex flex-col items-center gap-4 border-t border-stone-100 pt-5">
+              <div className="text-center">
                 <p className="text-[11px] uppercase tracking-[0.24em] text-stone-400">
                   Tariffa indicativa
                 </p>
                 <span className="font-serif text-2xl text-stone-800">{room.price}</span>
               </div>
-              <span className="inline-flex items-center gap-1 text-amber-700 text-sm font-semibold group-hover:gap-2 transition-all">
+              <span className="inline-flex items-center gap-1 text-sm font-semibold text-amber-700 transition-all group-hover:gap-2">
                 Scopri di più
                 <svg
                   className="w-4 h-4"

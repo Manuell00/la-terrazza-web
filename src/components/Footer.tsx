@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
           {/* Brand */}
-          <div className="text-center">
+          <div className="rounded-[24px] border border-white/8 bg-white/[0.04] px-4 py-4 text-center md:px-5">
             <div className="mb-2.5 flex items-center justify-center gap-2.5">
               <div className="relative w-9 h-9 rounded-full overflow-hidden ring-2 ring-stone-600 flex-shrink-0">
                 <Image src="/images/logo/logo.jpg" alt="La Terrazza Logo" fill className="object-cover" />
@@ -39,37 +39,37 @@ export default function Footer() {
 
           {/* Camere */}
           <div className="rounded-[24px] border border-white/6 bg-white/[0.03] px-4 py-4 md:px-5">
-            <div className="grid grid-cols-2 gap-5 text-center md:grid-cols-[0.9fr_1.1fr] md:gap-10">
-            <div>
-              <h4 className="text-white text-[11px] font-semibold tracking-widest uppercase mb-2.5">Camere</h4>
-              <ul className="space-y-1.5">
-              {[
-                { href: "/camere/luna", label: "Camera Luna" },
-                { href: "/camere/stella", label: "Camera Stella" },
-                { href: "/camere/sole", label: "Camera Sole" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-xs text-stone-400 hover:text-amber-400 transition-colors">{link.label}</Link>
-                </li>
-              ))}
-              </ul>
-            </div>
+            <div className="grid grid-cols-2 text-center">
+              <div className="pr-4 md:pr-6">
+                <h4 className="mb-2.5 text-[11px] font-semibold uppercase tracking-widest text-white">Camere</h4>
+                <ul className="space-y-1.5">
+                  {[
+                    { href: "/camere/luna", label: "Camera Luna" },
+                    { href: "/camere/stella", label: "Camera Stella" },
+                    { href: "/camere/sole", label: "Camera Sole" },
+                  ].map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="text-xs text-stone-400 transition-colors hover:text-amber-400">{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            {/* Info */}
-            <div>
-              <h4 className="text-white text-[11px] font-semibold tracking-widest uppercase mb-2.5">Info</h4>
-              <ul className="space-y-1.5">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/prenota", label: "Prenota" },
-                { href: "/partner", label: "Partner" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-xs text-stone-400 hover:text-amber-400 transition-colors">{link.label}</Link>
-                </li>
-              ))}
-              </ul>
-            </div>
+              <div className="relative pl-4 md:pl-6">
+                <div className="absolute bottom-1 left-0 top-1 w-px bg-[linear-gradient(180deg,transparent,rgba(245,158,11,0.55),transparent)]" />
+                <h4 className="mb-2.5 text-[11px] font-semibold uppercase tracking-widest text-white">Info</h4>
+                <ul className="space-y-1.5">
+                  {[
+                    { href: "/", label: "Home" },
+                    { href: "/prenota", label: "Prenota" },
+                    { href: "/partner", label: "Partner" },
+                  ].map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="text-xs text-stone-400 transition-colors hover:text-amber-400">{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 
