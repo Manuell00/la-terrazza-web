@@ -17,6 +17,8 @@ const WA_ICON = (
   </svg>
 );
 
+const platformLabelClass = "text-[1.65rem] font-semibold tracking-[-0.03em] text-stone-800";
+
 function waLink(roomName: string) {
   const text = encodeURIComponent(
     `Buongiorno! Vorrei informazioni sulla ${roomName}. È disponibile? Grazie!`
@@ -39,7 +41,7 @@ export default function PrenotaPage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <AnimatedSection>
-            <p className="text-amber-300 text-sm font-medium tracking-widest uppercase mb-4">
+            <p className="text-emerald-300 text-sm font-medium tracking-widest uppercase mb-4">
               Prenota il tuo soggiorno
             </p>
             <h1 className="font-serif text-5xl md:text-6xl text-white font-semibold leading-tight mb-6">
@@ -120,8 +122,10 @@ export default function PrenotaPage() {
             {/* Airbnb */}
             <AnimatedSection delay={0}>
               <div className="flex h-full flex-col items-center rounded-[28px] border border-stone-200 bg-stone-50 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-300 hover:bg-rose-50/60 hover:shadow-lg">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white text-3xl shadow-sm">🏠</div>
-                <h3 className="font-serif text-2xl text-stone-800 mb-2">Airbnb</h3>
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
+                  <Image src="/images/brands/airbnb-belo.svg" alt="Airbnb" width={26} height={26} className="h-[26px] w-[26px] rounded-md" />
+                </div>
+                <h3 className={platformLabelClass}>Airbnb</h3>
                 <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
                   Prenota Camera Luna, Stella o Sole direttamente su Airbnb. Pagamento sicuro e protezione ospiti.
                 </p>
@@ -145,7 +149,7 @@ export default function PrenotaPage() {
             <AnimatedSection delay={0.1}>
               <div className="flex h-full flex-col items-center rounded-[28px] border border-stone-200 bg-stone-50 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50/60 hover:shadow-lg">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white text-3xl shadow-sm">🏨</div>
-                <h3 className="font-serif text-2xl text-stone-800 mb-2">Booking.com</h3>
+                <h3 className={platformLabelClass}>Booking.com</h3>
                 <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
                   Prenota su Booking.com con cancellazione flessibile. Migliaia di recensioni verificate.
                 </p>
@@ -174,7 +178,7 @@ export default function PrenotaPage() {
             <AnimatedSection delay={0.2}>
               <div className="flex h-full flex-col items-center rounded-[28px] border border-stone-200 bg-stone-50 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-green-300 hover:bg-green-50/70 hover:shadow-lg">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white text-3xl shadow-sm">🛏️</div>
-                <h3 className="font-serif text-2xl text-stone-800 mb-2">Bed-and-Breakfast.it</h3>
+                <h3 className={platformLabelClass}>Bed-and-Breakfast.it</h3>
                 <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
                   Il portale italiano dei B&B. Trova disponibilità e prenota in pochi click.
                 </p>
@@ -206,7 +210,7 @@ export default function PrenotaPage() {
       <section className="py-16 mb-0 bg-stone-50 border-t border-stone-100">
         <div className="container mx-auto px-4 max-w-4xl">
           <AnimatedSection className="text-center mb-10">
-            <p className="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Contatto diretto</p>
+            <p className="text-emerald-700 text-xs font-semibold tracking-widest uppercase mb-3">Contatto diretto</p>
             <h2 className="font-serif text-3xl md:text-4xl text-stone-800 mb-3">Preferisci parlare con noi?</h2>
             <p className="text-stone-500 max-w-lg mx-auto">
               Siamo disponibili ogni giorno dalle 8 alle 22. Rispondiamo entro pochi minuti.
@@ -242,9 +246,9 @@ export default function PrenotaPage() {
 
             <a
               href={`mailto:${siteConfig.email}`}
-              className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-stone-200 bg-white hover:border-amber-300 hover:bg-amber-50 transition-all group"
+              className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 hover:bg-emerald-50 transition-all group"
             >
-              <div className="w-10 h-10 rounded-full bg-amber-50 group-hover:bg-amber-100 flex items-center justify-center transition-colors">
+              <div className="w-10 h-10 rounded-full bg-emerald-50 group-hover:bg-emerald-100 flex items-center justify-center transition-colors">
                 <span className="text-lg">✉️</span>
               </div>
               <p className="font-semibold text-stone-800 text-sm">Email</p>

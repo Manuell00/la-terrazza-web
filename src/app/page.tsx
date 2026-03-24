@@ -68,7 +68,7 @@ export default function HomePage() {
             </AnimatedSection>
 
             <AnimatedSection direction="right" className="text-center">
-              <p className="mb-3 text-center text-xs font-semibold uppercase tracking-widest text-amber-600">La nostra storia</p>
+              <p className="mb-3 text-center text-xs font-semibold uppercase tracking-widest text-emerald-700">La nostra storia</p>
               <h2 className="mb-5 text-center font-serif text-3xl leading-tight text-stone-800 md:text-5xl">
                 Un posto che<br />si sente speciale.
               </h2>
@@ -77,11 +77,11 @@ export default function HomePage() {
                 <p>
                   <span className="font-semibold text-stone-900">Tre camere</span>:
                   {" "}
-                  <span className="font-semibold text-amber-700">Luna</span>,
+                  <span className="font-semibold text-emerald-700">Luna</span>,
                   {" "}
-                  <span className="font-semibold text-amber-700">Stella</span>
+                  <span className="font-semibold text-emerald-700">Stella</span>
                   {" "}e{" "}
-                  <span className="font-semibold text-amber-700">Sole</span>.
+                  <span className="font-semibold text-emerald-700">Sole</span>.
                 </p>
                 <p className="font-medium text-stone-700">Tre caratteri diversi, una sola promessa: andarsene con un sorriso.</p>
               </div>
@@ -100,7 +100,7 @@ export default function HomePage() {
       <section className="py-20 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Perché sceglierci</p>
+            <p className="text-emerald-700 text-xs font-semibold tracking-widest uppercase mb-3">Perché sceglierci</p>
             <h2 className="font-serif text-3xl md:text-5xl text-stone-800 leading-tight">
               Quello che rende La Terrazza unica.
             </h2>
@@ -109,7 +109,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
             {highlights.map((h, i) => (
               <AnimatedSection key={h.title} delay={i * 0.08}>
-                <div className="group flex h-full flex-col items-center rounded-2xl border border-stone-100 p-4 text-center transition-all duration-300 hover:scale-[1.02] hover:border-amber-200 hover:bg-amber-50/40 hover:shadow-lg md:p-6">
+                <div className="group flex h-full flex-col items-center rounded-2xl border border-stone-100 p-4 text-center transition-all duration-300 hover:scale-[1.03] hover:border-emerald-200 hover:bg-emerald-50/40 hover:shadow-lg md:p-6">
                   <div className="text-3xl md:text-4xl mb-3">{h.icon}</div>
                   <h3 className="font-serif text-base md:text-xl text-stone-800 mb-1.5 leading-snug">{h.title}</h3>
                   <p className="text-stone-500 text-xs md:text-sm leading-relaxed">{h.desc}</p>
@@ -124,7 +124,7 @@ export default function HomePage() {
       <section className="py-20 md:py-24 bg-stone-50">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Le nostre camere</p>
+            <p className="text-emerald-700 text-xs font-semibold tracking-widest uppercase mb-3">Le nostre camere</p>
             <h2 className="font-serif text-3xl md:text-5xl text-stone-800 leading-tight mb-3">Tre camere, tre emozioni.</h2>
             <p className="text-stone-500">Ogni spazio ha la sua personalità. Scegli quella che rispecchia il tuo umore.</p>
           </AnimatedSection>
@@ -138,7 +138,7 @@ export default function HomePage() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center max-w-xl mx-auto mb-8">
-            <p className="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-2">La struttura</p>
+            <p className="text-emerald-700 text-xs font-semibold tracking-widest uppercase mb-2">La struttura</p>
             <h2 className="font-serif text-2xl md:text-3xl text-stone-800">Scorri per scoprirla.</h2>
           </AnimatedSection>
           <AnimatedSection className="max-w-3xl mx-auto">
@@ -151,12 +151,12 @@ export default function HomePage() {
       <section className="py-20 md:py-24 bg-stone-50">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Recensioni</p>
+            <p className="text-emerald-700 text-xs font-semibold tracking-widest uppercase mb-3">Recensioni</p>
             <h2 className="font-serif text-3xl md:text-5xl text-stone-800 leading-tight mb-4">Cosa dicono i nostri ospiti.</h2>
             <div className="flex items-center justify-center gap-2">
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} className="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
@@ -177,7 +177,7 @@ export default function HomePage() {
       <section className="py-20 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center max-w-2xl mx-auto mb-10">
-            <p className="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-3">Come raggiungerci</p>
+            <p className="text-emerald-700 text-xs font-semibold tracking-widest uppercase mb-3">Come raggiungerci</p>
             <h2 className="font-serif text-3xl md:text-4xl text-stone-800 leading-tight mb-4">Nel cuore del Piemonte.</h2>
           </AnimatedSection>
 
@@ -217,7 +217,7 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <AnimatedSection>
-            <p className="text-amber-300 text-xs font-semibold tracking-widest uppercase mb-4">Pronto a partire?</p>
+            <p className="text-emerald-300 text-xs font-semibold tracking-widest uppercase mb-4">Pronto a partire?</p>
             <h2 className="font-serif text-4xl md:text-6xl text-white font-semibold leading-tight md:leading-none mb-5">
               <span className="md:hidden">
                 Il tuo relax<br />inizia qui.
@@ -239,7 +239,7 @@ export default function HomePage() {
                 📞 Chiama ora
               </a>
               <Link href="/prenota"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-amber-500 px-5 py-3 text-sm font-semibold text-stone-900 transition-all hover:-translate-y-0.5 hover:bg-amber-400 sm:px-8 sm:py-4 sm:text-base">
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-emerald-500 sm:px-8 sm:py-4 sm:text-base">
                 Controlla disponibilità
               </Link>
             </div>

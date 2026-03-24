@@ -47,7 +47,7 @@ export default function Header() {
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-stone-300 group-hover:ring-amber-500 transition-all">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-stone-300 transition-all group-hover:ring-emerald-700">
               <Image src="/images/logo/logo.jpg" alt="La Terrazza Logo" fill className="object-cover" />
             </div>
             <div>
@@ -68,13 +68,13 @@ export default function Header() {
                 href={link.href}
                 className={`group relative text-sm font-medium tracking-wide px-3 py-1.5 rounded-full transition-all duration-200 ${
                   isActive(link.href)
-                    ? "text-stone-900"
-                    : "text-stone-600 hover:text-stone-900 hover:bg-stone-100/80"
+                    ? "text-emerald-900"
+                    : "text-stone-600 hover:bg-stone-100/80 hover:text-emerald-800"
                 }`}
               >
                 <span>{link.label}</span>
                 <span
-                  className={`absolute inset-x-3 -bottom-[2px] h-[2px] origin-left rounded-full bg-amber-500 transition-transform duration-300 ${
+                  className={`absolute inset-x-3 -bottom-[2px] h-[2px] origin-left rounded-full bg-emerald-700 transition-transform duration-300 ${
                     isActive(link.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                   }`}
                 />
@@ -146,7 +146,7 @@ export default function Header() {
                         onClick={() => setMenuOpen(false)}
                         className={`group flex items-center justify-center gap-3 rounded-[22px] px-5 py-4 text-center text-[1.05rem] font-semibold uppercase tracking-[0.16em] transition-all active:scale-[0.985] ${
                           isActive(link.href)
-                            ? "bg-amber-400 text-stone-950 shadow-[0_16px_40px_-18px_rgba(251,191,36,0.8)]"
+                            ? "bg-emerald-500 text-white shadow-[0_16px_40px_-18px_rgba(22,163,74,0.65)]"
                             : "bg-white/[0.05] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)] hover:bg-white/[0.09]"
                         }`}
                       >

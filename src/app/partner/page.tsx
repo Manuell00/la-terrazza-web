@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
+import PartnerGallery from "@/components/PartnerGallery";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
@@ -30,41 +30,6 @@ const sanBartolomeoImages = [
   "/images/partner/san-bartolomeo/sb-4.jpg",
 ];
 
-function PartnerGallery({
-  images,
-  alt,
-}: {
-  images: string[];
-  alt: string;
-}) {
-  const [featured, ...rest] = images;
-
-  return (
-    <div className="space-y-3">
-      <div className="relative h-72 overflow-hidden rounded-[28px] shadow-xl ring-1 ring-stone-200">
-        <Image
-          src={featured}
-          alt={`${alt} principale`}
-          fill
-          className="object-cover transition-transform duration-500 hover:scale-105"
-        />
-      </div>
-      <div className="grid grid-cols-3 gap-3">
-        {rest.map((src, i) => (
-          <div key={src} className="relative h-32 overflow-hidden rounded-2xl ring-1 ring-stone-200">
-            <Image
-              src={src}
-              alt={`${alt} ${i + 2}`}
-              fill
-              className="object-cover transition-transform duration-500 hover:scale-105"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default function PartnerPage() {
   return (
     <main className="pt-20">
@@ -72,7 +37,7 @@ export default function PartnerPage() {
       <section className="py-20 md:py-24 bg-stone-50">
         <div className="container mx-auto px-4 text-center">
           <AnimatedSection>
-            <p className="text-amber-600 text-xs font-semibold tracking-widest uppercase mb-4">La nostra rete</p>
+            <p className="text-emerald-700 text-xs font-semibold tracking-widest uppercase mb-4">La nostra rete</p>
             <h1 className="font-serif text-4xl md:text-6xl text-stone-800 font-semibold leading-tight mb-5">
               I nostri partner.
             </h1>
@@ -91,14 +56,14 @@ export default function PartnerPage() {
           <AnimatedSection className="mb-10">
             <div className="flex flex-col gap-4">
               <div>
-                <div className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full border bg-amber-50 border-amber-200 text-amber-700 mb-4">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                <div className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full border bg-emerald-50 border-emerald-200 text-emerald-700 mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                   Casa vacanze
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl text-stone-800 font-semibold mb-1">
                   MaRoSa House
                 </h2>
-                <p className="text-amber-600 font-medium">Il comfort di casa, il calore dell&apos;ospitalità</p>
+                <p className="text-emerald-700 font-medium">Il comfort di casa, il calore dell&apos;ospitalità</p>
               </div>
             </div>
           </AnimatedSection>
@@ -117,24 +82,24 @@ export default function PartnerPage() {
                   Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede
                   e si sente. Un posto pensato per farti stare bene, dal primo all&apos;ultimo minuto.
                 </p>
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <a
-                    href={siteConfig.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5"
-                  >
-                    {WA_ICON} Contatta via WhatsApp
-                  </a>
-                  <a
-                    href="https://marosahouse.it"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 border border-stone-300 text-stone-700 hover:border-amber-400 hover:text-amber-700 px-5 py-2.5 rounded-full text-sm font-medium transition-all"
-                  >
-                    🌐 marosahouse.it
-                  </a>
-                </div>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={siteConfig.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-green-600 px-5 py-2.5 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-green-500"
+                >
+                  {WA_ICON} Contatta via WhatsApp
+                </a>
+                <a
+                  href="https://marosahouse.it"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-5 py-2.5 text-sm font-medium text-stone-700 transition-all hover:-translate-y-0.5 hover:border-emerald-500 hover:text-emerald-700"
+                >
+                  🌐 marosahouse.it
+                </a>
               </div>
             </AnimatedSection>
 
@@ -160,7 +125,7 @@ export default function PartnerPage() {
               <h2 className="font-serif text-3xl md:text-4xl text-stone-800 font-semibold mb-2">
                 Appartamento San Bartolomeo
               </h2>
-              <p className="text-amber-600 font-medium mb-5">Tra storia e natura, un posto tutto per te</p>
+              <p className="text-emerald-700 font-medium mb-5">Tra storia e natura, un posto tutto per te</p>
               <div className="rounded-[28px] border border-stone-200 bg-white p-7 md:p-8 shadow-sm mb-8">
                 <p className="text-stone-600 leading-relaxed mb-4">
                   L&apos;Appartamento San Bartolomeo offre una soluzione indipendente per chi desidera
@@ -192,7 +157,7 @@ export default function PartnerPage() {
 
             {/* Image gallery */}
             <AnimatedSection direction="right" className="order-1 md:order-2">
-              <PartnerGallery images={sanBartolomeoImages} alt="Appartamento San Bartolomeo" />
+              <PartnerGallery images={sanBartolomeoImages} alt="Appartamento San Bartolomeo" featuredMode="contain" />
             </AnimatedSection>
           </div>
         </div>
@@ -213,7 +178,7 @@ export default function PartnerPage() {
               href={siteConfig.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-900 font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5"
             >
               {WA_ICON} Scrivici su WhatsApp
             </a>

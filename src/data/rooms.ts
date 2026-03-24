@@ -91,7 +91,7 @@ export const rooms: Room[] = [
     airbnbUrl: "https://www.airbnb.it/rooms/1360851292351796993",
     price: "Da €55 / notte",
     highlight: "Vista mozzafiato",
-    color: "from-amber-800 to-stone-700",
+    color: "from-emerald-800 to-stone-700",
   },
   {
     id: "sole",
@@ -131,6 +131,6 @@ export const rooms: Room[] = [
     airbnbUrl: "https://www.airbnb.it/rooms/1360860375665572777",
     price: "Da €55 / notte",
     highlight: "La più luminosa",
-    color: "from-yellow-700 to-orange-700",
+    color: "from-emerald-700 to-teal-700",
   },
 ];

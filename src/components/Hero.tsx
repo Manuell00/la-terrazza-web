@@ -14,94 +14,99 @@ const WA_ICON = (
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section ref={ref} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative flex h-screen min-h-[680px] items-end overflow-hidden">
       {/* Parallax background */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <Image
-          src="/images/camera-stella/stella-3.jpg"
-          alt="La Terrazza Affittacamere — camera elegante e luminosa"
+          src="/images/struttura/struttura-4.jpg"
+          alt="La Terrazza Affittacamere — panorama e natura del Monferrato"
           fill
           priority
           quality={100}
-          className="object-cover scale-[1.02]"
+          className="object-cover scale-[1.04]"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent_34%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/76 via-stone-950/54 to-stone-950/84 md:from-stone-950/64 md:via-stone-950/38 md:to-stone-950/72" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.2),transparent_34%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,24,39,0.62)_0%,rgba(17,24,39,0.38)_42%,rgba(17,24,39,0.16)_72%,rgba(17,24,39,0.2)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/72 via-stone-950/18 to-stone-950/16" />
       </motion.div>
 
       {/* Content */}
-      <motion.div className="relative z-10 mx-auto max-w-4xl px-4 text-center" style={{ opacity }}>
-        <div className="mx-auto max-w-3xl rounded-[34px] border border-white/16 bg-[linear-gradient(180deg,rgba(17,24,39,0.8),rgba(28,25,23,0.68))] px-5 py-7 shadow-[0_32px_90px_-34px_rgba(0,0,0,0.82)] ring-1 ring-black/10 sm:px-8 sm:py-9 md:px-10">
-          {/* Location pill */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/90"
-          >
-            <span>📍</span><span>Cantarana, Asti — Piemonte</span>
-          </motion.div>
-
-          {/* Headline — più emotivo */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}
-            className="mb-5 font-serif text-[2.9rem] font-semibold leading-[0.92] tracking-[-0.03em] text-white [text-shadow:0_18px_44px_rgba(0,0,0,0.55),0_3px_10px_rgba(0,0,0,0.75)] sm:text-5xl md:text-7xl"
-          >
-            Un rifugio di relax
-            <br />
-            <span className="text-stone-100 [text-shadow:0_18px_44px_rgba(0,0,0,0.55),0_3px_10px_rgba(0,0,0,0.75)]">
-              tra natura e comfort.
-            </span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.7 }}
-            className="mx-auto mb-10 max-w-[20rem] text-base leading-relaxed text-stone-100 [text-shadow:0_3px_16px_rgba(0,0,0,0.55)] sm:max-w-2xl sm:text-lg md:text-xl"
-          >
-            Tre camere esclusive tra i vigneti del Monferrato. Stacca la spina, respira,
-            lasciati coccolare — e torna a casa diverso.
-          </motion.p>
-
-          {/* CTAs — hidden on mobile (floating WA button handles it), visible from sm */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6 }}
-            className="hidden sm:flex flex-row justify-center gap-4"
-          >
-            <a
-              href={siteConfig.whatsapp}
-              target="_blank" rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-8 py-4 text-base font-semibold text-white shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-green-400 hover:shadow-[0_20px_55px_-20px_rgba(34,197,94,0.7)]"
+      <motion.div className="relative z-10 w-full" style={{ opacity }}>
+        <div className="container mx-auto px-4 pb-16 md:pb-20">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/12 px-4 py-2 text-sm text-white/90 backdrop-blur-[6px]"
             >
-              {WA_ICON}
-              Contattaci su WhatsApp
-            </a>
-            <a
-              href="/prenota"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white px-8 py-4 text-base font-semibold text-stone-900 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-stone-100 hover:shadow-[0_18px_45px_-18px_rgba(255,255,255,0.35)]"
-            >
-              Controlla disponibilità
-            </a>
-          </motion.div>
+              <span>📍</span><span>Cantarana, Asti — Piemonte</span>
+            </motion.div>
 
-          {/* Trust signals */}
-          <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 0.8 }}
-            className="mt-10 hidden flex-wrap justify-center gap-3 sm:mt-12 sm:flex sm:gap-5"
-          >
-            {[
-              { icon: "★", text: `${siteConfig.rating}/5 rating` },
-              { icon: "✓", text: "Risposta veloce" },
-              { icon: "🔒", text: "Prenotazione sicura" },
-              { icon: "🍳", text: "Colazione inclusa" },
-            ].map((t) => (
-              <span key={t.text} className="inline-flex items-center gap-1.5 rounded-full border border-white/18 bg-white/10 px-3 py-1.5 text-xs text-white/90 sm:text-sm">
-                <span className="text-amber-300">{t.icon}</span>{t.text}
-              </span>
-            ))}
-          </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.8 }}
+              className="max-w-2xl font-serif text-[3.15rem] font-semibold leading-[0.88] tracking-[-0.04em] text-white [text-shadow:0_20px_48px_rgba(0,0,0,0.35)] sm:text-[4.4rem] md:text-[5.9rem]"
+            >
+              Un rifugio di relax
+              <span className="mt-2 block text-stone-100/96">tra natura e comfort.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.75 }}
+              className="mt-6 max-w-xl text-base leading-relaxed text-stone-100/92 sm:text-lg md:text-xl"
+            >
+              Tre camere esclusive tra i vigneti del Monferrato. Stacca la spina, respira e lasciati accogliere con la calma autentica del Piemonte.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.68, duration: 0.65 }}
+              className="mt-8 hidden flex-wrap gap-4 sm:flex"
+            >
+              <a
+                href={siteConfig.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-8 py-4 text-base font-semibold text-white shadow-[0_20px_55px_-22px_rgba(22,163,74,0.75)] transition-all duration-300 hover:-translate-y-1 hover:bg-green-500"
+              >
+                {WA_ICON}
+                Contattaci su WhatsApp
+              </a>
+              <a
+                href="/prenota"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/12 px-8 py-4 text-base font-semibold text-white backdrop-blur-[6px] transition-all duration-300 hover:-translate-y-1 hover:bg-white/18"
+              >
+                Controlla disponibilità
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.85, duration: 0.7 }}
+              className="mt-10 hidden max-w-2xl grid-cols-2 gap-3 sm:grid md:grid-cols-4"
+            >
+              {[
+                { icon: "★", text: `${siteConfig.rating}/5 rating` },
+                { icon: "✓", text: "Risposta veloce" },
+                { icon: "🔒", text: "Prenotazione sicura" },
+                { icon: "🍳", text: "Colazione inclusa" },
+              ].map((t) => (
+                <span key={t.text} className="inline-flex items-center justify-center gap-1.5 rounded-2xl border border-white/12 bg-white/10 px-4 py-3 text-xs text-white/92 backdrop-blur-[6px] sm:text-sm">
+                  <span className="text-emerald-300">{t.icon}</span>{t.text}
+                </span>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </motion.div>
 

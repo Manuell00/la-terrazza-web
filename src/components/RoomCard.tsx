@@ -58,7 +58,7 @@ export default function RoomCard({ room, index }: Props) {
                 </p>
                 <span className="font-serif text-2xl text-stone-800">{room.price}</span>
               </div>
-              <span className="inline-flex items-center gap-1 text-sm font-semibold text-amber-700 transition-all group-hover:gap-2">
+              <span className="inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 transition-all group-hover:gap-2">
                 Scopri di più
                 <svg
                   className="w-4 h-4"

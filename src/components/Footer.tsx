@@ -25,7 +25,7 @@ export default function Footer() {
               <a
                 href={siteConfig.links.instagram}
                 target="_blank" rel="noopener noreferrer"
-                className="w-8 h-8 bg-stone-800 hover:bg-amber-600 rounded-full flex items-center justify-center transition-colors"
+                className="w-8 h-8 bg-stone-800 hover:bg-emerald-600 rounded-full flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@ export default function Footer() {
               <a
                 href={siteConfig.links.facebook}
                 target="_blank" rel="noopener noreferrer"
-                className="w-8 h-8 bg-stone-800 hover:bg-amber-600 rounded-full flex items-center justify-center transition-colors"
+                className="w-8 h-8 bg-stone-800 hover:bg-emerald-600 rounded-full flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ export default function Footer() {
                     { href: "/camere/sole", label: "Camera Sole" },
                   ].map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-xs text-stone-400 transition-colors hover:text-amber-400">
+                      <Link href={link.href} className="text-xs text-stone-400 transition-colors hover:text-emerald-400">
                         {link.label}
                       </Link>
                     </li>
@@ -66,7 +66,7 @@ export default function Footer() {
               </div>
 
               <div className="relative pl-4 md:pl-6">
-                <div className="absolute bottom-1 left-0 top-1 w-px bg-[linear-gradient(180deg,transparent,rgba(245,158,11,0.4),transparent)]" />
+                <div className="absolute bottom-1 left-0 top-1 w-px bg-[linear-gradient(180deg,transparent,rgba(16,185,129,0.45),transparent)]" />
                 <h4 className="mb-2.5 text-[11px] font-semibold uppercase tracking-widest text-white">Info</h4>
                 <ul className="space-y-1.5">
                   {[
@@ -75,7 +75,7 @@ export default function Footer() {
                     { href: "/partner", label: "Partner" },
                   ].map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-xs text-stone-400 transition-colors hover:text-amber-400">
+                      <Link href={link.href} className="text-xs text-stone-400 transition-colors hover:text-emerald-400">
                         {link.label}
                       </Link>
                     </li>
@@ -90,17 +90,17 @@ export default function Footer() {
             <h4 className="text-white text-[11px] font-semibold tracking-widest uppercase mb-2.5">Contatti</h4>
             <ul className="space-y-2">
               <li className="flex items-start justify-center gap-1.5">
-                <span className="text-amber-500 text-xs mt-0.5">📍</span>
+                <span className="text-emerald-500 text-xs mt-0.5">📍</span>
                 <span className="text-xs text-stone-400">Cantarana (Asti), Piemonte</span>
               </li>
               <li>
                 <a href={`tel:${siteConfig.phone}`} className="inline-flex items-center gap-1.5 text-xs text-stone-400 transition-colors hover:text-white">
-                  <span className="text-amber-500">📞</span>Chiama ora
+                  <span className="text-emerald-500">📞</span>Chiama ora
                 </a>
               </li>
               <li>
                 <a href={`mailto:${siteConfig.email}`} className="inline-flex items-center gap-1.5 break-all text-xs text-stone-400 transition-colors hover:text-white">
-                  <span className="text-amber-500">✉️</span>{siteConfig.email}
+                  <span className="text-emerald-500">✉️</span>{siteConfig.email}
                 </a>
               </li>
             </ul>

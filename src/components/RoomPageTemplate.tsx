@@ -16,9 +16,25 @@ interface Props {
   otherRooms: Room[];
 }
 
-// Logo Booking.com — neutral
+const amenityIcons: Record<string, string> = {
+  "Lenzuola di qualità": "🧺",
+  "Asciugamani inclusi": "🛁",
+  "TV smart": "📺",
+  "Pulizie giornaliere": "✨",
+  "Parcheggio gratuito": "🚗",
+};
+
+const platformLabelClass = "text-sm font-semibold tracking-[0.01em]";
+
+const AirbnbLogo = () => (
+  <div className="flex items-center gap-2">
+    <Image src="/images/brands/airbnb-belo.svg" alt="Airbnb" width={18} height={18} className="h-[18px] w-[18px] rounded-[4px]" />
+    <span className={platformLabelClass}>Airbnb</span>
+  </div>
+);
+
 const BookingLogo = () => (
-  <span className="font-semibold text-sm tracking-tight">
+  <span className={platformLabelClass}>
     Booking<span className="opacity-60">.com</span>
   </span>
 );
@@ -88,7 +104,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                   ))}
                   {room.amenities.map((a) => (
                     <div key={a} className="flex items-center gap-3 bg-stone-50 rounded-xl px-4 py-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0 ml-1" />
+                      <span className="text-xl">{amenityIcons[a] ?? "✓"}</span>
                       <span className="text-stone-700 text-sm">{a}</span>
                     </div>
                   ))}
@@ -130,10 +146,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                     {/* 3. Airbnb */}
                     <a href={room.airbnbUrl} target="_blank" rel="noopener noreferrer"
                       className={platformButtonBase}>
-                      <svg className="w-4 h-4 flex-shrink-0 group-hover:text-white/80" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M22.292 18.13c-.145-.387-.29-.724-.436-1.014-.144-.29-.37-.62-.623-.918l-7.02-9.468C13.6 6.04 12.86 5.6 12 5.6s-1.6.44-2.213 1.13L2.767 16.198c-.253.297-.48.627-.623.918-.145.29-.29.627-.436 1.014-.29.774-.27 1.477.073 1.99.387.59 1.06.892 1.95.892h15.54c.89 0 1.563-.302 1.95-.892.342-.513.362-1.216.072-1.99z"/>
-                      </svg>
-                      airbnb
+                      <AirbnbLogo />
                     </a>
 
                     {/* 4. Booking */}
@@ -145,7 +158,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                     {/* 5. B&B.it */}
                     <a href={siteConfig.links.bedAndBreakfast} target="_blank" rel="noopener noreferrer"
                       className={platformButtonBase}>
-                      Bed-and-Breakfast.it
+                      <span className={platformLabelClass}>Bed-and-Breakfast.it</span>
                     </a>
                   </div>
 

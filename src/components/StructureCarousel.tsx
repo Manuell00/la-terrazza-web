@@ -99,7 +99,7 @@ export default function StructureCarousel() {
             key={i}
             onClick={() => go(i)}
             className={`rounded-full transition-all duration-300 ${
-              i === current ? "w-5 h-2 bg-amber-500" : "w-2 h-2 bg-stone-300 hover:bg-stone-400"
+              i === current ? "w-5 h-2 bg-emerald-600" : "w-2 h-2 bg-stone-300 hover:bg-stone-400"
             }`}
             aria-label={`Immagine ${i + 1}`}
           />

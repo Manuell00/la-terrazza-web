@@ -204,11 +204,11 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
                     relative h-9 text-xs font-medium rounded-lg transition-all duration-100 select-none
                     ${disabled ? "text-stone-200 cursor-not-allowed" : "cursor-pointer"}
                     ${blocked && !past ? "bg-stone-100" : ""}
-                    ${!disabled && !checkin && !checkout && !inRange ? "hover:bg-amber-50 hover:text-amber-700 text-stone-700" : ""}
-                    ${inRange ? "bg-amber-100 text-amber-800 rounded-none" : ""}
-                    ${checkin ? "bg-amber-500 text-white rounded-lg z-10" : ""}
-                    ${checkout ? "bg-amber-500 text-white rounded-lg z-10" : ""}
-                    ${isToday && !checkin && !checkout ? "ring-1 ring-amber-400 text-amber-700" : ""}
+                    ${!disabled && !checkin && !checkout && !inRange ? "hover:bg-emerald-50 hover:text-emerald-700 text-stone-700" : ""}
+                    ${inRange ? "bg-emerald-100 text-emerald-800 rounded-none" : ""}
+                    ${checkin ? "bg-emerald-600 text-white rounded-lg z-10" : ""}
+                    ${checkout ? "bg-emerald-600 text-white rounded-lg z-10" : ""}
+                    ${isToday && !checkin && !checkout ? "ring-1 ring-emerald-400 text-emerald-700" : ""}
                   `}
                 >
                   {day.getDate()}
@@ -227,7 +227,7 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
             <span className="w-2 h-2 rounded-full bg-rose-300 inline-block" /> Non disponibile
           </span>
           <span className="flex items-center gap-1">
-            <span className="w-3 h-3 rounded bg-amber-500 inline-block" /> Selezionato
+            <span className="w-3 h-3 rounded bg-emerald-600 inline-block" /> Selezionato
           </span>
         </div>
       </div>
@@ -245,15 +245,15 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
       {/* Selection summary */}
       <div className="px-4 pb-4">
         <div className="grid grid-cols-2 gap-2 mb-3">
-          <div className={`rounded-xl p-3 border-2 transition-colors ${checkIn ? "border-amber-400 bg-amber-50" : "border-stone-200 bg-stone-50"}`}>
+          <div className={`rounded-xl p-3 border-2 transition-colors ${checkIn ? "border-emerald-400 bg-emerald-50" : "border-stone-200 bg-stone-50"}`}>
             <p className="text-[10px] text-stone-400 mb-0.5">Arrivo</p>
-            <p className={`text-sm font-semibold ${checkIn ? "text-amber-700" : "text-stone-300"}`}>
+            <p className={`text-sm font-semibold ${checkIn ? "text-emerald-700" : "text-stone-300"}`}>
               {checkIn ? formatDate(checkIn) : "—"}
             </p>
           </div>
-          <div className={`rounded-xl p-3 border-2 transition-colors ${checkOut ? "border-amber-400 bg-amber-50" : "border-stone-200 bg-stone-50"}`}>
+          <div className={`rounded-xl p-3 border-2 transition-colors ${checkOut ? "border-emerald-400 bg-emerald-50" : "border-stone-200 bg-stone-50"}`}>
             <p className="text-[10px] text-stone-400 mb-0.5">Partenza</p>
-            <p className={`text-sm font-semibold ${checkOut ? "text-amber-700" : "text-stone-300"}`}>
+            <p className={`text-sm font-semibold ${checkOut ? "text-emerald-700" : "text-stone-300"}`}>
               {checkOut ? formatDate(checkOut) : "—"}
             </p>
           </div>
