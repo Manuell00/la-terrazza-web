@@ -73,9 +73,17 @@ export default function HomePage() {
                 Un posto che<br />si sente speciale.
               </h2>
               <div className="mx-auto max-w-xl space-y-4 text-center text-sm leading-relaxed text-stone-600 md:text-base">
-                <p>La Terrazza nasce dall&apos;amore per questa terra. Una proprietà familiare trasformata in un luogo di accoglienza autentica, dove ogni dettaglio è stato curato per farti sentire a casa — anzi, meglio di casa.</p>
                 <p>Siamo a Cantarana, nel cuore dell&apos;Astigiano, tra i vigneti del Monferrato. Un posto dove la natura detta i ritmi e il cielo la sera è uno spettacolo.</p>
-                <p>Tre camere — Luna, Stella, Sole — tre caratteri diversi, una sola promessa: andartene con il sorriso.</p>
+                <p>
+                  <span className="font-semibold text-stone-900">Tre camere</span>:
+                  {" "}
+                  <span className="font-semibold text-amber-700">Luna</span>,
+                  {" "}
+                  <span className="font-semibold text-amber-700">Stella</span>
+                  {" "}e{" "}
+                  <span className="font-semibold text-amber-700">Sole</span>.
+                </p>
+                <p className="font-medium text-stone-700">Tre caratteri diversi, una sola promessa: andarsene con un sorriso.</p>
               </div>
               <div className="mt-8 flex justify-center">
                 <Link href="/prenota"

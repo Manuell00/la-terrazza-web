@@ -35,7 +35,7 @@ export default function Hero() {
 
       {/* Content */}
       <motion.div className="relative z-10 mx-auto max-w-4xl px-4 text-center" style={{ opacity }}>
-        <div className="mx-auto max-w-3xl rounded-[32px] border border-white/16 bg-stone-950/38 px-5 py-7 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.75)] backdrop-blur-xl sm:px-8 sm:py-9 md:px-10">
+        <div className="mx-auto max-w-3xl rounded-[32px] border border-white/14 bg-stone-950/26 px-5 py-7 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.72)] backdrop-blur-lg sm:px-8 sm:py-9 md:px-10">
           {/* Location pill */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }}
@@ -47,17 +47,19 @@ export default function Hero() {
           {/* Headline — più emotivo */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}
-            className="mb-5 font-serif text-[2.9rem] font-semibold leading-[0.92] tracking-[-0.03em] text-white drop-shadow-[0_12px_35px_rgba(0,0,0,0.3)] sm:text-5xl md:text-7xl"
+            className="mb-5 font-serif text-[2.9rem] font-semibold leading-[0.92] tracking-[-0.03em] text-white drop-shadow-[0_16px_38px_rgba(0,0,0,0.5)] sm:text-5xl md:text-7xl"
           >
             Un rifugio di relax
             <br />
-            <span className="text-amber-300">tra natura e comfort.</span>
+            <span className="text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.5)] sm:text-amber-200">
+              tra natura e comfort.
+            </span>
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.7 }}
-            className="mx-auto mb-10 max-w-[20rem] text-base leading-relaxed text-stone-200 sm:max-w-2xl sm:text-lg md:text-xl"
+            className="mx-auto mb-10 max-w-[20rem] text-base leading-relaxed text-stone-100 [text-shadow:0_2px_18px_rgba(0,0,0,0.45)] sm:max-w-2xl sm:text-lg md:text-xl"
           >
             Tre camere esclusive tra i vigneti del Monferrato. Stacca la spina, respira,
             lasciati coccolare — e torna a casa diverso.

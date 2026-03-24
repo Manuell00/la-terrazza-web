@@ -144,7 +144,7 @@ export default function Header() {
                       <Link
                         href={link.href}
                         onClick={() => setMenuOpen(false)}
-                        className={`group flex items-center justify-center gap-3 rounded-[22px] px-5 py-4 text-center font-serif text-[1.7rem] leading-none tracking-tight transition-all active:scale-[0.985] ${
+                        className={`group flex items-center justify-center gap-3 rounded-[22px] px-5 py-4 text-center text-[1.05rem] font-semibold uppercase tracking-[0.16em] transition-all active:scale-[0.985] ${
                           isActive(link.href)
                             ? "bg-amber-400 text-stone-950 shadow-[0_16px_40px_-18px_rgba(251,191,36,0.8)]"
                             : "bg-white/[0.05] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)] hover:bg-white/[0.09]"
