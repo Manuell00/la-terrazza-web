@@ -77,7 +77,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
       <section className="relative flex h-[65vh] min-h-[440px] items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image src={room.coverImage} alt={room.name} fill priority className="object-cover" quality={90} />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/22 to-stone-950/14" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/88 via-stone-950/34 to-stone-950/18" />
         </div>
 
         {/* Breadcrumb */}
@@ -98,11 +98,13 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             className="text-center md:text-left"
           >
-            <span className="mb-4 inline-block rounded-full border border-white/25 bg-white/15 px-4 py-1.5 text-sm text-white backdrop-blur-sm">
-              {room.highlight}
-            </span>
-            <h1 className="mb-2 font-serif text-5xl font-semibold text-white md:text-7xl">{room.name}</h1>
-            <p className="mx-auto max-w-xl text-xl text-stone-200/80 font-light md:mx-0">{room.subtitle}</p>
+            <div className="mx-auto max-w-2xl rounded-[30px] border border-white/12 bg-stone-950/34 px-6 py-6 shadow-[0_24px_70px_-34px_rgba(0,0,0,0.7)] backdrop-blur-md md:mx-0 md:px-8 md:py-7">
+              <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/12 px-4 py-1.5 text-sm text-white backdrop-blur-sm">
+                {room.highlight}
+              </span>
+              <h1 className="mb-2 font-serif text-5xl font-semibold text-white [text-shadow:0_10px_34px_rgba(0,0,0,0.45)] md:text-7xl">{room.name}</h1>
+              <p className="mx-auto max-w-xl text-xl text-stone-100/88 font-light md:mx-0">{room.subtitle}</p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -285,10 +287,12 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/72 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/82 via-stone-950/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
-                  <h3 className="font-serif text-2xl text-white">{r.name}</h3>
-                  <p className="text-sm text-stone-200/80 font-light">{r.subtitle}</p>
+                  <div className="mx-auto max-w-[18rem] rounded-[22px] border border-white/12 bg-stone-950/38 px-4 py-3 shadow-[0_18px_40px_-22px_rgba(0,0,0,0.7)] backdrop-blur-md">
+                    <h3 className="font-serif text-2xl text-white">{r.name}</h3>
+                    <p className="text-sm text-stone-100/86 font-light">{r.subtitle}</p>
+                  </div>
                 </div>
               </Link>
             ))}
