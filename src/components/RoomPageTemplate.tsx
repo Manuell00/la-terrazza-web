@@ -187,7 +187,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                   {expandedFeatures.map((f, index) => (
                     <div
                       key={f.label}
-                      className={`flex items-center gap-3 rounded-[16px] border border-stone-100 bg-cream-50 px-4 py-3.5 transition-all duration-200 hover:border-emerald-100 hover:bg-emerald-50/40 ${
+                      className={`flex flex-col items-center justify-center gap-2 rounded-[16px] border border-stone-100 bg-cream-50 px-4 py-3.5 text-center transition-all duration-200 hover:border-emerald-100 hover:bg-emerald-50/40 ${
                         index >= collapsedFeatures.length
                           ? showAllFeatures
                             ? ""
@@ -200,7 +200,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                       }`}
                     >
                       <span className="text-xl">{f.icon}</span>
-                      <span className="text-sm font-medium text-stone-700">{f.label}</span>
+                      <span className="text-sm font-medium leading-snug text-stone-700">{f.label}</span>
                     </div>
                   ))}
                 </div>
