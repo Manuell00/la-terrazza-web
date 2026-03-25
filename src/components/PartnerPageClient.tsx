@@ -515,6 +515,7 @@ export default function PartnerPageClient() {
       {/* ── MaRoSa House ── */}
       <PartnerSection
         bg="cream"
+        separated
         badge={c.marosa.badge}
         title={c.marosa.title}
         tagline={c.marosa.tagline}
