@@ -252,14 +252,6 @@ export default function HomePage() {
                     Controlla disponibilità
                   </Link>
                   <a
-                    href={siteConfig.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/16 bg-white/10 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/16"
-                  >
-                    {WA_ICON} Scrivici su WhatsApp
-                  </a>
-                  <a
                     href={`tel:${siteConfig.phone}`}
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-stone-800 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-700"
                   >
@@ -267,7 +259,7 @@ export default function HomePage() {
                   </a>
                 </div>
 
-                <div className="mt-10 grid gap-3 text-left sm:grid-cols-3">
+                <div className="mt-10 grid gap-3 text-center sm:grid-cols-3">
                   {[
                     "Tre camere con carattere",
                     "Risposta veloce e diretta",
@@ -292,23 +284,23 @@ export default function HomePage() {
                 </div>
                 <div className="relative min-h-[160px] overflow-hidden rounded-[24px] border border-white bg-white shadow-soft">
                   <Image
-                    src="/images/camera-stella/stella-2.jpg"
-                    alt="Dettaglio Camera Stella"
+                    src="/images/camera-sole/sole-3.jpg"
+                    alt="Dettaglio Camera Sole"
                     fill
                     quality={100}
                     className="object-cover transition-transform duration-700 hover:scale-[1.04]"
                   />
                 </div>
-                <div className="relative flex min-h-[160px] flex-col justify-between overflow-hidden rounded-[24px] border border-stone-200 bg-white p-5 shadow-soft">
+                <div className="relative flex min-h-[160px] flex-col justify-between overflow-hidden rounded-[24px] border border-stone-200 bg-white p-5 text-center shadow-soft">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700">La Terrazza</p>
                     <h3 className="mt-3 font-serif text-3xl leading-[0.95] text-stone-900">
                       Ospitalità
-                      <span className="block text-stone-500">con ritmo lento</span>
+                      <span className="block text-stone-500">autentica e luminosa</span>
                     </h3>
                   </div>
                   <p className="text-sm leading-relaxed text-stone-500">
-                    Linee più pulite, immagini meglio incorniciate e una gerarchia visiva finalmente più solida.
+                    Un luogo pensato per farti stare bene, tra quiete vera, dettagli curati e il ritmo naturale del Piemonte.
                   </p>
                 </div>
               </div>

@@ -147,7 +147,7 @@ export default function Hero() {
                   {trustItems.map((item) => (
                     <div
                       key={item.label}
-                      className="rounded-[22px] border border-stone-100 bg-stone-50/90 px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-100 hover:bg-white"
+                      className="rounded-[22px] border border-stone-100 bg-stone-50/90 px-5 py-4 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-100 hover:bg-white"
                     >
                       <p className="text-sm font-semibold text-stone-800">{item.label}</p>
                       <p className="mt-1 text-sm text-stone-500">{item.value}</p>
