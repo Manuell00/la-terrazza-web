@@ -315,7 +315,7 @@ function PartnerSection({
         {/* 1 — TITLE */}
         <AnimatedSection className="mb-10 text-center">
           <div className="inline-flex flex-col items-center">
-            <h2 className={`font-serif text-3xl font-semibold tracking-[-0.03em] text-stone-800 md:text-5xl ${isMarosa ? "md:[text-shadow:0_10px_24px_rgba(16,185,129,0.14)]" : ""}`}>{title}</h2>
+            <h2 className={`section-title-xl text-3xl md:text-5xl ${isMarosa ? "md:[text-shadow:0_10px_24px_rgba(16,185,129,0.14)]" : ""}`}>{title}</h2>
             <span className={`mt-3 h-[3px] rounded-full bg-[linear-gradient(90deg,rgba(16,185,129,0.2),rgba(16,185,129,0.9),rgba(16,185,129,0.2))] shadow-[0_8px_20px_-8px_rgba(16,185,129,0.65)] ${isMarosa ? "w-24 md:w-28" : "w-20"}`} />
           </div>
           <p className="mt-2 text-base font-medium text-emerald-700">{tagline}</p>
@@ -461,7 +461,7 @@ export default function PartnerPageClient() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.08} className="mb-5">
-            <h1 className="font-serif text-4xl font-semibold leading-tight text-stone-800 md:text-6xl">
+            <h1 className="page-hero-title text-4xl text-stone-800 md:text-6xl">
               {c.hero.title}
             </h1>
           </AnimatedSection>
@@ -491,7 +491,7 @@ export default function PartnerPageClient() {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-emerald-700">
                   {lang === "it" ? "Collaborazioni selezionate" : "Curated collaborations"}
                 </p>
-                <p className="mt-3 font-serif text-2xl leading-tight text-stone-800">
+                <p className="card-title mt-3 text-2xl leading-tight">
                   {lang === "it" ? (
                     <>Strutture che condividono<span className="block text-stone-500">la stessa idea di accoglienza</span></>
                   ) : (
@@ -568,7 +568,7 @@ export default function PartnerPageClient() {
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <p className="section-label text-emerald-400">{c.cta.label}</p>
-            <h2 className="mb-4 font-serif text-3xl text-white md:text-4xl">{c.cta.title}</h2>
+            <h2 className="section-title-md mb-4 text-white md:text-4xl">{c.cta.title}</h2>
             <p className="mx-auto mb-8 max-w-lg text-sm leading-relaxed text-stone-400">
               {c.cta.description}
             </p>

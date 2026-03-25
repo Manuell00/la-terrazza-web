@@ -44,7 +44,7 @@ export default function PrenotaPage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-emerald-400">
               Prenota il tuo soggiorno
             </p>
-            <h1 className="mb-5 font-serif text-[2.4rem] font-semibold leading-tight text-white sm:text-5xl md:text-6xl text-balance">
+            <h1 className="page-hero-title mb-5 text-[2.4rem] text-white sm:text-5xl md:text-6xl text-balance">
               Il tuo relax inizia qui.
             </h1>
             <p className="mx-auto max-w-xl text-base leading-relaxed text-stone-300/90 md:text-lg">
@@ -59,7 +59,7 @@ export default function PrenotaPage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mb-12 text-center">
             <p className="section-label">Scegli la camera</p>
-            <h2 className="font-serif text-3xl text-stone-800">Qual è la tua preferita?</h2>
+            <h2 className="section-title-md">Qual è la tua preferita?</h2>
           </AnimatedSection>
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
             {rooms.map((room, i) => (
@@ -74,7 +74,7 @@ export default function PrenotaPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-950/65 to-transparent" />
                     <div className="absolute inset-x-4 bottom-4 text-center">
-                      <h3 className="font-serif text-xl font-semibold text-white">
+                      <h3 className="card-title text-xl text-white">
                         {room.name}
                       </h3>
                       <p className="text-sm text-stone-200/80 font-light">{room.subtitle}</p>
@@ -120,7 +120,7 @@ export default function PrenotaPage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mb-12 text-center">
             <p className="section-label">Tutte le piattaforme</p>
-            <h2 className="mb-3 font-serif text-3xl text-stone-800">Prenota anche su</h2>
+            <h2 className="section-title-md mb-3">Prenota anche su</h2>
             <p className="mx-auto max-w-lg text-stone-400">
               Tutte le prenotazioni sono sicure e verificate. Scegli la piattaforma che preferisci.
             </p>
@@ -134,7 +134,7 @@ export default function PrenotaPage() {
                 <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-stone-50 shadow-soft">
                   <Image src="/images/brands/airbnb-belo.svg" alt="Airbnb" width={26} height={26} className="h-[26px] w-[26px]" />
                 </div>
-                <h3 className="mb-3 font-serif text-[1.6rem] font-semibold tracking-tight text-stone-800">Airbnb</h3>
+                <h3 className="card-title mb-3 text-[1.6rem] tracking-tight">Airbnb</h3>
                 <p className="mb-6 max-w-xs text-sm leading-relaxed text-stone-400">
                   Prenota Camera Luna, Stella o Sole su Airbnb. Pagamento sicuro e protezione ospiti.
                 </p>
@@ -160,7 +160,7 @@ export default function PrenotaPage() {
                 <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-stone-50 shadow-soft">
                   <Image src="/images/brands/booking-icon.png" alt="Booking.com" width={28} height={28} className="h-[28px] w-[28px] rounded-md" />
                 </div>
-                <h3 className="mb-3 font-serif text-[1.6rem] font-semibold tracking-tight text-stone-800">Booking.com</h3>
+                <h3 className="card-title mb-3 text-[1.6rem] tracking-tight">Booking.com</h3>
                 <p className="mb-6 max-w-xs text-sm leading-relaxed text-stone-400">
                   Prenota su Booking.com con cancellazione flessibile. Migliaia di recensioni verificate.
                 </p>
@@ -191,7 +191,7 @@ export default function PrenotaPage() {
                 <div className="mb-5 flex h-14 items-center justify-center rounded-[18px] bg-stone-50 px-4 shadow-soft">
                   <Image src="/images/brands/bnb-logo.svg" alt="Bed-and-Breakfast.it" width={84} height={12} className="h-[13px] w-auto" />
                 </div>
-                <h3 className="mb-3 font-serif text-[1.6rem] font-semibold tracking-tight text-stone-800">Bed-and-Breakfast.it</h3>
+                <h3 className="card-title mb-3 text-[1.6rem] tracking-tight">Bed-and-Breakfast.it</h3>
                 <p className="mb-6 max-w-xs text-sm leading-relaxed text-stone-400">
                   Il portale italiano dei B&B. Trova disponibilità e prenota in pochi click.
                 </p>
@@ -224,7 +224,7 @@ export default function PrenotaPage() {
         <div className="container mx-auto px-4 max-w-4xl">
           <AnimatedSection className="mb-12 text-center">
             <p className="section-label">Contatto diretto</p>
-            <h2 className="mb-3 font-serif text-3xl text-stone-800 md:text-4xl">
+            <h2 className="section-title-md mb-3">
               Preferisci parlare con noi?
             </h2>
             <p className="mx-auto max-w-lg text-stone-400">

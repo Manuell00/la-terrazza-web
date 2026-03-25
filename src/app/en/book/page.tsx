@@ -34,7 +34,7 @@ export default function EnglishBookPage() {
         <div className="relative z-10 container mx-auto px-4 text-center">
           <AnimatedSection>
             <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-emerald-400">Book your stay</p>
-            <h1 className="mb-5 font-serif text-[2.4rem] font-semibold leading-tight text-white sm:text-5xl md:text-6xl text-balance">
+            <h1 className="page-hero-title mb-5 text-[2.4rem] text-white sm:text-5xl md:text-6xl text-balance">
               Your escape starts here.
             </h1>
             <p className="mx-auto max-w-xl text-base leading-relaxed text-stone-300/90 md:text-lg">
@@ -48,7 +48,7 @@ export default function EnglishBookPage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mb-12 text-center">
             <p className="section-label">Choose your room</p>
-            <h2 className="font-serif text-3xl text-stone-800">Which one feels right for you?</h2>
+            <h2 className="section-title-md">Which one feels right for you?</h2>
           </AnimatedSection>
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
             {rooms.map((room, i) => (
@@ -58,7 +58,7 @@ export default function EnglishBookPage() {
                     <Image src={room.coverImage} alt={room.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-950/65 to-transparent" />
                     <div className="absolute inset-x-4 bottom-4 text-center">
-                      <h3 className="font-serif text-xl font-semibold text-white">{room.name}</h3>
+                      <h3 className="card-title text-xl text-white">{room.name}</h3>
                       <p className="text-sm font-light text-stone-200/80">{room.subtitle}</p>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ export default function EnglishBookPage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mb-12 text-center">
             <p className="section-label">All platforms</p>
-            <h2 className="mb-3 font-serif text-3xl text-stone-800">Book also on</h2>
+            <h2 className="section-title-md mb-3">Book also on</h2>
             <p className="mx-auto max-w-lg text-stone-400">Choose the platform you prefer for your reservation.</p>
           </AnimatedSection>
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
@@ -103,7 +103,7 @@ export default function EnglishBookPage() {
                   <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-stone-50 shadow-soft">
                     <Image src={platform.image} alt={platform.title} width={28} height={28} className="h-[28px] w-auto rounded-md" />
                   </div>
-                  <h3 className="mb-3 font-serif text-[1.6rem] font-semibold tracking-tight text-stone-800">{platform.title}</h3>
+                  <h3 className="card-title mb-3 text-[1.6rem] tracking-tight">{platform.title}</h3>
                   <p className="mb-6 max-w-xs text-sm leading-relaxed text-stone-400">{platform.desc}</p>
                   <a href={platform.href} target="_blank" rel="noopener noreferrer" className="mt-auto flex min-h-[44px] w-full items-center justify-center rounded-full border border-stone-200 px-4 py-2.5 text-sm font-semibold text-stone-700 transition-all duration-200 hover:border-emerald-500 hover:bg-emerald-600 hover:text-white">
                     {platform.button}

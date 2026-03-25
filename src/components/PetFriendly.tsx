@@ -18,7 +18,7 @@ export default function PetFriendly() {
         {/* Section header */}
         <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
           <p className="section-label">{t.petLabel}</p>
-          <h2 className="mb-3 font-serif text-3xl font-semibold leading-tight text-stone-800 md:text-5xl">
+          <h2 className="section-title-xl mb-3 text-3xl leading-tight">
             {t.petTitle}
           </h2>
           <p className="text-base text-stone-400">

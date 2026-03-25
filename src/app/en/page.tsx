@@ -63,7 +63,7 @@ export default function EnglishHomePage() {
             <AnimatedSection direction="right" className="order-1 text-center md:order-2 md:text-left">
               <div className="rounded-[30px] border border-stone-100 bg-cream-50/80 p-7 shadow-soft backdrop-blur-sm md:p-9">
                 <p className="section-label">Our story</p>
-                <h2 id="en-home-story-title" className="mb-5 font-serif text-[2.3rem] font-semibold leading-[0.95] tracking-[-0.03em] text-stone-800 md:text-5xl">
+                <h2 id="en-home-story-title" className="section-title-xl mb-5 text-[2.3rem]">
                   A special place.
                 </h2>
                 <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
@@ -122,7 +122,7 @@ export default function EnglishHomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Why choose us</p>
-            <h2 id="en-home-highlights-title" className="font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
+            <h2 id="en-home-highlights-title" className="section-title-xl">
               What makes La Terrazza feel different.
             </h2>
           </AnimatedSection>
@@ -144,7 +144,7 @@ export default function EnglishHomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Our rooms</p>
-            <h2 id="en-home-rooms-title" className="mb-3 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
+            <h2 id="en-home-rooms-title" className="section-title-xl mb-3">
               Three rooms, three moods.
             </h2>
             <p className="text-stone-400">Each room has its own personality. Choose the one that feels right for your stay.</p>
@@ -159,7 +159,7 @@ export default function EnglishHomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-10 max-w-xl text-center">
             <p className="section-label">The property</p>
-            <h2 id="en-home-structure-title" className="font-serif text-[2rem] font-semibold leading-[0.98] tracking-[-0.03em] text-stone-800 md:text-3xl">Scroll to discover it.</h2>
+            <h2 id="en-home-structure-title" className="section-title-lg text-[2rem] md:text-3xl">Scroll to discover it.</h2>
           </AnimatedSection>
           <AnimatedSection className="mx-auto max-w-3xl">
             <StructureCarousel />
@@ -171,7 +171,7 @@ export default function EnglishHomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Reviews</p>
-            <h2 id="en-home-reviews-title" className="mb-5 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">What our guests say.</h2>
+            <h2 id="en-home-reviews-title" className="section-title-xl mb-5">What our guests say.</h2>
           </AnimatedSection>
           <div className="mx-auto hidden max-w-6xl md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5">
             {reviews.map((review, i) => <ReviewCard key={review.id} review={review} index={i} />)}
@@ -186,7 +186,7 @@ export default function EnglishHomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-12 max-w-2xl text-center">
             <p className="section-label">How to reach us</p>
-            <h2 id="en-home-map-title" className="font-serif text-[2.15rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
+            <h2 id="en-home-map-title" className="section-title-lg text-[2.15rem]">
               Vineyards, quiet and scenic roads.
             </h2>
             <p className="mx-auto mt-4 hidden max-w-xl text-sm leading-relaxed text-stone-500 md:block md:text-base">

@@ -47,6 +47,30 @@
     @apply mb-5 inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-700;
   }
 
+  .page-hero-title {
+    @apply font-serif font-semibold leading-[0.94] tracking-[-0.045em];
+  }
+
+  .section-title {
+    @apply font-serif font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800;
+  }
+
+  .section-title-xl {
+    @apply section-title text-[2.25rem] md:text-5xl;
+  }
+
+  .section-title-lg {
+    @apply section-title text-[2rem] md:text-4xl;
+  }
+
+  .section-title-md {
+    @apply section-title text-3xl md:text-4xl;
+  }
+
+  .card-title {
+    @apply font-serif font-semibold tracking-[-0.025em] text-stone-800;
+  }
+
   .premium-hover-card {
     @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-card-hover;
   }

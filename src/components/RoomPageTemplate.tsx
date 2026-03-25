@@ -115,7 +115,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
               <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/12 px-4 py-1.5 text-sm text-white backdrop-blur-sm">
                 {room.highlight}
               </span>
-              <h1 className="mb-2 font-serif text-5xl font-semibold text-white [text-shadow:0_10px_34px_rgba(0,0,0,0.45)] md:text-7xl">
+              <h1 className="page-hero-title mb-2 text-5xl text-white [text-shadow:0_10px_34px_rgba(0,0,0,0.45)] md:text-7xl">
                 {room.name}
                 <span className="ml-3">{room.symbol}</span>
               </h1>
@@ -141,7 +141,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
               {/* Description */}
               <AnimatedSection className="text-center">
                 <p className="section-label mb-3">{lang === "it" ? "La camera" : "The room"}</p>
-                <h2 className="mb-5 font-serif text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
+                <h2 className="section-title-lg mb-5 text-[2.35rem]">
                   {room.name}
                 </h2>
                 <div className="mx-auto max-w-2xl text-stone-500">
@@ -179,7 +179,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
               {/* Features */}
               <AnimatedSection className="text-center">
                 <p className="section-label mb-3">{lang === "it" ? "Dotazioni" : "Features"}</p>
-                <h3 className="mb-7 font-serif text-[2rem] font-semibold leading-[0.98] tracking-[-0.03em] text-stone-800 md:text-3xl">
+                <h3 className="section-title-lg mb-7 text-[2rem] md:text-3xl">
                   {lang === "it" ? "Tutto quello che ti aspetta in camera" : "Everything waiting for you in the room"}
                 </h3>
 
@@ -303,7 +303,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
         <div className="container mx-auto max-w-4xl px-4">
           <AnimatedSection className="mb-10 text-center">
             <p className="section-label mb-3">{lang === "it" ? "Cosa dicono" : "Guest reviews"}</p>
-            <h2 className="font-serif text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">{lang === "it" ? "Recensioni degli ospiti" : "What guests say"}</h2>
+            <h2 className="section-title-lg text-[2.2rem] md:text-4xl">{lang === "it" ? "Recensioni degli ospiti" : "What guests say"}</h2>
           </AnimatedSection>
 
           {/* Desktop: grid */}
@@ -321,7 +321,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
         <div className="container mx-auto max-w-6xl px-4">
           <AnimatedSection className="mb-10 text-center">
             <p className="section-label mb-3">{lang === "it" ? "Esplora ancora" : "Keep exploring"}</p>
-            <h2 className="font-serif text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800">{lang === "it" ? "Le altre camere" : "Other rooms"}</h2>
+            <h2 className="section-title-lg text-[2.2rem]">{lang === "it" ? "Le altre camere" : "Other rooms"}</h2>
           </AnimatedSection>
           <div className="grid gap-6 md:grid-cols-2">
             {otherRooms.map((r) => (
@@ -341,7 +341,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950/82 via-stone-950/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
                   <div className="mx-auto max-w-[18rem] rounded-[22px] border border-white/12 bg-stone-950/38 px-4 py-3 shadow-[0_18px_40px_-22px_rgba(0,0,0,0.7)] backdrop-blur-md">
-                    <h3 className="font-serif text-2xl text-white">{r.name}</h3>
+                    <h3 className="card-title text-2xl text-white">{r.name}</h3>
                     <p className="text-sm text-stone-100/86 font-light">{r.subtitle}</p>
                   </div>
                 </div>
@@ -356,7 +356,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <p className="section-label text-emerald-400">{lang === "it" ? "Pronto?" : "Ready?"}</p>
-            <h2 className="mb-3 font-serif text-3xl text-white md:text-4xl">
+            <h2 className="section-title-md mb-3 text-white md:text-4xl">
               {lang === "it" ? `Prenota ${room.name}` : `Book ${room.name}`}
             </h2>
             <p className="mx-auto mb-8 max-w-md text-sm leading-relaxed text-stone-400">

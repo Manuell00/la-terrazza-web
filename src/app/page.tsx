@@ -69,7 +69,7 @@ export default function HomePage() {
             <AnimatedSection direction="right" className="order-1 text-center md:order-2 md:text-left">
               <div className="rounded-[30px] border border-stone-100 bg-cream-50/80 p-7 shadow-soft backdrop-blur-sm md:p-9">
                 <p className="section-label">La nostra storia</p>
-                <h2 id="home-story-title" className="mb-5 font-serif text-[2.3rem] font-semibold leading-[0.95] tracking-[-0.03em] text-stone-800 md:text-5xl">
+                <h2 id="home-story-title" className="section-title-xl mb-5 text-[2.3rem]">
                   Un posto speciale.
                 </h2>
                 <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
@@ -132,7 +132,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Perché sceglierci</p>
-            <h2 id="home-highlights-title" className="font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
+            <h2 id="home-highlights-title" className="section-title-xl">
               Quello che rende La Terrazza unica.
             </h2>
           </AnimatedSection>
@@ -158,7 +158,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Le nostre camere</p>
-            <h2 id="home-rooms-title" className="mb-3 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
+            <h2 id="home-rooms-title" className="section-title-xl mb-3">
               Tre camere, tre emozioni.
             </h2>
             <p className="hidden text-stone-400 md:block">Ogni spazio ha la sua personalità. Scegli quella che rispecchia il tuo umore.</p>
@@ -174,7 +174,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-10 max-w-xl text-center">
             <p className="section-label">La struttura</p>
-            <h2 id="home-structure-title" className="font-serif text-[2rem] font-semibold leading-[0.98] tracking-[-0.03em] text-stone-800 md:text-3xl">Scorri per scoprirla.</h2>
+            <h2 id="home-structure-title" className="section-title-lg text-[2rem] md:text-3xl">Scorri per scoprirla.</h2>
           </AnimatedSection>
           <AnimatedSection className="mx-auto max-w-3xl">
             <StructureCarousel />
@@ -187,7 +187,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Recensioni</p>
-            <h2 id="home-reviews-title" className="mb-5 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
+            <h2 id="home-reviews-title" className="section-title-xl mb-5">
               Cosa dicono i nostri ospiti.
             </h2>
             <div className="inline-flex flex-col items-center rounded-[26px] border border-stone-100 bg-white px-5 py-4 shadow-[0_24px_70px_-42px_rgba(28,25,23,0.22)] md:px-7">
@@ -227,7 +227,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-12 max-w-2xl text-center">
             <p className="section-label">Come raggiungerci</p>
-            <h2 id="home-map-title" className="font-serif text-[2.15rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
+            <h2 id="home-map-title" className="section-title-lg text-[2.15rem]">
               Tra vigne, quiete e strade panoramiche.
             </h2>
             <p className="mx-auto mt-4 hidden max-w-xl text-sm leading-relaxed text-stone-500 md:block md:text-base">
@@ -288,7 +288,7 @@ export default function HomePage() {
         <div className="container relative mx-auto px-4">
           <AnimatedSection>
             <p className="section-label mb-5 text-emerald-400">Pronti ad accoglierti</p>
-            <h2 className="mb-4 font-serif text-3xl font-semibold leading-tight text-white md:text-5xl">
+            <h2 className="page-hero-title mb-4 text-3xl text-white md:text-5xl">
               La tua prossima fuga inizia qui.
             </h2>
             <p className="mx-auto mb-10 max-w-lg text-sm leading-relaxed text-stone-400 md:text-base">
