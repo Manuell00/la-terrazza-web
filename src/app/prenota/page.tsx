@@ -75,7 +75,6 @@ export default function PrenotaPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-950/65 to-transparent" />
                     <div className="absolute inset-x-4 bottom-4 text-center">
                       <h3 className="font-serif text-xl font-semibold text-white">
-                        <span className="mr-2">{room.symbol}</span>
                         {room.name}
                       </h3>
                       <p className="text-sm text-stone-200/80 font-light">{room.subtitle}</p>
@@ -145,7 +144,6 @@ export default function PrenotaPage() {
                       rel="noopener noreferrer"
                       className="flex min-h-[44px] w-full items-center justify-center rounded-full border border-stone-200 px-4 py-2.5 text-sm font-semibold text-stone-700 transition-all duration-200 hover:border-emerald-500 hover:bg-emerald-600 hover:text-white"
                     >
-                      <span className="mr-2">{room.symbol}</span>
                       {room.name}
                     </a>
                   ))}
@@ -169,7 +167,6 @@ export default function PrenotaPage() {
                       key={room.id}
                       className="rounded-full border border-stone-100 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-500"
                     >
-                      <span className="mr-1.5">{room.symbol}</span>
                       {room.name.replace("Camera ", "")}
                     </span>
                   ))}
@@ -201,7 +198,6 @@ export default function PrenotaPage() {
                       key={room.id}
                       className="rounded-full border border-stone-100 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-500"
                     >
-                      <span className="mr-1.5">{room.symbol}</span>
                       {room.name.replace("Camera ", "")}
                     </span>
                   ))}
