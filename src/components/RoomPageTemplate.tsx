@@ -194,7 +194,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                     <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-stone-400">Prezzo indicativo</p>
                     <p className="font-serif text-3xl font-semibold text-stone-800">{room.price}</p>
                     <p className="mt-1 text-xs leading-relaxed text-stone-400">
-                      Base struttura da €55 / notte per 2 ospiti · il prezzo finale varia in base a camera, date, stagione e piattaforma.
+                      Prezzo indicativo per 2 ospiti. Può variare in base a date, stagione e piattaforma.
                     </p>
                   </div>
 

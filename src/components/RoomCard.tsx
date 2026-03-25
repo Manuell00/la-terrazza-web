@@ -66,7 +66,7 @@ export default function RoomCard({ room, index }: Props) {
               </p>
               <p className="mb-4 font-serif text-2xl text-stone-800">{room.price}</p>
               <p className="mb-4 text-xs leading-relaxed text-stone-400">
-                Base struttura da €55 / notte per 2 ospiti.
+                Prezzo indicativo. Può variare in base a date e periodo.
               </p>
 
               <span className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stone-200 bg-stone-50 px-5 py-2.5 text-sm font-semibold text-stone-700 transition-all duration-300 group-hover:border-emerald-600 group-hover:bg-emerald-600 group-hover:text-white">
