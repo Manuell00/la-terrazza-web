@@ -81,7 +81,7 @@ export default function Hero() {
 
       <div className="hidden md:block">
         <div className="container relative mx-auto px-4 pb-16 pt-36 lg:pt-40">
-          <div className="grid min-h-[760px] items-center gap-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] lg:gap-14">
+          <div className="grid min-h-[720px] items-center gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-16">
             <motion.div
               initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
@@ -89,7 +89,7 @@ export default function Hero() {
               className="relative z-10"
               style={{ y: cardY }}
             >
-              <div className="max-w-2xl rounded-[36px] border border-white/80 bg-white/88 p-8 shadow-[0_28px_90px_-38px_rgba(28,25,23,0.38)] backdrop-blur-xl lg:p-10">
+              <div className="max-w-xl">
                 <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800">
                   <span className="text-base">📍</span>
                   Cantarana, Asti — Piemonte
@@ -99,21 +99,19 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.12, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                  className="font-serif text-[4.8rem] font-semibold leading-[0.88] tracking-[-0.05em] text-stone-900 xl:text-[5.5rem]"
+                  className="font-serif text-[4.7rem] font-semibold leading-[0.9] tracking-[-0.055em] text-stone-900 xl:text-[5.2rem]"
                 >
-                  Un rifugio
-                  <span className="block text-emerald-800">che sa di quiete.</span>
+                  Soggiorni
+                  <span className="block text-emerald-800">che rallentano il tempo.</span>
                 </motion.h1>
 
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.22, duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-6 max-w-xl text-lg leading-relaxed text-stone-600"
+                  className="mt-6 max-w-md text-lg leading-relaxed text-stone-600"
                 >
-                  Tre camere curate con sensibilità contemporanea, panorami aperti sui vigneti e
-                  un&apos;ospitalità pensata per rallentare il ritmo. La natura resta presente, ma il
-                  design torna finalmente protagonista.
+                  Tre camere essenziali, viste aperte sui vigneti e un&apos;ospitalità pensata per farti respirare meglio.
                 </motion.p>
 
                 <motion.div
@@ -143,7 +141,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.42, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-10 grid gap-3 sm:grid-cols-2"
+                  className="mt-10 grid max-w-lg gap-3 sm:grid-cols-2"
                 >
                   {trustItems.map((item) => (
                     <div
@@ -162,61 +160,38 @@ export default function Hero() {
               initial={{ opacity: 0, y: 36 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.95, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="relative h-[700px]"
+              className="relative h-[660px]"
               style={{ y: imageY }}
             >
-              <div className="absolute inset-x-10 top-4 h-[calc(100%-3rem)] rounded-[42px] border border-white/70 bg-white/55 shadow-[0_28px_84px_-42px_rgba(28,25,23,0.36)] backdrop-blur-md" />
+              <div className="absolute inset-x-6 top-4 h-[calc(100%-2.5rem)] rounded-[42px] bg-[linear-gradient(180deg,rgba(255,255,255,0.65),rgba(255,255,255,0.28))] blur-2xl" />
 
-              <div className="absolute left-0 top-20 w-[76%] overflow-hidden rounded-[34px] border border-white/80 bg-white p-3 shadow-[0_32px_100px_-42px_rgba(28,25,23,0.5)]">
-                <div className="relative h-[430px] overflow-hidden rounded-[26px]">
+              <div className="absolute inset-x-0 top-8 overflow-hidden rounded-[36px] border border-white/80 bg-white p-4 shadow-[0_34px_110px_-46px_rgba(28,25,23,0.46)]">
+                <div className="relative h-[560px] overflow-hidden rounded-[28px]">
                   <Image
                     src="/images/struttura/struttura-4.jpg"
                     alt="Vista della struttura La Terrazza"
                     fill
                     quality={100}
-                    className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                    className="object-cover transition-transform duration-700 hover:scale-[1.02]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/24 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/26 via-stone-950/4 to-transparent" />
                 </div>
               </div>
 
-              <div className="absolute right-0 top-0 w-[43%] overflow-hidden rounded-[28px] border border-white/80 bg-white p-3 shadow-[0_28px_90px_-40px_rgba(28,25,23,0.45)]">
-                <div className="relative h-[240px] overflow-hidden rounded-[22px]">
-                  <Image
-                    src="/images/camera-sole/sole-2.jpg"
-                    alt="Dettaglio Camera Sole"
-                    fill
-                    quality={100}
-                    className="object-cover transition-transform duration-700 hover:scale-[1.04]"
-                  />
-                </div>
-                <div className="px-2 pb-1 pt-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.26em] text-emerald-700">Camera Sole</p>
-                  <p className="mt-2 font-serif text-xl leading-none text-stone-900">Luce naturale, atmosfera morbida</p>
-                </div>
+              <div className="absolute bottom-0 left-[-1.5rem] max-w-[18rem] rounded-[28px] border border-stone-200 bg-white px-5 py-5 shadow-[0_28px_84px_-40px_rgba(28,25,23,0.42)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.26em] text-emerald-700">La Terrazza</p>
+                <p className="mt-3 font-serif text-2xl leading-[0.95] text-stone-900">
+                  Tre camere con
+                  <span className="block text-stone-500">anima diversa</span>
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-stone-500">
+                  Più pulizia visiva, più spazio bianco e un impatto più elegante già dal primo sguardo.
+                </p>
               </div>
 
-              <div className="absolute bottom-3 right-10 w-[50%] overflow-hidden rounded-[28px] border border-white/80 bg-stone-900 p-3 text-white shadow-[0_26px_84px_-42px_rgba(28,25,23,0.72)]">
-                <div className="relative h-[180px] overflow-hidden rounded-[22px]">
-                  <Image
-                    src="/images/camera-luna/luna-2.jpg"
-                    alt="Dettaglio Camera Luna"
-                    fill
-                    quality={100}
-                    className="object-cover opacity-92 transition-transform duration-700 hover:scale-[1.04]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/68 via-stone-950/16 to-transparent" />
-                </div>
-                <div className="grid grid-cols-[1fr_auto] items-end gap-3 px-2 pb-1 pt-4">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.26em] text-emerald-300">Accoglienza autentica</p>
-                    <p className="mt-2 font-serif text-2xl leading-none">Tre camere, tre atmosfere</p>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.06] px-3 py-2 text-right backdrop-blur-sm">
-                    <p className="text-lg font-semibold">{siteConfig.rating}/5</p>
-                    <p className="text-[11px] text-stone-300">{siteConfig.reviewCount}+ recensioni</p>
-                  </div>
-                </div>
+              <div className="absolute right-6 top-0 rounded-[24px] border border-white/80 bg-stone-900/92 px-4 py-4 text-white shadow-[0_22px_70px_-34px_rgba(28,25,23,0.65)] backdrop-blur-sm">
+                <p className="text-lg font-semibold">{siteConfig.rating}/5</p>
+                <p className="mt-1 text-[11px] text-stone-300">{siteConfig.reviewCount}+ recensioni</p>
               </div>
             </motion.div>
           </div>

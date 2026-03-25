@@ -29,7 +29,7 @@ export default function RoomCard({ room, index }: Props) {
               fill
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/72 via-stone-950/12 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/72 via-stone-950/12 to-transparent md:from-stone-950/18 md:via-transparent md:to-transparent" />
 
             {/* Highlight badge */}
             <div className="absolute top-4 right-4 rounded-full border border-white/25 bg-stone-950/30 px-3 py-1.5 text-xs font-medium text-white/90 backdrop-blur-sm">
@@ -37,7 +37,7 @@ export default function RoomCard({ room, index }: Props) {
             </div>
 
             {/* Room name overlay */}
-            <div className="absolute bottom-0 left-0 right-0 px-5 pb-5 text-center">
+            <div className="absolute bottom-0 left-0 right-0 px-5 pb-5 text-center md:hidden">
               <div className="mx-auto max-w-[15rem] rounded-[20px] border border-white/12 bg-stone-950/45 px-4 py-3 backdrop-blur-md shadow-[0_14px_40px_-18px_rgba(0,0,0,0.75)]">
                 <h3 className="font-serif text-2xl font-semibold text-white tracking-wide">
                   {room.name}
@@ -49,6 +49,12 @@ export default function RoomCard({ room, index }: Props) {
 
           {/* Card body */}
           <div className="flex flex-1 flex-col bg-white p-6 text-center">
+            <div className="mb-4 hidden md:block">
+              <h3 className="font-serif text-[2rem] font-semibold tracking-[-0.03em] text-stone-900">
+                {room.name}
+              </h3>
+              <p className="mt-1 text-sm font-medium text-emerald-700">{room.subtitle}</p>
+            </div>
             <p className="flex-1 text-sm leading-relaxed text-stone-500 mb-6">
               {room.description}
             </p>
