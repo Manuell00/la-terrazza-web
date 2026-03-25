@@ -141,7 +141,7 @@ export default function HomePage() {
             <h2 className="mb-3 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
               Tre camere, tre emozioni.
             </h2>
-            <p className="text-stone-400">Ogni spazio ha la sua personalità. Scegli quella che rispecchia il tuo umore.</p>
+            <p className="hidden text-stone-400 md:block">Ogni spazio ha la sua personalità. Scegli quella che rispecchia il tuo umore.</p>
           </AnimatedSection>
           <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3 md:gap-8">
             {rooms.map((room, i) => <RoomCard key={room.id} room={room} index={i} />)}
