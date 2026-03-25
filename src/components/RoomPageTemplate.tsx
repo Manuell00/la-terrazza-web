@@ -24,6 +24,7 @@ const amenityIcons: Record<string, string> = {
   "TV smart": "📺",
   "Pulizie giornaliere": "✨",
   "Parcheggio gratuito": "🚗",
+  "Stazione di ricarica per auto elettriche": "🔌",
 };
 
 const AirbnbLogo = () => (
