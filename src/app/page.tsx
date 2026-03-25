@@ -125,7 +125,7 @@ export default function HomePage() {
                     {h.icon}
                   </div>
                   <h3 className="mb-2 font-serif text-base leading-snug text-stone-800 md:text-xl">{h.title}</h3>
-                  <p className="text-xs leading-relaxed text-stone-400 md:text-sm">{h.desc}</p>
+                  <p className="hidden text-xs leading-relaxed text-stone-400 md:block md:text-sm">{h.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
