@@ -55,15 +55,30 @@ export default function PartnerPage() {
               Strutture selezionate con cura, accomunate dalla stessa filosofia:
               accoglienza autentica e la magia del Piemonte come cornice.
             </p>
-            <div className="mx-auto mt-10 max-w-sm overflow-hidden rounded-[28px] border border-stone-100 bg-white p-3 shadow-[0_26px_80px_-42px_rgba(28,25,23,0.3)]">
-              <div className="relative aspect-square overflow-hidden rounded-[22px] bg-cream-50">
-                <Image
-                  src="/images/partner-intro.png"
-                  alt="Visual dedicato ai partner de La Terrazza Affittacamere"
-                  fill
-                  quality={100}
-                  className="object-cover"
-                />
+            <div className="mx-auto mt-10 max-w-xl rounded-[30px] border border-stone-100 bg-gradient-to-br from-white via-cream-50 to-emerald-50/40 p-4 shadow-[0_30px_90px_-46px_rgba(28,25,23,0.32)]">
+              <div className="grid items-center gap-4 rounded-[24px] bg-white/72 p-3 backdrop-blur-sm md:grid-cols-[1.05fr_0.95fr] md:p-4">
+                <div className="relative aspect-[1.04] overflow-hidden rounded-[22px] bg-cream-50">
+                  <Image
+                    src="/images/partner-intro.png"
+                    alt="Visual dedicato ai partner de La Terrazza Affittacamere"
+                    fill
+                    quality={100}
+                    className="object-cover"
+                  />
+                </div>
+                <div className="px-2 text-center md:text-left">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-emerald-700">
+                    Collaborazioni selezionate
+                  </p>
+                  <p className="mt-3 font-serif text-2xl leading-tight text-stone-800">
+                    Strutture che condividono
+                    <span className="block text-stone-500">la stessa idea di accoglienza</span>
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-stone-500">
+                    Un piccolo network costruito con cura, per proporre esperienze coerenti,
+                    affidabili e immerse nel carattere del territorio.
+                  </p>
+                </div>
               </div>
             </div>
           </AnimatedSection>

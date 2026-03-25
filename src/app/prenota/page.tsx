@@ -32,12 +32,12 @@ export default function PrenotaPage() {
       <section className="relative overflow-hidden bg-stone-900 py-24">
         <div className="absolute inset-0">
           <Image
-            src="/images/struttura/struttura-1.jpg"
+            src="/images/struttura/struttura-3.jpg"
             alt="Prenota La Terrazza"
             fill
-            className="object-cover opacity-25"
+            className="object-cover opacity-32"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/40 to-stone-950/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/70 via-stone-950/68 to-stone-950/82" />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <AnimatedSection>
