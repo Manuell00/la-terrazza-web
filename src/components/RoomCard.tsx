@@ -40,6 +40,7 @@ export default function RoomCard({ room, index }: Props) {
             <div className="absolute bottom-0 left-0 right-0 px-5 pb-5 text-center md:hidden">
               <div className="mx-auto max-w-[15rem] rounded-[20px] border border-white/12 bg-stone-950/45 px-4 py-3 backdrop-blur-md shadow-[0_14px_40px_-18px_rgba(0,0,0,0.75)]">
                 <h3 className="font-serif text-2xl font-semibold text-white tracking-wide">
+                  <span className="mr-2">{room.symbol}</span>
                   {room.name}
                 </h3>
                 <p className="mt-1 text-sm text-stone-200/90 font-light">{room.subtitle}</p>
@@ -51,6 +52,7 @@ export default function RoomCard({ room, index }: Props) {
           <div className="flex flex-1 flex-col bg-white p-6 text-center">
             <div className="mb-4 hidden md:block">
               <h3 className="font-serif text-[2rem] font-semibold tracking-[-0.03em] text-stone-900">
+                <span className="mr-2">{room.symbol}</span>
                 {room.name}
               </h3>
               <p className="mt-1 text-sm font-medium text-emerald-700">{room.subtitle}</p>

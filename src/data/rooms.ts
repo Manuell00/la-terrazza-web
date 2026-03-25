@@ -2,6 +2,7 @@ export interface Room {
   id: string;
   slug: string;
   name: string;
+  symbol: string;
   subtitle: string;
   description: string;
   longDescription: string;
@@ -22,6 +23,7 @@ export const rooms: Room[] = [
     id: "luna",
     slug: "luna",
     name: "Camera Luna",
+    symbol: "🌙",
     subtitle: "Lasciati avvolgere dalla notte",
     description:
       "Toni profondi e atmosfera intima. La Luna ti attende con eleganza discreta e un riposo che senti nelle ossa.",
@@ -61,6 +63,7 @@ export const rooms: Room[] = [
     id: "stella",
     slug: "stella",
     name: "Camera Stella",
+    symbol: "⭐",
     subtitle: "Splendi nella tua notte",
     description:
       "Luminosa e accogliente. La Stella ti abbraccia con la sua atmosfera calda, perfetta per una fuga romantica o un viaggio rigenerante.",
@@ -99,6 +102,7 @@ export const rooms: Room[] = [
     id: "sole",
     slug: "sole",
     name: "Camera Sole",
+    symbol: "☀️",
     subtitle: "Inizia ogni giorno in bellezza",
     description:
       "La più luminosa. Il Sole ti sveglia dolcemente, inondando la stanza di luce naturale e di energia positiva.",

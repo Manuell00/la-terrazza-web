@@ -88,7 +88,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
             <nav className="flex items-center gap-2 text-sm text-white/50">
               <Link href="/" className="transition-colors hover:text-white">Home</Link>
               <span>/</span>
-              <span className="text-white/90">{room.name}</span>
+              <span className="text-white/90">{room.symbol} {room.name}</span>
             </nav>
           </div>
         </div>
@@ -104,7 +104,10 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
               <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/12 px-4 py-1.5 text-sm text-white backdrop-blur-sm">
                 {room.highlight}
               </span>
-              <h1 className="mb-2 font-serif text-5xl font-semibold text-white [text-shadow:0_10px_34px_rgba(0,0,0,0.45)] md:text-7xl">{room.name}</h1>
+              <h1 className="mb-2 font-serif text-5xl font-semibold text-white [text-shadow:0_10px_34px_rgba(0,0,0,0.45)] md:text-7xl">
+                <span className="mr-3">{room.symbol}</span>
+                {room.name}
+              </h1>
               <p className="mx-auto max-w-xl text-xl text-stone-100/88 font-light md:mx-0">{room.subtitle}</p>
             </div>
           </motion.div>
@@ -127,7 +130,10 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
               {/* Description */}
               <AnimatedSection className="text-center">
                 <p className="section-label mb-2">La camera</p>
-                <h2 className="mb-5 font-serif text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">{room.name}</h2>
+                <h2 className="mb-5 font-serif text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
+                  <span className="mr-2">{room.symbol}</span>
+                  {room.name}
+                </h2>
                 <p className="mx-auto max-w-2xl text-base leading-relaxed text-stone-500 md:text-lg">
                   <span className="font-semibold text-stone-800">{room.name}</span> è pensata per chi cerca{" "}
                   <span className="font-semibold text-emerald-700">comfort autentico</span>,{" "}
