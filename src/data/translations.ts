@@ -65,7 +65,7 @@ export const translations = {
       mapCta: "Apri su Google Maps",
       petLabel: "Per tutti",
       petTitle: "Amici a quattro zampe",
-      petSubtitle: "Qui anche i tuoi amici sono i benvenuti.",
+      petSubtitle: "Qui anche i tuoi amici a quattro zampe sono i benvenuti.",
       petDesc: "Sappiamo quanto sia importante viaggiare insieme al proprio cane, per questo abbiamo pensato a piccoli comfort anche per loro.",
       petBadge: "Pet Friendly",
       petBadgeSub: "I cani sono i benvenuti",
