@@ -41,15 +41,17 @@ export default function PrenotaPage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <AnimatedSection>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-emerald-400">
-              Prenota il tuo soggiorno
-            </p>
-            <h1 className="page-hero-title mb-5 text-[2.4rem] text-white sm:text-5xl md:text-6xl text-balance">
-              Il tuo relax inizia qui.
-            </h1>
-            <p className="mx-auto max-w-xl text-base leading-relaxed text-stone-300/90 md:text-lg">
-              Scegli la camera che preferisci e prenota direttamente — oppure scrivici su WhatsApp.
-            </p>
+            <div className="mx-auto max-w-3xl rounded-[32px] border border-white/12 bg-stone-950/38 px-6 py-8 shadow-[0_30px_90px_-45px_rgba(0,0,0,0.75)] backdrop-blur-md md:px-10 md:py-10">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-emerald-400">
+                Prenota il tuo soggiorno
+              </p>
+              <h1 className="page-hero-title mb-5 text-[2.4rem] text-white sm:text-5xl md:text-6xl text-balance">
+                Il tuo relax inizia qui.
+              </h1>
+              <p className="mx-auto max-w-xl text-base leading-relaxed text-stone-300/90 md:text-lg">
+                Scegli la camera che preferisci e prenota direttamente — oppure scrivici su WhatsApp.
+              </p>
+            </div>
           </AnimatedSection>
         </div>
       </section>

@@ -287,27 +287,29 @@ export default function HomePage() {
 
         <div className="container relative mx-auto px-4">
           <AnimatedSection>
-            <p className="section-label mb-5 text-emerald-400">Pronti ad accoglierti</p>
-            <h2 className="page-hero-title mb-4 text-3xl text-white md:text-5xl">
-              La tua prossima fuga inizia qui.
-            </h2>
-            <p className="mx-auto mb-10 max-w-lg text-sm leading-relaxed text-stone-400 md:text-base">
-              Tre camere, natura intorno, silenzio vero. Verifica la disponibilità e prenota il tuo soggiorno a La Terrazza.
-            </p>
+            <div className="mx-auto max-w-2xl rounded-[30px] border border-white/12 bg-stone-950/36 px-6 py-8 shadow-[0_30px_90px_-45px_rgba(0,0,0,0.75)] backdrop-blur-md md:px-10 md:py-10">
+              <p className="section-label mb-5 text-emerald-400">Pronti ad accoglierti</p>
+              <h2 className="page-hero-title mb-4 text-3xl text-white md:text-5xl">
+                La tua prossima fuga inizia qui.
+              </h2>
+              <p className="mx-auto mb-10 max-w-lg text-sm leading-relaxed text-stone-300 md:text-base">
+                Tre camere, natura intorno, silenzio vero. Verifica la disponibilità e prenota il tuo soggiorno a La Terrazza.
+              </p>
 
-            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link
-                href="/prenota"
-                className="inline-flex w-full max-w-[18rem] items-center justify-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:bg-green-500 hover:-translate-y-px active:translate-y-0 sm:w-auto sm:max-w-none"
-              >
-                Verifica disponibilità
-              </Link>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="inline-flex w-full max-w-[18rem] items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/15 hover:-translate-y-px active:translate-y-0 sm:w-auto sm:max-w-none"
-              >
-                📞 Chiama per prenotare
-              </a>
+              <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+                <Link
+                  href="/prenota"
+                  className="inline-flex w-full max-w-[18rem] items-center justify-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:bg-green-500 hover:-translate-y-px active:translate-y-0 sm:w-auto sm:max-w-none"
+                >
+                  Verifica disponibilità
+                </Link>
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  className="inline-flex w-full max-w-[18rem] items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/15 hover:-translate-y-px active:translate-y-0 sm:w-auto sm:max-w-none"
+                >
+                  📞 Chiama per prenotare
+                </a>
+              </div>
             </div>
           </AnimatedSection>
         </div>
