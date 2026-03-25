@@ -293,9 +293,9 @@ function PartnerSection({
                   href={locationHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-flex min-h-[42px] w-full max-w-[13rem] items-center justify-center gap-2 rounded-full border border-stone-900 bg-stone-900 px-4 py-2.5 text-[11px] font-semibold text-white shadow-[0_16px_34px_-18px_rgba(28,25,23,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-800"
+                  className="btn-outline mt-3"
                 >
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/14 text-white">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-stone-800 text-white">
                     <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                     </svg>
