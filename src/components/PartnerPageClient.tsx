@@ -339,21 +339,21 @@ function PartnerSection({
                 )}
               </div>
 
-              <div className="mx-auto flex h-full min-h-[15rem] w-full max-w-[13rem] flex-col items-center justify-center">
-                <div className="w-full rounded-[30px] border border-stone-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f6f5f0_48%,#eef4ef_100%)] p-4 text-center shadow-[0_26px_70px_-38px_rgba(28,25,23,0.34)]">
-                  <div className="relative mx-auto flex h-[7.4rem] w-[7.4rem] items-center justify-center overflow-hidden rounded-full border border-stone-200/90 bg-[radial-gradient(circle_at_30%_30%,#fff8ef_0%,#eef8f1_42%,#d8ece0_100%)] shadow-[0_20px_44px_-24px_rgba(28,25,23,0.34)]">
+              <div className="mx-auto flex h-full min-h-[14.25rem] w-full max-w-[12.25rem] flex-col items-center justify-center md:min-h-[15rem] md:max-w-[13rem]">
+                <div className="w-full rounded-[28px] border border-stone-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f6f5f0_48%,#eef4ef_100%)] p-3.5 text-center shadow-[0_26px_70px_-38px_rgba(28,25,23,0.34)] md:rounded-[30px] md:p-4">
+                  <div className="relative mx-auto flex h-[6.75rem] w-[6.75rem] items-center justify-center overflow-hidden rounded-full border border-stone-200/90 bg-[radial-gradient(circle_at_30%_30%,#fff8ef_0%,#eef8f1_42%,#d8ece0_100%)] shadow-[0_20px_44px_-24px_rgba(28,25,23,0.34)] md:h-[7.4rem] md:w-[7.4rem]">
                     <div className="absolute inset-[0.9rem] rounded-full border border-white/70" />
                     <div className="absolute inset-[1.35rem] rounded-full border border-emerald-100/70" />
                     <div className="absolute left-[24%] top-[22%] h-7 w-7 rounded-full bg-white/80 blur-sm" />
                     <div className="absolute right-[22%] bottom-[23%] h-9 w-9 rounded-full bg-emerald-100/70 blur-md" />
                     <div className="relative z-10 flex flex-col items-center text-center">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-lg shadow-[0_10px_22px_-14px_rgba(28,25,23,0.45)]">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/85 text-[0.95rem] shadow-[0_10px_22px_-14px_rgba(28,25,23,0.45)] md:h-10 md:w-10 md:text-lg">
                         📍
                       </span>
                       <span className="mt-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">
                         {locationLabel}
                       </span>
-                      <span className="mt-1 max-w-[5.75rem] text-[11px] font-medium leading-tight text-stone-700">
+                      <span className="mt-1 max-w-[5.4rem] text-[10.5px] font-medium leading-tight text-stone-700 md:max-w-[5.75rem] md:text-[11px]">
                         {locationSub}
                       </span>
                     </div>
@@ -362,10 +362,10 @@ function PartnerSection({
                     href={locationHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-outline mt-4 min-h-[2.85rem] w-full justify-center gap-2 px-3 text-[13px]"
+                    className="btn-outline mt-3.5 min-h-[2.55rem] w-full justify-center gap-1.5 px-2.5 text-[12px] md:mt-4 md:min-h-[2.85rem] md:gap-2 md:px-3 md:text-[13px]"
                   >
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-stone-800 text-white">
-                      <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24">
+                    <span className="flex h-5.5 w-5.5 items-center justify-center rounded-full bg-stone-800 text-white md:h-6 md:w-6">
+                      <svg className="h-[11px] w-[11px] md:h-3 md:w-3" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                       </svg>
                     </span>
