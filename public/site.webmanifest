@@ -1,0 +1,26 @@
+{
+  "name": "La Terrazza Affittacamere",
+  "short_name": "La Terrazza",
+  "description": "Affittacamere nel cuore della campagna astigiana con tre camere e colazione inclusa.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1c1917",
+  "icons": [
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

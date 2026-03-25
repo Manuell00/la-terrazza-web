@@ -68,9 +68,14 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/images/logo/logo.jpg",
-    apple: "/images/logo/logo.jpg",
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon-32.png",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -82,6 +87,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "BedAndBreakfast",
     name: "La Terrazza Affittacamere",
+    logo: "https://www.laterrazza-affittacamere.it/icon-512.png",
     description:
       "Affittacamere immerso nella campagna di Cantarana (Asti), Piemonte. Tre camere esclusive con colazione inclusa.",
     url: "https://www.laterrazza-affittacamere.it",
