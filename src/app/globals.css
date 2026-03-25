@@ -44,7 +44,7 @@
 
   /* ── Section label (eyebrow text) ── */
   .section-label {
-    @apply mb-3 inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-700;
+    @apply mb-5 inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-700;
   }
 }
 

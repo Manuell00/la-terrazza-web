@@ -169,16 +169,23 @@ export default function HomePage() {
             <h2 className="mb-5 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
               Cosa dicono i nostri ospiti.
             </h2>
-            <div className="flex items-center justify-center gap-2">
-              <div className="flex gap-0.5">
+            <div className="inline-flex flex-col items-center rounded-[26px] border border-stone-100 bg-white px-5 py-4 shadow-[0_24px_70px_-42px_rgba(28,25,23,0.22)] md:px-7">
+              <div className="mb-2 flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} className="h-4 w-4 text-emerald-500 md:h-[18px] md:w-[18px]" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
-              <span className="font-semibold text-stone-800">{siteConfig.rating}</span>
-              <span className="text-sm text-stone-400">· {siteConfig.reviewCount}+ recensioni verificate</span>
+              <div className="flex items-end justify-center gap-2">
+                <span className="font-serif text-3xl font-semibold leading-none text-stone-900 md:text-[2.2rem]">
+                  {siteConfig.rating}
+                </span>
+                <span className="pb-0.5 text-sm font-medium text-stone-500">/ 5</span>
+              </div>
+              <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-stone-400">
+                {siteConfig.reviewCount}+ recensioni verificate
+              </p>
             </div>
           </AnimatedSection>
 
