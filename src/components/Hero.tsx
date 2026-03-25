@@ -110,23 +110,53 @@ function HeroIllustration({ compact = false }: { compact?: boolean }) {
           variants={floatingCardVariants}
           initial="hidden"
           animate="visible"
-          className="absolute right-[10%] bottom-[20%] flex w-[30%] flex-col gap-3"
+          className={compact ? "absolute right-[7%] bottom-[16%] flex w-[38%] flex-col gap-2.5" : "absolute right-[10%] bottom-[20%] flex w-[30%] flex-col gap-3"}
         >
-          <div className="rounded-[18px] border border-white/55 bg-white/75 px-4 py-3 backdrop-blur-sm">
+          <div className={`${compact ? "rounded-[16px] px-3 py-2.5" : "rounded-[18px] px-4 py-3"} border border-white/55 bg-white/75 backdrop-blur-sm`}>
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">Check-in</p>
-            <p className="mt-1 text-sm font-semibold text-stone-800">Accoglienza rapida</p>
+            <p className={`${compact ? "mt-1 text-[12px]" : "mt-1 text-sm"} font-semibold text-stone-800`}>Accoglienza rapida</p>
           </div>
           <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-[18px] border border-white/55 bg-white/78 px-3 py-3 text-center backdrop-blur-sm">
-              <p className="text-lg">🍳</p>
-              <p className="mt-1 text-[11px] font-semibold text-stone-800">Colazione inclusa</p>
+            <div className={`${compact ? "rounded-[16px] px-2.5 py-2.5" : "rounded-[18px] px-3 py-3"} border border-white/55 bg-white/78 text-center backdrop-blur-sm`}>
+              <p className={compact ? "text-base" : "text-lg"}>🍳</p>
+              <p className={`${compact ? "mt-1 text-[10px]" : "mt-1 text-[11px]"} font-semibold text-stone-800`}>Colazione inclusa</p>
             </div>
-            <div className="rounded-[18px] border border-white/55 bg-white/78 px-3 py-3 text-center backdrop-blur-sm">
-              <p className="text-lg">🚗</p>
-              <p className="mt-1 text-[11px] font-semibold text-stone-800">Parcheggio gratuito</p>
+            <div className={`${compact ? "rounded-[16px] px-2.5 py-2.5" : "rounded-[18px] px-3 py-3"} border border-white/55 bg-white/78 text-center backdrop-blur-sm`}>
+              <p className={compact ? "text-base" : "text-lg"}>🚗</p>
+              <p className={`${compact ? "mt-1 text-[10px]" : "mt-1 text-[11px]"} font-semibold text-stone-800`}>Parcheggio gratuito</p>
             </div>
           </div>
         </motion.div>
+
+        {compact && (
+          <>
+            <motion.div
+              custom={0.38}
+              variants={floatingCardVariants}
+              initial="hidden"
+              animate="visible"
+              className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/4 rounded-[20px] border border-white/90 bg-white/92 px-3.5 py-3 text-center text-stone-900 shadow-[0_20px_60px_-30px_rgba(28,25,23,0.32)] backdrop-blur-xl"
+            >
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">Recensioni</p>
+              <p className="mt-1.5 text-xl font-semibold leading-none">{siteConfig.rating}/5</p>
+              <p className="mt-1 text-[11px] text-stone-500">{siteConfig.reviewCount}+ recensioni</p>
+            </motion.div>
+
+            <motion.div
+              custom={0.5}
+              variants={floatingCardVariants}
+              initial="hidden"
+              animate="visible"
+              className="absolute bottom-0 left-1/2 w-[15.5rem] -translate-x-1/2 translate-y-1/4 rounded-[24px] border border-stone-200 bg-white px-4 py-4 text-center shadow-[0_24px_70px_-34px_rgba(28,25,23,0.34)]"
+            >
+              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">La Terrazza</p>
+              <p className="mt-2 font-serif text-xl leading-[0.95] text-stone-900">
+                Tre camere con
+                <span className="block text-stone-500">anima diversa</span>
+              </p>
+            </motion.div>
+          </>
+        )}
 
         <div className="absolute inset-x-8 bottom-6 h-[2px] rounded-full bg-white/55" />
       </motion.div>
