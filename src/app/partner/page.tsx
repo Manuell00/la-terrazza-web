@@ -7,7 +7,7 @@ import { siteConfig } from "@/data/siteConfig";
 export const metadata: Metadata = {
   title: "I Nostri Partner | La Terrazza Affittacamere",
   description:
-    "Scopri i partner de La Terrazza Affittacamere: MaRoSa House e Appartamento San Bartolomeo. Strutture selezionate per un soggiorno autentico in Piemonte.",
+    "Scopri i partner de La Terrazza Affittacamere: MaRoSa House a Rapallo e Appartamento San Bartolomeo al Mare. Strutture selezionate tra Piemonte e Liguria.",
 };
 
 const WA_ICON = (
@@ -53,7 +53,7 @@ export default function PartnerPage() {
             </h1>
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-stone-400 md:text-lg">
               Strutture selezionate con cura, accomunate dalla stessa filosofia:
-              accoglienza autentica e la magia del Piemonte come cornice.
+              accoglienza autentica, ritmo lento e luoghi capaci di raccontare il territorio.
             </p>
             <div className="mx-auto mt-10 max-w-xl rounded-[30px] border border-stone-100 bg-gradient-to-br from-white via-cream-50 to-emerald-50/40 p-4 shadow-[0_30px_90px_-46px_rgba(28,25,23,0.32)]">
               <div className="grid items-center gap-4 rounded-[24px] bg-white/72 p-3 backdrop-blur-sm md:grid-cols-[1.05fr_0.95fr] md:p-4">
@@ -118,13 +118,13 @@ export default function PartnerPage() {
           <AnimatedSection className="mb-8">
             <div className="rounded-[26px] border border-stone-100 bg-white p-7 shadow-card md:p-9">
               <p className="mb-4 text-center text-base leading-relaxed text-stone-600">
-                MaRoSa House è una struttura partner selezionata per la qualità dell&apos;accoglienza
-                e la cura degli spazi. Un punto di riferimento per chi cerca un soggiorno autentico
-                e confortevole nel cuore del Piemonte.
+                MaRoSa House è una casa vacanze partner situata a Rapallo, nel cuore della Riviera Ligure.
+                È una base comoda e curata per chi desidera muoversi con facilità tra
+                Santa Margherita Ligure, Portofino e il fascino della costa.
               </p>
               <p className="text-center text-sm leading-relaxed text-stone-400">
-                Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede
-                e si sente. Un posto pensato per farti stare bene, dal primo all&apos;ultimo minuto.
+                Una soluzione pensata per soggiorni brevi ma completi, con comfort domestico,
+                posizione strategica e tutta l&apos;atmosfera rilassata della Liguria.
               </p>
             </div>
           </AnimatedSection>
@@ -186,13 +186,13 @@ export default function PartnerPage() {
           <AnimatedSection className="mb-8">
             <div className="rounded-[26px] border border-stone-100 bg-cream-50 p-7 shadow-soft md:p-9">
               <p className="mb-4 text-center text-base leading-relaxed text-stone-600">
-                L&apos;Appartamento San Bartolomeo offre una soluzione indipendente per chi desidera
-                maggiore privacy e autonomia. Spazi ampi, arredi curati e la magia del paesaggio
-                piemontese a portata di mano.
+                L&apos;Appartamento San Bartolomeo al Mare offre una soluzione indipendente
+                per chi cerca una vera casa al mare, con più privacy, autonomia e ritmi liberi.
+                È pensato per vivere il soggiorno con semplicità, a pochi passi dall&apos;atmosfera della costa ligure.
               </p>
               <p className="text-center text-sm leading-relaxed text-stone-400">
-                Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri,
-                senza rinunciare al comfort. La struttura parla da sola.
+                Ideale per coppie o famiglie che vogliono godersi il mare, il lungomare
+                e una permanenza più indipendente, con il comfort di uno spazio tutto per sé.
               </p>
             </div>
           </AnimatedSection>
