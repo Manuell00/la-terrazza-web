@@ -70,6 +70,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
     ...room.features,
     ...room.amenities.map((label) => ({ icon: amenityIcons[label] ?? "✓", label })),
   ];
+  const hasOddDesktopFeatureCount = expandedFeatures.length % 2 !== 0;
 
   return (
     <main>
@@ -151,6 +152,10 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                           ? showAllFeatures
                             ? ""
                             : "hidden md:flex"
+                          : ""
+                      } ${
+                        hasOddDesktopFeatureCount && index === expandedFeatures.length - 1
+                          ? "sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.375rem)]"
                           : ""
                       }`}
                     >
