@@ -21,12 +21,12 @@ const trustItems = [
 
 function HeroIllustration({ compact = false }: { compact?: boolean }) {
   return (
-    <div className={`relative overflow-hidden rounded-[34px] border border-white/70 bg-[linear-gradient(180deg,#f5efe5_0%,#e6efe2_100%)] shadow-[0_34px_110px_-46px_rgba(28,25,23,0.32)] ${compact ? "h-[420px]" : "h-[560px]"}`}>
+    <div className={`relative overflow-hidden rounded-[34px] shadow-[0_34px_110px_-46px_rgba(28,25,23,0.24)] ${compact ? "h-[420px]" : "h-[560px]"}`}>
       <div className="absolute inset-x-8 top-8 h-24 rounded-full bg-white/45 blur-2xl" />
       <div className="absolute left-[-10%] top-[14%] h-36 w-36 rounded-full bg-emerald-200/70 blur-2xl" />
       <div className="absolute right-[-8%] top-[8%] h-44 w-44 rounded-full bg-stone-200/80 blur-3xl" />
 
-      <div className="absolute inset-x-6 bottom-8 top-20 rounded-[28px] bg-[linear-gradient(180deg,#dbe9d8_0%,#f7f2e7_100%)]">
+      <div className="absolute inset-x-0 bottom-0 top-0 rounded-[34px]">
         <div className="absolute inset-0 overflow-hidden rounded-[28px]">
           <Image
             src="/images/hero-generated-house.jpg"
@@ -205,9 +205,6 @@ export default function Hero() {
                 <p className="mt-3 font-serif text-2xl leading-[0.95] text-stone-900">
                   Tre camere con
                   <span className="block text-stone-500">anima diversa</span>
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-stone-500">
-                  Più pulizia visiva, più spazio bianco e un impatto più elegante già dal primo sguardo.
                 </p>
               </div>
 
