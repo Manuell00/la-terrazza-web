@@ -7,6 +7,7 @@ import ReviewCard from "@/components/ReviewCard";
 import AnimatedSection from "@/components/AnimatedSection";
 import StructureCarousel from "@/components/StructureCarousel";
 import MobileReviewsCarousel from "@/components/MobileReviewsCarousel";
+import PetFriendly from "@/components/PetFriendly";
 import { rooms } from "@/data/rooms";
 import { reviews } from "@/data/reviews";
 import { siteConfig } from "@/data/siteConfig";
@@ -198,6 +199,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Pet Friendly ── */}
+      <PetFriendly />
+
       {/* ── Map ── */}
       <section className="bg-cream-50 py-20 md:py-28">
         <div className="container mx-auto px-4">
@@ -249,6 +253,48 @@ export default function HomePage() {
                   </svg>
                 </span>
                 Apri su Google Maps
+              </a>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      {/* ── Final CTA ── */}
+      <section className="relative overflow-hidden bg-stone-900 py-24 text-center md:py-32">
+        {/* Subtle radial glow */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div className="h-[480px] w-[480px] rounded-full bg-emerald-900/20 blur-[120px]" />
+        </div>
+
+        <div className="container relative mx-auto px-4">
+          <AnimatedSection>
+            <p className="section-label mb-5 text-emerald-400">Pronti ad accoglierti</p>
+            <h2 className="mb-4 font-serif text-3xl font-semibold leading-tight text-white md:text-5xl">
+              La tua prossima fuga inizia qui.
+            </h2>
+            <p className="mx-auto mb-10 max-w-lg text-sm leading-relaxed text-stone-400 md:text-base">
+              Tre camere, natura intorno, silenzio vero. Controlla la disponibilità e prenota il tuo soggiorno a La Terrazza.
+            </p>
+
+            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <Link
+                href="/prenota"
+                className="inline-flex items-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:bg-green-500 hover:-translate-y-px active:translate-y-0"
+              >
+                Controlla disponibilità
+              </Link>
+              <a
+                href={siteConfig.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-stone-800/90 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-stone-700 hover:-translate-y-px active:translate-y-0"
+              >
+                {WA_ICON} Verifica disponibilità su WhatsApp
+              </a>
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/15 hover:-translate-y-px active:translate-y-0"
+              >
+                📞 Chiama per prenotare
               </a>
             </div>
           </AnimatedSection>
