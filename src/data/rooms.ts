@@ -65,7 +65,7 @@ export const rooms: Room[] = [
       "Luminosa e accogliente. La Stella ti abbraccia con la sua atmosfera calda, perfetta per una fuga romantica o un viaggio rigenerante.",
     longDescription:
       "La Camera Stella brilla di luce propria. Tonalità calde, tessuti morbidi, dettagli curati uno a uno. È la camera dei sogni per chi vuole sentirsi speciale. Aprendo la finestra al mattino, l'aria profumata di Piemonte entra come un benvenuto silenzioso. La colazione preparata con cura ti aspetta, e non avrai fretta di andare via.",
-    coverImage: "/images/camera-stella/stella-2.jpg",
+    coverImage: "/images/camera-stella/stella-3.jpg",
     images: [
       "/images/camera-stella/stella-1.jpg",
       "/images/camera-stella/stella-2.jpg",
