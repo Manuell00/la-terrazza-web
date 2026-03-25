@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Room } from "@/data/rooms";
+import { useLanguage } from "@/context/LanguageContext";
+import { localizePath } from "@/lib/i18n";
 
 interface Props {
   room: Room;
@@ -11,6 +13,7 @@ interface Props {
 }
 
 export default function RoomCard({ room, index }: Props) {
+  const { lang } = useLanguage();
   return (
     <motion.div
       initial={{ opacity: 0, y: 48 }}
@@ -18,7 +21,7 @@ export default function RoomCard({ room, index }: Props) {
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.65, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
     >
-      <Link href={`/camere/${room.slug}`} className="group block h-full">
+      <Link href={localizePath(`/camere/${room.slug}`, lang)} className="group block h-full">
         <div className="relative flex h-full flex-col overflow-hidden rounded-[26px] border border-stone-200/70 bg-white shadow-card transition-all duration-500 hover:-translate-y-1.5 hover:shadow-card-hover">
 
           {/* Image */}
@@ -62,15 +65,17 @@ export default function RoomCard({ room, index }: Props) {
             {/* Price + CTA */}
             <div className="border-t border-stone-100 pt-5">
               <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
-                Tariffa indicativa
+                {lang === "it" ? "Tariffa indicativa" : "Indicative rate"}
               </p>
               <p className="mb-4 font-serif text-2xl text-stone-800">{room.price}</p>
               <p className="mb-4 text-xs leading-relaxed text-stone-400">
-                Prezzo indicativo. Può variare in base a date e periodo.
+                {lang === "it"
+                  ? "Prezzo indicativo. Può variare in base a date e periodo."
+                  : "Indicative price. It may vary depending on dates and season."}
               </p>
 
               <span className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stone-200 bg-stone-50 px-5 py-2.5 text-sm font-semibold text-stone-700 transition-all duration-300 group-hover:border-emerald-600 group-hover:bg-emerald-600 group-hover:text-white">
-                Scopri di più
+                {lang === "it" ? "Scopri di più" : "Discover more"}
                 <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

@@ -3,43 +3,26 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
-
-const petFeatures = [
-  {
-    icon: "🛏️",
-    title: "Cuccia disponibile",
-    desc: "Su richiesta al check-in",
-  },
-  {
-    icon: "🥣",
-    title: "Ciotole incluse",
-    desc: "Per acqua e cibo",
-  },
-  {
-    icon: "🦴",
-    title: "Snack di benvenuto",
-    desc: "Un pensiero per loro",
-  },
-  {
-    icon: "🌿",
-    title: "Spazio tranquillo",
-    desc: "Aria aperta e verde intorno",
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/data/translations";
 
 export default function PetFriendly() {
+  const { lang } = useLanguage();
+  const t = translations[lang].home;
+  const petFeatures = t.petFeatures;
+
   return (
     <section className="bg-white py-20 md:py-28">
       <div className="container mx-auto max-w-6xl px-4">
 
         {/* Section header */}
         <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
-          <p className="section-label">Per tutti</p>
+          <p className="section-label">{t.petLabel}</p>
           <h2 className="mb-3 font-serif text-3xl font-semibold leading-tight text-stone-800 md:text-5xl">
-            Amici a quattro zampe
+            {t.petTitle}
           </h2>
           <p className="text-base text-stone-400">
-            Qui anche i tuoi amici sono i benvenuti.
+            {t.petSubtitle}
           </p>
         </AnimatedSection>
 
@@ -72,8 +55,8 @@ export default function PetFriendly() {
                     <span className="text-lg">🐾</span>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-stone-800">Pet Friendly</p>
-                    <p className="mt-0.5 text-xs text-emerald-600">I cani sono i benvenuti</p>
+                    <p className="text-sm font-semibold text-stone-800">{t.petBadge}</p>
+                    <p className="mt-0.5 text-xs text-emerald-600">{t.petBadgeSub}</p>
                   </div>
                 </div>
               </motion.div>
@@ -84,8 +67,7 @@ export default function PetFriendly() {
           <AnimatedSection direction="right" className="text-center md:text-left">
 
             <p className="mb-6 text-base leading-relaxed text-stone-500 md:text-lg">
-              Sappiamo quanto sia importante viaggiare insieme al proprio cane,
-              per questo abbiamo pensato a piccoli comfort anche per loro.
+              {t.petDesc}
             </p>
 
             {/* Feature cards grid */}
@@ -110,7 +92,7 @@ export default function PetFriendly() {
 
             {/* Note */}
             <p className="mt-6 text-xs leading-relaxed text-stone-400">
-              * Informaci in fase di prenotazione. Piccola tariffa di pulizia aggiuntiva potrebbe essere applicata.
+              {t.petNote}
             </p>
           </AnimatedSection>
         </div>

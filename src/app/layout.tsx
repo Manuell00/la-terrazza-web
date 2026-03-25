@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieBanner from "@/components/CookieBanner";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -129,11 +130,13 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased bg-white text-stone-800">
-        <Header />
-        {children}
-        <Footer />
-        <WhatsAppButton />
-        <CookieBanner />
+        <LanguageProvider>
+          <Header />
+          {children}
+          <Footer />
+          <WhatsAppButton />
+          <CookieBanner />
+        </LanguageProvider>
       </body>
     </html>
   );

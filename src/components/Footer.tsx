@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/data/siteConfig";
+import { useLanguage } from "@/context/LanguageContext";
+import { localizePath } from "@/lib/i18n";
 
 export default function Footer() {
+  const { lang } = useLanguage();
   return (
     <footer className="bg-stone-900 text-stone-300">
       <div className="container mx-auto px-4 py-8 md:py-14">
@@ -18,7 +23,9 @@ export default function Footer() {
               </div>
               <div className="text-left">
                 <span className="block font-serif text-base font-semibold text-white">La Terrazza</span>
-                <span className="block text-[9px] font-medium uppercase tracking-[0.3em] text-stone-500">Affittacamere</span>
+                <span className="block text-[9px] font-medium uppercase tracking-[0.3em] text-stone-500">
+                  {lang === "it" ? "Affittacamere" : "Guesthouse"}
+                </span>
               </div>
             </div>
             <div className="mt-2 flex gap-3">
@@ -55,13 +62,13 @@ export default function Footer() {
               <div>
                 <h4 className="mb-3 flex items-center justify-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/60">
                   <span>🛏️</span>
-                  <span>Camere</span>
+                  <span>{lang === "it" ? "Camere" : "Rooms"}</span>
                 </h4>
                 <ul className="space-y-2">
                   {[
-                    { href: "/camere/luna", label: "Camera Luna" },
-                    { href: "/camere/stella", label: "Camera Stella" },
-                    { href: "/camere/sole", label: "Camera Sole" },
+                    { href: localizePath("/camere/luna", lang), label: lang === "it" ? "Camera Luna" : "Luna Room" },
+                    { href: localizePath("/camere/stella", lang), label: lang === "it" ? "Camera Stella" : "Stella Room" },
+                    { href: localizePath("/camere/sole", lang), label: lang === "it" ? "Camera Sole" : "Sole Room" },
                   ].map((link) => (
                     <li key={link.href}>
                       <Link
@@ -83,9 +90,9 @@ export default function Footer() {
                 </h4>
                 <ul className="space-y-2">
                   {[
-                    { href: "/", label: "Home" },
-                    { href: "/prenota", label: "Prenota" },
-                    { href: "/partner", label: "Partner" },
+                    { href: localizePath("/", lang), label: "Home" },
+                    { href: localizePath("/prenota", lang), label: lang === "it" ? "Prenota" : "Book" },
+                    { href: localizePath("/partner", lang), label: lang === "it" ? "Partner" : "Partners" },
                   ].map((link) => (
                     <li key={link.href}>
                       <Link
@@ -105,12 +112,12 @@ export default function Footer() {
           <div className="rounded-[22px] border border-white/6 bg-white/[0.03] px-5 py-5 text-center md:py-6">
             <h4 className="mb-3 flex items-center justify-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/60">
               <span>✉️</span>
-              <span>Contatti</span>
+              <span>{lang === "it" ? "Contatti" : "Contact"}</span>
             </h4>
             <ul className="mb-4 space-y-2">
               <li className="flex items-center justify-center gap-2">
                 <span className="text-emerald-500 text-xs">📍</span>
-                <span className="text-xs text-stone-500">Cantarana (Asti), Piemonte</span>
+                <span className="text-xs text-stone-500">{lang === "it" ? "Cantarana (Asti), Piemonte" : "Cantarana (Asti), Piedmont"}</span>
               </li>
               <li>
                 <a
@@ -137,7 +144,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-5 flex flex-col items-center justify-between gap-1.5 border-t border-stone-800/60 pt-4 sm:flex-row">
           <p className="text-center text-[11px] text-stone-700 sm:text-left">
-            © {new Date().getFullYear()} La Terrazza Affittacamere. Tutti i diritti riservati.
+            © {new Date().getFullYear()} La Terrazza Affittacamere. {lang === "it" ? "Tutti i diritti riservati." : "All rights reserved."}
           </p>
           <p className="text-[11px] text-stone-700">Palazzasso, Cantarana (AT)</p>
         </div>

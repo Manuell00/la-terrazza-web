@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import PartnerGallery from "@/components/PartnerGallery";
 import { siteConfig } from "@/data/siteConfig";
+import { useLanguage } from "@/context/LanguageContext";
 
 /* ─── GA helper ─────────────────────────────────────────────────── */
 function track(category: string, label: string) {
@@ -134,30 +134,6 @@ const content = {
     },
   },
 } as const;
-
-type Lang = "it" | "en";
-
-/* ─── Language Toggle ────────────────────────────────────────────── */
-function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
-  return (
-    <div className="flex items-center gap-1 rounded-full border border-stone-200 bg-white p-1 shadow-soft">
-      {(["it", "en"] as Lang[]).map((l) => (
-        <button
-          key={l}
-          type="button"
-          onClick={() => setLang(l)}
-          className={`relative rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide transition-all duration-200 ${
-            lang === l
-              ? "bg-stone-900 text-white shadow-sm"
-              : "text-stone-500 hover:text-stone-800"
-          }`}
-        >
-          {l === "it" ? "🇮🇹 IT" : "🇬🇧 EN"}
-        </button>
-      ))}
-    </div>
-  );
-}
 
 /* ─── Trust Strip ────────────────────────────────────────────────── */
 function TrustStrip({ text, items }: { text: string; items: readonly string[] }) {
@@ -312,7 +288,7 @@ function PartnerSection({
 
 /* ─── Main Component ─────────────────────────────────────────────── */
 export default function PartnerPageClient() {
-  const [lang, setLang] = useState<Lang>("it");
+  const { lang } = useLanguage();
   const c = content[lang];
 
   return (
@@ -321,16 +297,6 @@ export default function PartnerPageClient() {
       {/* ── Hero ── */}
       <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-
-          {/* Language toggle — top-right of section */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.4 }}
-            className="mb-8 flex justify-center"
-          >
-            <LangToggle lang={lang} setLang={setLang} />
-          </motion.div>
 
           <AnimatedSection className="mb-3">
             <p className="section-label">{c.hero.label}</p>

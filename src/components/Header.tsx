@@ -5,29 +5,32 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { siteConfig } from "@/data/siteConfig";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/camere/luna", label: "Luna" },
-  { href: "/camere/stella", label: "Stella" },
-  { href: "/camere/sole", label: "Sole" },
-  { href: "/prenota", label: "Prenota" },
-  { href: "/partner", label: "Partner" },
-];
-
-const navLinksFull = [
-  { href: "/", label: "Home" },
-  { href: "/camere/luna", label: "Camera Luna" },
-  { href: "/camere/stella", label: "Camera Stella" },
-  { href: "/camere/sole", label: "Camera Sole" },
-  { href: "/prenota", label: "Prenota" },
-  { href: "/partner", label: "Partner" },
-];
+import LangToggle from "@/components/LangToggle";
+import { useLanguage } from "@/context/LanguageContext";
+import { localizePath } from "@/lib/i18n";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { lang } = useLanguage();
+
+  const navLinks = [
+    { href: localizePath("/", lang), label: "Home" },
+    { href: localizePath("/camere/luna", lang), label: lang === "it" ? "Luna" : "Luna" },
+    { href: localizePath("/camere/stella", lang), label: lang === "it" ? "Stella" : "Stella" },
+    { href: localizePath("/camere/sole", lang), label: lang === "it" ? "Sole" : "Sole" },
+    { href: localizePath("/prenota", lang), label: lang === "it" ? "Prenota" : "Book" },
+    { href: localizePath("/partner", lang), label: lang === "it" ? "Partner" : "Partners" },
+  ];
+
+  const navLinksFull = [
+    { href: localizePath("/", lang), label: "Home" },
+    { href: localizePath("/camere/luna", lang), label: lang === "it" ? "Camera Luna" : "Luna Room" },
+    { href: localizePath("/camere/stella", lang), label: lang === "it" ? "Camera Stella" : "Stella Room" },
+    { href: localizePath("/camere/sole", lang), label: lang === "it" ? "Camera Sole" : "Sole Room" },
+    { href: localizePath("/prenota", lang), label: lang === "it" ? "Prenota" : "Book" },
+    { href: localizePath("/partner", lang), label: lang === "it" ? "Partner" : "Partners" },
+  ];
 
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
@@ -54,7 +57,7 @@ export default function Header() {
                 La Terrazza
               </span>
               <span className="block text-[10px] font-medium uppercase tracking-[0.3em] text-stone-400">
-                Affittacamere
+                {lang === "it" ? "Affittacamere" : "Guesthouse"}
               </span>
             </div>
           </Link>
@@ -81,12 +84,17 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Hamburger (mobile) */}
+          {/* Right side: lang toggle (desktop) + hamburger (mobile) */}
           <div className="flex items-center gap-3">
+            {/* Desktop lang toggle */}
+            <div className="hidden lg:flex">
+              <LangToggle />
+            </div>
+            {/* Hamburger (mobile) */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="rounded-xl border border-stone-200 bg-white p-2.5 text-stone-700 shadow-soft transition-all hover:bg-stone-50 lg:hidden"
-              aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
+              aria-label={menuOpen ? (lang === "it" ? "Chiudi menu" : "Close menu") : (lang === "it" ? "Apri menu" : "Open menu")}
             >
               <div className="flex w-6 flex-col gap-1.5">
                 <span className={`block h-0.5 bg-current transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
@@ -120,7 +128,7 @@ export default function Header() {
                   <span className="h-1 w-10 rounded-full bg-white/15" />
                 </div>
                 <p className="mb-5 text-center text-[10px] font-semibold uppercase tracking-[0.36em] text-stone-600">
-                  Navigazione
+                  {lang === "it" ? "Navigazione" : "Navigation"}
                 </p>
                 <div className="space-y-2.5">
                   {navLinksFull.map((link, i) => (
@@ -151,6 +159,10 @@ export default function Header() {
                       </Link>
                     </motion.div>
                   ))}
+                </div>
+                {/* Language toggle */}
+                <div className="mt-5 flex justify-center">
+                  <LangToggle dark />
                 </div>
               </div>
             </motion.div>

@@ -12,6 +12,8 @@ import RoomCalendar from "@/components/RoomCalendar";
 import { Room } from "@/data/rooms";
 import { reviews } from "@/data/reviews";
 import { siteConfig } from "@/data/siteConfig";
+import { useLanguage } from "@/context/LanguageContext";
+import { localizePath } from "@/lib/i18n";
 
 interface Props {
   room: Room;
@@ -58,6 +60,7 @@ const platformBtn =
   "group flex min-h-[48px] w-full items-center justify-center gap-3 rounded-full border border-stone-200 bg-white px-5 py-3 text-sm font-medium text-stone-600 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-400 hover:bg-emerald-600 hover:text-white hover:shadow-card";
 
 export default function RoomPageTemplate({ room, otherRooms }: Props) {
+  const { lang } = useLanguage();
   const [showAllFeatures, setShowAllFeatures] = useState(false);
 
   /* Build feature lists */
@@ -86,7 +89,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
         <div className="absolute top-24 left-0 right-0 z-10">
           <div className="container mx-auto px-4">
             <nav className="flex items-center gap-2 text-sm text-white/50">
-              <Link href="/" className="transition-colors hover:text-white">Home</Link>
+              <Link href={localizePath("/", lang)} className="transition-colors hover:text-white">Home</Link>
               <span>/</span>
               <span className="text-white/90">{room.name}</span>
             </nav>
@@ -129,24 +132,32 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
 
               {/* Description */}
               <AnimatedSection className="text-center">
-                <p className="section-label mb-2">La camera</p>
+                <p className="section-label mb-2">{lang === "it" ? "La camera" : "The room"}</p>
                 <h2 className="mb-5 font-serif text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
                   {room.name}
                 </h2>
                 <p className="mx-auto max-w-2xl text-base leading-relaxed text-stone-500 md:text-lg">
-                  <span className="font-semibold text-stone-800">{room.name}</span> è pensata per chi cerca{" "}
-                  <span className="font-semibold text-emerald-700">comfort autentico</span>,{" "}
-                  ritmi lenti e un&apos;atmosfera che invita davvero a fermarsi.{" "}
-                  Tra <span className="font-semibold text-stone-800">luce naturale</span>, dettagli curati e la calma del paesaggio,
-                  ogni soggiorno acquista un tono più intimo e rilassato.
+                  {lang === "it" ? (
+                    <>
+                      <span className="font-semibold text-stone-800">{room.name}</span> è pensata per chi cerca{" "}
+                      <span className="font-semibold text-emerald-700">comfort autentico</span>, ritmi lenti e un&apos;atmosfera che invita davvero a fermarsi. Tra{" "}
+                      <span className="font-semibold text-stone-800">luce naturale</span>, dettagli curati e la calma del paesaggio, ogni soggiorno acquista un tono più intimo e rilassato.
+                    </>
+                  ) : (
+                    <>
+                      <span className="font-semibold text-stone-800">{room.name}</span> is designed for guests looking for{" "}
+                      <span className="font-semibold text-emerald-700">authentic comfort</span>, slower rhythms and a setting that genuinely invites you to pause. Between{" "}
+                      <span className="font-semibold text-stone-800">natural light</span>, thoughtful details and the calm of the landscape, each stay feels more intimate and restorative.
+                    </>
+                  )}
                 </p>
               </AnimatedSection>
 
               {/* Features */}
               <AnimatedSection className="text-center">
-                <p className="section-label mb-2">Dotazioni</p>
+                <p className="section-label mb-2">{lang === "it" ? "Dotazioni" : "Features"}</p>
                 <h3 className="mb-7 font-serif text-[2rem] font-semibold leading-[0.98] tracking-[-0.03em] text-stone-800 md:text-3xl">
-                  Tutto quello che ti aspetta in camera
+                  {lang === "it" ? "Tutto quello che ti aspetta in camera" : "Everything waiting for you in the room"}
                 </h3>
 
                 <div className="grid gap-3 sm:grid-cols-2">
@@ -178,7 +189,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                     onClick={() => setShowAllFeatures((v) => !v)}
                     className="mt-5 btn-outline text-sm px-5 py-2.5 md:hidden"
                   >
-                    {showAllFeatures ? "Mostra meno ↑" : "Visualizza tutto →"}
+                    {showAllFeatures ? (lang === "it" ? "Mostra meno ↑" : "Show less ↑") : (lang === "it" ? "Visualizza tutto →" : "View all →")}
                   </button>
                 )}
               </AnimatedSection>
@@ -191,10 +202,12 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                 {/* Booking card */}
                 <div className="rounded-[24px] border border-stone-100 bg-white p-6 shadow-elevated">
                   <div className="mb-5 border-b border-stone-100 pb-5">
-                    <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-stone-400">Prezzo indicativo</p>
+                    <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-stone-400">{lang === "it" ? "Prezzo indicativo" : "Indicative price"}</p>
                     <p className="font-serif text-3xl font-semibold text-stone-800">{room.price}</p>
                     <p className="mt-1 text-xs leading-relaxed text-stone-400">
-                      Prezzo indicativo per 2 ospiti. Può variare in base a date, stagione e piattaforma.
+                      {lang === "it"
+                        ? "Prezzo indicativo per 2 ospiti. Può variare in base a date, stagione e piattaforma."
+                        : "Indicative price for 2 guests. It may vary depending on dates, season and platform."}
                     </p>
                   </div>
 
@@ -206,7 +219,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                       rel="noopener noreferrer"
                       className="flex w-full items-center justify-center gap-2.5 rounded-full bg-green-600 px-5 py-4 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-500 hover:shadow-lg"
                     >
-                      {WA_ICON} Prenota via WhatsApp
+                      {WA_ICON} {lang === "it" ? "Prenota via WhatsApp" : "Book via WhatsApp"}
                     </a>
 
                     {/* 2. Phone */}
@@ -214,12 +227,12 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                       href={`tel:${siteConfig.phone}`}
                       className="flex w-full items-center justify-center gap-2.5 rounded-full bg-stone-800 px-5 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-stone-700"
                     >
-                      📞 Chiama per prenotare
+                      📞 {lang === "it" ? "Chiama per prenotare" : "Call to book"}
                     </a>
 
                     <div className="flex items-center gap-2 py-1">
                       <div className="h-px flex-1 bg-stone-100" />
-                      <span className="text-[10px] uppercase tracking-widest text-stone-300">oppure prenota su</span>
+                      <span className="text-[10px] uppercase tracking-widest text-stone-300">{lang === "it" ? "oppure prenota su" : "or book on"}</span>
                       <div className="h-px flex-1 bg-stone-100" />
                     </div>
 
@@ -242,9 +255,9 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                   {/* Trust signals */}
                   <div className="mt-5 space-y-2 border-t border-stone-100 pt-5">
                     {[
-                      { icon: "✓", text: "Risposta entro pochi minuti" },
-                      { icon: "🔒", text: "Prenotazione sicura e verificata" },
-                      { icon: "⭐", text: `Rating ${siteConfig.rating}/5 verificato` },
+                      { icon: "✓", text: lang === "it" ? "Risposta entro pochi minuti" : "Reply within a few minutes" },
+                      { icon: "🔒", text: lang === "it" ? "Prenotazione sicura e verificata" : "Secure verified booking" },
+                      { icon: "⭐", text: lang === "it" ? `Rating ${siteConfig.rating}/5 verificato` : `Verified ${siteConfig.rating}/5 rating` },
                     ].map((t) => (
                       <div key={t.text} className="flex items-center justify-center gap-2 text-xs text-stone-400">
                         <span className="text-emerald-500">{t.icon}</span>
@@ -266,8 +279,8 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
       <section className="bg-cream-50 py-14 md:py-20">
         <div className="container mx-auto max-w-4xl px-4">
           <AnimatedSection className="mb-10 text-center">
-            <p className="section-label">Cosa dicono</p>
-            <h2 className="font-serif text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">Recensioni degli ospiti</h2>
+            <p className="section-label">{lang === "it" ? "Cosa dicono" : "Guest reviews"}</p>
+            <h2 className="font-serif text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">{lang === "it" ? "Recensioni degli ospiti" : "What guests say"}</h2>
           </AnimatedSection>
 
           {/* Desktop: grid */}
@@ -284,14 +297,14 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
       <section className="bg-white py-14">
         <div className="container mx-auto max-w-6xl px-4">
           <AnimatedSection className="mb-10 text-center">
-            <p className="section-label">Esplora ancora</p>
-            <h2 className="font-serif text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800">Le altre camere</h2>
+            <p className="section-label">{lang === "it" ? "Esplora ancora" : "Keep exploring"}</p>
+            <h2 className="font-serif text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800">{lang === "it" ? "Le altre camere" : "Other rooms"}</h2>
           </AnimatedSection>
           <div className="grid gap-6 md:grid-cols-2">
             {otherRooms.map((r) => (
               <Link
                 key={r.id}
-                href={`/camere/${r.slug}`}
+                href={localizePath(`/camere/${r.slug}`, lang)}
                 className="group relative block h-64 overflow-hidden rounded-[22px] shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
               >
                 <Image
@@ -317,12 +330,12 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
       <section className="bg-stone-900 py-16 text-center">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <p className="section-label text-emerald-400">Pronto?</p>
+            <p className="section-label text-emerald-400">{lang === "it" ? "Pronto?" : "Ready?"}</p>
             <h2 className="mb-3 font-serif text-3xl text-white md:text-4xl">
-              Prenota {room.name}
+              {lang === "it" ? `Prenota ${room.name}` : `Book ${room.name}`}
             </h2>
             <p className="mx-auto mb-8 max-w-md text-sm leading-relaxed text-stone-400">
-              Scrivici su WhatsApp — risposta garantita entro pochi minuti.
+              {lang === "it" ? "Scrivici su WhatsApp — risposta garantita entro pochi minuti." : "Message us on WhatsApp — we usually reply within a few minutes."}
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <a
@@ -331,13 +344,13 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto btn-primary px-8 py-4 text-base"
               >
-                {WA_ICON} Verifica disponibilità
+                {WA_ICON} {lang === "it" ? "Verifica disponibilità" : "Check availability"}
               </a>
               <a
                 href={`tel:${siteConfig.phone}`}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/18"
               >
-                📞 Chiama per prenotare
+                📞 {lang === "it" ? "Chiama per prenotare" : "Call to book"}
               </a>
             </div>
           </AnimatedSection>

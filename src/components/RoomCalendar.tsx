@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/data/siteConfig";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface Props {
   roomName: string;
@@ -32,9 +33,12 @@ function diffDays(a: Date, b: Date) {
 }
 
 const MONTHS_IT = ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"];
+const MONTHS_EN = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const DAYS_IT = ["Lu","Ma","Me","Gi","Ve","Sa","Do"];
+const DAYS_EN = ["Mo","Tu","We","Th","Fr","Sa","Su"];
 
 export default function RoomCalendar({ roomName, roomSlug }: Props) {
+  const { lang } = useLanguage();
   const today = new Date(); today.setHours(0,0,0,0);
   const [viewDate, setViewDate] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
   const [blockedDates, setBlockedDates] = useState<Set<DateStr>>(new Set());
@@ -93,7 +97,9 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
       const ciDate = fromDateStr(checkIn);
       if (d <= ciDate) { setCheckIn(ds); setCheckOut(null); return; }
       if (rangeHasBlocked(ciDate, d)) {
-        setError("Le date selezionate includono giorni non disponibili. Scegli un periodo diverso.");
+        setError(lang === "it"
+          ? "Le date selezionate includono giorni non disponibili. Scegli un periodo diverso."
+          : "The selected dates include unavailable days. Please choose a different period.");
         return;
       }
       setCheckOut(ds); setStep("checkin");
@@ -118,14 +124,17 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
 
   const formatDate = (ds: DateStr) => {
     const d = fromDateStr(ds);
-    return `${d.getDate()} ${MONTHS_IT[d.getMonth()]} ${d.getFullYear()}`;
+    const months = lang === "it" ? MONTHS_IT : MONTHS_EN;
+    return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
   };
 
   // Generate WhatsApp message
   const buildWAMsg = () => {
     if (!checkIn || !checkOut) return "";
     return encodeURIComponent(
-      `Buongiorno! Vorrei prenotare la ${roomName} dal ${formatDate(checkIn)} al ${formatDate(checkOut)} per ${guests} ${guests === 1 ? "persona" : "persone"} (${nights} ${nights === 1 ? "notte" : "notti"}). È disponibile? Grazie!`
+      lang === "it"
+        ? `Buongiorno! Vorrei prenotare la ${roomName} dal ${formatDate(checkIn)} al ${formatDate(checkOut)} per ${guests} ${guests === 1 ? "persona" : "persone"} (${nights} ${nights === 1 ? "notte" : "notti"}). È disponibile? Grazie!`
+        : `Hello! I would like to book ${roomName} from ${formatDate(checkIn)} to ${formatDate(checkOut)} for ${guests} ${guests === 1 ? "guest" : "guests"} (${nights} ${nights === 1 ? "night" : "nights"}). Is it available? Thank you!`
     );
   };
 
@@ -133,7 +142,9 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
   const buildEmailBody = () => {
     if (!checkIn || !checkOut) return "";
     return encodeURIComponent(
-      `Gentili signori,\n\nVorrei richiedere disponibilità per la ${roomName}:\n\n• Check-in: ${formatDate(checkIn)}\n• Check-out: ${formatDate(checkOut)}\n• Notti: ${nights}\n• Ospiti: ${guests}\n\nAttendo risposta, grazie!`
+      lang === "it"
+        ? `Gentili signori,\n\nVorrei richiedere disponibilità per la ${roomName}:\n\n• Check-in: ${formatDate(checkIn)}\n• Check-out: ${formatDate(checkOut)}\n• Notti: ${nights}\n• Ospiti: ${guests}\n\nAttendo risposta, grazie!`
+        : `Hello,\n\nI would like to request availability for ${roomName}:\n\n• Check-in: ${formatDate(checkIn)}\n• Check-out: ${formatDate(checkOut)}\n• Nights: ${nights}\n• Guests: ${guests}\n\nThank you in advance.`
     );
   };
 
@@ -146,9 +157,11 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
     <div className="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden">
       {/* Header */}
       <div className="bg-stone-50 px-5 py-4 border-b border-stone-100">
-        <h3 className="font-serif text-lg text-stone-800 mb-0.5">Verifica disponibilità</h3>
+        <h3 className="font-serif text-lg text-stone-800 mb-0.5">{lang === "it" ? "Verifica disponibilità" : "Check availability"}</h3>
         <p className="text-stone-400 text-xs">
-          {step === "checkin" ? "Seleziona la data di arrivo" : "Seleziona la data di partenza"}
+          {step === "checkin"
+            ? (lang === "it" ? "Seleziona la data di arrivo" : "Select your check-in date")
+            : (lang === "it" ? "Seleziona la data di partenza" : "Select your check-out date")}
         </p>
       </div>
 
@@ -163,7 +176,7 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
             </svg>
           </button>
           <span className="font-medium text-stone-800 text-sm">
-            {MONTHS_IT[viewDate.getMonth()]} {viewDate.getFullYear()}
+            {(lang === "it" ? MONTHS_IT : MONTHS_EN)[viewDate.getMonth()]} {viewDate.getFullYear()}
           </span>
           <button onClick={nextMonth}
             className="w-8 h-8 rounded-full flex items-center justify-center text-stone-500 hover:bg-stone-100 transition-colors">
@@ -175,14 +188,14 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
 
         {/* Day headers */}
         <div className="grid grid-cols-7 mb-1">
-          {DAYS_IT.map((d) => (
+          {(lang === "it" ? DAYS_IT : DAYS_EN).map((d) => (
             <div key={d} className="text-center text-[10px] font-semibold text-stone-400 py-1">{d}</div>
           ))}
         </div>
 
         {/* Days grid */}
         {loading ? (
-          <div className="flex justify-center items-center h-40 text-stone-400 text-sm">Caricamento...</div>
+          <div className="flex justify-center items-center h-40 text-stone-400 text-sm">{lang === "it" ? "Caricamento..." : "Loading..."}</div>
         ) : (
           <div className="grid grid-cols-7 gap-0.5">
             {days.map((day, i) => {
@@ -227,10 +240,10 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
         {/* Legend */}
         <div className="flex items-center gap-4 mt-3 text-[10px] text-stone-400">
           <span className="flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-rose-300 inline-block" /> Non disponibile
+            <span className="w-2 h-2 rounded-full bg-rose-300 inline-block" /> {lang === "it" ? "Non disponibile" : "Unavailable"}
           </span>
           <span className="flex items-center gap-1">
-            <span className="w-3 h-3 rounded bg-emerald-600 inline-block" /> Selezionato
+            <span className="w-3 h-3 rounded bg-emerald-600 inline-block" /> {lang === "it" ? "Selezionato" : "Selected"}
           </span>
         </div>
       </div>
@@ -249,13 +262,13 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
       <div className="px-4 pb-4">
         <div className="grid grid-cols-2 gap-2 mb-3">
           <div className={`rounded-xl p-3 border-2 transition-colors ${checkIn ? "border-emerald-400 bg-emerald-50" : "border-stone-200 bg-stone-50"}`}>
-            <p className="text-[10px] text-stone-400 mb-0.5">Arrivo</p>
+            <p className="text-[10px] text-stone-400 mb-0.5">{lang === "it" ? "Arrivo" : "Check-in"}</p>
             <p className={`text-sm font-semibold ${checkIn ? "text-emerald-700" : "text-stone-300"}`}>
               {checkIn ? formatDate(checkIn) : "—"}
             </p>
           </div>
           <div className={`rounded-xl p-3 border-2 transition-colors ${checkOut ? "border-emerald-400 bg-emerald-50" : "border-stone-200 bg-stone-50"}`}>
-            <p className="text-[10px] text-stone-400 mb-0.5">Partenza</p>
+            <p className="text-[10px] text-stone-400 mb-0.5">{lang === "it" ? "Partenza" : "Check-out"}</p>
             <p className={`text-sm font-semibold ${checkOut ? "text-emerald-700" : "text-stone-300"}`}>
               {checkOut ? formatDate(checkOut) : "—"}
             </p>
@@ -264,7 +277,7 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
 
         {/* Guests */}
         <div className="flex items-center justify-between bg-stone-50 rounded-xl px-4 py-2.5 mb-4">
-          <span className="text-sm text-stone-600">Ospiti</span>
+          <span className="text-sm text-stone-600">{lang === "it" ? "Ospiti" : "Guests"}</span>
           <div className="flex items-center gap-3">
             <button onClick={() => setGuests(Math.max(1, guests - 1))}
               className="w-7 h-7 rounded-full border border-stone-300 flex items-center justify-center text-stone-600 hover:bg-stone-200 transition-colors text-base font-bold">−</button>
@@ -277,8 +290,8 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
         {/* Price placeholder */}
         {nights > 0 && (
           <div className="text-center mb-4">
-            <span className="text-xs text-stone-400">{nights} {nights === 1 ? "notte" : "notti"} · </span>
-            <span className="text-sm font-semibold text-stone-700">Prezzo su richiesta</span>
+            <span className="text-xs text-stone-400">{nights} {lang === "it" ? (nights === 1 ? "notte" : "notti") : (nights === 1 ? "night" : "nights")} · </span>
+            <span className="text-sm font-semibold text-stone-700">{lang === "it" ? "Prezzo su richiesta" : "Price on request"}</span>
           </div>
         )}
 
@@ -294,23 +307,25 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>
-              Prenota via WhatsApp
+              {lang === "it" ? "Prenota via WhatsApp" : "Book via WhatsApp"}
             </a>
             {/* SECONDARY: Email */}
             <a
               href={`mailto:${siteConfig.email}?subject=Richiesta prenotazione ${roomName}&body=${buildEmailBody()}`}
               className="flex items-center justify-center gap-2 w-full bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium py-3 rounded-xl transition-all text-sm"
             >
-              ✉️ Invia richiesta via email
+              ✉️ {lang === "it" ? "Invia richiesta via email" : "Send request by email"}
             </a>
             <button onClick={reset}
               className="w-full text-stone-400 hover:text-stone-600 text-xs py-1.5 transition-colors">
-              Cancella selezione
+              {lang === "it" ? "Cancella selezione" : "Clear selection"}
             </button>
           </div>
         ) : (
           <div className="text-center text-xs text-stone-400 py-2">
-            {checkIn ? "Ora seleziona la data di partenza" : "Seleziona le date per procedere"}
+            {checkIn
+              ? (lang === "it" ? "Ora seleziona la data di partenza" : "Now select your check-out date")
+              : (lang === "it" ? "Seleziona le date per procedere" : "Select your dates to continue")}
           </div>
         )}
       </div>
