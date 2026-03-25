@@ -1,5 +1,6 @@
 "use client";
 
+import { ReactNode } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -65,6 +66,16 @@ const content = {
         "MaRoSa House è una casa vacanze in posizione strategica tra Rapallo, Santa Margherita Ligure e Portofino. Una soluzione curata e professionale, pensata per chi vuole vivere la Riviera Ligure con comfort, autonomia e stile.",
       descSecondary:
         "Una gestione attenta, ambienti ordinati e un'accoglienza affidabile: il tipo di soggiorno che funziona davvero, dal weekend breve alla vacanza più rilassata.",
+      descriptionHighlights: [
+        "casa vacanze",
+        "Rapallo",
+        "Santa Margherita Ligure",
+        "Portofino",
+        "Riviera Ligure",
+        "comfort",
+        "autonomia",
+        "stile",
+      ],
       locationLabel: "Posizione",
       locationSub: "Rapallo Riviera Ligure",
       locationHref: "https://www.google.com/maps/search/?api=1&query=Rapallo%2C%20Liguria",
@@ -80,6 +91,14 @@ const content = {
         "San Bartolomeo al Mare entra nella nostra selezione come riferimento per chi desidera una vera casa al mare. Un appartamento indipendente, spazioso e curato, dove vivere la Liguria con la libertà e la privacy che solo una soluzione privata può offrire.",
       descSecondary:
         "Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri, senza rinunciare al comfort. La struttura parla da sola.",
+      descriptionHighlights: [
+        "San Bartolomeo al Mare",
+        "casa al mare",
+        "appartamento indipendente",
+        "Liguria",
+        "libertà",
+        "privacy",
+      ],
       locationLabel: "Posizione",
       locationSub: "San Bartolomeo al Mare",
       locationHref: "https://www.google.com/maps/search/?api=1&query=San%20Bartolomeo%20al%20Mare%2C%20Liguria",
@@ -113,6 +132,15 @@ const content = {
         "MaRoSa House is a holiday home in a strategic position between Rapallo, Santa Margherita Ligure and Portofino. A polished, professionally managed stay for guests who want comfort, independence and the atmosphere of the Ligurian Riviera.",
       descSecondary:
         "Reliable hosting, well-kept interiors and a stay that works beautifully whether you are planning a short break or a slower holiday by the coast.",
+      descriptionHighlights: [
+        "holiday home",
+        "Rapallo",
+        "Santa Margherita Ligure",
+        "Portofino",
+        "comfort",
+        "independence",
+        "Ligurian Riviera",
+      ],
       locationLabel: "Location",
       locationSub: "Rapallo Ligurian Riviera",
       locationHref: "https://www.google.com/maps/search/?api=1&query=Rapallo%2C%20Liguria",
@@ -128,6 +156,14 @@ const content = {
         "San Bartolomeo al Mare joins our selection as the ideal destination for those seeking a true seaside retreat. An independent, spacious, and thoughtfully furnished apartment — offering the privacy and freedom that only a private property can deliver.",
       descSecondary:
         "Perfect for couples or families who want to experience the Ligurian coast at their own pace, without compromising on comfort. The space speaks for itself.",
+      descriptionHighlights: [
+        "San Bartolomeo al Mare",
+        "seaside retreat",
+        "independent",
+        "private property",
+        "privacy",
+        "freedom",
+      ],
       locationLabel: "Location",
       locationSub: "San Bartolomeo al Mare",
       locationHref: "https://www.google.com/maps/search/?api=1&query=San%20Bartolomeo%20al%20Mare%2C%20Liguria",
@@ -180,6 +216,7 @@ interface PartnerSectionProps {
   label: string;
   description: string;
   descSecondary: string;
+  descriptionHighlights?: readonly string[];
   locationLabel: string;
   locationSub: string;
   locationHref: string;
@@ -205,6 +242,7 @@ function PartnerSection({
   label,
   description,
   descSecondary,
+  descriptionHighlights = [],
   locationLabel,
   locationSub,
   locationHref,
@@ -224,6 +262,33 @@ function PartnerSection({
   const bgClass = bg === "cream" ? "bg-cream-50" : "bg-white";
   const highlightPhrase = description.split(". ")[0];
   const remainingDescription = description.slice(highlightPhrase.length).trim().replace(/^\./, "").trim();
+
+  function emphasizeText(text: string, highlights: readonly string[]): ReactNode {
+    if (!highlights.length) return text;
+
+    const escaped = highlights
+      .filter(Boolean)
+      .map((item) => item.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+
+    if (!escaped.length) return text;
+
+    const regex = new RegExp(`(${escaped.join("|")})`, "gi");
+    const parts = text.split(regex);
+
+    return parts.map((part, index) => {
+      const isHighlight = highlights.some((item) => item.toLowerCase() === part.toLowerCase());
+      return isHighlight ? (
+        <span
+          key={`${part}-${index}`}
+          className="font-semibold tracking-[-0.01em] text-stone-900 decoration-emerald-200 decoration-2 underline-offset-[0.22em] md:bg-[linear-gradient(180deg,transparent_58%,rgba(16,185,129,0.14)_58%)]"
+        >
+          {part}
+        </span>
+      ) : (
+        <span key={`${part}-${index}`}>{part}</span>
+      );
+    });
+  }
 
   return (
     <section className={`${bgClass} py-16 md:py-24`}>
@@ -257,12 +322,12 @@ function PartnerSection({
                 <p className="mb-3 text-center text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-700 md:text-left">
                   {label}
                 </p>
-                <p className="mx-auto mb-4 max-w-xl text-balance font-sans text-[1.08rem] font-medium leading-[1.55] tracking-[-0.01em] text-stone-800 md:mx-0 md:max-w-2xl md:text-[1.16rem]">
-                  {highlightPhrase}
+                <p className="mx-auto mb-4 max-w-xl text-balance font-sans text-[1.05rem] font-medium leading-[1.62] tracking-[-0.012em] text-stone-800 md:mx-0 md:max-w-2xl md:text-[1.15rem]">
+                  {emphasizeText(highlightPhrase, descriptionHighlights)}
                 </p>
                 {remainingDescription && (
-                  <p className="mx-auto hidden max-w-2xl text-center text-[15px] leading-[1.75] text-stone-500 md:mx-0 md:block md:text-left md:text-[15.5px]">
-                    {remainingDescription}
+                  <p className="mx-auto hidden max-w-2xl text-center font-sans text-[15px] leading-[1.78] text-stone-500 md:mx-0 md:block md:text-left md:text-[15.5px]">
+                    {emphasizeText(remainingDescription, descriptionHighlights)}
                   </p>
                 )}
                 {descSecondary && (
@@ -431,6 +496,7 @@ export default function PartnerPageClient() {
         label={c.marosa.label}
         description={c.marosa.description}
         descSecondary={c.marosa.descSecondary}
+        descriptionHighlights={c.marosa.descriptionHighlights}
         locationLabel={c.marosa.locationLabel}
         locationSub={c.marosa.locationSub}
         locationHref={c.marosa.locationHref}
@@ -454,6 +520,7 @@ export default function PartnerPageClient() {
         label={c.sanBartolomeo.label}
         description={c.sanBartolomeo.description}
         descSecondary={c.sanBartolomeo.descSecondary}
+        descriptionHighlights={c.sanBartolomeo.descriptionHighlights}
         locationLabel={c.sanBartolomeo.locationLabel}
         locationSub={c.sanBartolomeo.locationSub}
         locationHref={c.sanBartolomeo.locationHref}
