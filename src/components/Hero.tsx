@@ -208,7 +208,7 @@ export default function Hero() {
                 </p>
               </div>
 
-              <div className="absolute right-6 top-0 rounded-[24px] border border-white/90 bg-white/92 px-4 py-4 text-stone-900 shadow-[0_24px_80px_-34px_rgba(28,25,23,0.32)] backdrop-blur-xl">
+              <div className="absolute -right-3 -top-4 rounded-[24px] border border-white/90 bg-white/92 px-4 py-4 text-stone-900 shadow-[0_24px_80px_-34px_rgba(28,25,23,0.32)] backdrop-blur-xl">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500">Recensioni</p>
                 <p className="mt-2 text-2xl font-semibold leading-none">{siteConfig.rating}/5</p>
                 <p className="mt-2 text-[12px] text-stone-500">{siteConfig.reviewCount}+ recensioni verificate</p>
