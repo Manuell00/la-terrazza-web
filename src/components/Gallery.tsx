@@ -21,15 +21,19 @@ export default function Gallery({ images, alt }: Props) {
 
   useEffect(() => {
     if (lightbox === null) return;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") close();
       if (event.key === "ArrowRight") go(1);
       if (event.key === "ArrowLeft") go(-1);
     };
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     window.addEventListener("keydown", onKeyDown);
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [close, go, lightbox]);
@@ -113,23 +117,23 @@ export default function Gallery({ images, alt }: Props) {
               ‹
             </button>
 
-            <motion.div
-              key={lightbox}
-              initial={{ opacity: 0, y: 12, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 12, scale: 0.96 }}
-              transition={{ duration: 0.26, ease: "easeOut" }}
-              className="relative w-full max-w-4xl aspect-[4/3] overflow-hidden rounded-[28px] border border-white/10 bg-stone-900 shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={images[lightbox]}
-                alt={`${alt} ${lightbox + 1}`}
-                fill
-                className="object-contain"
-                priority
-              />
-            </motion.div>
+          <motion.div
+            key={lightbox}
+            initial={{ opacity: 0, y: 12, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 12, scale: 0.96 }}
+            transition={{ duration: 0.26, ease: "easeOut" }}
+            className="relative h-[100dvh] w-[100vw] overflow-hidden bg-stone-900 sm:h-auto sm:w-full sm:max-w-4xl sm:aspect-[4/3] sm:rounded-[28px] sm:border sm:border-white/10 sm:shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={images[lightbox]}
+              alt={`${alt} ${lightbox + 1}`}
+              fill
+              className="object-contain"
+              priority
+            />
+          </motion.div>
 
             {/* Next */}
             <button
