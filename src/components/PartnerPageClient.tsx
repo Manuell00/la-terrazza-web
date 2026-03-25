@@ -272,7 +272,6 @@ function PartnerSection({
   cta3Href,
 }: PartnerSectionProps) {
   const bgClass = bg === "cream" ? "bg-cream-50" : "bg-white";
-  const isMarosa = title === "MaRoSa House";
   const highlightPhrase = description.split(". ")[0];
   const remainingDescription = description.slice(highlightPhrase.length).trim().replace(/^\./, "").trim();
 
@@ -315,8 +314,8 @@ function PartnerSection({
         {/* 1 — TITLE */}
         <AnimatedSection className="mb-10 text-center">
           <div className="inline-flex flex-col items-center">
-            <h2 className={`section-title-xl text-3xl md:text-5xl ${isMarosa ? "bg-[linear-gradient(180deg,transparent_60%,rgba(16,185,129,0.16)_60%)] px-1 md:[text-shadow:0_10px_24px_rgba(16,185,129,0.14)]" : ""}`}>{title}</h2>
-            <span className={`mt-3 h-[3px] rounded-full bg-[linear-gradient(90deg,rgba(16,185,129,0.2),rgba(16,185,129,0.95),rgba(16,185,129,0.2))] shadow-[0_8px_20px_-8px_rgba(16,185,129,0.65)] ${isMarosa ? "w-28 md:w-32" : "w-20"}`} />
+            <h2 className="section-title-xl text-3xl md:text-5xl">{title}</h2>
+            <span className="mt-3 h-[3px] w-24 rounded-full bg-[linear-gradient(90deg,rgba(16,185,129,0.2),rgba(16,185,129,0.95),rgba(16,185,129,0.2))] shadow-[0_8px_20px_-8px_rgba(16,185,129,0.65)]" />
           </div>
           <p className="mt-2 text-base font-medium text-emerald-700">{tagline}</p>
         </AnimatedSection>
@@ -339,6 +338,11 @@ function PartnerSection({
               <div className="text-center md:text-left">
                 <p className="mb-3 text-center text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-700 md:text-left">
                   {label}
+                </p>
+                <p className="card-title mb-4 text-center text-[1.35rem] text-stone-900 md:text-left md:text-[1.45rem]">
+                  <span className="bg-[linear-gradient(180deg,transparent_60%,rgba(16,185,129,0.16)_60%)] px-1">
+                    {title}
+                  </span>
                 </p>
                 {mobileDescription && (
                   <div className="mx-auto mb-4 max-w-xl rounded-[22px] border border-stone-100 bg-white/88 px-5 py-4 text-center shadow-[0_18px_40px_-28px_rgba(28,25,23,0.22)] md:hidden">
