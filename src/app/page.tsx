@@ -272,7 +272,7 @@ export default function HomePage() {
               La tua prossima fuga inizia qui.
             </h2>
             <p className="mx-auto mb-10 max-w-lg text-sm leading-relaxed text-stone-400 md:text-base">
-              Tre camere, natura intorno, silenzio vero. Controlla la disponibilità e prenota il tuo soggiorno a La Terrazza.
+              Tre camere, natura intorno, silenzio vero. Verifica la disponibilità e prenota il tuo soggiorno a La Terrazza.
             </p>
 
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -280,7 +280,7 @@ export default function HomePage() {
                 href="/prenota"
                 className="inline-flex items-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:bg-green-500 hover:-translate-y-px active:translate-y-0"
               >
-                Controlla disponibilità
+                Verifica disponibilità
               </Link>
               <a
                 href={`tel:${siteConfig.phone}`}
