@@ -197,18 +197,38 @@ export default function HomePage() {
           <AnimatedSection className="mx-auto mb-12 max-w-2xl text-center">
             <p className="section-label">Come raggiungerci</p>
             <h2 className="font-serif text-[2.15rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
-              Nel cuore del Piemonte.
+              Tra vigne, quiete e strade panoramiche.
             </h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-stone-500 md:text-base">
+              Arrivare a La Terrazza significa entrare gradualmente in un paesaggio più lento,
+              fatto di colline morbide, luce aperta e un Piemonte che si fa subito sentire.
+            </p>
           </AnimatedSection>
 
           <AnimatedSection className="mx-auto max-w-5xl">
-            <div className="h-72 overflow-hidden rounded-[24px] border border-stone-200 shadow-elevated md:h-96">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2845.0!2d8.1!3d44.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47865a5e5e5e5e5f%3A0x0!2sCantarana%2C+AT!5e0!3m2!1sit!2sit!4v1711234567890"
-                width="100%" height="100%" style={{ border: 0 }}
-                allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-                title="La Terrazza Affittacamere - Mappa"
-              />
+            <div className="overflow-hidden rounded-[32px] border border-stone-200 bg-white p-3 shadow-[0_30px_100px_-46px_rgba(28,25,23,0.28)] md:p-4">
+              <div className="mb-4 grid gap-3 md:grid-cols-3">
+                {[
+                  { icon: "📍", title: "Cantarana, Asti", text: "Una posizione raccolta, immersa nel verde." },
+                  { icon: "🚗", title: "Arrivo semplice", text: "Comoda da raggiungere in auto tra le colline." },
+                  { icon: "🌿", title: "Atmosfera autentica", text: "Il paesaggio cambia ritmo appena arrivi." },
+                ].map((item) => (
+                  <div key={item.title} className="rounded-[22px] border border-stone-100 bg-cream-50 px-4 py-4 text-center">
+                    <p className="text-xl">{item.icon}</p>
+                    <p className="mt-2 text-sm font-semibold text-stone-800">{item.title}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-stone-500">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="h-72 overflow-hidden rounded-[24px] border border-stone-200 shadow-inner md:h-96">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2845.0!2d8.1!3d44.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47865a5e5e5e5e5f%3A0x0!2sCantarana%2C+AT!5e0!3m2!1sit!2sit!4v1711234567890"
+                  width="100%" height="100%" style={{ border: 0 }}
+                  allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                  title="La Terrazza Affittacamere - Mappa"
+                />
+              </div>
             </div>
             <div className="mt-6 text-center">
               <a
