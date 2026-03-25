@@ -14,6 +14,13 @@ const sourceLabel = {
   google: "Google",
 };
 
+const labelEmoji: Record<string, string> = {
+  Coppia: "👩‍❤️‍👨",
+  "Weekend romantico": "🌙",
+  "Soggiorno esteso": "🧳",
+  Anniversario: "💞",
+};
+
 export default function ReviewCard({ review, index }: Props) {
   return (
     <motion.div
@@ -62,7 +69,7 @@ export default function ReviewCard({ review, index }: Props) {
       {review.label && (
         <div className="mt-3 pt-3 border-t border-stone-50">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-700">
-            <span className="h-1 w-1 rounded-full bg-emerald-500" />
+            <span className="text-xs leading-none">{labelEmoji[review.label] ?? "✦"}</span>
             {review.label}
           </span>
         </div>
