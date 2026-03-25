@@ -37,11 +37,13 @@ export default function RoomCard({ room, index }: Props) {
             </div>
 
             {/* Room name overlay */}
-            <div className="absolute bottom-0 left-0 right-0 px-6 pb-5 text-center">
-              <h3 className="font-serif text-2xl font-semibold text-white tracking-wide">
-                {room.name}
-              </h3>
-              <p className="mt-1 text-sm text-stone-200/80 font-light">{room.subtitle}</p>
+            <div className="absolute bottom-0 left-0 right-0 px-5 pb-5 text-center">
+              <div className="mx-auto max-w-[15rem] rounded-[20px] border border-white/12 bg-stone-950/45 px-4 py-3 backdrop-blur-md shadow-[0_14px_40px_-18px_rgba(0,0,0,0.75)]">
+                <h3 className="font-serif text-2xl font-semibold text-white tracking-wide">
+                  {room.name}
+                </h3>
+                <p className="mt-1 text-sm text-stone-200/90 font-light">{room.subtitle}</p>
+              </div>
             </div>
           </div>
 

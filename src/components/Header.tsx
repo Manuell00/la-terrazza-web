@@ -150,36 +150,24 @@ export default function Header() {
                       <Link
                         href={link.href}
                         onClick={() => setMenuOpen(false)}
-                        className={`group flex items-center justify-between rounded-[20px] px-5 py-4 text-[0.95rem] font-semibold tracking-wide transition-all active:scale-[0.985] ${
+                        className={`group grid grid-cols-[1fr_auto_1fr] items-center rounded-[20px] px-5 py-4 text-[0.95rem] font-semibold tracking-wide transition-all active:scale-[0.985] ${
                           isActive(link.href)
                             ? "bg-emerald-600 text-white shadow-[0_12px_32px_-12px_rgba(22,163,74,0.65)]"
                             : "bg-white/[0.05] text-white hover:bg-white/[0.09] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]"
                         }`}
                       >
-                        <span>{link.label}</span>
+                        <span className="invisible">→</span>
+                        <span className="text-center">{link.label}</span>
                         <motion.span
                           animate={{ x: [0, 3, 0] }}
                           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                          className={isActive(link.href) ? "text-white/60" : "text-stone-500 group-hover:text-stone-400"}
+                          className={`justify-self-end ${isActive(link.href) ? "text-white/60" : "text-stone-500 group-hover:text-stone-400"}`}
                         >
                           →
                         </motion.span>
                       </Link>
                     </motion.div>
                   ))}
-                </div>
-
-                {/* Mobile WhatsApp CTA inside menu */}
-                <div className="mt-5 pt-4 border-t border-white/8">
-                  <a
-                    href={siteConfig.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setMenuOpen(false)}
-                    className="flex w-full items-center justify-center gap-2 rounded-[20px] bg-green-600 py-4 text-sm font-semibold text-white transition-all hover:bg-green-500"
-                  >
-                    {WA_ICON} Verifica disponibilità su WhatsApp
-                  </a>
                 </div>
               </div>
             </motion.div>

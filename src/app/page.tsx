@@ -80,7 +80,7 @@ export default function HomePage() {
             {/* Text */}
             <AnimatedSection direction="right" className="text-center md:text-left">
               <p className="section-label">La nostra storia</p>
-              <h2 className="mb-5 font-serif text-3xl leading-tight text-stone-800 md:text-5xl">
+              <h2 className="mb-5 font-serif text-[2.3rem] font-semibold leading-[0.95] tracking-[-0.03em] text-stone-800 md:text-5xl">
                 Un posto che<br />si sente speciale.
               </h2>
               <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
@@ -108,7 +108,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Perché sceglierci</p>
-            <h2 className="font-serif text-3xl leading-tight text-stone-800 md:text-5xl">
+            <h2 className="font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
               Quello che rende La Terrazza unica.
             </h2>
           </AnimatedSection>
@@ -134,7 +134,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Le nostre camere</p>
-            <h2 className="mb-3 font-serif text-3xl leading-tight text-stone-800 md:text-5xl">
+            <h2 className="mb-3 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
               Tre camere, tre emozioni.
             </h2>
             <p className="text-stone-400">Ogni spazio ha la sua personalità. Scegli quella che rispecchia il tuo umore.</p>
@@ -150,7 +150,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-10 max-w-xl text-center">
             <p className="section-label">La struttura</p>
-            <h2 className="font-serif text-2xl text-stone-800 md:text-3xl">Scorri per scoprirla.</h2>
+            <h2 className="font-serif text-[2rem] font-semibold leading-[0.98] tracking-[-0.03em] text-stone-800 md:text-3xl">Scorri per scoprirla.</h2>
           </AnimatedSection>
           <AnimatedSection className="mx-auto max-w-3xl">
             <StructureCarousel />
@@ -163,7 +163,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Recensioni</p>
-            <h2 className="mb-5 font-serif text-3xl leading-tight text-stone-800 md:text-5xl">
+            <h2 className="mb-5 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
               Cosa dicono i nostri ospiti.
             </h2>
             <div className="flex items-center justify-center gap-2">
@@ -193,7 +193,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-12 max-w-2xl text-center">
             <p className="section-label">Come raggiungerci</p>
-            <h2 className="font-serif text-3xl leading-tight text-stone-800 md:text-4xl">
+            <h2 className="font-serif text-[2.15rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
               Nel cuore del Piemonte.
             </h2>
           </AnimatedSection>
@@ -243,25 +243,23 @@ export default function HomePage() {
               Risposta garantita entro pochi minuti.
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              {/* PRIMARY: Controlla disponibilità — green */}
-              <Link
-                href="/prenota"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-8 py-4 text-base font-semibold text-white shadow-[0_16px_48px_-16px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500"
-              >
-                Controlla disponibilità
-              </Link>
-              {/* SECONDARY: WhatsApp — dark neutral */}
               <a
                 href={siteConfig.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-stone-800/90 border border-white/10 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-700"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-8 py-4 text-base font-semibold text-white shadow-[0_16px_48px_-16px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500"
               >
-                {WA_ICON} Verifica disponibilità su WhatsApp
+                {WA_ICON} Scrivici su WhatsApp
               </a>
+              <Link
+                href="/prenota"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/18"
+              >
+                Controlla disponibilità
+              </Link>
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/18"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-stone-800/90 border border-white/10 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-700"
               >
                 📞 Chiama per prenotare
               </a>

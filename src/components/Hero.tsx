@@ -33,11 +33,11 @@ export default function Hero() {
         {/* Subtle vignette top */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.06),transparent_50%)]" />
         {/* Left gradient — stronger for text legibility on desktop */}
-        <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(8,12,8,0.85)_0%,rgba(8,12,8,0.58)_42%,rgba(8,12,8,0.22)_70%,rgba(8,12,8,0.16)_100%)]" />
-        {/* Bottom-to-top gradient for CTA area — heavier on mobile */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent md:from-stone-950/85 md:via-stone-950/22" />
-        {/* Mobile: extra center darkening for readability */}
-        <div className="absolute inset-0 bg-stone-950/20 md:hidden" />
+        <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(8,12,8,0.82)_0%,rgba(8,12,8,0.54)_42%,rgba(8,12,8,0.18)_70%,rgba(8,12,8,0.12)_100%)]" />
+        {/* Bottom-to-top gradient for CTA area */}
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/88 via-stone-950/28 to-transparent md:from-stone-950/82 md:via-stone-950/18" />
+        {/* Mobile: centered reading panel */}
+        <div className="absolute inset-x-4 bottom-10 top-[22%] rounded-[30px] bg-[linear-gradient(180deg,rgba(12,10,9,0.18),rgba(12,10,9,0.58),rgba(12,10,9,0.78))] backdrop-blur-[2px] md:hidden" />
       </motion.div>
 
       {/* Content */}
@@ -64,8 +64,8 @@ export default function Hero() {
               transition={{ delay: 0.35, duration: 0.8 }}
               className="md:hidden font-serif text-[2.6rem] font-semibold leading-[1.0] tracking-[-0.03em] text-white [text-shadow:0_8px_32px_rgba(0,0,0,0.6)]"
             >
-              Relax, natura e comfort
-              <span className="mt-1 block text-stone-100/90">in un soggiorno unico.</span>
+              Un soggiorno
+              <span className="mt-1 block text-stone-100/92">davvero unico.</span>
             </motion.h1>
 
             {/* ── DESKTOP headline ── */}
@@ -84,7 +84,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.75 }}
-              className="mt-5 max-w-sm text-base leading-relaxed text-stone-100/85 sm:max-w-lg sm:text-lg md:max-w-xl md:text-xl"
+              className="mt-5 hidden max-w-sm text-base leading-relaxed text-stone-100/85 sm:max-w-lg sm:text-lg md:block md:max-w-xl md:text-xl"
             >
               Tre camere esclusive tra i vigneti del Monferrato. Stacca la spina, respira e lasciati accogliere con la calma autentica del Piemonte.
             </motion.p>

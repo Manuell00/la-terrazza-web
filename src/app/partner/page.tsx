@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import PartnerGallery from "@/components/PartnerGallery";
 import { siteConfig } from "@/data/siteConfig";
@@ -91,12 +90,12 @@ export default function PartnerPage() {
           {/* 3. DESCRIPTION */}
           <AnimatedSection className="mb-8">
             <div className="rounded-[26px] border border-stone-100 bg-white p-7 shadow-card md:p-9">
-              <p className="mb-4 text-base leading-relaxed text-stone-600">
+              <p className="mb-4 text-center text-base leading-relaxed text-stone-600">
                 MaRoSa House è una struttura partner selezionata per la qualità dell&apos;accoglienza
                 e la cura degli spazi. Un punto di riferimento per chi cerca un soggiorno autentico
                 e confortevole nel cuore del Piemonte.
               </p>
-              <p className="text-sm leading-relaxed text-stone-400">
+              <p className="text-center text-sm leading-relaxed text-stone-400">
                 Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede
                 e si sente. Un posto pensato per farti stare bene, dal primo all&apos;ultimo minuto.
               </p>
@@ -137,17 +136,6 @@ export default function PartnerPage() {
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
               Appartamento privato
             </div>
-            {/* San Bartolomeo logo — small, centered */}
-            <div className="mb-5 flex justify-center">
-              <div className="relative h-16 w-40 overflow-hidden rounded-2xl border border-stone-100 bg-stone-50 shadow-soft">
-                <Image
-                  src={sanBartolomeoLogo}
-                  alt="Appartamento San Bartolomeo logo"
-                  fill
-                  className="object-contain p-2"
-                />
-              </div>
-            </div>
             <h2 className="font-serif text-3xl font-semibold text-stone-800 md:text-5xl">
               Appartamento San Bartolomeo
             </h2>
@@ -159,23 +147,23 @@ export default function PartnerPage() {
           {/* 2. IMAGES */}
           <AnimatedSection className="mb-10">
             <PartnerGallery
-              featuredImage={sanBartolomeoImages[0]}
-              gridImages={sanBartolomeoImages.slice(1)}
+              featuredImage={sanBartolomeoLogo}
+              gridImages={sanBartolomeoImages}
               lightboxImages={sanBartolomeoImages}
               alt="Appartamento San Bartolomeo"
-              featuredMode="cover"
+              featuredMode="contain"
             />
           </AnimatedSection>
 
           {/* 3. DESCRIPTION */}
           <AnimatedSection className="mb-8">
             <div className="rounded-[26px] border border-stone-100 bg-cream-50 p-7 shadow-soft md:p-9">
-              <p className="mb-4 text-base leading-relaxed text-stone-600">
+              <p className="mb-4 text-center text-base leading-relaxed text-stone-600">
                 L&apos;Appartamento San Bartolomeo offre una soluzione indipendente per chi desidera
                 maggiore privacy e autonomia. Spazi ampi, arredi curati e la magia del paesaggio
                 piemontese a portata di mano.
               </p>
-              <p className="text-sm leading-relaxed text-stone-400">
+              <p className="text-center text-sm leading-relaxed text-stone-400">
                 Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri,
                 senza rinunciare al comfort. La struttura parla da sola.
               </p>
@@ -219,7 +207,7 @@ export default function PartnerPage() {
               href={siteConfig.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-secondary"
             >
               {WA_ICON} Scrivici su WhatsApp
             </a>

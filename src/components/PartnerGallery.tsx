@@ -55,10 +55,10 @@ export default function PartnerGallery({
             src={featuredImage}
             alt={`${alt} principale`}
             fill
-            className={`${featuredMode === "contain" ? "object-contain p-6 md:p-8" : "object-cover"} transition-transform duration-500 group-hover:scale-[1.03]`}
+            className={`${featuredMode === "contain" ? "object-contain p-4 md:p-6" : "object-cover"} transition-transform duration-500 group-hover:scale-[1.03]`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-950/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          <span className="absolute bottom-4 right-4 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-stone-700 shadow-sm">
+          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-white/92 px-3 py-1 text-xs font-medium text-stone-700 shadow-sm">
             Apri gallery
           </span>
         </button>

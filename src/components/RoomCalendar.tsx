@@ -12,7 +12,10 @@ interface Props {
 type DateStr = string; // "YYYY-MM-DD"
 
 function toDateStr(d: Date): DateStr {
-  return d.toISOString().split("T")[0];
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 function fromDateStr(s: DateStr): Date {
   const [y, m, d] = s.split("-").map(Number);
@@ -206,8 +209,8 @@ export default function RoomCalendar({ roomName, roomSlug }: Props) {
                     ${blocked && !past ? "bg-stone-100" : ""}
                     ${!disabled && !checkin && !checkout && !inRange ? "hover:bg-emerald-50 hover:text-emerald-700 text-stone-700" : ""}
                     ${inRange ? "bg-emerald-100 text-emerald-800 rounded-none" : ""}
-                    ${checkin ? "bg-emerald-600 text-white rounded-lg z-10" : ""}
-                    ${checkout ? "bg-emerald-600 text-white rounded-lg z-10" : ""}
+                    ${checkin ? "!rounded-l-lg !rounded-r-lg bg-emerald-600 text-white z-10 shadow-[0_8px_24px_-12px_rgba(5,150,105,0.7)]" : ""}
+                    ${checkout ? "!rounded-l-lg !rounded-r-lg bg-emerald-600 text-white z-10 shadow-[0_8px_24px_-12px_rgba(5,150,105,0.7)]" : ""}
                     ${isToday && !checkin && !checkout ? "ring-1 ring-emerald-400 text-emerald-700" : ""}
                   `}
                 >
