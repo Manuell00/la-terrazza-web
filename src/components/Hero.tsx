@@ -168,16 +168,6 @@ export default function Hero() {
               <motion.p variants={heroItemVariants} className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-stone-600">
                 Soggiorni che rallentano il tempo, tra i vigneti del Monferrato e un&apos;ospitalità semplice da amare.
               </motion.p>
-              <motion.a
-                variants={heroItemVariants}
-                href={siteConfig.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-18px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500"
-              >
-                {WA_ICON}
-                Scrivici ora
-              </motion.a>
 
               <motion.div
                 variants={heroImageVariants}
@@ -187,6 +177,27 @@ export default function Hero() {
                 style={{ y: imageY }}
               >
                 <HeroIllustration compact />
+              </motion.div>
+
+              <motion.div
+                variants={heroItemVariants}
+                className="mt-6 flex items-center justify-center gap-3"
+              >
+                <a
+                  href={siteConfig.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-green-600 px-4 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-18px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500"
+                >
+                  {WA_ICON}
+                  Scrivici ora
+                </a>
+                <Link
+                  href="/prenota"
+                  className="inline-flex flex-1 items-center justify-center rounded-full bg-stone-900 px-4 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-18px_rgba(28,25,23,0.65)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-800"
+                >
+                  Controlla disponibilità
+                </Link>
               </motion.div>
             </motion.div>
           </div>

@@ -51,8 +51,33 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
 
+            {/* Text */}
+            <AnimatedSection direction="right" className="order-1 text-center md:order-2 md:text-left">
+              <div className="rounded-[30px] border border-stone-100 bg-cream-50/80 p-7 shadow-soft backdrop-blur-sm md:p-9">
+                <p className="section-label">La nostra storia</p>
+                <h2 className="mb-5 font-serif text-[2.3rem] font-semibold leading-[0.95] tracking-[-0.03em] text-stone-800 md:text-5xl">
+                  Un posto che<br />si sente speciale.
+                </h2>
+                <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
+                  <p>Siamo a Cantarana, nel cuore dell&apos;Astigiano, tra i vigneti del Monferrato. Un posto dove la natura detta i ritmi e il cielo la sera è uno spettacolo.</p>
+                  <p>
+                    <span className="font-semibold text-stone-900">Tre camere</span>:{" "}
+                    <span className="font-semibold text-emerald-700">Luna</span>,{" "}
+                    <span className="font-semibold text-emerald-700">Stella</span>{" "}e{" "}
+                    <span className="font-semibold text-emerald-700">Sole</span>.
+                    {" "}Tre caratteri diversi, una sola promessa: andarsene con un sorriso.
+                  </p>
+                </div>
+                <div className="mt-8 flex justify-center md:justify-start">
+                  <Link href="/prenota" className="btn-outline text-sm px-6 py-3">
+                    Scopri le nostre camere →
+                  </Link>
+                </div>
+              </div>
+            </AnimatedSection>
+
             {/* Image */}
-            <AnimatedSection direction="left">
+            <AnimatedSection direction="left" className="order-2 md:order-1">
               <div className="relative">
                 <div className="group relative h-72 overflow-hidden rounded-[24px] shadow-elevated md:h-[460px]">
                   <Image
@@ -74,31 +99,6 @@ export default function HomePage() {
                       <p className="mt-0.5 text-xs text-stone-400">{siteConfig.reviewCount}+ recensioni</p>
                     </div>
                   </div>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Text */}
-            <AnimatedSection direction="right" className="text-center md:text-left">
-              <div className="rounded-[30px] border border-stone-100 bg-cream-50/80 p-7 shadow-soft backdrop-blur-sm md:p-9">
-                <p className="section-label">La nostra storia</p>
-                <h2 className="mb-5 font-serif text-[2.3rem] font-semibold leading-[0.95] tracking-[-0.03em] text-stone-800 md:text-5xl">
-                  Un posto che<br />si sente speciale.
-                </h2>
-                <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
-                  <p>Siamo a Cantarana, nel cuore dell&apos;Astigiano, tra i vigneti del Monferrato. Un posto dove la natura detta i ritmi e il cielo la sera è uno spettacolo.</p>
-                  <p>
-                    <span className="font-semibold text-stone-900">Tre camere</span>:{" "}
-                    <span className="font-semibold text-emerald-700">Luna</span>,{" "}
-                    <span className="font-semibold text-emerald-700">Stella</span>{" "}e{" "}
-                    <span className="font-semibold text-emerald-700">Sole</span>.
-                    {" "}Tre caratteri diversi, una sola promessa: andarsene con un sorriso.
-                  </p>
-                </div>
-                <div className="mt-8 flex justify-center md:justify-start">
-                  <Link href="/prenota" className="btn-outline text-sm px-6 py-3">
-                    Scopri le nostre camere →
-                  </Link>
                 </div>
               </div>
             </AnimatedSection>
