@@ -69,7 +69,7 @@ const content = {
       locationSub: "Rapallo Riviera Ligure",
       locationHref: "https://www.google.com/maps/search/?api=1&query=Rapallo%2C%20Liguria",
       cta1: "Vai al sito",
-      ctaWa: "Contatta via WhatsApp",
+      ctaWa: "Chiama per informazioni",
     },
     sanBartolomeo: {
       badge: "Appartamento privato",
@@ -117,7 +117,7 @@ const content = {
       locationSub: "Rapallo Ligurian Riviera",
       locationHref: "https://www.google.com/maps/search/?api=1&query=Rapallo%2C%20Liguria",
       cta1: "Visit website",
-      ctaWa: "Contact via WhatsApp",
+      ctaWa: "Call for information",
     },
     sanBartolomeo: {
       badge: "Private Apartment",
