@@ -63,7 +63,7 @@ export const rooms: Room[] = [
     id: "stella",
     slug: "stella",
     name: "Camera Stella",
-    symbol: "⭐",
+    symbol: "🌠",
     subtitle: "Splendi nella tua notte",
     description:
       "Luminosa e accogliente. La Stella ti abbraccia con la sua atmosfera calda, perfetta per una fuga romantica o un viaggio rigenerante.",
