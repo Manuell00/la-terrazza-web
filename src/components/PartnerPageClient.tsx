@@ -293,9 +293,14 @@ function PartnerSection({
                   href={locationHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center justify-center gap-1.5 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-[11px] font-semibold text-stone-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-700"
+                  className="mt-3 inline-flex items-center justify-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-2 text-[11px] font-semibold text-stone-700 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-stone-300 hover:bg-stone-50"
                 >
-                  🗺️ {locationLabel === "Posizione" ? "Vedi su Google Maps" : "View on Google Maps"}
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-stone-800 text-white">
+                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                  </span>
+                  {locationLabel === "Posizione" ? "Apri su Google Maps" : "Open in Google Maps"}
                 </a>
               </div>
             </div>
