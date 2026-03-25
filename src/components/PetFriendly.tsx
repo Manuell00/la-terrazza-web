@@ -79,21 +79,16 @@ export default function PetFriendly() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ delay: 0.1 + i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="group flex flex-col items-center gap-2 rounded-[18px] border border-stone-100 bg-cream-50 p-4 text-center shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-100 hover:bg-emerald-50/40 hover:shadow-card md:items-start md:text-left"
+                  className="group flex flex-col items-center justify-center gap-2 rounded-[18px] border border-stone-100 bg-cream-50 p-4 text-center shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-100 hover:bg-emerald-50/40 hover:shadow-card md:min-h-[144px]"
                 >
                   <span className="text-2xl">{f.icon}</span>
-                  <div>
+                  <div className="text-center">
                     <p className="text-sm font-semibold text-stone-800">{f.title}</p>
                     <p className="mt-0.5 text-xs text-stone-400">{f.desc}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
-
-            {/* Note */}
-            <p className="mt-6 text-xs leading-relaxed text-stone-400">
-              {t.petNote}
-            </p>
           </AnimatedSection>
         </div>
       </div>
