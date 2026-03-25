@@ -278,13 +278,13 @@ export default function HomePage() {
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
                 href="/prenota"
-                className="inline-flex items-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:bg-green-500 hover:-translate-y-px active:translate-y-0"
+                className="inline-flex w-full max-w-[18rem] items-center justify-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:bg-green-500 hover:-translate-y-px active:translate-y-0 sm:w-auto sm:max-w-none"
               >
                 Verifica disponibilità
               </Link>
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/15 hover:-translate-y-px active:translate-y-0"
+                className="inline-flex w-full max-w-[18rem] items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/15 hover:-translate-y-px active:translate-y-0 sm:w-auto sm:max-w-none"
               >
                 📞 Chiama per prenotare
               </a>
