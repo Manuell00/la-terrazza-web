@@ -65,8 +65,7 @@ const content = {
         "Abbiamo scelto MaRoSa House per la sua capacità di unire il calore di una vera casa con il carattere autentico della Liguria. Posizione strategica tra Rapallo, Santa Margherita Ligure e Portofino — non una camera d'albergo, ma uno spazio tutto tuo dove sentirti davvero a casa.",
       descSecondary:
         "Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede e si sente. Un posto pensato per farti stare bene, dal primo all'ultimo minuto.",
-      cta1: "Scopri l'appartamento",
-      cta2: "Guarda disponibilità",
+      cta1: "Vai al sito",
       ctaWa: "Contatta via WhatsApp",
     },
     sanBartolomeo: {
@@ -108,8 +107,7 @@ const content = {
         "We chose MaRoSa House for its ability to blend the warmth of a real home with authentic Ligurian character. Perfectly located between Rapallo, Santa Margherita Ligure, and Portofino — not a hotel room, but a space that feels genuinely yours from the first evening.",
       descSecondary:
         "Understated elegance, a welcoming atmosphere, and attention to detail you can both see and feel. Designed to make you feel good from the first moment to the last.",
-      cta1: "Explore the property",
-      cta2: "Check availability",
+      cta1: "Visit website",
       ctaWa: "Contact via WhatsApp",
     },
     sanBartolomeo: {
@@ -174,12 +172,12 @@ interface PartnerSectionProps {
   gridImages: string[];
   lightboxImages: string[];
   featuredMode?: "cover" | "contain";
-  cta1Text: string;
-  cta1Href: string;
-  cta1TrackLabel: string;
-  cta2Text: string;
-  cta2Href: string;
-  cta2TrackLabel: string;
+  cta1Text?: string;
+  cta1Href?: string;
+  cta1TrackLabel?: string;
+  cta2Text?: string;
+  cta2Href?: string;
+  cta2TrackLabel?: string;
   cta3Text?: string;
   cta3Href?: string;
 }
@@ -263,24 +261,28 @@ function PartnerSection({
         {/* 4 — BUTTONS */}
         <AnimatedSection>
           <div className="flex flex-row flex-wrap justify-center gap-3">
-            <a
-              href={cta1Href}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => track("partner_click", cta1TrackLabel)}
-              className="btn-primary text-sm px-6 py-3"
-            >
-              {cta1Text} →
-            </a>
-            <a
-              href={cta2Href}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => track("partner_whatsapp", cta2TrackLabel)}
-              className="btn-secondary text-sm px-6 py-3"
-            >
-              {WA_ICON} {cta2Text}
-            </a>
+            {cta1Text && cta1Href && cta1TrackLabel && (
+              <a
+                href={cta1Href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track("partner_click", cta1TrackLabel)}
+                className="btn-primary text-sm px-6 py-3"
+              >
+                {cta1Text} →
+              </a>
+            )}
+            {cta2Text && cta2Href && cta2TrackLabel && (
+              <a
+                href={cta2Href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track("partner_whatsapp", cta2TrackLabel)}
+                className="btn-secondary text-sm px-6 py-3"
+              >
+                {WA_ICON} {cta2Text}
+              </a>
+            )}
             {cta3Text && cta3Href && (
               <a
                 href={cta3Href}
@@ -301,6 +303,7 @@ function PartnerSection({
 export default function PartnerPageClient() {
   const { lang } = useLanguage();
   const c = content[lang];
+  const marosaWhatsapp = "https://wa.me/393383232007";
 
   return (
     <main className="pt-20">
@@ -381,11 +384,8 @@ export default function PartnerPageClient() {
         cta1Text={c.marosa.cta1}
         cta1Href="https://marosahouse.it"
         cta1TrackLabel="MaRoSa House - Website"
-        cta2Text={c.marosa.cta2}
-        cta2Href={siteConfig.whatsapp}
-        cta2TrackLabel="MaRoSa House - WhatsApp"
         cta3Text={c.marosa.ctaWa}
-        cta3Href={siteConfig.whatsapp}
+        cta3Href={marosaWhatsapp}
       />
 
       {/* ── San Bartolomeo ── */}
@@ -401,9 +401,6 @@ export default function PartnerPageClient() {
         gridImages={sanBartolomeoImages}
         lightboxImages={sanBartolomeoImages}
         featuredMode="contain"
-        cta1Text={c.sanBartolomeo.cta1}
-        cta1Href={siteConfig.whatsapp}
-        cta1TrackLabel="San Bartolomeo - Explore"
         cta2Text={c.sanBartolomeo.cta2}
         cta2Href={siteConfig.whatsapp}
         cta2TrackLabel="San Bartolomeo - WhatsApp"
