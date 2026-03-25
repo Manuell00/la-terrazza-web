@@ -195,7 +195,7 @@ export default function Hero() {
 
               <motion.div
                 variants={heroItemVariants}
-                className="mt-6 flex items-center justify-center gap-3"
+                className="mt-8 flex items-center justify-center gap-3"
               >
                 <a
                   href={siteConfig.whatsapp}
