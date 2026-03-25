@@ -25,6 +25,12 @@ const config: Config = {
           800: "#292524",
           900: "#1c1917",
         },
+        cream: {
+          50: "#fdf8f2",
+          100: "#f7ede0",
+          200: "#ead9c4",
+          300: "#d9c3a6",
+        },
       },
       container: {
         center: true,
@@ -33,6 +39,12 @@ const config: Config = {
           sm: "1.5rem",
           lg: "2rem",
         },
+      },
+      boxShadow: {
+        "card": "0 4px 24px -4px rgba(28, 25, 23, 0.10), 0 1px 4px -1px rgba(28, 25, 23, 0.06)",
+        "card-hover": "0 12px 40px -8px rgba(28, 25, 23, 0.16), 0 2px 8px -2px rgba(28, 25, 23, 0.08)",
+        "elevated": "0 8px 32px -6px rgba(28, 25, 23, 0.14), 0 2px 8px -2px rgba(28, 25, 23, 0.06)",
+        "soft": "0 2px 16px -4px rgba(28, 25, 23, 0.08), 0 1px 4px -1px rgba(28, 25, 23, 0.04)",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",

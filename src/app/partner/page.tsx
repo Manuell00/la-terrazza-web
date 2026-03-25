@@ -34,15 +34,16 @@ const sanBartolomeoImages = [
 export default function PartnerPage() {
   return (
     <main className="pt-20">
-      {/* Hero */}
-      <section className="py-20 md:py-24 bg-stone-50">
+
+      {/* ── Hero ── */}
+      <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto px-4 text-center">
           <AnimatedSection>
-            <p className="text-emerald-700 text-xs font-semibold tracking-widest uppercase mb-4">La nostra rete</p>
-            <h1 className="font-serif text-4xl md:text-6xl text-stone-800 font-semibold leading-tight mb-5">
+            <p className="section-label">La nostra rete</p>
+            <h1 className="mb-5 font-serif text-4xl font-semibold leading-tight text-stone-800 md:text-6xl">
               I nostri partner.
             </h1>
-            <p className="text-stone-500 text-lg max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-base leading-relaxed text-stone-400 md:text-lg">
               Strutture selezionate con cura, accomunate dalla stessa filosofia:
               accoglienza autentica e la magia del Piemonte come cornice.
             </p>
@@ -50,26 +51,20 @@ export default function PartnerPage() {
         </div>
       </section>
 
-      {/* MaRoSa House */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="container mx-auto px-4 max-w-6xl">
-          {/* Header */}
+      {/* ── MaRoSa House ── */}
+      <section className="bg-cream-50 py-16 md:py-24">
+        <div className="container mx-auto max-w-6xl px-4">
           <AnimatedSection className="mb-10">
-            <div className="flex flex-col gap-4">
-              <div>
-                <div className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full border bg-emerald-50 border-emerald-200 text-emerald-700 mb-4">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  Casa vacanze
-                </div>
-                <h2 className="font-serif text-3xl md:text-4xl text-stone-800 font-semibold mb-1">
-                  MaRoSa House
-                </h2>
-                <p className="text-emerald-700 font-medium">Il comfort di casa, il calore dell&apos;ospitalità</p>
-              </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700 mb-4">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              Casa vacanze
             </div>
+            <h2 className="font-serif text-3xl font-semibold text-stone-800 md:text-4xl">
+              MaRoSa House
+            </h2>
+            <p className="mt-1 font-medium text-emerald-700">Il comfort di casa, il calore dell&apos;ospitalità</p>
           </AnimatedSection>
 
-          {/* Description + Grid */}
           <div className="grid items-start gap-8 md:grid-cols-[0.95fr_1.05fr] md:gap-12">
             {/* Image grid */}
             <AnimatedSection direction="right" className="md:order-2">
@@ -84,13 +79,13 @@ export default function PartnerPage() {
 
             {/* Text */}
             <AnimatedSection direction="left" className="md:order-1 text-center md:text-left">
-              <div className="rounded-[28px] border border-stone-200 bg-stone-50 p-7 md:p-8 shadow-sm">
-                <p className="text-stone-600 leading-relaxed mb-4">
+              <div className="rounded-[26px] border border-stone-100 bg-white p-7 shadow-card md:p-8">
+                <p className="mb-4 leading-relaxed text-stone-600">
                   MaRoSa House è una struttura partner selezionata per la qualità dell&apos;accoglienza
                   e la cura degli spazi. Un punto di riferimento per chi cerca un soggiorno autentico
                   e confortevole nel cuore del Piemonte.
                 </p>
-                <p className="text-stone-500 leading-relaxed text-sm">
+                <p className="text-sm leading-relaxed text-stone-400">
                   Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede
                   e si sente. Un posto pensato per farti stare bene, dal primo all&apos;ultimo minuto.
                 </p>
@@ -100,7 +95,7 @@ export default function PartnerPage() {
                   href={siteConfig.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-stone-800 px-5 py-2.5 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-stone-700"
+                  className="btn-secondary text-sm px-6 py-3"
                 >
                   {WA_ICON} Contatta via WhatsApp
                 </a>
@@ -108,20 +103,19 @@ export default function PartnerPage() {
                   href="https://marosahouse.it"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-5 py-2.5 text-sm font-medium text-stone-700 transition-all hover:-translate-y-0.5 hover:border-emerald-500 hover:text-emerald-700"
+                  className="btn-outline text-sm px-6 py-3"
                 >
                   🌐 marosahouse.it
                 </a>
               </div>
             </AnimatedSection>
           </div>
-
         </div>
       </section>
 
-      {/* San Bartolomeo */}
-      <section className="bg-stone-50 py-16 md:py-20">
-        <div className="container mx-auto px-4 max-w-6xl">
+      {/* ── San Bartolomeo ── */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="container mx-auto max-w-6xl px-4">
           <div className="grid items-start gap-8 md:grid-cols-[0.95fr_1.05fr] md:gap-12">
             {/* Image gallery */}
             <AnimatedSection direction="right" className="text-center md:order-2">
@@ -136,21 +130,21 @@ export default function PartnerPage() {
 
             {/* Content */}
             <AnimatedSection direction="left" className="text-center md:order-1 md:text-left">
-              <div className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full border bg-blue-50 border-blue-200 text-blue-700 mb-5">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700 mb-5">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 Appartamento privato
               </div>
-              <h2 className="font-serif text-3xl md:text-4xl text-stone-800 font-semibold mb-2">
+              <h2 className="mb-2 font-serif text-3xl font-semibold text-stone-800 md:text-4xl">
                 Appartamento San Bartolomeo
               </h2>
-              <p className="text-emerald-700 font-medium mb-5">Tra storia e natura, un posto tutto per te</p>
-              <div className="rounded-[28px] border border-stone-200 bg-white p-7 md:p-8 shadow-sm mb-8">
-                <p className="text-stone-600 leading-relaxed mb-4">
+              <p className="mb-6 font-medium text-emerald-700">Tra storia e natura, un posto tutto per te</p>
+              <div className="rounded-[26px] border border-stone-100 bg-cream-50 p-7 shadow-soft md:p-8 mb-7">
+                <p className="mb-4 leading-relaxed text-stone-600">
                   L&apos;Appartamento San Bartolomeo offre una soluzione indipendente per chi desidera
                   maggiore privacy e autonomia. Spazi ampi, arredi curati e la magia del paesaggio
                   piemontese a portata di mano.
                 </p>
-                <p className="text-stone-500 leading-relaxed text-sm">
+                <p className="text-sm leading-relaxed text-stone-400">
                   Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri,
                   senza rinunciare al comfort. La struttura parla da sola.
                 </p>
@@ -160,13 +154,13 @@ export default function PartnerPage() {
                   href={siteConfig.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5"
+                  className="btn-secondary text-sm px-6 py-3"
                 >
                   {WA_ICON} Contatta via WhatsApp
                 </a>
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="inline-flex items-center gap-2 border border-stone-300 text-stone-700 hover:border-stone-500 px-5 py-2.5 rounded-full text-sm font-medium transition-all"
+                  className="btn-outline text-sm px-6 py-3"
                 >
                   📞 Chiama ora
                 </a>
@@ -176,22 +170,22 @@ export default function PartnerPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-stone-900 text-center">
+      {/* ── CTA ── */}
+      <section className="bg-stone-900 py-20 text-center">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="font-serif text-3xl md:text-4xl text-white mb-3">
+            <p className="section-label text-emerald-400">Lavoriamo insieme</p>
+            <h2 className="mb-4 font-serif text-3xl text-white md:text-4xl">
               Vuoi collaborare con noi?
             </h2>
-            <p className="text-stone-400 mb-8 max-w-lg mx-auto text-sm">
-              Siamo aperti a collaborazioni con strutture che condividono la
-              nostra filosofia di ospitalità autentica.
+            <p className="mx-auto mb-8 max-w-lg text-sm leading-relaxed text-stone-400">
+              Siamo aperti a collaborazioni con strutture che condividono la nostra filosofia di ospitalità autentica.
             </p>
             <a
               href={siteConfig.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5"
+              className="btn-primary"
             >
               {WA_ICON} Scrivici su WhatsApp
             </a>

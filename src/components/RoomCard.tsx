@@ -13,65 +13,55 @@ interface Props {
 export default function RoomCard({ room, index }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 48 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+      transition={{ duration: 0.65, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
     >
-      <Link href={`/camere/${room.slug}`} className="group block">
-        <div className="relative overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-2xl">
+      <Link href={`/camere/${room.slug}`} className="group block h-full">
+        <div className="relative flex h-full flex-col overflow-hidden rounded-[26px] border border-stone-200/70 bg-white shadow-card transition-all duration-500 hover:-translate-y-1.5 hover:shadow-card-hover">
+
           {/* Image */}
-          <div className="relative h-72 overflow-hidden">
+          <div className="relative h-72 overflow-hidden flex-shrink-0">
             <Image
               src={room.coverImage}
               alt={room.name}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/72 via-stone-950/12 to-transparent" />
 
             {/* Highlight badge */}
-            <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full border border-white/30">
+            <div className="absolute top-4 right-4 rounded-full border border-white/25 bg-stone-950/30 px-3 py-1.5 text-xs font-medium text-white/90 backdrop-blur-sm">
               {room.highlight}
             </div>
 
             {/* Room name overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-              <h3 className="font-serif text-white text-2xl font-semibold">
+            <div className="absolute bottom-0 left-0 right-0 px-6 pb-5 text-center">
+              <h3 className="font-serif text-2xl font-semibold text-white tracking-wide">
                 {room.name}
               </h3>
-              <p className="mt-1 text-sm text-stone-200">{room.subtitle}</p>
+              <p className="mt-1 text-sm text-stone-200/80 font-light">{room.subtitle}</p>
             </div>
           </div>
 
           {/* Card body */}
-          <div className="bg-white p-6 text-center">
-            <p className="mb-6 min-h-[96px] text-sm leading-relaxed text-stone-600">
+          <div className="flex flex-1 flex-col bg-white p-6 text-center">
+            <p className="flex-1 text-sm leading-relaxed text-stone-500 mb-6">
               {room.description}
             </p>
 
-            {/* Footer */}
-            <div className="flex flex-col items-center gap-4 border-t border-stone-100 pt-5">
-              <div className="text-center">
-                <p className="text-[11px] uppercase tracking-[0.24em] text-stone-400">
-                  Tariffa indicativa
-                </p>
-                <span className="font-serif text-2xl text-stone-800">{room.price}</span>
-              </div>
-              <span className="inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 transition-all group-hover:gap-2">
+            {/* Price + CTA */}
+            <div className="border-t border-stone-100 pt-5">
+              <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
+                Tariffa indicativa
+              </p>
+              <p className="mb-4 font-serif text-2xl text-stone-800">{room.price}</p>
+
+              <span className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stone-200 bg-stone-50 px-5 py-2.5 text-sm font-semibold text-stone-700 transition-all duration-300 group-hover:border-emerald-600 group-hover:bg-emerald-600 group-hover:text-white">
                 Scopri di più
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
+                <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </span>
             </div>

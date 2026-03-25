@@ -25,21 +25,17 @@ const amenityIcons: Record<string, string> = {
   "Parcheggio gratuito": "🚗",
 };
 
-const platformLabelClass = "text-sm font-semibold tracking-[0.01em]";
-
 const AirbnbLogo = () => (
   <div className="flex items-center gap-2">
-    <Image src="/images/brands/airbnb-belo.svg" alt="Airbnb" width={18} height={18} className="h-[18px] w-[18px] rounded-[4px]" />
-    <span className={platformLabelClass}>Airbnb</span>
+    <Image src="/images/brands/airbnb-belo.svg" alt="Airbnb" width={18} height={18} className="h-[18px] w-[18px]" />
+    <span className="text-sm font-semibold">Airbnb</span>
   </div>
 );
 
 const BookingLogo = () => (
   <div className="flex items-center gap-2">
-    <Image src="/images/brands/booking-icon.png" alt="Booking.com" width={18} height={18} className="h-[18px] w-[18px] rounded-[4px]" />
-    <span className={platformLabelClass}>
-      Booking<span className="opacity-60">.com</span>
-    </span>
+    <Image src="/images/brands/booking-icon.png" alt="Booking.com" width={18} height={18} className="h-[18px] w-[18px] rounded-sm" />
+    <span className="text-sm font-semibold">Booking<span className="opacity-50">.com</span></span>
   </div>
 );
 
@@ -55,9 +51,9 @@ const WA_ICON = (
   </svg>
 );
 
-// Uniform neutral style — platform identity comes from logo/name, not color
-const platformButtonBase =
-  "group flex min-h-[48px] w-full items-center justify-center gap-3 rounded-xl border border-stone-200 bg-white px-5 py-3 text-sm font-medium text-stone-600 transition-all duration-200 hover:-translate-y-0.5 hover:border-stone-300 hover:bg-stone-800 hover:text-white shadow-sm";
+/* Neutral platform button — identity comes from logo/name, not color */
+const platformBtn =
+  "group flex min-h-[48px] w-full items-center justify-center gap-3 rounded-full border border-stone-200 bg-white px-5 py-3 text-sm font-medium text-stone-600 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-400 hover:bg-emerald-600 hover:text-white hover:shadow-card";
 
 export default function RoomPageTemplate({ room, otherRooms }: Props) {
   const [showAllFeatures, setShowAllFeatures] = useState(false);
@@ -71,69 +67,77 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
   const displayedFeatures = showAllFeatures ? expandedFeatures : collapsedFeatures;
 
   return (
-    <main className="pt-0">
-      {/* Hero */}
-      <section className="relative h-[65vh] min-h-[440px] flex items-end overflow-hidden">
+    <main>
+      {/* ── Room Hero ── */}
+      <section className="relative flex h-[65vh] min-h-[440px] items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image src={room.coverImage} alt={room.name} fill priority className="object-cover" quality={90} />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/15" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/82 via-stone-950/20 to-stone-950/12" />
         </div>
 
+        {/* Breadcrumb */}
         <div className="absolute top-24 left-0 right-0 z-10">
           <div className="container mx-auto px-4">
-            <nav className="flex items-center gap-2 text-white/60 text-sm">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <nav className="flex items-center gap-2 text-sm text-white/50">
+              <Link href="/" className="transition-colors hover:text-white">Home</Link>
               <span>/</span>
-              <span className="text-white">{room.name}</span>
+              <span className="text-white/90">{room.name}</span>
             </nav>
           </div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 pb-14">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center md:text-left">
-            <span className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm px-4 py-1.5 rounded-full mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center md:text-left"
+          >
+            <span className="mb-4 inline-block rounded-full border border-white/25 bg-white/15 px-4 py-1.5 text-sm text-white backdrop-blur-sm">
               {room.highlight}
             </span>
-            <h1 className="font-serif text-5xl md:text-7xl text-white font-semibold mb-2">{room.name}</h1>
-            <p className="mx-auto max-w-xl text-xl text-stone-200 md:mx-0">{room.subtitle}</p>
+            <h1 className="mb-2 font-serif text-5xl font-semibold text-white md:text-7xl">{room.name}</h1>
+            <p className="mx-auto max-w-xl text-xl text-stone-200/80 font-light md:mx-0">{room.subtitle}</p>
           </motion.div>
         </div>
       </section>
 
-      {/* Main content */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid lg:grid-cols-3 gap-10">
+      {/* ── Main content ── */}
+      <section className="bg-white py-14 md:py-20">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="grid gap-10 lg:grid-cols-3">
+
             {/* Left: Gallery + Description */}
-            <div className="space-y-10 lg:col-span-2">
+            <div className="space-y-12 lg:col-span-2">
               <AnimatedSection>
                 <Gallery images={room.images} alt={room.name} />
               </AnimatedSection>
+
               <AnimatedSection className="text-center">
                 <h2 className="mb-4 font-serif text-3xl text-stone-800">La camera</h2>
-                <p className="mx-auto max-w-2xl text-lg leading-relaxed text-stone-600">
-                  <span className="font-semibold text-stone-800">{room.name}</span> è pensata per chi cerca
-                  {" "}
-                  <span className="font-semibold text-stone-800">comfort autentico</span>,
-                  {" "}ritmi lenti e un&apos;atmosfera che invita davvero a fermarsi.
-                  {" "}Tra luce naturale, dettagli curati e calma del paesaggio, ogni soggiorno acquista un tono più intimo e rilassato.
+                <p className="mx-auto max-w-2xl text-base leading-relaxed text-stone-500 md:text-lg">
+                  <span className="font-semibold text-stone-800">{room.name}</span> è pensata per chi cerca{" "}
+                  <span className="font-semibold text-stone-800">comfort autentico</span>,{" "}
+                  ritmi lenti e un&apos;atmosfera che invita davvero a fermarsi.{" "}
+                  Tra luce naturale, dettagli curati e la calma del paesaggio, ogni soggiorno acquista un tono più intimo e rilassato.
                 </p>
               </AnimatedSection>
+
               <AnimatedSection className="text-center">
-                <h3 className="mb-5 font-serif text-2xl text-stone-800">Cosa trovi in camera</h3>
+                <h3 className="mb-6 font-serif text-2xl text-stone-800">Cosa trovi in camera</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {displayedFeatures.map((f) => (
-                    <div key={f.label} className="flex items-center gap-3 bg-stone-50 rounded-xl px-4 py-3">
+                    <div key={f.label} className="flex items-center gap-3 rounded-[16px] border border-stone-100 bg-cream-50 px-4 py-3">
                       <span className="text-xl">{f.icon}</span>
-                      <span className="text-stone-700 text-sm">{f.label}</span>
+                      <span className="text-sm text-stone-700">{f.label}</span>
                     </div>
                   ))}
                 </div>
                 {expandedFeatures.length > collapsedFeatures.length && (
                   <button
                     type="button"
-                    onClick={() => setShowAllFeatures((value) => !value)}
-                    className="mt-5 inline-flex items-center justify-center rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 transition-colors hover:border-stone-500 hover:bg-stone-50"
+                    onClick={() => setShowAllFeatures((v) => !v)}
+                    className="mt-5 btn-outline text-sm px-5 py-2.5"
                   >
                     {showAllFeatures ? "Mostra meno" : "Visualizza tutto"}
                   </button>
@@ -142,64 +146,67 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
             </div>
 
             {/* Right: Booking sidebar */}
-            <div className="lg:col-span-1 space-y-5">
+            <div className="lg:col-span-1">
               <AnimatedSection direction="right" className="sticky top-28 space-y-4 text-center">
-                {/* Quick booking card */}
-                <div className="bg-stone-50 rounded-2xl p-5 border border-stone-200 shadow-sm">
-                  <div className="mb-5 pb-4 border-b border-stone-200">
-                    <p className="text-stone-400 text-xs mb-1">A partire da</p>
-                    <p className="font-serif text-2xl text-stone-800 font-semibold">{room.price}</p>
+
+                {/* Booking card */}
+                <div className="rounded-[24px] border border-stone-100 bg-white p-6 shadow-elevated">
+                  <div className="mb-5 border-b border-stone-100 pb-5">
+                    <p className="mb-1 text-xs text-stone-400">A partire da</p>
+                    <p className="font-serif text-3xl font-semibold text-stone-800">{room.price}</p>
                   </div>
 
-                  {/* CTA hierarchy: 1) WhatsApp, 2) Telefono, 3) Airbnb, 4) Booking, 5) B&B */}
                   <div className="space-y-2.5">
                     {/* 1. WhatsApp — PRIMARY */}
-                    <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2.5 w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-4 px-5 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg text-sm">
-                      {WA_ICON}
-                      Prenota via WhatsApp
+                    <a
+                      href={siteConfig.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex w-full items-center justify-center gap-2.5 rounded-full bg-green-600 px-5 py-4 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-500 hover:shadow-lg"
+                    >
+                      {WA_ICON} Prenota via WhatsApp
                     </a>
 
-                    {/* 2. Telefono */}
-                    <a href={`tel:${siteConfig.phone}`}
-                      className="flex items-center justify-center gap-2.5 w-full bg-stone-800 hover:bg-stone-700 text-white font-medium py-3.5 px-5 rounded-xl transition-all hover:-translate-y-0.5 text-sm">
+                    {/* 2. Phone */}
+                    <a
+                      href={`tel:${siteConfig.phone}`}
+                      className="flex w-full items-center justify-center gap-2.5 rounded-full bg-stone-800 px-5 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-stone-700"
+                    >
                       📞 Chiama ora
                     </a>
 
-                    <div className="flex items-center gap-2 my-1">
-                      <div className="flex-1 h-px bg-stone-200" />
-                      <span className="text-[10px] text-stone-400 uppercase tracking-widest">oppure prenota su</span>
-                      <div className="flex-1 h-px bg-stone-200" />
+                    <div className="flex items-center gap-2 py-1">
+                      <div className="h-px flex-1 bg-stone-100" />
+                      <span className="text-[10px] uppercase tracking-widest text-stone-300">oppure prenota su</span>
+                      <div className="h-px flex-1 bg-stone-100" />
                     </div>
 
                     {/* 3. Airbnb */}
-                    <a href={room.airbnbUrl} target="_blank" rel="noopener noreferrer"
-                      className={platformButtonBase}>
+                    <a href={room.airbnbUrl} target="_blank" rel="noopener noreferrer" className={platformBtn}>
                       <AirbnbLogo />
                     </a>
 
                     {/* 4. Booking */}
-                    <a href={siteConfig.links.booking} target="_blank" rel="noopener noreferrer"
-                      className={platformButtonBase}>
+                    <a href={siteConfig.links.booking} target="_blank" rel="noopener noreferrer" className={platformBtn}>
                       <BookingLogo />
                     </a>
 
                     {/* 5. B&B.it */}
-                    <a href={siteConfig.links.bedAndBreakfast} target="_blank" rel="noopener noreferrer"
-                      className={platformButtonBase}>
+                    <a href={siteConfig.links.bedAndBreakfast} target="_blank" rel="noopener noreferrer" className={platformBtn}>
                       <BedAndBreakfastLogo />
                     </a>
                   </div>
 
-                  {/* Trust */}
-                  <div className="mt-5 space-y-1.5 border-t border-stone-200 pt-4">
+                  {/* Trust signals */}
+                  <div className="mt-5 space-y-2 border-t border-stone-100 pt-5">
                     {[
                       { icon: "✓", text: "Risposta entro pochi minuti" },
                       { icon: "🔒", text: "Prenotazione sicura e verificata" },
                       { icon: "⭐", text: `Rating ${siteConfig.rating}/5 verificato` },
                     ].map((t) => (
-                      <div key={t.text} className="flex items-center justify-center gap-2 text-stone-500 text-xs">
-                        <span className="text-green-500">{t.icon}</span><span>{t.text}</span>
+                      <div key={t.text} className="flex items-center justify-center gap-2 text-xs text-stone-400">
+                        <span className="text-emerald-500">{t.icon}</span>
+                        <span>{t.text}</span>
                       </div>
                     ))}
                   </div>
@@ -213,34 +220,43 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
         </div>
       </section>
 
-      {/* Reviews */}
-      <section className="py-12 bg-stone-50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <AnimatedSection className="mb-8 text-center">
+      {/* ── Reviews ── */}
+      <section className="bg-cream-50 py-14">
+        <div className="container mx-auto max-w-4xl px-4">
+          <AnimatedSection className="mb-10 text-center">
+            <p className="section-label">Cosa dicono</p>
             <h2 className="font-serif text-3xl text-stone-800">Recensioni degli ospiti</h2>
           </AnimatedSection>
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid gap-5 md:grid-cols-2">
             {reviews.slice(0, 4).map((r, i) => <ReviewCard key={r.id} review={r} index={i} />)}
           </div>
         </div>
       </section>
 
-      {/* Other rooms */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <AnimatedSection className="mb-8 text-center">
-            <h2 className="font-serif text-3xl text-stone-800">Esplora le altre camere</h2>
+      {/* ── Other rooms ── */}
+      <section className="bg-white py-14">
+        <div className="container mx-auto max-w-6xl px-4">
+          <AnimatedSection className="mb-10 text-center">
+            <p className="section-label">Esplora ancora</p>
+            <h2 className="font-serif text-3xl text-stone-800">Le altre camere</h2>
           </AnimatedSection>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6 md:grid-cols-2">
             {otherRooms.map((r) => (
-              <Link key={r.id} href={`/camere/${r.slug}`}
-                className="group relative h-60 rounded-2xl overflow-hidden block">
-                <Image src={r.coverImage} alt={r.name} fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              <Link
+                key={r.id}
+                href={`/camere/${r.slug}`}
+                className="group relative block h-64 overflow-hidden rounded-[22px] shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+              >
+                <Image
+                  src={r.coverImage}
+                  alt={r.name}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/72 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
-                  <h3 className="font-serif text-white text-2xl">{r.name}</h3>
-                  <p className="text-stone-200 text-sm">{r.subtitle}</p>
+                  <h3 className="font-serif text-2xl text-white">{r.name}</h3>
+                  <p className="text-sm text-stone-200/80 font-light">{r.subtitle}</p>
                 </div>
               </Link>
             ))}
@@ -248,28 +264,38 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-14 bg-stone-900 text-center">
+      {/* ── Final CTA ── */}
+      <section className="bg-stone-900 py-16 text-center">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="font-serif text-3xl md:text-4xl text-white mb-3">
-              Pronto a prenotare {room.name}?
+            <p className="section-label text-emerald-400">Pronto?</p>
+            <h2 className="mb-3 font-serif text-3xl text-white md:text-4xl">
+              Prenota {room.name}
             </h2>
-            <p className="text-stone-400 mb-8 max-w-md mx-auto text-sm">
+            <p className="mx-auto mb-8 max-w-md text-sm leading-relaxed text-stone-400">
               Scrivici su WhatsApp — risposta garantita entro pochi minuti.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              {/* PRIMARY: WhatsApp */}
-              <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5">
+            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <a
+                href={siteConfig.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto btn-primary px-8 py-4 text-base"
+              >
                 {WA_ICON} Scrivi su WhatsApp
               </a>
-              <a href={`tel:${siteConfig.phone}`}
-                className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/25 text-white font-medium px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 text-sm">
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/18"
+              >
                 📞 Chiama ora
               </a>
-              <a href={room.airbnbUrl} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/25 text-white/70 hover:text-white font-medium px-8 py-4 rounded-full transition-all text-sm">
+              <a
+                href={room.airbnbUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-medium text-white/70 transition-all duration-300 hover:text-white hover:-translate-y-0.5 hover:bg-white/18"
+              >
                 Airbnb
               </a>
             </div>

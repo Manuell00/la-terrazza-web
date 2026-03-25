@@ -17,8 +17,6 @@ const WA_ICON = (
   </svg>
 );
 
-const platformLabelClass = "text-[1.65rem] font-semibold tracking-[-0.03em] text-stone-800";
-
 function waLink(roomName: string) {
   const text = encodeURIComponent(
     `Buongiorno! Vorrei informazioni sulla ${roomName}. È disponibile? Grazie!`
@@ -29,73 +27,77 @@ function waLink(roomName: string) {
 export default function PrenotaPage() {
   return (
     <main className="pt-20">
-      {/* Hero */}
-      <section className="relative py-24 overflow-hidden bg-stone-900">
+
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden bg-stone-900 py-24">
         <div className="absolute inset-0">
           <Image
             src="/images/struttura/struttura-1.jpg"
             alt="Prenota La Terrazza"
             fill
-            className="object-cover opacity-30"
+            className="object-cover opacity-25"
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/40 to-stone-950/60" />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <AnimatedSection>
-            <p className="text-emerald-300 text-sm font-medium tracking-widest uppercase mb-4">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-emerald-400">
               Prenota il tuo soggiorno
             </p>
-            <h1 className="font-serif text-[2.4rem] md:text-6xl text-white font-semibold leading-tight mb-6 sm:text-5xl">
+            <h1 className="mb-5 font-serif text-[2.4rem] font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
               Il tuo relax inizia qui.
             </h1>
-            <p className="text-stone-300 text-lg max-w-xl mx-auto">
+            <p className="mx-auto max-w-xl text-base leading-relaxed text-stone-300 md:text-lg">
               Scegli la camera che preferisci e prenota direttamente — o scrivici su WhatsApp.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Rooms quick select */}
-      <section className="py-16 bg-stone-50">
+      {/* ── Rooms quick select ── */}
+      <section className="bg-cream-50 py-20">
         <div className="container mx-auto px-4">
-          <AnimatedSection className="text-center mb-12">
-            <h2 className="font-serif text-[2rem] text-stone-800 sm:text-3xl">Scegli la tua camera</h2>
+          <AnimatedSection className="mb-12 text-center">
+            <p className="section-label">Scegli la camera</p>
+            <h2 className="font-serif text-3xl text-stone-800">Qual è la tua preferita?</h2>
           </AnimatedSection>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
             {rooms.map((room, i) => (
               <AnimatedSection key={room.id} delay={i * 0.1}>
-                <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-stone-100 h-full flex flex-col">
-                  <div className="relative h-48 overflow-hidden">
+                <div className="group flex h-full flex-col overflow-hidden rounded-[24px] border border-stone-100 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                  <div className="relative h-48 overflow-hidden flex-shrink-0">
                     <Image
                       src={room.coverImage}
                       alt={room.name}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/65 to-transparent" />
                     <div className="absolute bottom-4 left-4">
-                      <h3 className="font-serif text-white text-xl font-semibold">{room.name}</h3>
+                      <h3 className="font-serif text-xl font-semibold text-white">{room.name}</h3>
+                      <p className="text-sm text-stone-200/80 font-light">{room.subtitle}</p>
                     </div>
                   </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <p className="text-stone-500 text-sm mb-4 flex-1">{room.description}</p>
-                    <div className="mb-5 border-t border-stone-100 pt-4 text-center">
-                      <p className="text-[11px] font-semibold tracking-[0.24em] uppercase text-stone-400 mb-1">
+                  <div className="flex flex-1 flex-col p-5">
+                    <p className="mb-4 flex-1 text-sm leading-relaxed text-stone-500">{room.description}</p>
+                    <div className="mb-4 border-t border-stone-100 pt-4 text-center">
+                      <p className="mb-0.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
                         Tariffa indicativa
                       </p>
-                      <p className="text-[1.9rem] font-semibold tracking-[-0.03em] text-stone-800">{room.price}</p>
+                      <p className="font-serif text-2xl font-semibold text-stone-800">{room.price}</p>
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex gap-2.5">
                       <a
                         href={waLink(room.name)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-1.5 bg-green-600 hover:bg-green-500 text-white text-sm font-medium py-2.5 rounded-lg transition-colors"
+                        className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-green-600 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-green-500 hover:-translate-y-0.5"
                       >
                         {WA_ICON} WhatsApp
                       </a>
                       <Link
                         href={`/camere/${room.slug}`}
-                        className="flex-1 text-center bg-stone-100 hover:bg-stone-200 text-stone-700 text-sm font-medium py-2.5 rounded-lg transition-colors"
+                        className="flex flex-1 items-center justify-center rounded-full border border-stone-200 bg-white py-2.5 text-sm font-medium text-stone-700 transition-all duration-200 hover:border-stone-300 hover:bg-stone-50"
                       >
                         Dettagli
                       </Link>
@@ -108,35 +110,37 @@ export default function PrenotaPage() {
         </div>
       </section>
 
-      {/* Platforms */}
-      <section className="py-16 bg-white">
+      {/* ── Platforms ── */}
+      <section className="bg-white py-20">
         <div className="container mx-auto px-4">
-          <AnimatedSection className="text-center mb-12">
-            <h2 className="font-serif text-3xl text-stone-800 mb-3">Prenota anche su</h2>
-            <p className="text-stone-500 max-w-lg mx-auto">
+          <AnimatedSection className="mb-12 text-center">
+            <p className="section-label">Tutte le piattaforme</p>
+            <h2 className="mb-3 font-serif text-3xl text-stone-800">Prenota anche su</h2>
+            <p className="mx-auto max-w-lg text-stone-400">
               Tutte le prenotazioni sono sicure e verificate. Scegli la piattaforma che preferisci.
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+
             {/* Airbnb */}
             <AnimatedSection delay={0}>
-              <div className="flex h-full flex-col items-center rounded-[28px] border border-stone-200 bg-stone-50 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-300 hover:bg-rose-50/60 hover:shadow-lg">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
-                  <Image src="/images/brands/airbnb-belo.svg" alt="Airbnb" width={26} height={26} className="h-[26px] w-[26px] rounded-md" />
+              <div className="flex h-full flex-col items-center rounded-[26px] border border-stone-100 bg-white p-7 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-card-hover">
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-stone-50 shadow-soft">
+                  <Image src="/images/brands/airbnb-belo.svg" alt="Airbnb" width={26} height={26} className="h-[26px] w-[26px]" />
                 </div>
-                <h3 className={platformLabelClass}>Airbnb</h3>
-                <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
-                  Prenota Camera Luna, Stella o Sole direttamente su Airbnb. Pagamento sicuro e protezione ospiti.
+                <h3 className="mb-3 font-serif text-[1.6rem] font-semibold tracking-tight text-stone-800">Airbnb</h3>
+                <p className="mb-6 max-w-xs text-sm leading-relaxed text-stone-400">
+                  Prenota Camera Luna, Stella o Sole su Airbnb. Pagamento sicuro e protezione ospiti.
                 </p>
-                <div className="mt-auto w-full space-y-2.5">
+                <div className="mt-auto w-full space-y-2">
                   {rooms.map((room) => (
                     <a
                       key={room.id}
                       href={room.airbnbUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex min-h-[48px] w-full items-center justify-center rounded-xl border-2 border-rose-200 px-4 py-3 text-center text-sm font-semibold text-rose-600 transition-all hover:border-rose-400 hover:bg-rose-500 hover:text-white"
+                      className="flex min-h-[44px] w-full items-center justify-center rounded-full border border-stone-200 px-4 py-2.5 text-sm font-semibold text-stone-700 transition-all duration-200 hover:border-emerald-500 hover:bg-emerald-600 hover:text-white"
                     >
                       {room.name}
                     </a>
@@ -145,21 +149,21 @@ export default function PrenotaPage() {
               </div>
             </AnimatedSection>
 
-            {/* Booking */}
+            {/* Booking.com */}
             <AnimatedSection delay={0.1}>
-              <div className="flex h-full flex-col items-center rounded-[28px] border border-stone-200 bg-stone-50 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50/60 hover:shadow-lg">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
-                  <Image src="/images/brands/booking-icon.png" alt="Booking.com" width={26} height={26} className="h-[26px] w-[26px] rounded-md" />
+              <div className="flex h-full flex-col items-center rounded-[26px] border border-stone-100 bg-white p-7 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-card-hover">
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-stone-50 shadow-soft">
+                  <Image src="/images/brands/booking-icon.png" alt="Booking.com" width={28} height={28} className="h-[28px] w-[28px] rounded-md" />
                 </div>
-                <h3 className={platformLabelClass}>Booking.com</h3>
-                <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
+                <h3 className="mb-3 font-serif text-[1.6rem] font-semibold tracking-tight text-stone-800">Booking.com</h3>
+                <p className="mb-6 max-w-xs text-sm leading-relaxed text-stone-400">
                   Prenota su Booking.com con cancellazione flessibile. Migliaia di recensioni verificate.
                 </p>
-                <div className="mb-6 flex w-full flex-wrap justify-center gap-2">
+                <div className="mb-5 flex w-full flex-wrap justify-center gap-2">
                   {rooms.map((room) => (
                     <span
                       key={room.id}
-                      className="rounded-full border border-blue-100 bg-white px-3 py-1 text-xs font-medium text-blue-700"
+                      className="rounded-full border border-stone-100 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-500"
                     >
                       {room.name.replace("Camera ", "")}
                     </span>
@@ -169,7 +173,7 @@ export default function PrenotaPage() {
                   href={siteConfig.links.booking}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto flex min-h-[48px] w-full items-center justify-center rounded-xl border-2 border-blue-200 px-4 py-3 text-center text-sm font-semibold text-blue-600 transition-all hover:border-blue-400 hover:bg-blue-600 hover:text-white"
+                  className="mt-auto flex min-h-[44px] w-full items-center justify-center rounded-full border border-stone-200 px-4 py-2.5 text-sm font-semibold text-stone-700 transition-all duration-200 hover:border-emerald-500 hover:bg-emerald-600 hover:text-white"
                 >
                   Prenota su Booking
                 </a>
@@ -178,19 +182,19 @@ export default function PrenotaPage() {
 
             {/* B&B.it */}
             <AnimatedSection delay={0.2}>
-              <div className="flex h-full flex-col items-center rounded-[28px] border border-stone-200 bg-stone-50 p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-green-300 hover:bg-green-50/70 hover:shadow-lg">
-                <div className="mb-4 flex h-14 items-center justify-center rounded-[18px] bg-white px-3 shadow-sm">
-                  <Image src="/images/brands/bnb-logo.svg" alt="Bed-and-Breakfast.it" width={84} height={10} className="h-[12px] w-auto" />
+              <div className="flex h-full flex-col items-center rounded-[26px] border border-stone-100 bg-white p-7 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-card-hover">
+                <div className="mb-5 flex h-14 items-center justify-center rounded-[18px] bg-stone-50 px-4 shadow-soft">
+                  <Image src="/images/brands/bnb-logo.svg" alt="Bed-and-Breakfast.it" width={84} height={12} className="h-[13px] w-auto" />
                 </div>
-                <h3 className={platformLabelClass}>Bed-and-Breakfast.it</h3>
-                <p className="max-w-xs text-stone-500 text-sm leading-relaxed mb-6">
+                <h3 className="mb-3 font-serif text-[1.6rem] font-semibold tracking-tight text-stone-800">Bed-and-Breakfast.it</h3>
+                <p className="mb-6 max-w-xs text-sm leading-relaxed text-stone-400">
                   Il portale italiano dei B&B. Trova disponibilità e prenota in pochi click.
                 </p>
-                <div className="mb-6 flex w-full flex-wrap justify-center gap-2">
+                <div className="mb-5 flex w-full flex-wrap justify-center gap-2">
                   {rooms.map((room) => (
                     <span
                       key={room.id}
-                      className="rounded-full border border-green-100 bg-white px-3 py-1 text-xs font-medium text-green-700"
+                      className="rounded-full border border-stone-100 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-500"
                     >
                       {room.name.replace("Camera ", "")}
                     </span>
@@ -200,9 +204,9 @@ export default function PrenotaPage() {
                   href={siteConfig.links.bedAndBreakfast}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto flex min-h-[48px] w-full items-center justify-center rounded-xl border-2 border-green-200 px-4 py-3 text-center text-sm font-semibold text-green-700 transition-all hover:border-green-500 hover:bg-green-600 hover:text-white"
+                  className="mt-auto flex min-h-[44px] w-full items-center justify-center rounded-full border border-stone-200 px-4 py-2.5 text-sm font-semibold text-stone-700 transition-all duration-200 hover:border-emerald-500 hover:bg-emerald-600 hover:text-white"
                 >
-                  Vedi su B&B.it
+                  Vedi su B&amp;B.it
                 </a>
               </div>
             </AnimatedSection>
@@ -210,53 +214,55 @@ export default function PrenotaPage() {
         </div>
       </section>
 
-      {/* Direct contact */}
-      <section className="py-16 mb-0 bg-stone-50 border-t border-stone-100">
+      {/* ── Direct contact ── */}
+      <section className="bg-cream-50 py-20">
         <div className="container mx-auto px-4 max-w-4xl">
-          <AnimatedSection className="text-center mb-10">
-            <p className="text-emerald-700 text-xs font-semibold tracking-widest uppercase mb-3">Contatto diretto</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-stone-800 mb-3">Preferisci parlare con noi?</h2>
-            <p className="text-stone-500 max-w-lg mx-auto">
+          <AnimatedSection className="mb-12 text-center">
+            <p className="section-label">Contatto diretto</p>
+            <h2 className="mb-3 font-serif text-3xl text-stone-800 md:text-4xl">
+              Preferisci parlare con noi?
+            </h2>
+            <p className="mx-auto max-w-lg text-stone-400">
               Siamo disponibili ogni giorno dalle 8 alle 22. Rispondiamo entro pochi minuti.
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+          <div className="mx-auto grid max-w-xl gap-4 md:grid-cols-3">
             <a
               href={siteConfig.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-stone-200 bg-white hover:border-green-300 hover:bg-green-50 transition-all group"
+              className="group flex flex-col items-center gap-3 rounded-[22px] border border-stone-100 bg-white p-6 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-card"
             >
-              <div className="w-10 h-10 rounded-full bg-green-100 group-hover:bg-green-200 flex items-center justify-center transition-colors">
-                <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-50 transition-colors group-hover:bg-emerald-100">
+                <svg className="h-5 w-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
               </div>
-              <p className="font-semibold text-stone-800 text-sm">WhatsApp</p>
-              <p className="text-stone-500 text-xs">{siteConfig.phone}</p>
+              <p className="font-semibold text-stone-800">WhatsApp</p>
+              <p className="text-xs text-stone-400">{siteConfig.phone}</p>
             </a>
 
             <a
               href={`tel:${siteConfig.phone}`}
-              className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-stone-200 bg-white hover:border-stone-400 hover:bg-stone-50 transition-all group"
+              className="group flex flex-col items-center gap-3 rounded-[22px] border border-stone-100 bg-white p-6 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:shadow-card"
             >
-              <div className="w-10 h-10 rounded-full bg-stone-100 group-hover:bg-stone-200 flex items-center justify-center transition-colors">
-                <span className="text-lg">📞</span>
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-stone-50 transition-colors group-hover:bg-stone-100">
+                <span className="text-xl">📞</span>
               </div>
-              <p className="font-semibold text-stone-800 text-sm">Chiamaci</p>
-              <p className="text-stone-500 text-xs">{siteConfig.phone}</p>
+              <p className="font-semibold text-stone-800">Chiamaci</p>
+              <p className="text-xs text-stone-400">{siteConfig.phone}</p>
             </a>
 
             <a
               href={`mailto:${siteConfig.email}`}
-              className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-stone-200 bg-white hover:border-emerald-300 hover:bg-emerald-50 transition-all group"
+              className="group flex flex-col items-center gap-3 rounded-[22px] border border-stone-100 bg-white p-6 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:shadow-card"
             >
-              <div className="w-10 h-10 rounded-full bg-emerald-50 group-hover:bg-emerald-100 flex items-center justify-center transition-colors">
-                <span className="text-lg">✉️</span>
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-stone-50 transition-colors group-hover:bg-stone-100">
+                <span className="text-xl">✉️</span>
               </div>
-              <p className="font-semibold text-stone-800 text-sm">Email</p>
-              <p className="text-stone-500 text-xs truncate max-w-full">{siteConfig.email}</p>
+              <p className="font-semibold text-stone-800">Email</p>
+              <p className="max-w-full truncate text-xs text-stone-400">{siteConfig.email}</p>
             </a>
           </div>
         </div>
