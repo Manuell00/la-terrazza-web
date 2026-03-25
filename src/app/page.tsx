@@ -70,7 +70,7 @@ export default function HomePage() {
               <div className="rounded-[30px] border border-stone-100 bg-cream-50/80 p-7 shadow-soft backdrop-blur-sm md:p-9">
                 <p className="section-label">La nostra storia</p>
                 <h2 id="home-story-title" className="section-title-xl mb-5 text-[2.3rem]">
-                  Un posto speciale.
+                  Un posto speciale
                 </h2>
                 <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
                   <p>Siamo a Cantarana, nel cuore dell&apos;Astigiano, tra i vigneti del Monferrato. Un posto dove la natura detta i ritmi e il cielo la sera è uno spettacolo.</p>
@@ -133,7 +133,7 @@ export default function HomePage() {
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Perché sceglierci</p>
             <h2 id="home-highlights-title" className="section-title-xl">
-              Quello che rende La Terrazza unica.
+              Quello che rende La Terrazza unica
             </h2>
           </AnimatedSection>
 
@@ -159,7 +159,7 @@ export default function HomePage() {
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Le nostre camere</p>
             <h2 id="home-rooms-title" className="section-title-xl mb-3">
-              Tre camere, tre emozioni.
+              Tre camere, tre emozioni
             </h2>
             <p className="hidden text-stone-400 md:block">Ogni spazio ha la sua personalità. Scegli quella che rispecchia il tuo umore.</p>
           </AnimatedSection>
@@ -174,7 +174,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-10 max-w-xl text-center">
             <p className="section-label">La struttura</p>
-            <h2 id="home-structure-title" className="section-title-lg text-[2rem] md:text-3xl">Scorri per scoprirla.</h2>
+            <h2 id="home-structure-title" className="section-title-lg text-[2rem] md:text-3xl">Scorri per scoprirla</h2>
           </AnimatedSection>
           <AnimatedSection className="mx-auto max-w-3xl">
             <StructureCarousel />
@@ -188,7 +188,7 @@ export default function HomePage() {
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Recensioni</p>
             <h2 id="home-reviews-title" className="section-title-xl mb-5">
-              Cosa dicono i nostri ospiti.
+              Cosa dicono i nostri ospiti
             </h2>
             <div className="inline-flex flex-col items-center rounded-[26px] border border-stone-100 bg-white px-5 py-4 shadow-[0_24px_70px_-42px_rgba(28,25,23,0.22)] md:px-7">
               <div className="mb-2 flex gap-1">
@@ -290,7 +290,7 @@ export default function HomePage() {
             <div className="mx-auto max-w-2xl rounded-[30px] border border-white/12 bg-stone-950/36 px-6 py-8 shadow-[0_30px_90px_-45px_rgba(0,0,0,0.75)] backdrop-blur-md md:px-10 md:py-10">
               <p className="section-label mb-5 text-emerald-400">Pronti ad accoglierti</p>
               <h2 className="page-hero-title mb-4 text-3xl text-white md:text-5xl">
-                La tua prossima fuga inizia qui.
+                La tua prossima fuga inizia qui
               </h2>
               <p className="mx-auto mb-10 max-w-lg text-sm leading-relaxed text-stone-300 md:text-base">
                 Tre camere, natura intorno, silenzio vero. Verifica la disponibilità e prenota il tuo soggiorno a La Terrazza.

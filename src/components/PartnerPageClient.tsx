@@ -51,7 +51,7 @@ const content = {
   it: {
     hero: {
       label: "La nostra rete",
-      title: "I nostri partner.",
+      title: "I nostri partner",
       description:
         "Strutture selezionate con cura, accomunate dalla stessa filosofia: accoglienza autentica, ritmo lento e luoghi capaci di raccontare il territorio.",
     },
@@ -121,7 +121,7 @@ const content = {
   en: {
     hero: {
       label: "Our Network",
-      title: "Our Partners.",
+      title: "Our Partners",
       description:
         "A carefully selected network of accommodations united by the same philosophy: authentic hospitality, unhurried rhythms, and places that genuinely capture the spirit of their territory.",
     },
