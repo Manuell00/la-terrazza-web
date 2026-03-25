@@ -39,14 +39,20 @@ function HeroIllustration({ compact = false }: { compact?: boolean }) {
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.02),rgba(19,29,20,0.12))]" />
         </div>
 
-        <div className="absolute right-[10%] bottom-[22%] flex w-[30%] flex-col gap-3">
+        <div className="absolute right-[10%] bottom-[20%] flex w-[30%] flex-col gap-3">
           <div className="rounded-[18px] border border-white/55 bg-white/75 px-4 py-3 backdrop-blur-sm">
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">Check-in</p>
             <p className="mt-1 text-sm font-semibold text-stone-800">Accoglienza rapida</p>
           </div>
-          <div className="rounded-[18px] border border-white/55 bg-stone-900 px-4 py-3 text-white shadow-[0_18px_40px_-24px_rgba(28,25,23,0.65)]">
-            <p className="text-[10px] uppercase tracking-[0.22em] text-stone-300">La Terrazza</p>
-            <p className="mt-1 text-sm font-semibold">Tre camere, un ritmo lento</p>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="rounded-[18px] border border-white/55 bg-white/78 px-3 py-3 text-center backdrop-blur-sm">
+              <p className="text-lg">🍳</p>
+              <p className="mt-1 text-[11px] font-semibold text-stone-800">Colazione inclusa</p>
+            </div>
+            <div className="rounded-[18px] border border-white/55 bg-white/78 px-3 py-3 text-center backdrop-blur-sm">
+              <p className="text-lg">🚗</p>
+              <p className="mt-1 text-[11px] font-semibold text-stone-800">Parcheggio gratuito</p>
+            </div>
           </div>
         </div>
 
@@ -200,12 +206,14 @@ export default function Hero() {
             >
               <HeroIllustration />
 
-              <div className="absolute bottom-0 left-[-1.5rem] max-w-[18rem] rounded-[28px] border border-stone-200 bg-white px-5 py-5 shadow-[0_28px_84px_-40px_rgba(28,25,23,0.42)]">
+              <div className="absolute bottom-0 left-[-1rem] flex w-[18.5rem] items-center justify-center rounded-[28px] border border-stone-200 bg-white px-5 py-5 text-center shadow-[0_28px_84px_-40px_rgba(28,25,23,0.42)]">
+                <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.26em] text-stone-500">La Terrazza</p>
                 <p className="mt-3 font-serif text-2xl leading-[0.95] text-stone-900">
                   Tre camere con
                   <span className="block text-stone-500">anima diversa</span>
                 </p>
+                </div>
               </div>
 
               <div className="absolute -right-3 -top-4 rounded-[24px] border border-white/90 bg-white/92 px-4 py-4 text-stone-900 shadow-[0_24px_80px_-34px_rgba(28,25,23,0.32)] backdrop-blur-xl">
