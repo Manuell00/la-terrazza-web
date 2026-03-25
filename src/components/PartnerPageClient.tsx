@@ -357,7 +357,7 @@ function PartnerSection({
 export default function PartnerPageClient() {
   const { lang } = useLanguage();
   const c = content[lang];
-  const marosaWhatsapp = "https://wa.me/393383232007";
+  const marosaPhone = "3383232007";
 
   return (
     <main className="pt-20">
@@ -442,7 +442,7 @@ export default function PartnerPageClient() {
         cta1Href="https://marosahouse.it"
         cta1TrackLabel="MaRoSa House - Website"
         cta3Text={c.marosa.ctaWa}
-        cta3Href={marosaWhatsapp}
+        cta3Href={`tel:${marosaPhone}`}
       />
 
       {/* ── San Bartolomeo ── */}
