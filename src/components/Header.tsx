@@ -96,7 +96,7 @@ export default function Header() {
               className="hidden items-center gap-2 rounded-full bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-500 hover:shadow-md md:flex"
             >
               {WA_ICON}
-              Verifica disponibilità
+              Scrivici ora
             </a>
 
             {/* Hamburger (mobile) */}

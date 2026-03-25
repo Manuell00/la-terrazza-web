@@ -37,15 +37,15 @@ export default function Hero() {
         <div className="relative flex min-h-[700px] items-end overflow-hidden">
           <motion.div className="absolute inset-0 z-0" style={{ y: imageY }}>
             <Image
-              src="/images/struttura/struttura-2.jpg"
+              src="/images/struttura/struttura-1.jpg"
               alt="La Terrazza Affittacamere — panorama e natura del Monferrato"
               fill
               priority
               quality={100}
               className="object-cover scale-[1.04]"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,18,16,0.15),rgba(18,18,16,0.55),rgba(18,18,16,0.82))]" />
-            <div className="absolute inset-x-4 bottom-10 top-[22%] rounded-[30px] bg-[linear-gradient(180deg,rgba(12,10,9,0.16),rgba(12,10,9,0.52),rgba(12,10,9,0.76))] backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,18,16,0.18),rgba(18,18,16,0.38),rgba(18,18,16,0.76))]" />
+            <div className="absolute inset-x-5 bottom-12 top-[28%] rounded-[32px] border border-white/10 bg-[linear-gradient(180deg,rgba(12,10,9,0.08),rgba(12,10,9,0.36),rgba(12,10,9,0.68))] backdrop-blur-[2px]" />
           </motion.div>
 
           <div className="relative z-10 w-full px-4 pb-14">
@@ -59,21 +59,22 @@ export default function Hero() {
                 <span className="text-base">📍</span>
                 <span className="tracking-wide">Cantarana, Asti — Piemonte</span>
               </div>
-              <h1 className="font-serif text-[2.65rem] font-semibold leading-[0.98] tracking-[-0.04em] text-white [text-shadow:0_10px_34px_rgba(0,0,0,0.55)]">
-                Un soggiorno
-                <span className="mt-1 block text-stone-100/92">davvero unico.</span>
+              <h1 className="font-serif text-[2.8rem] font-semibold leading-[0.96] tracking-[-0.045em] text-white [text-shadow:0_10px_34px_rgba(0,0,0,0.55)]">
+                Soggiorni
+                <span className="mt-1 block text-stone-100/92">che rallentano il tempo.</span>
               </h1>
-              <div className="mt-7 grid grid-cols-2 gap-2 sm:gap-3">
-                {trustItems.map((item) => (
-                  <span
-                    key={item.label}
-                    className="rounded-2xl border border-white/12 bg-white/10 px-3 py-3 text-xs text-white/90 backdrop-blur-sm"
-                  >
-                    <span className="block font-semibold text-white">{item.label}</span>
-                    <span className="mt-0.5 block text-stone-200/78">{item.value}</span>
-                  </span>
-                ))}
-              </div>
+              <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-stone-100/82">
+                Tre camere curate tra i vigneti del Monferrato, con quiete vera e un&apos;ospitalità semplice da amare.
+              </p>
+              <a
+                href={siteConfig.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-18px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500"
+              >
+                {WA_ICON}
+                Scrivici ora
+              </a>
             </motion.div>
           </div>
         </div>
@@ -168,7 +169,7 @@ export default function Hero() {
               <div className="absolute inset-x-0 top-8 overflow-hidden rounded-[36px] border border-white/80 bg-white p-4 shadow-[0_34px_110px_-46px_rgba(28,25,23,0.46)]">
                 <div className="relative h-[560px] overflow-hidden rounded-[28px]">
                   <Image
-                    src="/images/struttura/struttura-4.jpg"
+                    src="/images/struttura/struttura-1.jpg"
                     alt="Vista della struttura La Terrazza"
                     fill
                     quality={100}

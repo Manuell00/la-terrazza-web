@@ -151,7 +151,7 @@ export default function PartnerPage() {
               gridImages={sanBartolomeoImages}
               lightboxImages={sanBartolomeoImages}
               alt="Appartamento San Bartolomeo"
-              featuredMode="contain"
+              featuredMode="cover"
             />
           </AnimatedSection>
 
