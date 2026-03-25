@@ -126,13 +126,12 @@ export default function PartnerPage() {
           <AnimatedSection className="mb-8">
             <div className="rounded-[26px] border border-stone-100 bg-white p-7 shadow-card md:p-9">
               <p className="mb-4 text-center text-base leading-relaxed text-stone-600">
-                MaRoSa House è una casa vacanze partner situata a Rapallo, nel cuore della Riviera Ligure.
-                È una base comoda e curata per chi desidera muoversi con facilità tra
-                Santa Margherita Ligure, Portofino e il fascino della costa.
-              </p>
-              <p className="text-center text-sm leading-relaxed text-stone-400">
-                Una soluzione pensata per soggiorni brevi ma completi, con comfort domestico,
-                posizione strategica e tutta l&apos;atmosfera rilassata della Liguria.
+                <strong className="font-semibold text-stone-800">MaRoSa House</strong> è una casa vacanze partner situata a{" "}
+                <strong className="font-semibold text-stone-800">Rapallo</strong>, nel cuore della{" "}
+                <strong className="font-semibold text-emerald-700">Riviera Ligure</strong>. Una base{" "}
+                <strong className="font-semibold text-stone-800">comoda e curata</strong> per muoversi con facilità tra{" "}
+                <strong className="font-semibold text-stone-800">Santa Margherita Ligure</strong>,{" "}
+                <strong className="font-semibold text-stone-800">Portofino</strong> e il fascino della costa.
               </p>
             </div>
           </AnimatedSection>
@@ -172,7 +171,7 @@ export default function PartnerPage() {
               Appartamento privato
             </div>
             <h2 className="font-serif text-3xl font-semibold text-stone-800 md:text-5xl">
-              Appartamento San Bartolomeo
+              San Bartolomeo
             </h2>
             <p className="mt-2 text-base font-medium text-emerald-700">
               Tra storia e natura, un posto tutto per te
@@ -185,7 +184,7 @@ export default function PartnerPage() {
               featuredImage={sanBartolomeoLogo}
               gridImages={sanBartolomeoImages}
               lightboxImages={sanBartolomeoImages}
-              alt="Appartamento San Bartolomeo"
+              alt="San Bartolomeo"
               featuredMode="contain"
             />
           </AnimatedSection>
@@ -194,13 +193,11 @@ export default function PartnerPage() {
           <AnimatedSection className="mb-8">
             <div className="rounded-[26px] border border-stone-100 bg-cream-50 p-7 shadow-soft md:p-9">
               <p className="mb-4 text-center text-base leading-relaxed text-stone-600">
-                L&apos;Appartamento San Bartolomeo al Mare offre una soluzione indipendente
-                per chi cerca una vera casa al mare, con più privacy, autonomia e ritmi liberi.
-                È pensato per vivere il soggiorno con semplicità, a pochi passi dall&apos;atmosfera della costa ligure.
-              </p>
-              <p className="text-center text-sm leading-relaxed text-stone-400">
-                Ideale per coppie o famiglie che vogliono godersi il mare, il lungomare
-                e una permanenza più indipendente, con il comfort di uno spazio tutto per sé.
+                <strong className="font-semibold text-stone-800">San Bartolomeo al Mare</strong> offre una{" "}
+                <strong className="font-semibold text-stone-800">soluzione indipendente</strong> per chi cerca una vera{" "}
+                <strong className="font-semibold text-emerald-700">casa al mare</strong>, con più{" "}
+                <strong className="font-semibold text-stone-800">privacy</strong>, autonomia e ritmi liberi, a pochi passi
+                dall&apos;<strong className="font-semibold text-stone-800">atmosfera della costa ligure</strong>.
               </p>
             </div>
           </AnimatedSection>
