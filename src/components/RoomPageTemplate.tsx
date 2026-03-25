@@ -126,7 +126,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
               {/* Description */}
               <AnimatedSection className="text-center">
                 <p className="section-label mb-2">La camera</p>
-                <h2 className="mb-5 font-serif text-3xl text-stone-800 md:text-4xl">{room.name}</h2>
+                <h2 className="mb-5 font-serif text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">{room.name}</h2>
                 <p className="mx-auto max-w-2xl text-base leading-relaxed text-stone-500 md:text-lg">
                   <span className="font-semibold text-stone-800">{room.name}</span> è pensata per chi cerca{" "}
                   <span className="font-semibold text-emerald-700">comfort autentico</span>,{" "}
@@ -139,7 +139,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
               {/* Features */}
               <AnimatedSection className="text-center">
                 <p className="section-label mb-2">Dotazioni</p>
-                <h3 className="mb-7 font-serif text-2xl text-stone-800 md:text-3xl">
+                <h3 className="mb-7 font-serif text-[2rem] font-semibold leading-[0.98] tracking-[-0.03em] text-stone-800 md:text-3xl">
                   Tutto quello che ti aspetta in camera
                 </h3>
 
@@ -259,7 +259,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
         <div className="container mx-auto max-w-4xl px-4">
           <AnimatedSection className="mb-10 text-center">
             <p className="section-label">Cosa dicono</p>
-            <h2 className="font-serif text-3xl text-stone-800 md:text-4xl">Recensioni degli ospiti</h2>
+            <h2 className="font-serif text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">Recensioni degli ospiti</h2>
           </AnimatedSection>
 
           {/* Desktop: grid */}
@@ -277,7 +277,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
         <div className="container mx-auto max-w-6xl px-4">
           <AnimatedSection className="mb-10 text-center">
             <p className="section-label">Esplora ancora</p>
-            <h2 className="font-serif text-3xl text-stone-800">Le altre camere</h2>
+            <h2 className="font-serif text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800">Le altre camere</h2>
           </AnimatedSection>
           <div className="grid gap-6 md:grid-cols-2">
             {otherRooms.map((r) => (
