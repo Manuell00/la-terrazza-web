@@ -56,7 +56,7 @@ const content = {
         "Strutture selezionate con cura, accomunate dalla stessa filosofia: accoglienza autentica, ritmo lento e luoghi capaci di raccontare il territorio.",
     },
     trust: "Collaboriamo con strutture selezionate per offrirti il miglior soggiorno possibile.",
-    trustItems: ["Strutture verificate", "Qualità garantita", "Ospitalità autentica"],
+    trustItems: ["Strutture verificate", "Qualità garantita"],
     marosa: {
       badge: "Casa vacanze",
       title: "MaRoSa House",
@@ -66,6 +66,8 @@ const content = {
         "MaRoSa House è una casa vacanze in posizione strategica tra Rapallo, Santa Margherita Ligure e Portofino. Una soluzione curata e professionale, pensata per chi vuole vivere la Riviera Ligure con comfort, autonomia e stile.",
       descSecondary:
         "Una gestione attenta, ambienti ordinati e un'accoglienza affidabile: il tipo di soggiorno che funziona davvero, dal weekend breve alla vacanza più rilassata.",
+      mobileDescription:
+        "Una casa vacanze curata e professionale, in posizione strategica tra Rapallo, Santa Margherita Ligure e Portofino.",
       descriptionHighlights: [
         "casa vacanze",
         "Rapallo",
@@ -91,6 +93,8 @@ const content = {
         "San Bartolomeo al Mare entra nella nostra selezione come riferimento per chi desidera una vera casa al mare. Un appartamento indipendente, spazioso e curato, dove vivere la Liguria con la libertà e la privacy che solo una soluzione privata può offrire.",
       descSecondary:
         "Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri, senza rinunciare al comfort. La struttura parla da sola.",
+      mobileDescription:
+        "Una vera casa al mare a San Bartolomeo al Mare: indipendente, curata e pensata per vivere la Liguria con più libertà.",
       descriptionHighlights: [
         "San Bartolomeo al Mare",
         "casa al mare",
@@ -122,7 +126,7 @@ const content = {
         "A carefully selected network of accommodations united by the same philosophy: authentic hospitality, unhurried rhythms, and places that genuinely capture the spirit of their territory.",
     },
     trust: "We collaborate with selected properties to offer you the best possible stay.",
-    trustItems: ["Verified properties", "Quality guaranteed", "Authentic hospitality"],
+    trustItems: ["Verified properties", "Quality guaranteed"],
     marosa: {
       badge: "Holiday Home",
       title: "MaRoSa House",
@@ -132,6 +136,8 @@ const content = {
         "MaRoSa House is a holiday home in a strategic position between Rapallo, Santa Margherita Ligure and Portofino. A polished, professionally managed stay for guests who want comfort, independence and the atmosphere of the Ligurian Riviera.",
       descSecondary:
         "Reliable hosting, well-kept interiors and a stay that works beautifully whether you are planning a short break or a slower holiday by the coast.",
+      mobileDescription:
+        "A polished holiday home in a strategic position between Rapallo, Santa Margherita Ligure and Portofino.",
       descriptionHighlights: [
         "holiday home",
         "Rapallo",
@@ -156,6 +162,8 @@ const content = {
         "San Bartolomeo al Mare joins our selection as the ideal destination for those seeking a true seaside retreat. An independent, spacious, and thoughtfully furnished apartment — offering the privacy and freedom that only a private property can deliver.",
       descSecondary:
         "Perfect for couples or families who want to experience the Ligurian coast at their own pace, without compromising on comfort. The space speaks for itself.",
+      mobileDescription:
+        "A true seaside home in San Bartolomeo al Mare: independent, comfortable and ideal for a more private Ligurian stay.",
       descriptionHighlights: [
         "San Bartolomeo al Mare",
         "seaside retreat",
@@ -210,12 +218,14 @@ function TrustStrip({ text, items }: { text: string; items: readonly string[] })
 /* ─── Partner Section ────────────────────────────────────────────── */
 interface PartnerSectionProps {
   bg: "cream" | "white";
+  separated?: boolean;
   badge: string;
   title: string;
   tagline: string;
   label: string;
   description: string;
   descSecondary: string;
+  mobileDescription?: string;
   descriptionHighlights?: readonly string[];
   locationLabel: string;
   locationSub: string;
@@ -236,12 +246,14 @@ interface PartnerSectionProps {
 
 function PartnerSection({
   bg,
+  separated = false,
   badge,
   title,
   tagline,
   label,
   description,
   descSecondary,
+  mobileDescription,
   descriptionHighlights = [],
   locationLabel,
   locationSub,
@@ -291,8 +303,13 @@ function PartnerSection({
   }
 
   return (
-    <section className={`${bgClass} py-16 md:py-24`}>
+    <section className={`${bgClass} ${separated ? "relative border-t border-stone-200/80 pt-20 md:border-t-0 md:pt-24" : "py-16 md:py-24"} ${!separated ? "py-16 md:py-24" : "pb-16 md:pb-24"}`}>
       <div className="container mx-auto max-w-4xl px-4">
+        {separated && (
+          <div className="mx-auto mb-12 flex justify-center md:hidden">
+            <span className="h-px w-24 bg-gradient-to-r from-transparent via-stone-300 to-transparent" />
+          </div>
+        )}
 
         {/* 1 — TITLE */}
         <AnimatedSection className="mb-10 text-center">
@@ -322,7 +339,14 @@ function PartnerSection({
                 <p className="mb-3 text-center text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-700 md:text-left">
                   {label}
                 </p>
-                <p className="mx-auto mb-4 max-w-xl text-balance font-sans text-[1.05rem] font-medium leading-[1.62] tracking-[-0.012em] text-stone-800 md:mx-0 md:max-w-2xl md:text-[1.15rem]">
+                {mobileDescription && (
+                  <div className="mx-auto mb-4 max-w-xl rounded-[22px] border border-stone-100 bg-white/88 px-5 py-4 text-center shadow-[0_18px_40px_-28px_rgba(28,25,23,0.22)] md:hidden">
+                    <p className="text-[1rem] font-medium leading-[1.65] tracking-[-0.012em] text-stone-700">
+                      {emphasizeText(mobileDescription, descriptionHighlights)}
+                    </p>
+                  </div>
+                )}
+                <p className={`mx-auto mb-4 max-w-xl text-balance font-sans text-[1.05rem] font-medium leading-[1.62] tracking-[-0.012em] text-stone-800 md:mx-0 md:max-w-2xl md:text-[1.15rem] ${mobileDescription ? "hidden md:block" : ""}`}>
                   {emphasizeText(highlightPhrase, descriptionHighlights)}
                 </p>
                 {remainingDescription && (
@@ -496,6 +520,7 @@ export default function PartnerPageClient() {
         label={c.marosa.label}
         description={c.marosa.description}
         descSecondary={c.marosa.descSecondary}
+        mobileDescription={c.marosa.mobileDescription}
         descriptionHighlights={c.marosa.descriptionHighlights}
         locationLabel={c.marosa.locationLabel}
         locationSub={c.marosa.locationSub}
@@ -514,12 +539,14 @@ export default function PartnerPageClient() {
       {/* ── San Bartolomeo ── */}
       <PartnerSection
         bg="white"
+        separated
         badge={c.sanBartolomeo.badge}
         title={c.sanBartolomeo.title}
         tagline={c.sanBartolomeo.tagline}
         label={c.sanBartolomeo.label}
         description={c.sanBartolomeo.description}
         descSecondary={c.sanBartolomeo.descSecondary}
+        mobileDescription={c.sanBartolomeo.mobileDescription}
         descriptionHighlights={c.sanBartolomeo.descriptionHighlights}
         locationLabel={c.sanBartolomeo.locationLabel}
         locationSub={c.sanBartolomeo.locationSub}
