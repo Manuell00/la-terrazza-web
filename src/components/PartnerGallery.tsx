@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
+import { createPortal } from "react-dom";
 
 interface Props {
   featuredImage: string;
@@ -19,6 +20,7 @@ export default function PartnerGallery({
   featuredMode = "cover",
 }: Props) {
   const [selected, setSelected] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   const openAt = (index: number) => setSelected(index);
   const close = useCallback(() => setSelected(null), []);
@@ -26,6 +28,10 @@ export default function PartnerGallery({
     if (selected === null) return;
     setSelected((selected + direction + lightboxImages.length) % lightboxImages.length);
   }, [lightboxImages.length, selected]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (selected === null) return;
@@ -86,47 +92,55 @@ export default function PartnerGallery({
         </div>
       </div>
 
-      {selected !== null && (
-        <div className="fixed inset-0 z-[140] isolate px-4 py-6">
+      {mounted && selected !== null && createPortal(
+        <div className="fixed inset-0 z-[999] bg-stone-950/90 backdrop-blur-md">
           <button
             type="button"
             onClick={close}
-            className="absolute inset-0 bg-stone-950/88 backdrop-blur-sm"
+            className="absolute inset-0"
             aria-label="Chiudi galleria"
           />
-          <button
-            type="button"
-            onClick={close}
-            className="absolute right-5 top-5 z-20 rounded-full border border-white/15 bg-white/10 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/15"
-          >
-            Chiudi
-          </button>
-          <button
-            type="button"
-            onClick={() => go(-1)}
-            className="absolute left-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-colors hover:bg-white/15"
-            aria-label="Immagine precedente"
-          >
-            ‹
-          </button>
-          <div className="relative z-10 mx-auto h-[72vh] w-full max-w-5xl overflow-hidden rounded-[30px] border border-white/10 bg-stone-900 shadow-2xl">
-            <Image
-              src={lightboxImages[selected]}
-              alt={`${alt} ${selected + 1}`}
-              fill
-              className="object-contain"
-              sizes="100vw"
-            />
+          <div className="relative z-10 flex h-full w-full items-center justify-center px-4 py-6 sm:px-6">
+            <div className="relative w-full max-w-6xl">
+              <button
+                type="button"
+                onClick={close}
+                className="absolute right-0 top-[-3.25rem] z-30 rounded-full border border-white/15 bg-white/10 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/15"
+              >
+                Chiudi
+              </button>
+
+              <button
+                type="button"
+                onClick={() => go(-1)}
+                className="absolute left-2 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/35 text-white transition-colors hover:bg-white/15 sm:left-4"
+                aria-label="Immagine precedente"
+              >
+                ‹
+              </button>
+
+              <div className="relative mx-auto flex h-[78vh] w-full items-center justify-center overflow-hidden rounded-[30px] border border-white/10 bg-stone-950 shadow-2xl">
+                <Image
+                  src={lightboxImages[selected]}
+                  alt={`${alt} ${selected + 1}`}
+                  fill
+                  className="object-contain"
+                  sizes="100vw"
+                />
+              </div>
+
+              <button
+                type="button"
+                onClick={() => go(1)}
+                className="absolute right-2 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/35 text-white transition-colors hover:bg-white/15 sm:right-4"
+                aria-label="Immagine successiva"
+              >
+                ›
+              </button>
+            </div>
           </div>
-          <button
-            type="button"
-            onClick={() => go(1)}
-            className="absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-colors hover:bg-white/15"
-            aria-label="Immagine successiva"
-          >
-            ›
-          </button>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
