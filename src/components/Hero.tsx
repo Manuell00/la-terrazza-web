@@ -317,7 +317,7 @@ export default function Hero() {
                 variants={floatingCardVariants}
                 initial="hidden"
                 animate="visible"
-                className="absolute bottom-0 left-[-1rem] flex w-[18.5rem] items-center justify-center rounded-[28px] border border-stone-200 bg-white px-5 py-5 text-center shadow-[0_28px_84px_-40px_rgba(28,25,23,0.42)]"
+                className="absolute bottom-4 left-[-0.75rem] flex w-[18.5rem] items-center justify-center rounded-[28px] border border-stone-200 bg-white px-5 py-5 text-center shadow-[0_28px_84px_-40px_rgba(28,25,23,0.42)]"
               >
                 <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.26em] text-stone-500">La Terrazza</p>
@@ -333,7 +333,7 @@ export default function Hero() {
                 variants={floatingCardVariants}
                 initial="hidden"
                 animate="visible"
-                className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/3 rounded-[24px] border border-white/90 bg-white/92 px-4 py-4 text-center text-stone-900 shadow-[0_24px_80px_-34px_rgba(28,25,23,0.32)] backdrop-blur-xl"
+                className="absolute right-[-0.75rem] top-2 rounded-[24px] border border-white/90 bg-white/92 px-4 py-4 text-center text-stone-900 shadow-[0_24px_80px_-34px_rgba(28,25,23,0.32)] backdrop-blur-xl"
               >
                 <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500">Recensioni</p>
                 <p className="mt-2 text-2xl font-semibold leading-none">{siteConfig.rating}/5</p>
