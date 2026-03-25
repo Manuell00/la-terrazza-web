@@ -314,7 +314,7 @@ function PartnerSection({
         {/* 1 — TITLE */}
         <AnimatedSection className="mb-10 text-center">
           <div className="inline-flex flex-col items-center">
-            <h2 className="section-title-xl text-3xl md:text-5xl">{title}</h2>
+            <h2 className="section-title-xl text-[2.25rem] md:text-5xl">{title}</h2>
             <span className="mt-3 h-[3px] w-24 rounded-full bg-[linear-gradient(90deg,rgba(16,185,129,0.2),rgba(16,185,129,0.95),rgba(16,185,129,0.2))] shadow-[0_8px_20px_-8px_rgba(16,185,129,0.65)]" />
           </div>
           <p className="mt-2 text-base font-medium text-emerald-700">{tagline}</p>
