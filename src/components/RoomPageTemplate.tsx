@@ -185,9 +185,9 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                 {/* Booking card */}
                 <div className="rounded-[24px] border border-stone-100 bg-white p-6 shadow-elevated">
                   <div className="mb-5 border-b border-stone-100 pb-5">
-                    <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-stone-400">A partire da</p>
+                    <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-stone-400">Prezzo indicativo</p>
                     <p className="font-serif text-3xl font-semibold text-stone-800">{room.price}</p>
-                    <p className="mt-1 text-xs text-stone-400">per notte · colazione inclusa</p>
+                    <p className="mt-1 text-xs text-stone-400">colazione inclusa · può variare in base a date e piattaforma</p>
                   </div>
 
                   <div className="space-y-2.5">
