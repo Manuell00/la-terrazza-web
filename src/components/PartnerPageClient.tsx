@@ -257,17 +257,17 @@ function PartnerSection({
                 <p className="mb-3 text-center text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-700 md:text-left">
                   {label}
                 </p>
-                <p className="mx-auto mb-4 max-w-xl font-serif text-[1.42rem] leading-[1.2] tracking-[-0.03em] text-stone-800 md:mx-0 md:max-w-2xl md:text-[1.62rem]">
+                <p className="mx-auto mb-4 max-w-xl text-balance font-sans text-[1.08rem] font-medium leading-[1.55] tracking-[-0.01em] text-stone-800 md:mx-0 md:max-w-2xl md:text-[1.16rem]">
                   {highlightPhrase}
                 </p>
                 {remainingDescription && (
-                  <p className="mx-auto hidden max-w-2xl text-center text-[15px] leading-relaxed text-stone-500 md:mx-0 md:block md:text-left md:text-base">
+                  <p className="mx-auto hidden max-w-2xl text-center text-[15px] leading-[1.75] text-stone-500 md:mx-0 md:block md:text-left md:text-[15.5px]">
                     {remainingDescription}
                   </p>
                 )}
                 {descSecondary && (
                   <div className="mx-auto mt-5 hidden max-w-xl rounded-[22px] border border-stone-100/80 bg-white/70 px-5 py-4 backdrop-blur-sm md:mx-0 md:block">
-                    <p className="text-center text-sm leading-relaxed text-stone-500 md:text-left md:text-[15px]">
+                    <p className="text-center text-sm leading-[1.7] text-stone-500 md:text-left md:text-[14.5px]">
                       {descSecondary}
                     </p>
                   </div>
