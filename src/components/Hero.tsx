@@ -69,7 +69,7 @@ export default function Hero() {
       </div>
 
       <div className="md:hidden">
-        <div className="relative flex min-h-[700px] items-end overflow-hidden">
+        <div className="relative overflow-hidden">
           <div className="relative z-10 w-full px-4 pb-14 pt-28">
             <motion.div
               initial={{ opacity: 0, y: 22 }}
@@ -77,15 +77,15 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="mx-auto max-w-xl text-center"
             >
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/90 backdrop-blur-sm">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/85 px-4 py-2 text-sm text-emerald-800 shadow-soft backdrop-blur-sm">
                 <span className="text-base">📍</span>
                 <span className="tracking-wide">Cantarana, Asti — Piemonte</span>
               </div>
-              <h1 className="font-serif text-[2.8rem] font-semibold leading-[0.96] tracking-[-0.045em] text-white [text-shadow:0_10px_34px_rgba(0,0,0,0.55)]">
+              <h1 className="font-serif text-[2.8rem] font-semibold leading-[0.96] tracking-[-0.045em] text-stone-900">
                 Soggiorni
-                <span className="mt-1 block text-stone-100/92">che rallentano il tempo.</span>
+                <span className="mt-1 block text-emerald-800">che rallentano il tempo.</span>
               </h1>
-              <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-stone-100/82">
+              <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-stone-600">
                 Tre camere curate tra i vigneti del Monferrato, con quiete vera e un&apos;ospitalità semplice da amare.
               </p>
               <a
