@@ -29,22 +29,42 @@
 @layer components {
   /* ── Primary CTA → natural green ── */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500 hover:shadow-lg active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-green-500 hover:shadow-[0_22px_42px_-18px_rgba(22,163,74,0.55)] active:translate-y-0 active:scale-[0.99];
   }
 
   /* ── Secondary CTA → dark neutral ── */
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-stone-800 px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-700 hover:shadow-lg active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-stone-800 px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-stone-700 hover:shadow-[0_22px_42px_-18px_rgba(28,25,23,0.55)] active:translate-y-0 active:scale-[0.99];
   }
 
   /* ── Ghost / Outline button ── */
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-7 py-3.5 text-sm font-medium text-stone-700 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-stone-400 hover:shadow-card active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-7 py-3.5 text-sm font-medium text-stone-700 shadow-soft transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:border-stone-400 hover:shadow-[0_18px_38px_-22px_rgba(28,25,23,0.28)] active:translate-y-0 active:scale-[0.99];
   }
 
   /* ── Section label (eyebrow text) ── */
   .section-label {
     @apply mb-5 inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-700;
+  }
+
+  .premium-hover-card {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-card-hover;
+  }
+
+  .premium-image-hover {
+    @apply transition-transform duration-700 ease-out group-hover:scale-[1.05];
+  }
+
+  .premium-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(28, 25, 23, 0.28), rgba(28, 25, 23, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .group:hover .premium-image-overlay {
+    opacity: 1;
   }
 }
 

@@ -68,7 +68,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`group relative rounded-full px-3.5 py-2 text-sm font-medium tracking-wide transition-all duration-200 ${
+                className={`group relative rounded-full px-3.5 py-2 text-sm font-medium tracking-wide transition-all duration-300 ease-out ${
                   isActive(link.href)
                     ? "text-emerald-800"
                     : "text-stone-500 hover:bg-stone-100/70 hover:text-stone-800"
@@ -76,7 +76,7 @@ export default function Header() {
               >
                 <span>{link.label}</span>
                 <span
-                  className={`absolute inset-x-3.5 -bottom-[1px] h-[2px] origin-left rounded-full bg-emerald-600 transition-transform duration-300 ${
+                  className={`absolute inset-x-3.5 -bottom-[1px] h-[2px] origin-left rounded-full bg-emerald-600 transition-all duration-300 ease-out ${
                     isActive(link.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                   }`}
                 />

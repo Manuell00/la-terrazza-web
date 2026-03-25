@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
 
@@ -16,7 +16,6 @@ const images = [
 export default function StructureCarousel() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
-  const dragStartX = useRef(0);
 
   const go = (next: number) => {
     setDirection(next > current ? 1 : -1);
@@ -29,9 +28,9 @@ export default function StructureCarousel() {
   };
 
   const variants = {
-    enter: (d: number) => ({ x: d > 0 ? "100%" : "-100%", opacity: 0 }),
-    center: { x: 0, opacity: 1 },
-    exit: (d: number) => ({ x: d > 0 ? "-100%" : "100%", opacity: 0 }),
+    enter: (d: number) => ({ x: d > 0 ? "14%" : "-14%", opacity: 0, scale: 1.018 }),
+    center: { x: 0, opacity: 1, scale: 1 },
+    exit: (d: number) => ({ x: d > 0 ? "-14%" : "14%", opacity: 0, scale: 0.992 }),
   };
 
   return (
@@ -46,18 +45,18 @@ export default function StructureCarousel() {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            transition={{ duration: 0.62, ease: [0.42, 0, 0.2, 1] }}
             className="absolute inset-0"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.15}
+            dragElastic={0.09}
             onDragEnd={handleDragEnd}
           >
             <Image
               src={images[current].src}
               alt={images[current].alt}
               fill
-              className="object-cover pointer-events-none"
+              className="object-cover pointer-events-none transition-transform duration-700 ease-out"
               priority={current === 0}
             />
           </motion.div>
@@ -69,7 +68,7 @@ export default function StructureCarousel() {
         {/* Arrows */}
         <button
           onClick={() => go(current - 1)}
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-black/40 hover:bg-black/60 backdrop-blur-sm text-white rounded-full flex items-center justify-center transition-colors"
+          className="absolute left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:bg-black/60 hover:shadow-lg"
           aria-label="Precedente"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,7 +77,7 @@ export default function StructureCarousel() {
         </button>
         <button
           onClick={() => go(current + 1)}
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-black/40 hover:bg-black/60 backdrop-blur-sm text-white rounded-full flex items-center justify-center transition-colors"
+          className="absolute right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:bg-black/60 hover:shadow-lg"
           aria-label="Successiva"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

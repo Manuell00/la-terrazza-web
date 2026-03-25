@@ -18,20 +18,20 @@ export default function AnimatedSection({
 }: Props) {
   const initial =
     direction === "up"
-      ? { opacity: 0, y: 40 }
+      ? { opacity: 0, y: 28 }
       : direction === "left"
-      ? { opacity: 0, x: -40 }
+      ? { opacity: 0, x: -28 }
       : direction === "right"
-      ? { opacity: 0, x: 40 }
+      ? { opacity: 0, x: 28 }
       : { opacity: 0 };
 
   return (
     <motion.div
       className={className}
-      initial={{ ...initial, scale: 0.985, filter: "blur(10px)" }}
+      initial={{ ...initial, scale: 0.992, filter: "blur(8px)" }}
       whileInView={{ opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.72, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.64, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>

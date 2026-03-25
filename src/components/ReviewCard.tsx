@@ -27,11 +27,11 @@ export default function ReviewCard({ review, index }: Props) {
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex h-full flex-col rounded-[24px] border border-stone-100 bg-[linear-gradient(180deg,#ffffff_0%,#fcfaf6_100%)] p-6 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:border-emerald-100 hover:shadow-card"
+      transition={{ duration: 0.58, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative flex h-full flex-col rounded-[24px] border border-stone-100 bg-[linear-gradient(180deg,#ffffff_0%,#fcfaf6_100%)] p-6 shadow-soft transition-all duration-500 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:border-emerald-100 hover:shadow-card-hover"
     >
       {/* Decorative quote mark */}
-      <div className="pointer-events-none absolute right-5 top-3 select-none font-serif text-7xl leading-none text-stone-100 transition-transform duration-500 group-hover:scale-110">
+      <div className="pointer-events-none absolute right-5 top-3 select-none font-serif text-7xl leading-none text-stone-100 transition-all duration-500 ease-out group-hover:scale-110 group-hover:text-stone-200">
         &ldquo;
       </div>
 

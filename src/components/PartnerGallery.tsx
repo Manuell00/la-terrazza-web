@@ -59,16 +59,16 @@ export default function PartnerGallery({
         <button
           type="button"
           onClick={() => openAt(0)}
-          className="group relative block h-72 w-full overflow-hidden rounded-[28px] bg-white shadow-xl ring-1 ring-stone-200"
+          className="group relative block h-72 w-full overflow-hidden rounded-[28px] bg-white shadow-xl ring-1 ring-stone-200 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl"
           aria-label={`Apri la galleria di ${alt}`}
         >
           <Image
             src={featuredImage}
             alt={`${alt} principale`}
             fill
-            className={`${featuredMode === "contain" ? "object-contain p-4 md:p-6" : "object-cover"} transition-transform duration-500 group-hover:scale-[1.03]`}
+            className={`${featuredMode === "contain" ? "object-contain p-4 md:p-6" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-[1.05]`}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/28 via-stone-950/10 to-transparent opacity-0 transition-all duration-500 ease-out group-hover:opacity-100" />
           <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-white/92 px-3 py-1 text-xs font-medium text-stone-700 shadow-sm">
             Apri gallery
           </span>
@@ -79,15 +79,16 @@ export default function PartnerGallery({
               key={src}
               type="button"
               onClick={() => openAt(i)}
-              className="group relative block h-32 overflow-hidden rounded-2xl ring-1 ring-stone-200"
+              className="group relative block h-32 overflow-hidden rounded-2xl ring-1 ring-stone-200 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg"
               aria-label={`Apri immagine ${i + 2} di ${alt}`}
             >
               <Image
                 src={src}
                 alt={`${alt} ${i + 2}`}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
               />
+              <div className="premium-image-overlay" />
             </button>
           ))}
         </div>
@@ -124,10 +125,10 @@ export default function PartnerGallery({
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.div
                     key={lightboxImages[selected]}
-                    initial={{ opacity: 0, x: 28, scale: 0.985 }}
+                    initial={{ opacity: 0, x: 24, scale: 0.992 }}
                     animate={{ opacity: 1, x: 0, scale: 1 }}
-                    exit={{ opacity: 0, x: -28, scale: 0.985 }}
-                    transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                    exit={{ opacity: 0, x: -24, scale: 0.992 }}
+                    transition={{ duration: 0.42, ease: [0.42, 0, 0.2, 1] }}
                     className="absolute inset-0"
                   >
                     <Image

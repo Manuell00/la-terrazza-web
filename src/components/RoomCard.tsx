@@ -22,7 +22,7 @@ export default function RoomCard({ room, index }: Props) {
       transition={{ duration: 0.65, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
     >
       <Link href={localizePath(`/camere/${room.slug}`, lang)} className="group block h-full">
-        <div className="relative flex h-full flex-col overflow-hidden rounded-[26px] border border-stone-200/70 bg-white shadow-card transition-all duration-500 hover:-translate-y-1.5 hover:shadow-card-hover">
+        <div className="relative flex h-full flex-col overflow-hidden rounded-[26px] border border-stone-200/70 bg-white shadow-card transition-all duration-500 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-card-hover">
 
           {/* Image */}
           <div className="relative h-72 overflow-hidden flex-shrink-0">
@@ -30,8 +30,9 @@ export default function RoomCard({ room, index }: Props) {
               src={room.coverImage}
               alt={room.name}
               fill
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              className="object-cover premium-image-hover"
             />
+            <div className="premium-image-overlay" />
             <div className="absolute inset-0 bg-gradient-to-t from-stone-950/72 via-stone-950/12 to-transparent md:from-stone-950/18 md:via-transparent md:to-transparent" />
 
             {/* Highlight badge */}

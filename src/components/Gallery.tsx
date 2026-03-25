@@ -49,17 +49,17 @@ export default function Gallery({ images, alt }: Props) {
             className={`relative overflow-hidden rounded-xl cursor-pointer group ${
               i === 0 ? "col-span-2 h-72 md:col-span-2 md:row-span-2 md:h-96" : "h-36 md:h-44"
             }`}
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.02, y: -3 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
             <Image
               src={src}
               alt={`${alt} ${i + 1}`}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
               loading={i === 0 ? "eager" : "lazy"}
             />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/20">
+            <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-500 ease-out group-hover:bg-black/18">
               <svg
                 className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity"
                 fill="none"
@@ -122,7 +122,7 @@ export default function Gallery({ images, alt }: Props) {
             initial={{ opacity: 0, y: 12, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.96 }}
-            transition={{ duration: 0.26, ease: "easeOut" }}
+            transition={{ duration: 0.36, ease: [0.42, 0, 0.2, 1] }}
             className="relative h-[100dvh] w-[100vw] overflow-hidden bg-stone-900 sm:h-auto sm:w-full sm:max-w-4xl sm:aspect-[4/3] sm:rounded-[28px] sm:border sm:border-white/10 sm:shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >

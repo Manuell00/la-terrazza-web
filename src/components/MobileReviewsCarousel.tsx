@@ -25,7 +25,7 @@ export default function MobileReviewsCarousel() {
     <div className="md:hidden">
       <div
         ref={containerRef}
-        className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none"
+        className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth scrollbar-none"
       >
         {reviews.map((review, i) => (
           <div
@@ -46,7 +46,7 @@ export default function MobileReviewsCarousel() {
           <button
             type="button"
             onClick={() => scrollByCard("left")}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-stone-200/80 bg-white text-sm text-stone-500 shadow-sm transition-all hover:bg-stone-50 hover:text-stone-700"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-stone-200/80 bg-white text-sm text-stone-500 shadow-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:bg-stone-50 hover:text-stone-700 hover:shadow-md"
             aria-label="Recensione precedente"
           >
             ←
@@ -54,7 +54,7 @@ export default function MobileReviewsCarousel() {
           <button
             type="button"
             onClick={() => scrollByCard("right")}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-stone-200/80 bg-white text-sm text-stone-500 shadow-sm transition-all hover:bg-stone-50 hover:text-stone-700"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-stone-200/80 bg-white text-sm text-stone-500 shadow-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:bg-stone-50 hover:text-stone-700 hover:shadow-md"
             aria-label="Recensione successiva"
           >
             →
