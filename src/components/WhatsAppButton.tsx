@@ -4,9 +4,13 @@ import { motion } from "framer-motion";
 import { siteConfig } from "@/data/siteConfig";
 
 export default function WhatsAppButton() {
+  const whatsappTemplate = `${siteConfig.whatsapp}?text=${encodeURIComponent(
+    "Buongiorno! Sono interessato a prenotare una stanza presso La Terrazza Affittacamere. Potrei avere maggiori informazioni sulla disponibilita?"
+  )}`;
+
   return (
     <motion.a
-      href={siteConfig.whatsapp}
+      href={whatsappTemplate}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-green-700 hover:bg-green-600 text-white rounded-full shadow-xl transition-colors group"
