@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
 
 export default function Gallery({ images, alt }: Props) {
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
   const visibleImages = images.slice(0, 3);
 
   const close = useCallback(() => setLightbox(null), []);
@@ -18,6 +20,10 @@ export default function Gallery({ images, alt }: Props) {
     if (lightbox === null) return;
     setLightbox((lightbox + direction + images.length) % images.length);
   }, [images.length, lightbox]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (lightbox === null) return;
@@ -88,72 +94,85 @@ export default function Gallery({ images, alt }: Props) {
       </div>
 
       {/* Lightbox */}
-      <AnimatePresence>
-        {lightbox !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-stone-950/94 flex items-center justify-center p-4 backdrop-blur-sm"
-            onClick={close}
-          >
-            <button
-              className="absolute right-4 top-4 z-10 rounded-full border border-white/12 bg-white/8 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/14"
+      {mounted &&
+        lightbox !== null &&
+        createPortal(
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[999] bg-stone-950/94 backdrop-blur-sm"
               onClick={close}
-              aria-label="Chiudi"
             >
-              Chiudi
-            </button>
+              <button
+                className="absolute inset-0"
+                onClick={close}
+                aria-label="Chiudi galleria"
+              />
 
-            {/* Prev */}
-            <button
-              className="absolute left-4 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/8 text-2xl text-white transition-colors hover:bg-white/14"
-              onClick={(e) => {
-                e.stopPropagation();
-                go(-1);
-              }}
-              aria-label="Precedente"
-            >
-              ‹
-            </button>
+              <div className="relative z-10 flex h-full w-full items-center justify-center px-4 py-6 sm:px-6">
+                <div className="relative w-full max-w-5xl">
+                  <button
+                    className="absolute right-0 top-3 z-30 rounded-full border border-white/12 bg-white/10 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/16 sm:top-[-3.25rem]"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      close();
+                    }}
+                    aria-label="Chiudi"
+                  >
+                    Chiudi
+                  </button>
 
-          <motion.div
-            key={lightbox}
-            initial={{ opacity: 0, y: 12, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 12, scale: 0.96 }}
-            transition={{ duration: 0.36, ease: [0.42, 0, 0.2, 1] }}
-            className="relative h-[100dvh] w-[100vw] overflow-hidden bg-stone-900 sm:h-auto sm:w-full sm:max-w-4xl sm:aspect-[4/3] sm:rounded-[28px] sm:border sm:border-white/10 sm:shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={images[lightbox]}
-              alt={`${alt} ${lightbox + 1}`}
-              fill
-              className="object-contain"
-              priority
-            />
-          </motion.div>
+                  <button
+                    className="absolute left-2 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/12 bg-white/10 text-2xl text-white transition-colors hover:bg-white/16 sm:left-4"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      go(-1);
+                    }}
+                    aria-label="Precedente"
+                  >
+                    ‹
+                  </button>
 
-            {/* Next */}
-            <button
-              className="absolute right-4 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/8 text-2xl text-white transition-colors hover:bg-white/14"
-              onClick={(e) => {
-                e.stopPropagation();
-                go(1);
-              }}
-              aria-label="Successiva"
-            >
-              ›
-            </button>
+                  <motion.div
+                    key={lightbox}
+                    initial={{ opacity: 0, y: 12, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 12, scale: 0.96 }}
+                    transition={{ duration: 0.36, ease: [0.42, 0, 0.2, 1] }}
+                    className="relative h-[100dvh] w-[100vw] overflow-hidden bg-stone-900 sm:h-auto sm:w-full sm:max-w-4xl sm:aspect-[4/3] sm:rounded-[28px] sm:border sm:border-white/10 sm:shadow-2xl"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Image
+                      src={images[lightbox]}
+                      alt={`${alt} ${lightbox + 1}`}
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </motion.div>
 
-            {/* Counter */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm">
-              {lightbox + 1} / {images.length}
-            </div>
-          </motion.div>
+                  <button
+                    className="absolute right-2 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/12 bg-white/10 text-2xl text-white transition-colors hover:bg-white/16 sm:right-4"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      go(1);
+                    }}
+                    aria-label="Successiva"
+                  >
+                    ›
+                  </button>
+
+                  <div className="absolute bottom-4 left-1/2 z-30 -translate-x-1/2 rounded-full border border-white/10 bg-black/28 px-3 py-1.5 text-sm text-white/75 backdrop-blur-sm">
+                    {lightbox + 1} / {images.length}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>,
+          document.body
         )}
-      </AnimatePresence>
     </>
   );
 }
