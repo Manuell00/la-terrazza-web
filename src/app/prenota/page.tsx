@@ -87,6 +87,9 @@ export default function PrenotaPage() {
                         Tariffa indicativa
                       </p>
                       <p className="font-serif text-2xl font-semibold text-stone-800">{room.price}</p>
+                      <p className="mt-2 text-xs leading-relaxed text-stone-400">
+                        Base struttura da €55 / notte per 2 ospiti.
+                      </p>
                     </div>
                     <div className="flex gap-2.5">
                       <a

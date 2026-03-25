@@ -193,7 +193,9 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                   <div className="mb-5 border-b border-stone-100 pb-5">
                     <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-stone-400">Prezzo indicativo</p>
                     <p className="font-serif text-3xl font-semibold text-stone-800">{room.price}</p>
-                    <p className="mt-1 text-xs text-stone-400">colazione inclusa · può variare in base a date e piattaforma</p>
+                    <p className="mt-1 text-xs leading-relaxed text-stone-400">
+                      Base struttura da €55 / notte per 2 ospiti · il prezzo finale varia in base a camera, date, stagione e piattaforma.
+                    </p>
                   </div>
 
                   <div className="space-y-2.5">
