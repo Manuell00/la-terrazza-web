@@ -5,13 +5,13 @@ import Image from "next/image";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
 
 const images = [
-  { src: "/images/struttura/struttura-4.jpg", alt: "La Terrazza — esterno" },
-  { src: "/images/struttura/struttura-2.jpg", alt: "La Terrazza — ingresso" },
-  { src: "/images/struttura/struttura-5.jpg", alt: "La Terrazza — ambienti comuni" },
   { src: "/images/struttura/struttura-3.jpg", alt: "La Terrazza — hall" },
+  { src: "/images/struttura/struttura-5.jpg", alt: "La Terrazza — ambienti comuni" },
   { src: "/images/struttura/struttura-6.jpg", alt: "La Terrazza — terrazza" },
+  { src: "/images/struttura/struttura-2.jpg", alt: "La Terrazza — ingresso" },
   { src: "/images/camera-luna/luna-1.jpg", alt: "Camera Luna" },
   { src: "/images/camera-sole/sole-1.jpg", alt: "Camera Sole" },
+  { src: "/images/struttura/struttura-4.jpg", alt: "La Terrazza — esterno" },
 ];
 
 export default function StructureCarousel() {
