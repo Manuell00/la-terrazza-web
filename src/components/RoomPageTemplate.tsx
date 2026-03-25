@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Gallery from "@/components/Gallery";
 import ReviewCard from "@/components/ReviewCard";
 import AnimatedSection from "@/components/AnimatedSection";
+import MobileReviewsCarousel from "@/components/MobileReviewsCarousel";
 import RoomCalendar from "@/components/RoomCalendar";
 import { Room } from "@/data/rooms";
 import { reviews } from "@/data/reviews";
@@ -51,20 +52,24 @@ const WA_ICON = (
   </svg>
 );
 
-/* Neutral platform button — identity comes from logo/name, not color */
+/* Neutral platform button */
 const platformBtn =
   "group flex min-h-[48px] w-full items-center justify-center gap-3 rounded-full border border-stone-200 bg-white px-5 py-3 text-sm font-medium text-stone-600 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-400 hover:bg-emerald-600 hover:text-white hover:shadow-card";
 
 export default function RoomPageTemplate({ room, otherRooms }: Props) {
   const [showAllFeatures, setShowAllFeatures] = useState(false);
-  const keyFeatures = room.features.slice(0, 3);
-  const extraAmenities = room.amenities.slice(0, 2);
-  const collapsedFeatures = [...keyFeatures, ...extraAmenities.map((label) => ({ icon: amenityIcons[label] ?? "✓", label }))];
+
+  /* Build feature lists */
+  const keyFeatures = room.features.slice(0, 4); /* show 4 primary features */
+  const extraAmenities = room.amenities.slice(0, 1);
+  const collapsedFeatures = [
+    ...keyFeatures,
+    ...extraAmenities.map((label) => ({ icon: amenityIcons[label] ?? "✓", label })),
+  ];
   const expandedFeatures = [
     ...room.features,
     ...room.amenities.map((label) => ({ icon: amenityIcons[label] ?? "✓", label })),
   ];
-  const displayedFeatures = showAllFeatures ? expandedFeatures : collapsedFeatures;
 
   return (
     <main>
@@ -72,7 +77,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
       <section className="relative flex h-[65vh] min-h-[440px] items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image src={room.coverImage} alt={room.name} fill priority className="object-cover" quality={90} />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/82 via-stone-950/20 to-stone-950/12" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/22 to-stone-950/14" />
         </div>
 
         {/* Breadcrumb */}
@@ -107,39 +112,60 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
         <div className="container mx-auto max-w-6xl px-4">
           <div className="grid gap-10 lg:grid-cols-3">
 
-            {/* Left: Gallery + Description */}
-            <div className="space-y-12 lg:col-span-2">
+            {/* Left: Gallery + Description + Features */}
+            <div className="space-y-14 lg:col-span-2">
+
+              {/* Gallery */}
               <AnimatedSection>
                 <Gallery images={room.images} alt={room.name} />
               </AnimatedSection>
 
+              {/* Description */}
               <AnimatedSection className="text-center">
-                <h2 className="mb-4 font-serif text-3xl text-stone-800">La camera</h2>
+                <p className="section-label mb-2">La camera</p>
+                <h2 className="mb-5 font-serif text-3xl text-stone-800 md:text-4xl">{room.name}</h2>
                 <p className="mx-auto max-w-2xl text-base leading-relaxed text-stone-500 md:text-lg">
                   <span className="font-semibold text-stone-800">{room.name}</span> è pensata per chi cerca{" "}
-                  <span className="font-semibold text-stone-800">comfort autentico</span>,{" "}
+                  <span className="font-semibold text-emerald-700">comfort autentico</span>,{" "}
                   ritmi lenti e un&apos;atmosfera che invita davvero a fermarsi.{" "}
-                  Tra luce naturale, dettagli curati e la calma del paesaggio, ogni soggiorno acquista un tono più intimo e rilassato.
+                  Tra <span className="font-semibold text-stone-800">luce naturale</span>, dettagli curati e la calma del paesaggio,
+                  ogni soggiorno acquista un tono più intimo e rilassato.
                 </p>
               </AnimatedSection>
 
+              {/* Features */}
               <AnimatedSection className="text-center">
-                <h3 className="mb-6 font-serif text-2xl text-stone-800">Cosa trovi in camera</h3>
+                <p className="section-label mb-2">Dotazioni</p>
+                <h3 className="mb-7 font-serif text-2xl text-stone-800 md:text-3xl">
+                  Tutto quello che ti aspetta in camera
+                </h3>
+
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {displayedFeatures.map((f) => (
-                    <div key={f.label} className="flex items-center gap-3 rounded-[16px] border border-stone-100 bg-cream-50 px-4 py-3">
+                  {expandedFeatures.map((f, index) => (
+                    <div
+                      key={f.label}
+                      className={`flex items-center gap-3 rounded-[16px] border border-stone-100 bg-cream-50 px-4 py-3.5 transition-all duration-200 hover:border-emerald-100 hover:bg-emerald-50/40 ${
+                        index >= collapsedFeatures.length
+                          ? showAllFeatures
+                            ? ""
+                            : "hidden md:flex"
+                          : ""
+                      }`}
+                    >
                       <span className="text-xl">{f.icon}</span>
-                      <span className="text-sm text-stone-700">{f.label}</span>
+                      <span className="text-sm font-medium text-stone-700">{f.label}</span>
                     </div>
                   ))}
                 </div>
+
+                {/* "Visualizza tutto" — mobile only */}
                 {expandedFeatures.length > collapsedFeatures.length && (
                   <button
                     type="button"
                     onClick={() => setShowAllFeatures((v) => !v)}
-                    className="mt-5 btn-outline text-sm px-5 py-2.5"
+                    className="mt-5 btn-outline text-sm px-5 py-2.5 md:hidden"
                   >
-                    {showAllFeatures ? "Mostra meno" : "Visualizza tutto"}
+                    {showAllFeatures ? "Mostra meno ↑" : "Visualizza tutto →"}
                   </button>
                 )}
               </AnimatedSection>
@@ -152,8 +178,9 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                 {/* Booking card */}
                 <div className="rounded-[24px] border border-stone-100 bg-white p-6 shadow-elevated">
                   <div className="mb-5 border-b border-stone-100 pb-5">
-                    <p className="mb-1 text-xs text-stone-400">A partire da</p>
+                    <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-stone-400">A partire da</p>
                     <p className="font-serif text-3xl font-semibold text-stone-800">{room.price}</p>
+                    <p className="mt-1 text-xs text-stone-400">per notte · colazione inclusa</p>
                   </div>
 
                   <div className="space-y-2.5">
@@ -172,7 +199,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                       href={`tel:${siteConfig.phone}`}
                       className="flex w-full items-center justify-center gap-2.5 rounded-full bg-stone-800 px-5 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-stone-700"
                     >
-                      📞 Chiama ora
+                      📞 Chiama per prenotare
                     </a>
 
                     <div className="flex items-center gap-2 py-1">
@@ -221,15 +248,20 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
       </section>
 
       {/* ── Reviews ── */}
-      <section className="bg-cream-50 py-14">
+      <section className="bg-cream-50 py-14 md:py-20">
         <div className="container mx-auto max-w-4xl px-4">
           <AnimatedSection className="mb-10 text-center">
             <p className="section-label">Cosa dicono</p>
-            <h2 className="font-serif text-3xl text-stone-800">Recensioni degli ospiti</h2>
+            <h2 className="font-serif text-3xl text-stone-800 md:text-4xl">Recensioni degli ospiti</h2>
           </AnimatedSection>
-          <div className="grid gap-5 md:grid-cols-2">
+
+          {/* Desktop: grid */}
+          <div className="hidden md:grid grid-cols-2 gap-5">
             {reviews.slice(0, 4).map((r, i) => <ReviewCard key={r.id} review={r} index={i} />)}
           </div>
+
+          {/* Mobile: carousel */}
+          <MobileReviewsCarousel />
         </div>
       </section>
 
@@ -282,21 +314,13 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto btn-primary px-8 py-4 text-base"
               >
-                {WA_ICON} Scrivi su WhatsApp
+                {WA_ICON} Verifica disponibilità su WhatsApp
               </a>
               <a
                 href={`tel:${siteConfig.phone}`}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/18"
               >
-                📞 Chiama ora
-              </a>
-              <a
-                href={room.airbnbUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-medium text-white/70 transition-all duration-300 hover:text-white hover:-translate-y-0.5 hover:bg-white/18"
-              >
-                Airbnb
+                📞 Chiama per prenotare
               </a>
             </div>
           </AnimatedSection>

@@ -7,6 +7,7 @@ export interface Review {
   date: string;
   avatar: string;
   source: "airbnb" | "booking" | "google";
+  label?: string;
 }
 
 export const reviews: Review[] = [
@@ -19,6 +20,7 @@ export const reviews: Review[] = [
     date: "Febbraio 2026",
     avatar: "F",
     source: "airbnb",
+    label: "Coppia",
   },
   {
     id: "2",
@@ -29,6 +31,7 @@ export const reviews: Review[] = [
     date: "Gennaio 2026",
     avatar: "M",
     source: "booking",
+    label: "Weekend romantico",
   },
   {
     id: "3",
@@ -39,6 +42,7 @@ export const reviews: Review[] = [
     date: "Dicembre 2025",
     avatar: "S",
     source: "airbnb",
+    label: "Coppia",
   },
   {
     id: "4",
@@ -49,6 +53,7 @@ export const reviews: Review[] = [
     date: "Novembre 2025",
     avatar: "V",
     source: "google",
+    label: "Soggiorno esteso",
   },
   {
     id: "5",
@@ -59,6 +64,7 @@ export const reviews: Review[] = [
     date: "Ottobre 2025",
     avatar: "L",
     source: "airbnb",
+    label: "Coppia",
   },
   {
     id: "6",
@@ -69,5 +75,6 @@ export const reviews: Review[] = [
     date: "Settembre 2025",
     avatar: "C",
     source: "google",
+    label: "Anniversario",
   },
 ];

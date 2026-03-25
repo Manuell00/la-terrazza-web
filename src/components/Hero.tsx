@@ -31,17 +31,19 @@ export default function Hero() {
           className="object-cover scale-[1.04]"
         />
         {/* Subtle vignette top */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.08),transparent_50%)]" />
-        {/* Left gradient — stronger for text legibility */}
-        <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(10,15,10,0.78)_0%,rgba(10,15,10,0.52)_40%,rgba(10,15,10,0.18)_70%,rgba(10,15,10,0.14)_100%)]" />
-        {/* Bottom-to-top gradient for CTA area */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/22 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.06),transparent_50%)]" />
+        {/* Left gradient — stronger for text legibility on desktop */}
+        <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(8,12,8,0.85)_0%,rgba(8,12,8,0.58)_42%,rgba(8,12,8,0.22)_70%,rgba(8,12,8,0.16)_100%)]" />
+        {/* Bottom-to-top gradient for CTA area — heavier on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent md:from-stone-950/85 md:via-stone-950/22" />
+        {/* Mobile: extra center darkening for readability */}
+        <div className="absolute inset-0 bg-stone-950/20 md:hidden" />
       </motion.div>
 
       {/* Content */}
       <motion.div className="relative z-10 w-full pb-14 md:pb-20" style={{ opacity }}>
         <div className="container mx-auto px-4">
-          {/* Max width: centered on mobile, left-aligned on desktop */}
+          {/* Centered on mobile, left-aligned on desktop */}
           <div className="mx-auto max-w-xl text-center md:mx-0 md:max-w-3xl md:text-left">
 
             {/* Location badge */}
@@ -55,12 +57,23 @@ export default function Hero() {
               <span className="tracking-wide">Cantarana, Asti — Piemonte</span>
             </motion.div>
 
-            {/* Main headline */}
+            {/* ── MOBILE headline ── */}
             <motion.h1
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.8 }}
-              className="font-serif text-[2.8rem] font-semibold leading-[0.9] tracking-[-0.04em] text-white [text-shadow:0_16px_48px_rgba(0,0,0,0.5)] sm:text-[4rem] md:text-[5.5rem]"
+              className="md:hidden font-serif text-[2.6rem] font-semibold leading-[1.0] tracking-[-0.03em] text-white [text-shadow:0_8px_32px_rgba(0,0,0,0.6)]"
+            >
+              Relax, natura e comfort
+              <span className="mt-1 block text-stone-100/90">in un soggiorno unico.</span>
+            </motion.h1>
+
+            {/* ── DESKTOP headline ── */}
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.8 }}
+              className="hidden md:block font-serif text-[5.5rem] font-semibold leading-[0.9] tracking-[-0.04em] text-white [text-shadow:0_16px_48px_rgba(0,0,0,0.5)]"
             >
               Respira il silenzio
               <span className="mt-2 block text-stone-100/90 md:mt-1">e lasciati accogliere.</span>
@@ -76,25 +89,25 @@ export default function Hero() {
               Tre camere esclusive tra i vigneti del Monferrato. Stacca la spina, respira e lasciati accogliere con la calma autentica del Piemonte.
             </motion.p>
 
-            {/* CTAs — always visible, column on mobile, row on sm+ */}
+            {/* CTAs — HIDDEN on mobile, visible from md+ */}
             <motion.div
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.65, duration: 0.65 }}
-              className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:items-start"
+              className="mt-8 hidden md:flex md:flex-row md:items-start gap-3"
             >
               <a
                 href={siteConfig.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-7 py-4 text-base font-semibold text-white shadow-[0_16px_48px_-16px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500 hover:shadow-[0_20px_52px_-16px_rgba(22,163,74,0.9)] sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-7 py-4 text-base font-semibold text-white shadow-[0_16px_48px_-16px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500 hover:shadow-[0_20px_52px_-16px_rgba(22,163,74,0.9)]"
               >
                 {WA_ICON}
-                Contattaci su WhatsApp
+                Verifica disponibilità su WhatsApp
               </a>
               <Link
                 href="/prenota"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/12 px-7 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/12 px-7 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
               >
                 Controlla disponibilità
               </Link>

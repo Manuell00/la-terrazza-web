@@ -44,11 +44,11 @@ export default function PrenotaPage() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-emerald-400">
               Prenota il tuo soggiorno
             </p>
-            <h1 className="mb-5 font-serif text-[2.4rem] font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="mb-5 font-serif text-[2.4rem] font-semibold leading-tight text-white sm:text-5xl md:text-6xl text-balance">
               Il tuo relax inizia qui.
             </h1>
-            <p className="mx-auto max-w-xl text-base leading-relaxed text-stone-300 md:text-lg">
-              Scegli la camera che preferisci e prenota direttamente — o scrivici su WhatsApp.
+            <p className="mx-auto max-w-xl text-base leading-relaxed text-stone-300/90 md:text-lg">
+              Scegli la camera che preferisci e prenota direttamente — oppure scrivici su WhatsApp.
             </p>
           </AnimatedSection>
         </div>
@@ -250,7 +250,7 @@ export default function PrenotaPage() {
               <div className="flex h-11 w-11 items-center justify-center rounded-full bg-stone-50 transition-colors group-hover:bg-stone-100">
                 <span className="text-xl">📞</span>
               </div>
-              <p className="font-semibold text-stone-800">Chiamaci</p>
+              <p className="font-semibold text-stone-800">Chiama per prenotare</p>
               <p className="text-xs text-stone-400">{siteConfig.phone}</p>
             </a>
 

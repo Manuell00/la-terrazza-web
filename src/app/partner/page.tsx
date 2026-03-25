@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import PartnerGallery from "@/components/PartnerGallery";
 import { siteConfig } from "@/data/siteConfig";
@@ -15,8 +16,14 @@ const WA_ICON = (
   </svg>
 );
 
-const marosaImages = [
-  "/images/partner/marosa/logo.png",
+/* MaRoSa: logo as featured, real photos in grid */
+const marosaFeatured = "/images/partner/marosa/logo.png";
+const marosaGridImages = [
+  "/images/partner/marosa/marosa-1.jpg",
+  "/images/partner/marosa/marosa-2.jpg",
+  "/images/partner/marosa/marosa-4.jpg",
+];
+const marosaLightboxImages = [
   "/images/partner/marosa/marosa-1.jpg",
   "/images/partner/marosa/marosa-2.jpg",
   "/images/partner/marosa/marosa-4.jpg",
@@ -24,8 +31,9 @@ const marosaImages = [
   "/images/partner/marosa/marosa-6.jpg",
 ];
 
+/* San Bartolomeo: property photos only in gallery, logo displayed separately */
+const sanBartolomeoLogo = "/images/partner/san-bartolomeo/casa-mare-logo.jpg";
 const sanBartolomeoImages = [
-  "/images/partner/san-bartolomeo/casa-mare-logo.jpg",
   "/images/partner/san-bartolomeo/sb-2.jpg",
   "/images/partner/san-bartolomeo/sb-3.jpg",
   "/images/partner/san-bartolomeo/sb-4.jpg",
@@ -35,7 +43,7 @@ export default function PartnerPage() {
   return (
     <main className="pt-20">
 
-      {/* ── Hero ── */}
+      {/* ── Page Hero ── */}
       <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto px-4 text-center">
           <AnimatedSection>
@@ -53,120 +61,146 @@ export default function PartnerPage() {
 
       {/* ── MaRoSa House ── */}
       <section className="bg-cream-50 py-16 md:py-24">
-        <div className="container mx-auto max-w-6xl px-4">
-          <AnimatedSection className="mb-10">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700 mb-4">
+        <div className="container mx-auto max-w-4xl px-4">
+
+          {/* 1. TITLE */}
+          <AnimatedSection className="mb-10 text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
               Casa vacanze
             </div>
-            <h2 className="font-serif text-3xl font-semibold text-stone-800 md:text-4xl">
+            <h2 className="font-serif text-3xl font-semibold text-stone-800 md:text-5xl">
               MaRoSa House
             </h2>
-            <p className="mt-1 font-medium text-emerald-700">Il comfort di casa, il calore dell&apos;ospitalità</p>
+            <p className="mt-2 text-base font-medium text-emerald-700">
+              Il comfort di casa, il calore dell&apos;ospitalità
+            </p>
           </AnimatedSection>
 
-          <div className="grid items-start gap-8 md:grid-cols-[0.95fr_1.05fr] md:gap-12">
-            {/* Image grid */}
-            <AnimatedSection direction="right" className="md:order-2">
-              <PartnerGallery
-                featuredImage={marosaImages[0]}
-                gridImages={marosaImages.slice(1, 4)}
-                lightboxImages={marosaImages.slice(1)}
-                alt="MaRoSa House"
-                featuredMode="contain"
-              />
-            </AnimatedSection>
+          {/* 2. IMAGES */}
+          <AnimatedSection className="mb-10">
+            <PartnerGallery
+              featuredImage={marosaFeatured}
+              gridImages={marosaGridImages}
+              lightboxImages={marosaLightboxImages}
+              alt="MaRoSa House"
+              featuredMode="contain"
+            />
+          </AnimatedSection>
 
-            {/* Text */}
-            <AnimatedSection direction="left" className="md:order-1 text-center md:text-left">
-              <div className="rounded-[26px] border border-stone-100 bg-white p-7 shadow-card md:p-8">
-                <p className="mb-4 leading-relaxed text-stone-600">
-                  MaRoSa House è una struttura partner selezionata per la qualità dell&apos;accoglienza
-                  e la cura degli spazi. Un punto di riferimento per chi cerca un soggiorno autentico
-                  e confortevole nel cuore del Piemonte.
-                </p>
-                <p className="text-sm leading-relaxed text-stone-400">
-                  Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede
-                  e si sente. Un posto pensato per farti stare bene, dal primo all&apos;ultimo minuto.
-                </p>
-              </div>
-              <div className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
-                <a
-                  href={siteConfig.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary text-sm px-6 py-3"
-                >
-                  {WA_ICON} Contatta via WhatsApp
-                </a>
-                <a
-                  href="https://marosahouse.it"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-outline text-sm px-6 py-3"
-                >
-                  🌐 marosahouse.it
-                </a>
-              </div>
-            </AnimatedSection>
-          </div>
+          {/* 3. DESCRIPTION */}
+          <AnimatedSection className="mb-8">
+            <div className="rounded-[26px] border border-stone-100 bg-white p-7 shadow-card md:p-9">
+              <p className="mb-4 text-base leading-relaxed text-stone-600">
+                MaRoSa House è una struttura partner selezionata per la qualità dell&apos;accoglienza
+                e la cura degli spazi. Un punto di riferimento per chi cerca un soggiorno autentico
+                e confortevole nel cuore del Piemonte.
+              </p>
+              <p className="text-sm leading-relaxed text-stone-400">
+                Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede
+                e si sente. Un posto pensato per farti stare bene, dal primo all&apos;ultimo minuto.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          {/* 4. BUTTONS */}
+          <AnimatedSection>
+            <div className="flex flex-row flex-wrap justify-center gap-3">
+              <a
+                href={siteConfig.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-sm px-6 py-3"
+              >
+                {WA_ICON} Contatta via WhatsApp
+              </a>
+              <a
+                href="https://marosahouse.it"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline text-sm px-6 py-3"
+              >
+                🌐 marosahouse.it
+              </a>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* ── San Bartolomeo ── */}
       <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto max-w-6xl px-4">
-          <div className="grid items-start gap-8 md:grid-cols-[0.95fr_1.05fr] md:gap-12">
-            {/* Image gallery */}
-            <AnimatedSection direction="right" className="text-center md:order-2">
-              <PartnerGallery
-                featuredImage={sanBartolomeoImages[0]}
-                gridImages={sanBartolomeoImages.slice(1)}
-                lightboxImages={sanBartolomeoImages.slice(1)}
-                alt="Appartamento San Bartolomeo"
-                featuredMode="contain"
-              />
-            </AnimatedSection>
+        <div className="container mx-auto max-w-4xl px-4">
 
-            {/* Content */}
-            <AnimatedSection direction="left" className="text-center md:order-1 md:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700 mb-5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                Appartamento privato
+          {/* 1. TITLE */}
+          <AnimatedSection className="mb-10 text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              Appartamento privato
+            </div>
+            {/* San Bartolomeo logo — small, centered */}
+            <div className="mb-5 flex justify-center">
+              <div className="relative h-16 w-40 overflow-hidden rounded-2xl border border-stone-100 bg-stone-50 shadow-soft">
+                <Image
+                  src={sanBartolomeoLogo}
+                  alt="Appartamento San Bartolomeo logo"
+                  fill
+                  className="object-contain p-2"
+                />
               </div>
-              <h2 className="mb-2 font-serif text-3xl font-semibold text-stone-800 md:text-4xl">
-                Appartamento San Bartolomeo
-              </h2>
-              <p className="mb-6 font-medium text-emerald-700">Tra storia e natura, un posto tutto per te</p>
-              <div className="rounded-[26px] border border-stone-100 bg-cream-50 p-7 shadow-soft md:p-8 mb-7">
-                <p className="mb-4 leading-relaxed text-stone-600">
-                  L&apos;Appartamento San Bartolomeo offre una soluzione indipendente per chi desidera
-                  maggiore privacy e autonomia. Spazi ampi, arredi curati e la magia del paesaggio
-                  piemontese a portata di mano.
-                </p>
-                <p className="text-sm leading-relaxed text-stone-400">
-                  Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri,
-                  senza rinunciare al comfort. La struttura parla da sola.
-                </p>
-              </div>
-              <div className="flex flex-wrap justify-center gap-3 md:justify-start">
-                <a
-                  href={siteConfig.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary text-sm px-6 py-3"
-                >
-                  {WA_ICON} Contatta via WhatsApp
-                </a>
-                <a
-                  href={`tel:${siteConfig.phone}`}
-                  className="btn-outline text-sm px-6 py-3"
-                >
-                  📞 Chiama ora
-                </a>
-              </div>
-            </AnimatedSection>
-          </div>
+            </div>
+            <h2 className="font-serif text-3xl font-semibold text-stone-800 md:text-5xl">
+              Appartamento San Bartolomeo
+            </h2>
+            <p className="mt-2 text-base font-medium text-emerald-700">
+              Tra storia e natura, un posto tutto per te
+            </p>
+          </AnimatedSection>
+
+          {/* 2. IMAGES */}
+          <AnimatedSection className="mb-10">
+            <PartnerGallery
+              featuredImage={sanBartolomeoImages[0]}
+              gridImages={sanBartolomeoImages.slice(1)}
+              lightboxImages={sanBartolomeoImages}
+              alt="Appartamento San Bartolomeo"
+              featuredMode="cover"
+            />
+          </AnimatedSection>
+
+          {/* 3. DESCRIPTION */}
+          <AnimatedSection className="mb-8">
+            <div className="rounded-[26px] border border-stone-100 bg-cream-50 p-7 shadow-soft md:p-9">
+              <p className="mb-4 text-base leading-relaxed text-stone-600">
+                L&apos;Appartamento San Bartolomeo offre una soluzione indipendente per chi desidera
+                maggiore privacy e autonomia. Spazi ampi, arredi curati e la magia del paesaggio
+                piemontese a portata di mano.
+              </p>
+              <p className="text-sm leading-relaxed text-stone-400">
+                Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri,
+                senza rinunciare al comfort. La struttura parla da sola.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          {/* 4. BUTTONS */}
+          <AnimatedSection>
+            <div className="flex flex-row flex-wrap justify-center gap-3">
+              <a
+                href={siteConfig.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-sm px-6 py-3"
+              >
+                {WA_ICON} Contatta via WhatsApp
+              </a>
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="btn-outline text-sm px-6 py-3"
+              >
+                📞 Chiama per informazioni
+              </a>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

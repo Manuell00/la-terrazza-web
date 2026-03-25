@@ -243,27 +243,28 @@ export default function HomePage() {
               Risposta garantita entro pochi minuti.
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              {/* PRIMARY: WhatsApp — green */}
+              {/* PRIMARY: Controlla disponibilità — green */}
+              <Link
+                href="/prenota"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-8 py-4 text-base font-semibold text-white shadow-[0_16px_48px_-16px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500"
+              >
+                Controlla disponibilità
+              </Link>
+              {/* SECONDARY: WhatsApp — dark neutral */}
               <a
                 href={siteConfig.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-8 py-4 text-base font-semibold text-white shadow-[0_16px_48px_-16px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-stone-800/90 border border-white/10 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-700"
               >
-                {WA_ICON} Scrivici su WhatsApp
+                {WA_ICON} Verifica disponibilità su WhatsApp
               </a>
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/12 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/18"
               >
-                📞 Chiama ora
+                📞 Chiama per prenotare
               </a>
-              <Link
-                href="/prenota"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/12 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
-              >
-                Controlla disponibilità
-              </Link>
             </div>
           </AnimatedSection>
         </div>
