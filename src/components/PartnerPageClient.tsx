@@ -453,7 +453,9 @@ export default function PartnerPageClient() {
     <main className="pt-20">
 
       {/* ── Hero ── */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f8fbf7_52%,#ffffff_100%)] py-16 md:py-24">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-emerald-50/70 to-transparent" />
+        <div className="pointer-events-none absolute left-1/2 top-8 h-44 w-44 -translate-x-1/2 rounded-full bg-emerald-100/35 blur-3xl md:h-56 md:w-56" />
         <div className="container mx-auto px-4 text-center">
 
           <AnimatedSection className="mb-3">
