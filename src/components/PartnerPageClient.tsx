@@ -65,6 +65,8 @@ const content = {
         "Abbiamo scelto MaRoSa House per la sua capacità di unire il calore di una vera casa con il carattere autentico della Liguria. Posizione strategica tra Rapallo, Santa Margherita Ligure e Portofino — non una camera d'albergo, ma uno spazio tutto tuo dove sentirti davvero a casa.",
       descSecondary:
         "Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede e si sente. Un posto pensato per farti stare bene, dal primo all'ultimo minuto.",
+      locationLabel: "Posizione",
+      locationSub: "Rapallo Riviera Ligure",
       cta1: "Vai al sito",
       ctaWa: "Contatta via WhatsApp",
     },
@@ -77,6 +79,8 @@ const content = {
         "San Bartolomeo al Mare entra nella nostra selezione come riferimento per chi desidera una vera casa al mare. Un appartamento indipendente, spazioso e curato, dove vivere la Liguria con la libertà e la privacy che solo una soluzione privata può offrire.",
       descSecondary:
         "Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri, senza rinunciare al comfort. La struttura parla da sola.",
+      locationLabel: "Posizione",
+      locationSub: "San Bartolomeo al Mare",
       cta1: "Scopri l'appartamento",
       cta2: "Guarda disponibilità",
       ctaPhone: "Chiama per informazioni",
@@ -107,6 +111,8 @@ const content = {
         "We chose MaRoSa House for its ability to blend the warmth of a real home with authentic Ligurian character. Perfectly located between Rapallo, Santa Margherita Ligure, and Portofino — not a hotel room, but a space that feels genuinely yours from the first evening.",
       descSecondary:
         "Understated elegance, a welcoming atmosphere, and attention to detail you can both see and feel. Designed to make you feel good from the first moment to the last.",
+      locationLabel: "Location",
+      locationSub: "Rapallo Ligurian Riviera",
       cta1: "Visit website",
       ctaWa: "Contact via WhatsApp",
     },
@@ -119,6 +125,8 @@ const content = {
         "San Bartolomeo al Mare joins our selection as the ideal destination for those seeking a true seaside retreat. An independent, spacious, and thoughtfully furnished apartment — offering the privacy and freedom that only a private property can deliver.",
       descSecondary:
         "Perfect for couples or families who want to experience the Ligurian coast at their own pace, without compromising on comfort. The space speaks for itself.",
+      locationLabel: "Location",
+      locationSub: "San Bartolomeo al Mare",
       cta1: "Explore the property",
       cta2: "Check availability",
       ctaPhone: "Call for information",
@@ -168,6 +176,8 @@ interface PartnerSectionProps {
   label: string;
   description: string;
   descSecondary: string;
+  locationLabel: string;
+  locationSub: string;
   featuredImage: string;
   gridImages: string[];
   lightboxImages: string[];
@@ -190,6 +200,8 @@ function PartnerSection({
   label,
   description,
   descSecondary,
+  locationLabel,
+  locationSub,
   featuredImage,
   gridImages,
   lightboxImages,
@@ -235,25 +247,44 @@ function PartnerSection({
         {/* 3 — DESCRIPTION */}
         <AnimatedSection className="mb-8">
           <div className={`rounded-[30px] border border-stone-100 ${bg === "cream" ? "bg-white" : "bg-cream-50"} p-7 shadow-[0_24px_70px_-42px_rgba(28,25,23,0.22)] md:p-10`}>
-            <div className="mx-auto max-w-2xl text-center">
-            <p className="mb-4 text-center text-[11px] font-semibold uppercase tracking-[0.26em] text-emerald-700">
-              {label}
-            </p>
-            <p className="mx-auto mb-4 max-w-xl font-serif text-[1.55rem] leading-[1.2] tracking-[-0.03em] text-stone-800 md:text-[1.8rem]">
-              {highlightPhrase}
-            </p>
-            {remainingDescription && (
-              <p className="mx-auto max-w-2xl text-center text-[15px] leading-relaxed text-stone-500 md:text-base">
-                {remainingDescription}
-              </p>
-            )}
-            {descSecondary && (
-              <div className="mx-auto mt-5 max-w-xl rounded-[22px] border border-stone-100/80 bg-white/70 px-5 py-4 backdrop-blur-sm">
-                <p className="text-center text-sm leading-relaxed text-stone-500 md:text-[15px]">
-                  {descSecondary}
+            <div className="mx-auto grid max-w-3xl items-start gap-6 md:grid-cols-[minmax(0,1fr)_9.5rem] md:gap-8">
+              <div className="text-center md:text-left">
+                <p className="mb-3 text-center text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-700 md:text-left">
+                  {label}
                 </p>
+                <p className="mx-auto mb-4 max-w-xl font-serif text-[1.42rem] leading-[1.2] tracking-[-0.03em] text-stone-800 md:mx-0 md:max-w-2xl md:text-[1.62rem]">
+                  {highlightPhrase}
+                </p>
+                {remainingDescription && (
+                  <p className="mx-auto max-w-2xl text-center text-[15px] leading-relaxed text-stone-500 md:mx-0 md:text-left md:text-base">
+                    {remainingDescription}
+                  </p>
+                )}
+                {descSecondary && (
+                  <div className="mx-auto mt-5 max-w-xl rounded-[22px] border border-stone-100/80 bg-white/70 px-5 py-4 backdrop-blur-sm md:mx-0">
+                    <p className="text-center text-sm leading-relaxed text-stone-500 md:text-left md:text-[15px]">
+                      {descSecondary}
+                    </p>
+                  </div>
+                )}
               </div>
-            )}
+
+              <div className="mx-auto flex flex-col items-center justify-center md:pt-1">
+                <div className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-full border border-stone-200 bg-[radial-gradient(circle_at_30%_30%,#fef7ed_0%,#ecfdf5_45%,#d6efe3_100%)] shadow-[0_18px_40px_-24px_rgba(28,25,23,0.35)]">
+                  <div className="absolute inset-4 rounded-full border border-white/60" />
+                  <div className="absolute left-[28%] top-[24%] h-6 w-6 rounded-full bg-emerald-100/80 blur-sm" />
+                  <div className="absolute right-[24%] bottom-[26%] h-8 w-8 rounded-full bg-stone-200/70 blur-md" />
+                  <div className="relative z-10 flex flex-col items-center text-center">
+                    <span className="text-xl">📍</span>
+                    <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">
+                      {locationLabel}
+                    </span>
+                    <span className="mt-1 max-w-[5rem] text-[11px] font-medium leading-tight text-stone-700">
+                      {locationSub}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </AnimatedSection>
@@ -377,6 +408,8 @@ export default function PartnerPageClient() {
         label={c.marosa.label}
         description={c.marosa.description}
         descSecondary={c.marosa.descSecondary}
+        locationLabel={c.marosa.locationLabel}
+        locationSub={c.marosa.locationSub}
         featuredImage={marosaFeatured}
         gridImages={marosaGridImages}
         lightboxImages={marosaLightboxImages}
@@ -397,6 +430,8 @@ export default function PartnerPageClient() {
         label={c.sanBartolomeo.label}
         description={c.sanBartolomeo.description}
         descSecondary={c.sanBartolomeo.descSecondary}
+        locationLabel={c.sanBartolomeo.locationLabel}
+        locationSub={c.sanBartolomeo.locationSub}
         featuredImage={sanBartolomeoLogo}
         gridImages={sanBartolomeoImages}
         lightboxImages={sanBartolomeoImages}
