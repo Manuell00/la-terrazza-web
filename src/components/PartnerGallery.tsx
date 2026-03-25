@@ -29,15 +29,19 @@ export default function PartnerGallery({
 
   useEffect(() => {
     if (selected === null) return;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") close();
       if (event.key === "ArrowRight") go(1);
       if (event.key === "ArrowLeft") go(-1);
     };
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     window.addEventListener("keydown", onKeyDown);
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [close, go, selected]);
@@ -83,7 +87,7 @@ export default function PartnerGallery({
       </div>
 
       {selected !== null && (
-        <div className="fixed inset-0 z-[70] px-4 py-6">
+        <div className="fixed inset-0 z-[140] isolate px-4 py-6">
           <button
             type="button"
             onClick={close}
