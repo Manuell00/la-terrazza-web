@@ -41,11 +41,11 @@ function HeroIllustration({ compact = false }: { compact?: boolean }) {
 
         <div className="absolute right-[10%] bottom-[22%] flex w-[30%] flex-col gap-3">
           <div className="rounded-[18px] border border-white/55 bg-white/75 px-4 py-3 backdrop-blur-sm">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-700">Check-in</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">Check-in</p>
             <p className="mt-1 text-sm font-semibold text-stone-800">Accoglienza rapida</p>
           </div>
           <div className="rounded-[18px] border border-white/55 bg-stone-900 px-4 py-3 text-white shadow-[0_18px_40px_-24px_rgba(28,25,23,0.65)]">
-            <p className="text-[10px] uppercase tracking-[0.22em] text-emerald-300">La Terrazza</p>
+            <p className="text-[10px] uppercase tracking-[0.22em] text-stone-300">La Terrazza</p>
             <p className="mt-1 text-sm font-semibold">Tre camere, un ritmo lento</p>
           </div>
         </div>
@@ -83,12 +83,12 @@ export default function Hero() {
                 <span className="text-base">📍</span>
                 <span className="tracking-wide">Cantarana, Asti — Piemonte</span>
               </div>
-              <h1 className="font-serif text-[2.8rem] font-semibold leading-[0.96] tracking-[-0.045em] text-stone-900">
-                Soggiorni
-                <span className="mt-1 block text-emerald-800">che rallentano il tempo.</span>
+              <h1 className="font-serif text-[2.75rem] font-semibold leading-[0.94] tracking-[-0.05em] text-stone-900">
+                La Terrazza
+                <span className="mt-1 block text-stone-500">Affittacamere</span>
               </h1>
               <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-stone-600">
-                Tre camere curate tra i vigneti del Monferrato, con quiete vera e un&apos;ospitalità semplice da amare.
+                Soggiorni che rallentano il tempo, tra i vigneti del Monferrato e un&apos;ospitalità semplice da amare.
               </p>
               <a
                 href={siteConfig.whatsapp}
@@ -125,7 +125,7 @@ export default function Hero() {
               style={{ y: cardY }}
             >
               <div className="max-w-xl">
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800">
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-2 text-sm font-medium text-stone-700 shadow-soft">
                   <span className="text-base">📍</span>
                   Cantarana, Asti — Piemonte
                 </div>
@@ -134,10 +134,10 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.12, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                  className="font-serif text-[4.7rem] font-semibold leading-[0.9] tracking-[-0.055em] text-stone-900 xl:text-[5.2rem]"
+                  className="font-serif text-[4.65rem] font-semibold leading-[0.88] tracking-[-0.055em] text-stone-900 xl:text-[5.1rem]"
                 >
-                  Soggiorni
-                  <span className="block text-emerald-800">che rallentano il tempo.</span>
+                  La Terrazza
+                  <span className="block text-stone-500">Affittacamere</span>
                 </motion.h1>
 
                 <motion.p
@@ -146,7 +146,7 @@ export default function Hero() {
                   transition={{ delay: 0.22, duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
                   className="mt-6 max-w-md text-lg leading-relaxed text-stone-600"
                 >
-                  Tre camere essenziali, viste aperte sui vigneti e un&apos;ospitalità pensata per farti respirare meglio.
+                  Soggiorni che rallentano il tempo, tra viste aperte sui vigneti e un&apos;ospitalità pensata per farti respirare meglio.
                 </motion.p>
 
                 <motion.div
@@ -201,7 +201,7 @@ export default function Hero() {
               <HeroIllustration />
 
               <div className="absolute bottom-0 left-[-1.5rem] max-w-[18rem] rounded-[28px] border border-stone-200 bg-white px-5 py-5 shadow-[0_28px_84px_-40px_rgba(28,25,23,0.42)]">
-                <p className="text-xs font-semibold uppercase tracking-[0.26em] text-emerald-700">La Terrazza</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.26em] text-stone-500">La Terrazza</p>
                 <p className="mt-3 font-serif text-2xl leading-[0.95] text-stone-900">
                   Tre camere con
                   <span className="block text-stone-500">anima diversa</span>
@@ -211,9 +211,10 @@ export default function Hero() {
                 </p>
               </div>
 
-              <div className="absolute right-6 top-0 rounded-[24px] border border-white/80 bg-stone-900/92 px-4 py-4 text-white shadow-[0_22px_70px_-34px_rgba(28,25,23,0.65)] backdrop-blur-sm">
-                <p className="text-lg font-semibold">{siteConfig.rating}/5</p>
-                <p className="mt-1 text-[11px] text-stone-300">{siteConfig.reviewCount}+ recensioni</p>
+              <div className="absolute right-6 top-0 rounded-[24px] border border-white/90 bg-white/92 px-4 py-4 text-stone-900 shadow-[0_24px_80px_-34px_rgba(28,25,23,0.32)] backdrop-blur-xl">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500">Recensioni</p>
+                <p className="mt-2 text-2xl font-semibold leading-none">{siteConfig.rating}/5</p>
+                <p className="mt-2 text-[12px] text-stone-500">{siteConfig.reviewCount}+ recensioni verificate</p>
               </div>
             </motion.div>
           </div>
