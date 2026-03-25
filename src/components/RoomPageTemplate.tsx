@@ -323,7 +323,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto btn-primary px-8 py-4 text-base"
               >
-                {WA_ICON} Verifica disponibilità su WhatsApp
+                {WA_ICON} Verifica disponibilità
               </a>
               <a
                 href={`tel:${siteConfig.phone}`}
