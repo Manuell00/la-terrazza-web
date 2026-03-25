@@ -93,7 +93,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
           </div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 pb-14">
+        <div className="relative z-10 container mx-auto px-4 pb-20 md:pb-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
