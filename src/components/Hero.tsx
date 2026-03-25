@@ -129,33 +129,17 @@ function HeroIllustration({ compact = false }: { compact?: boolean }) {
         </motion.div>
 
         {compact && (
-          <>
-            <motion.div
-              custom={0.38}
-              variants={floatingCardVariants}
-              initial="hidden"
-              animate="visible"
-              className="absolute right-[5%] top-[3%] rounded-[20px] border border-white/90 bg-white/92 px-3.5 py-3 text-center text-stone-900 shadow-[0_20px_60px_-30px_rgba(28,25,23,0.32)] backdrop-blur-xl"
-            >
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">Recensioni</p>
-              <p className="mt-1.5 text-xl font-semibold leading-none">{siteConfig.rating}/5</p>
-              <p className="mt-1 text-[11px] text-stone-500">{siteConfig.reviewCount}+ recensioni</p>
-            </motion.div>
-
-            <motion.div
-              custom={0.5}
-              variants={floatingCardVariants}
-              initial="hidden"
-              animate="visible"
-              className="absolute bottom-[4%] left-1/2 w-[15.5rem] -translate-x-1/2 rounded-[24px] border border-stone-200 bg-white px-4 py-4 text-center shadow-[0_24px_70px_-34px_rgba(28,25,23,0.34)]"
-            >
-              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">La Terrazza</p>
-              <p className="mt-2 font-serif text-xl leading-[0.95] text-stone-900">
-                Tre camere con
-                <span className="block text-stone-500">anima diversa</span>
-              </p>
-            </motion.div>
-          </>
+          <motion.div
+            custom={0.38}
+            variants={floatingCardVariants}
+            initial="hidden"
+            animate="visible"
+            className="absolute right-[5%] top-[3%] rounded-[20px] border border-white/90 bg-white/92 px-3.5 py-3 text-center text-stone-900 shadow-[0_20px_60px_-30px_rgba(28,25,23,0.32)] backdrop-blur-xl"
+          >
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">Recensioni</p>
+            <p className="mt-1.5 text-xl font-semibold leading-none">{siteConfig.rating}/5</p>
+            <p className="mt-1 text-[11px] text-stone-500">{siteConfig.reviewCount}+ recensioni</p>
+          </motion.div>
         )}
 
         <div className="absolute inset-x-8 bottom-6 h-[2px] rounded-full bg-white/55" />
