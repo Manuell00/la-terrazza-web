@@ -67,6 +67,7 @@ const content = {
         "Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede e si sente. Un posto pensato per farti stare bene, dal primo all'ultimo minuto.",
       locationLabel: "Posizione",
       locationSub: "Rapallo Riviera Ligure",
+      locationHref: "https://www.google.com/maps/search/?api=1&query=Rapallo%2C%20Liguria",
       cta1: "Vai al sito",
       ctaWa: "Contatta via WhatsApp",
     },
@@ -81,6 +82,7 @@ const content = {
         "Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri, senza rinunciare al comfort. La struttura parla da sola.",
       locationLabel: "Posizione",
       locationSub: "San Bartolomeo al Mare",
+      locationHref: "https://www.google.com/maps/search/?api=1&query=San%20Bartolomeo%20al%20Mare%2C%20Liguria",
       cta1: "Scopri l'appartamento",
       cta2: "Guarda disponibilità",
       ctaPhone: "Chiama per informazioni",
@@ -113,6 +115,7 @@ const content = {
         "Understated elegance, a welcoming atmosphere, and attention to detail you can both see and feel. Designed to make you feel good from the first moment to the last.",
       locationLabel: "Location",
       locationSub: "Rapallo Ligurian Riviera",
+      locationHref: "https://www.google.com/maps/search/?api=1&query=Rapallo%2C%20Liguria",
       cta1: "Visit website",
       ctaWa: "Contact via WhatsApp",
     },
@@ -127,6 +130,7 @@ const content = {
         "Perfect for couples or families who want to experience the Ligurian coast at their own pace, without compromising on comfort. The space speaks for itself.",
       locationLabel: "Location",
       locationSub: "San Bartolomeo al Mare",
+      locationHref: "https://www.google.com/maps/search/?api=1&query=San%20Bartolomeo%20al%20Mare%2C%20Liguria",
       cta1: "Explore the property",
       cta2: "Check availability",
       ctaPhone: "Call for information",
@@ -178,6 +182,7 @@ interface PartnerSectionProps {
   descSecondary: string;
   locationLabel: string;
   locationSub: string;
+  locationHref: string;
   featuredImage: string;
   gridImages: string[];
   lightboxImages: string[];
@@ -202,6 +207,7 @@ function PartnerSection({
   descSecondary,
   locationLabel,
   locationSub,
+  locationHref,
   featuredImage,
   gridImages,
   lightboxImages,
@@ -280,6 +286,14 @@ function PartnerSection({
                     </span>
                   </div>
                 </div>
+                <a
+                  href={locationHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center justify-center gap-1.5 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-[11px] font-semibold text-stone-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-700"
+                >
+                  🗺️ {locationLabel === "Posizione" ? "Vedi su Google Maps" : "View on Google Maps"}
+                </a>
               </div>
             </div>
           </div>
@@ -406,6 +420,7 @@ export default function PartnerPageClient() {
         descSecondary={c.marosa.descSecondary}
         locationLabel={c.marosa.locationLabel}
         locationSub={c.marosa.locationSub}
+        locationHref={c.marosa.locationHref}
         featuredImage={marosaFeatured}
         gridImages={marosaGridImages}
         lightboxImages={marosaLightboxImages}
@@ -428,6 +443,7 @@ export default function PartnerPageClient() {
         descSecondary={c.sanBartolomeo.descSecondary}
         locationLabel={c.sanBartolomeo.locationLabel}
         locationSub={c.sanBartolomeo.locationSub}
+        locationHref={c.sanBartolomeo.locationHref}
         featuredImage={sanBartolomeoLogo}
         gridImages={sanBartolomeoImages}
         lightboxImages={sanBartolomeoImages}
