@@ -315,8 +315,8 @@ function PartnerSection({
         {/* 1 — TITLE */}
         <AnimatedSection className="mb-10 text-center">
           <div className="inline-flex flex-col items-center">
-            <h2 className={`section-title-xl text-3xl md:text-5xl ${isMarosa ? "md:[text-shadow:0_10px_24px_rgba(16,185,129,0.14)]" : ""}`}>{title}</h2>
-            <span className={`mt-3 h-[3px] rounded-full bg-[linear-gradient(90deg,rgba(16,185,129,0.2),rgba(16,185,129,0.9),rgba(16,185,129,0.2))] shadow-[0_8px_20px_-8px_rgba(16,185,129,0.65)] ${isMarosa ? "w-24 md:w-28" : "w-20"}`} />
+            <h2 className={`section-title-xl text-3xl md:text-5xl ${isMarosa ? "bg-[linear-gradient(180deg,transparent_60%,rgba(16,185,129,0.16)_60%)] px-1 md:[text-shadow:0_10px_24px_rgba(16,185,129,0.14)]" : ""}`}>{title}</h2>
+            <span className={`mt-3 h-[3px] rounded-full bg-[linear-gradient(90deg,rgba(16,185,129,0.2),rgba(16,185,129,0.95),rgba(16,185,129,0.2))] shadow-[0_8px_20px_-8px_rgba(16,185,129,0.65)] ${isMarosa ? "w-28 md:w-32" : "w-20"}`} />
           </div>
           <p className="mt-2 text-base font-medium text-emerald-700">{tagline}</p>
         </AnimatedSection>
