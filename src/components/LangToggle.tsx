@@ -32,7 +32,7 @@ export default function LangToggle({ dark = false }: Props) {
             lang === l ? activeClass : inactiveClass
           }`}
         >
-          {l === "it" ? "🇮🇹 IT" : "🇬🇧 EN"}
+          {l === "it" ? "🇮🇹 IT" : "🇺🇸 EN"}
         </button>
       ))}
     </div>
