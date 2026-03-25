@@ -4,7 +4,7 @@ import PartnerPageClient from "@/components/PartnerPageClient";
 export const metadata: Metadata = {
   title: "Partners | La Terrazza Affittacamere",
   description:
-    "Discover La Terrazza Affittacamere partners, including MaRoSa House on the Ligurian Riviera and San Bartolomeo al Mare.",
+    "Discover La Terrazza Affittacamere partner stays: MaRoSa House on the Ligurian Riviera and San Bartolomeo al Mare, selected for refined coastal escapes.",
 };
 
 export default function EnglishPartnersPage() {

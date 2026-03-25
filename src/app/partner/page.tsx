@@ -4,7 +4,7 @@ import PartnerPageClient from "@/components/PartnerPageClient";
 export const metadata: Metadata = {
   title: "I Nostri Partner | La Terrazza Affittacamere",
   description:
-    "Scopri i partner de La Terrazza Affittacamere: MaRoSa House a Rapallo e Appartamento San Bartolomeo al Mare. Strutture selezionate tra Piemonte e Liguria.",
+    "Scopri i partner de La Terrazza Affittacamere: MaRoSa House sulla Riviera Ligure e San Bartolomeo al Mare. Due strutture selezionate per soggiorni curati tra mare e territorio.",
 };
 
 export default function PartnerPage() {
