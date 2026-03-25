@@ -100,7 +100,7 @@ function HeroIllustration({ compact = false }: { compact?: boolean }) {
             fill
             priority
             quality={100}
-            className="object-cover transition-transform duration-[1800ms] ease-out"
+            className="scale-[0.985] object-cover transition-transform duration-[1800ms] ease-out"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.02),rgba(19,29,20,0.12))]" />
         </div>
@@ -292,7 +292,7 @@ export default function Hero() {
                 variants={floatingCardVariants}
                 initial="hidden"
                 animate="visible"
-                className="absolute -right-3 -top-4 rounded-[24px] border border-white/90 bg-white/92 px-4 py-4 text-stone-900 shadow-[0_24px_80px_-34px_rgba(28,25,23,0.32)] backdrop-blur-xl"
+                className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/3 rounded-[24px] border border-white/90 bg-white/92 px-4 py-4 text-center text-stone-900 shadow-[0_24px_80px_-34px_rgba(28,25,23,0.32)] backdrop-blur-xl"
               >
                 <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500">Recensioni</p>
                 <p className="mt-2 text-2xl font-semibold leading-none">{siteConfig.rating}/5</p>
