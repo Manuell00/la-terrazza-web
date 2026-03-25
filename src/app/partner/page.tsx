@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Metadata } from "next";
 import AnimatedSection from "@/components/AnimatedSection";
 import PartnerGallery from "@/components/PartnerGallery";
@@ -54,6 +55,17 @@ export default function PartnerPage() {
               Strutture selezionate con cura, accomunate dalla stessa filosofia:
               accoglienza autentica e la magia del Piemonte come cornice.
             </p>
+            <div className="mx-auto mt-10 max-w-sm overflow-hidden rounded-[28px] border border-stone-100 bg-white p-3 shadow-[0_26px_80px_-42px_rgba(28,25,23,0.3)]">
+              <div className="relative aspect-square overflow-hidden rounded-[22px] bg-cream-50">
+                <Image
+                  src="/images/partner-intro.png"
+                  alt="Visual dedicato ai partner de La Terrazza Affittacamere"
+                  fill
+                  quality={100}
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </AnimatedSection>
         </div>
       </section>
