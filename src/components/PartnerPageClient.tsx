@@ -272,6 +272,7 @@ function PartnerSection({
   cta3Href,
 }: PartnerSectionProps) {
   const bgClass = bg === "cream" ? "bg-cream-50" : "bg-white";
+  const isMarosa = title === "MaRoSa House";
   const highlightPhrase = description.split(". ")[0];
   const remainingDescription = description.slice(highlightPhrase.length).trim().replace(/^\./, "").trim();
 
@@ -314,8 +315,8 @@ function PartnerSection({
         {/* 1 — TITLE */}
         <AnimatedSection className="mb-10 text-center">
           <div className="inline-flex flex-col items-center">
-            <h2 className="font-serif text-3xl font-semibold tracking-[-0.03em] text-stone-800 md:text-5xl">{title}</h2>
-            <span className="mt-3 h-[3px] w-20 rounded-full bg-[linear-gradient(90deg,rgba(16,185,129,0.2),rgba(16,185,129,0.9),rgba(16,185,129,0.2))] shadow-[0_8px_20px_-8px_rgba(16,185,129,0.65)]" />
+            <h2 className={`font-serif text-3xl font-semibold tracking-[-0.03em] text-stone-800 md:text-5xl ${isMarosa ? "md:[text-shadow:0_10px_24px_rgba(16,185,129,0.14)]" : ""}`}>{title}</h2>
+            <span className={`mt-3 h-[3px] rounded-full bg-[linear-gradient(90deg,rgba(16,185,129,0.2),rgba(16,185,129,0.9),rgba(16,185,129,0.2))] shadow-[0_8px_20px_-8px_rgba(16,185,129,0.65)] ${isMarosa ? "w-24 md:w-28" : "w-20"}`} />
           </div>
           <p className="mt-2 text-base font-medium text-emerald-700">{tagline}</p>
         </AnimatedSection>
