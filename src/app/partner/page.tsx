@@ -134,8 +134,7 @@ export default function PartnerPage() {
                 <strong className="font-semibold text-emerald-700">identità ligure</strong> e una posizione davvero strategica
                 tra <strong className="font-semibold text-stone-800">Rapallo</strong>,{" "}
                 <strong className="font-semibold text-stone-800">Santa Margherita Ligure</strong> e{" "}
-                <strong className="font-semibold text-stone-800">Portofino</strong>. È il tipo di soggiorno che mantiene
-                un tono raccolto, curato e autentico, pur restando vicino al ritmo elegante della Riviera.
+                <strong className="font-semibold text-stone-800">Portofino</strong>.
               </p>
             </div>
           </AnimatedSection>
@@ -203,9 +202,8 @@ export default function PartnerPage() {
                 <strong className="font-semibold text-stone-800">San Bartolomeo al Mare</strong> entra nella nostra selezione
                 come riferimento per chi desidera una vera <strong className="font-semibold text-emerald-700">casa al mare</strong>,
                 con il valore di una <strong className="font-semibold text-stone-800">soluzione indipendente</strong> e il piacere
-                di vivere la costa con più <strong className="font-semibold text-stone-800">privacy</strong>, autonomia e libertà.
-                Un partner pensato per chi cerca un soggiorno essenziale ma curato, immerso nell&apos;
-                <strong className="font-semibold text-stone-800">atmosfera della Liguria</strong>.
+                di vivere la costa con più <strong className="font-semibold text-stone-800">privacy</strong>, autonomia e libertà,
+                immersi nell&apos;<strong className="font-semibold text-stone-800">atmosfera della Liguria</strong>.
               </p>
             </div>
           </AnimatedSection>
