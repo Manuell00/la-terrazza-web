@@ -260,16 +260,16 @@ function PartnerSection({
 
         {/* 4 — BUTTONS */}
         <AnimatedSection>
-          <div className="flex flex-row flex-wrap justify-center gap-3">
+          <div className="mx-auto grid max-w-xl grid-cols-2 gap-3">
             {cta1Text && cta1Href && cta1TrackLabel && (
               <a
                 href={cta1Href}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track("partner_click", cta1TrackLabel)}
-                className="btn-primary text-sm px-6 py-3"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-stone-900 px-5 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-800"
               >
-                {cta1Text} →
+                🌐 {cta1Text}
               </a>
             )}
             {cta2Text && cta2Href && cta2TrackLabel && (
@@ -278,7 +278,7 @@ function PartnerSection({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track("partner_whatsapp", cta2TrackLabel)}
-                className="btn-secondary text-sm px-6 py-3"
+                className="btn-secondary w-full text-sm px-5 py-3 text-center"
               >
                 {WA_ICON} {cta2Text}
               </a>
@@ -287,7 +287,7 @@ function PartnerSection({
               <a
                 href={cta3Href}
                 onClick={() => track("partner_phone", title)}
-                className="btn-outline text-sm px-6 py-3"
+                className="btn-outline w-full text-sm px-5 py-3 text-center"
               >
                 📞 {cta3Text}
               </a>
