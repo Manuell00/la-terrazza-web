@@ -206,6 +206,8 @@ function PartnerSection({
   cta3Href,
 }: PartnerSectionProps) {
   const bgClass = bg === "cream" ? "bg-cream-50" : "bg-white";
+  const highlightPhrase = description.split(". ")[0];
+  const remainingDescription = description.slice(highlightPhrase.length).trim().replace(/^\./, "").trim();
 
   return (
     <section className={`${bgClass} py-16 md:py-24`}>
@@ -234,18 +236,27 @@ function PartnerSection({
 
         {/* 3 — DESCRIPTION */}
         <AnimatedSection className="mb-8">
-          <div className={`rounded-[26px] border border-stone-100 ${bg === "cream" ? "bg-white" : "bg-cream-50"} p-7 shadow-card md:p-9`}>
-            <p className="mb-3 text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-700">
+          <div className={`rounded-[30px] border border-stone-100 ${bg === "cream" ? "bg-white" : "bg-cream-50"} p-7 shadow-[0_24px_70px_-42px_rgba(28,25,23,0.22)] md:p-10`}>
+            <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-4 text-center text-[11px] font-semibold uppercase tracking-[0.26em] text-emerald-700">
               {label}
             </p>
-            <p className="mb-4 text-center text-base leading-relaxed text-stone-600">
-              {description}
+            <p className="mx-auto mb-4 max-w-xl font-serif text-[1.55rem] leading-[1.2] tracking-[-0.03em] text-stone-800 md:text-[1.8rem]">
+              {highlightPhrase}
             </p>
-            {descSecondary && (
-              <p className="text-center text-sm leading-relaxed text-stone-400">
-                {descSecondary}
+            {remainingDescription && (
+              <p className="mx-auto max-w-2xl text-center text-[15px] leading-relaxed text-stone-500 md:text-base">
+                {remainingDescription}
               </p>
             )}
+            {descSecondary && (
+              <div className="mx-auto mt-5 max-w-xl rounded-[22px] border border-stone-100/80 bg-white/70 px-5 py-4 backdrop-blur-sm">
+                <p className="text-center text-sm leading-relaxed text-stone-500 md:text-[15px]">
+                  {descSecondary}
+                </p>
+              </div>
+            )}
+            </div>
           </div>
         </AnimatedSection>
 
