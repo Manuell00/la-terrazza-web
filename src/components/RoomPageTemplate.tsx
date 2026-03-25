@@ -132,7 +132,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
 
               {/* Description */}
               <AnimatedSection className="text-center">
-                <p className="section-label mb-2">{lang === "it" ? "La camera" : "The room"}</p>
+                <p className="section-label mb-3">{lang === "it" ? "La camera" : "The room"}</p>
                 <h2 className="mb-5 font-serif text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
                   {room.name}
                 </h2>
@@ -155,7 +155,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
 
               {/* Features */}
               <AnimatedSection className="text-center">
-                <p className="section-label mb-2">{lang === "it" ? "Dotazioni" : "Features"}</p>
+                <p className="section-label mb-3">{lang === "it" ? "Dotazioni" : "Features"}</p>
                 <h3 className="mb-7 font-serif text-[2rem] font-semibold leading-[0.98] tracking-[-0.03em] text-stone-800 md:text-3xl">
                   {lang === "it" ? "Tutto quello che ti aspetta in camera" : "Everything waiting for you in the room"}
                 </h3>
@@ -279,7 +279,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
       <section className="bg-cream-50 py-14 md:py-20">
         <div className="container mx-auto max-w-4xl px-4">
           <AnimatedSection className="mb-10 text-center">
-            <p className="section-label">{lang === "it" ? "Cosa dicono" : "Guest reviews"}</p>
+            <p className="section-label mb-3">{lang === "it" ? "Cosa dicono" : "Guest reviews"}</p>
             <h2 className="font-serif text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">{lang === "it" ? "Recensioni degli ospiti" : "What guests say"}</h2>
           </AnimatedSection>
 
@@ -297,7 +297,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
       <section className="bg-white py-14">
         <div className="container mx-auto max-w-6xl px-4">
           <AnimatedSection className="mb-10 text-center">
-            <p className="section-label">{lang === "it" ? "Esplora ancora" : "Keep exploring"}</p>
+            <p className="section-label mb-3">{lang === "it" ? "Esplora ancora" : "Keep exploring"}</p>
             <h2 className="font-serif text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800">{lang === "it" ? "Le altre camere" : "Other rooms"}</h2>
           </AnimatedSection>
           <div className="grid gap-6 md:grid-cols-2">
