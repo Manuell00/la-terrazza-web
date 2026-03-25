@@ -31,7 +31,7 @@ const marosaLightboxImages = [
 ];
 
 /* San Bartolomeo: property photos only in gallery, logo displayed separately */
-const sanBartolomeoLogo = "/images/partner/san-bartolomeo/casa-mare-logo.jpg";
+const sanBartolomeoLogo = "/images/partner/san-bartolomeo/sb-1.jpg";
 const sanBartolomeoImages = [
   "/images/partner/san-bartolomeo/sb-2.jpg",
   "/images/partner/san-bartolomeo/sb-3.jpg",
