@@ -231,7 +231,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               {/* PRIMARY: WhatsApp */}
               <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-5 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-400 shadow-xl sm:px-8 sm:py-4 sm:text-base">
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-stone-800 px-5 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-stone-700 shadow-xl sm:px-8 sm:py-4 sm:text-base">
                 {WA_ICON} Scrivici su WhatsApp
               </a>
               <a href={`tel:${siteConfig.phone}`}

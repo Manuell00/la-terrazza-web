@@ -30,14 +30,14 @@ export default function Hero() {
           className="object-cover scale-[1.04]"
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.2),transparent_34%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,24,39,0.62)_0%,rgba(17,24,39,0.38)_42%,rgba(17,24,39,0.16)_72%,rgba(17,24,39,0.2)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/72 via-stone-950/18 to-stone-950/16" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,24,39,0.72)_0%,rgba(17,24,39,0.48)_42%,rgba(17,24,39,0.2)_72%,rgba(17,24,39,0.18)_100%)] md:bg-[linear-gradient(90deg,rgba(17,24,39,0.62)_0%,rgba(17,24,39,0.38)_42%,rgba(17,24,39,0.16)_72%,rgba(17,24,39,0.2)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/82 via-stone-950/28 to-stone-950/20 md:from-stone-950/72 md:via-stone-950/18 md:to-stone-950/16" />
       </motion.div>
 
       {/* Content */}
       <motion.div className="relative z-10 w-full" style={{ opacity }}>
         <div className="container mx-auto px-4 pb-16 md:pb-20">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl text-center md:text-left">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
@@ -51,17 +51,17 @@ export default function Hero() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.8 }}
-              className="max-w-2xl font-serif text-[3.15rem] font-semibold leading-[0.88] tracking-[-0.04em] text-white [text-shadow:0_20px_48px_rgba(0,0,0,0.35)] sm:text-[4.4rem] md:text-[5.9rem]"
+              className="max-w-2xl font-serif text-[3rem] font-semibold leading-[0.86] tracking-[-0.045em] text-white [text-shadow:0_20px_48px_rgba(0,0,0,0.45)] sm:text-[4.4rem] md:text-[5.9rem]"
             >
-              Un rifugio di relax
-              <span className="mt-2 block text-stone-100/96">tra natura e comfort.</span>
+              Respira il silenzio
+              <span className="mt-2 block text-stone-100/96">e lasciati accogliere.</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.75 }}
-              className="mt-6 max-w-xl text-base leading-relaxed text-stone-100/92 sm:text-lg md:text-xl"
+              className="mx-auto mt-5 max-w-[21rem] text-base leading-relaxed text-stone-100/96 sm:max-w-xl sm:text-lg md:mx-0 md:text-xl"
             >
               Tre camere esclusive tra i vigneti del Monferrato. Stacca la spina, respira e lasciati accogliere con la calma autentica del Piemonte.
             </motion.p>

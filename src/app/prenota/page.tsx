@@ -44,7 +44,7 @@ export default function PrenotaPage() {
             <p className="text-emerald-300 text-sm font-medium tracking-widest uppercase mb-4">
               Prenota il tuo soggiorno
             </p>
-            <h1 className="font-serif text-5xl md:text-6xl text-white font-semibold leading-tight mb-6">
+            <h1 className="font-serif text-[2.4rem] md:text-6xl text-white font-semibold leading-tight mb-6 sm:text-5xl">
               Il tuo relax inizia qui.
             </h1>
             <p className="text-stone-300 text-lg max-w-xl mx-auto">
@@ -58,7 +58,7 @@ export default function PrenotaPage() {
       <section className="py-16 bg-stone-50">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-12">
-            <h2 className="font-serif text-3xl text-stone-800">Scegli la tua camera</h2>
+            <h2 className="font-serif text-[2rem] text-stone-800 sm:text-3xl">Scegli la tua camera</h2>
           </AnimatedSection>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {rooms.map((room, i) => (
@@ -78,7 +78,7 @@ export default function PrenotaPage() {
                   </div>
                   <div className="p-5 flex flex-col flex-1">
                     <p className="text-stone-500 text-sm mb-4 flex-1">{room.description}</p>
-                    <div className="mb-5 border-t border-stone-100 pt-4">
+                    <div className="mb-5 border-t border-stone-100 pt-4 text-center">
                       <p className="text-[11px] font-semibold tracking-[0.24em] uppercase text-stone-400 mb-1">
                         Tariffa indicativa
                       </p>

@@ -51,7 +51,7 @@ export default function PartnerPage() {
       </section>
 
       {/* MaRoSa House */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="bg-white py-16 md:py-20">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Header */}
           <AnimatedSection className="mb-10">
@@ -70,9 +70,20 @@ export default function PartnerPage() {
           </AnimatedSection>
 
           {/* Description + Grid */}
-          <div className="grid md:grid-cols-[0.95fr_1.05fr] gap-8 md:gap-12 items-start">
+          <div className="grid items-start gap-8 md:grid-cols-[0.95fr_1.05fr] md:gap-12">
+            {/* Image grid */}
+            <AnimatedSection direction="right" className="md:order-2">
+              <PartnerGallery
+                featuredImage={marosaImages[0]}
+                gridImages={marosaImages.slice(1, 4)}
+                lightboxImages={marosaImages.slice(1)}
+                alt="MaRoSa House"
+                featuredMode="contain"
+              />
+            </AnimatedSection>
+
             {/* Text */}
-            <AnimatedSection direction="left">
+            <AnimatedSection direction="left" className="md:order-1 text-center md:text-left">
               <div className="rounded-[28px] border border-stone-200 bg-stone-50 p-7 md:p-8 shadow-sm">
                 <p className="text-stone-600 leading-relaxed mb-4">
                   MaRoSa House è una struttura partner selezionata per la qualità dell&apos;accoglienza
@@ -84,12 +95,12 @@ export default function PartnerPage() {
                   e si sente. Un posto pensato per farti stare bene, dal primo all&apos;ultimo minuto.
                 </p>
               </div>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
                 <a
                   href={siteConfig.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-green-600 px-5 py-2.5 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-green-500"
+                  className="inline-flex items-center gap-2 rounded-full bg-stone-800 px-5 py-2.5 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-stone-700"
                 >
                   {WA_ICON} Contatta via WhatsApp
                 </a>
@@ -103,28 +114,28 @@ export default function PartnerPage() {
                 </a>
               </div>
             </AnimatedSection>
-
-            {/* Image grid */}
-            <AnimatedSection direction="right">
-              <PartnerGallery
-                featuredImage={marosaImages[0]}
-                gridImages={marosaImages.slice(1, 4)}
-                lightboxImages={marosaImages.slice(1)}
-                alt="MaRoSa House"
-                featuredMode="contain"
-              />
-            </AnimatedSection>
           </div>
 
         </div>
       </section>
 
       {/* San Bartolomeo */}
-      <section className="py-16 md:py-20 bg-stone-50">
+      <section className="bg-stone-50 py-16 md:py-20">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-[0.95fr_1.05fr] gap-8 md:gap-12 items-start">
+          <div className="grid items-start gap-8 md:grid-cols-[0.95fr_1.05fr] md:gap-12">
+            {/* Image gallery */}
+            <AnimatedSection direction="right" className="text-center md:order-2">
+              <PartnerGallery
+                featuredImage={sanBartolomeoImages[0]}
+                gridImages={sanBartolomeoImages.slice(1)}
+                lightboxImages={sanBartolomeoImages.slice(1)}
+                alt="Appartamento San Bartolomeo"
+                featuredMode="contain"
+              />
+            </AnimatedSection>
+
             {/* Content */}
-            <AnimatedSection direction="left" className="order-2 md:order-1">
+            <AnimatedSection direction="left" className="text-center md:order-1 md:text-left">
               <div className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full border bg-blue-50 border-blue-200 text-blue-700 mb-5">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                 Appartamento privato
@@ -144,12 +155,12 @@ export default function PartnerPage() {
                   senza rinunciare al comfort. La struttura parla da sola.
                 </p>
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap justify-center gap-3 md:justify-start">
                 <a
                   href={siteConfig.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5"
                 >
                   {WA_ICON} Contatta via WhatsApp
                 </a>
@@ -160,17 +171,6 @@ export default function PartnerPage() {
                   📞 Chiama ora
                 </a>
               </div>
-            </AnimatedSection>
-
-            {/* Image gallery */}
-            <AnimatedSection direction="right" className="order-1 md:order-2">
-              <PartnerGallery
-                featuredImage={sanBartolomeoImages[0]}
-                gridImages={sanBartolomeoImages.slice(1)}
-                lightboxImages={sanBartolomeoImages.slice(1)}
-                alt="Appartamento San Bartolomeo"
-                featuredMode="contain"
-              />
             </AnimatedSection>
           </div>
         </div>
@@ -191,7 +191,7 @@ export default function PartnerPage() {
               href={siteConfig.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5"
             >
               {WA_ICON} Scrivici su WhatsApp
             </a>

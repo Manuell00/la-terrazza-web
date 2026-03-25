@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -59,6 +60,16 @@ const platformButtonBase =
   "group flex min-h-[48px] w-full items-center justify-center gap-3 rounded-xl border border-stone-200 bg-white px-5 py-3 text-sm font-medium text-stone-600 transition-all duration-200 hover:-translate-y-0.5 hover:border-stone-300 hover:bg-stone-800 hover:text-white shadow-sm";
 
 export default function RoomPageTemplate({ room, otherRooms }: Props) {
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
+  const keyFeatures = room.features.slice(0, 3);
+  const extraAmenities = room.amenities.slice(0, 2);
+  const collapsedFeatures = [...keyFeatures, ...extraAmenities.map((label) => ({ icon: amenityIcons[label] ?? "✓", label }))];
+  const expandedFeatures = [
+    ...room.features,
+    ...room.amenities.map((label) => ({ icon: amenityIcons[label] ?? "✓", label })),
+  ];
+  const displayedFeatures = showAllFeatures ? expandedFeatures : collapsedFeatures;
+
   return (
     <main className="pt-0">
       {/* Hero */}
@@ -79,12 +90,12 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
         </div>
 
         <div className="relative z-10 container mx-auto px-4 pb-14">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center md:text-left">
             <span className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm px-4 py-1.5 rounded-full mb-4">
               {room.highlight}
             </span>
             <h1 className="font-serif text-5xl md:text-7xl text-white font-semibold mb-2">{room.name}</h1>
-            <p className="text-stone-200 text-xl max-w-xl">{room.subtitle}</p>
+            <p className="mx-auto max-w-xl text-xl text-stone-200 md:mx-0">{room.subtitle}</p>
           </motion.div>
         </div>
       </section>
@@ -94,36 +105,45 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-3 gap-10">
             {/* Left: Gallery + Description */}
-            <div className="lg:col-span-2 space-y-10">
+            <div className="space-y-10 lg:col-span-2">
               <AnimatedSection>
                 <Gallery images={room.images} alt={room.name} />
               </AnimatedSection>
-              <AnimatedSection>
-                <h2 className="font-serif text-3xl text-stone-800 mb-4">La camera</h2>
-                <p className="text-stone-600 leading-relaxed text-lg">{room.longDescription}</p>
+              <AnimatedSection className="text-center">
+                <h2 className="mb-4 font-serif text-3xl text-stone-800">La camera</h2>
+                <p className="mx-auto max-w-2xl text-lg leading-relaxed text-stone-600">
+                  <span className="font-semibold text-stone-800">{room.name}</span> è pensata per chi cerca
+                  {" "}
+                  <span className="font-semibold text-stone-800">comfort autentico</span>,
+                  {" "}ritmi lenti e un&apos;atmosfera che invita davvero a fermarsi.
+                  {" "}Tra luce naturale, dettagli curati e calma del paesaggio, ogni soggiorno acquista un tono più intimo e rilassato.
+                </p>
               </AnimatedSection>
-              <AnimatedSection>
-                <h3 className="font-serif text-2xl text-stone-800 mb-5">Cosa trovi in camera</h3>
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {room.features.map((f) => (
+              <AnimatedSection className="text-center">
+                <h3 className="mb-5 font-serif text-2xl text-stone-800">Cosa trovi in camera</h3>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {displayedFeatures.map((f) => (
                     <div key={f.label} className="flex items-center gap-3 bg-stone-50 rounded-xl px-4 py-3">
                       <span className="text-xl">{f.icon}</span>
                       <span className="text-stone-700 text-sm">{f.label}</span>
                     </div>
                   ))}
-                  {room.amenities.map((a) => (
-                    <div key={a} className="flex items-center gap-3 bg-stone-50 rounded-xl px-4 py-3">
-                      <span className="text-xl">{amenityIcons[a] ?? "✓"}</span>
-                      <span className="text-stone-700 text-sm">{a}</span>
-                    </div>
-                  ))}
                 </div>
+                {expandedFeatures.length > collapsedFeatures.length && (
+                  <button
+                    type="button"
+                    onClick={() => setShowAllFeatures((value) => !value)}
+                    className="mt-5 inline-flex items-center justify-center rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 transition-colors hover:border-stone-500 hover:bg-stone-50"
+                  >
+                    {showAllFeatures ? "Mostra meno" : "Visualizza tutto"}
+                  </button>
+                )}
               </AnimatedSection>
             </div>
 
             {/* Right: Booking sidebar */}
             <div className="lg:col-span-1 space-y-5">
-              <AnimatedSection direction="right" className="sticky top-28 space-y-4">
+              <AnimatedSection direction="right" className="sticky top-28 space-y-4 text-center">
                 {/* Quick booking card */}
                 <div className="bg-stone-50 rounded-2xl p-5 border border-stone-200 shadow-sm">
                   <div className="mb-5 pb-4 border-b border-stone-200">
@@ -172,13 +192,13 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                   </div>
 
                   {/* Trust */}
-                  <div className="mt-5 pt-4 border-t border-stone-200 space-y-1.5">
+                  <div className="mt-5 space-y-1.5 border-t border-stone-200 pt-4">
                     {[
                       { icon: "✓", text: "Risposta entro pochi minuti" },
                       { icon: "🔒", text: "Prenotazione sicura e verificata" },
                       { icon: "⭐", text: `Rating ${siteConfig.rating}/5 verificato` },
                     ].map((t) => (
-                      <div key={t.text} className="flex items-center gap-2 text-stone-500 text-xs">
+                      <div key={t.text} className="flex items-center justify-center gap-2 text-stone-500 text-xs">
                         <span className="text-green-500">{t.icon}</span><span>{t.text}</span>
                       </div>
                     ))}
@@ -196,7 +216,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
       {/* Reviews */}
       <section className="py-12 bg-stone-50">
         <div className="container mx-auto px-4 max-w-4xl">
-          <AnimatedSection className="mb-8">
+          <AnimatedSection className="mb-8 text-center">
             <h2 className="font-serif text-3xl text-stone-800">Recensioni degli ospiti</h2>
           </AnimatedSection>
           <div className="grid md:grid-cols-2 gap-5">
@@ -208,7 +228,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
       {/* Other rooms */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          <AnimatedSection className="mb-8">
+          <AnimatedSection className="mb-8 text-center">
             <h2 className="font-serif text-3xl text-stone-800">Esplora le altre camere</h2>
           </AnimatedSection>
           <div className="grid md:grid-cols-2 gap-6">
@@ -218,7 +238,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                 <Image src={r.coverImage} alt={r.name} fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
                   <h3 className="font-serif text-white text-2xl">{r.name}</h3>
                   <p className="text-stone-200 text-sm">{r.subtitle}</p>
                 </div>
@@ -241,7 +261,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               {/* PRIMARY: WhatsApp */}
               <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5">
+                className="inline-flex items-center justify-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5">
                 {WA_ICON} Scrivi su WhatsApp
               </a>
               <a href={`tel:${siteConfig.phone}`}
