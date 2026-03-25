@@ -283,14 +283,6 @@ export default function HomePage() {
                 Controlla disponibilità
               </Link>
               <a
-                href={siteConfig.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-stone-800/90 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-stone-700 hover:-translate-y-px active:translate-y-0"
-              >
-                {WA_ICON} Verifica disponibilità su WhatsApp
-              </a>
-              <a
                 href={`tel:${siteConfig.phone}`}
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/15 hover:-translate-y-px active:translate-y-0"
               >
