@@ -125,13 +125,17 @@ export default function PartnerPage() {
           {/* 3. DESCRIPTION */}
           <AnimatedSection className="mb-8">
             <div className="rounded-[26px] border border-stone-100 bg-white p-7 shadow-card md:p-9">
+              <p className="mb-3 text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-700">
+                Partner selezionato
+              </p>
               <p className="mb-4 text-center text-base leading-relaxed text-stone-600">
-                <strong className="font-semibold text-stone-800">MaRoSa House</strong> è una casa vacanze partner situata a{" "}
-                <strong className="font-semibold text-stone-800">Rapallo</strong>, nel cuore della{" "}
-                <strong className="font-semibold text-emerald-700">Riviera Ligure</strong>. Una base{" "}
-                <strong className="font-semibold text-stone-800">comoda e curata</strong> per muoversi con facilità tra{" "}
-                <strong className="font-semibold text-stone-800">Santa Margherita Ligure</strong>,{" "}
-                <strong className="font-semibold text-stone-800">Portofino</strong> e il fascino della costa.
+                Abbiamo scelto <strong className="font-semibold text-stone-800">MaRoSa House</strong> come struttura partner
+                per la sua capacità di unire <strong className="font-semibold text-stone-800">comfort domestico</strong>,{" "}
+                <strong className="font-semibold text-emerald-700">identità ligure</strong> e una posizione davvero strategica
+                tra <strong className="font-semibold text-stone-800">Rapallo</strong>,{" "}
+                <strong className="font-semibold text-stone-800">Santa Margherita Ligure</strong> e{" "}
+                <strong className="font-semibold text-stone-800">Portofino</strong>. È il tipo di soggiorno che mantiene
+                un tono raccolto, curato e autentico, pur restando vicino al ritmo elegante della Riviera.
               </p>
             </div>
           </AnimatedSection>
@@ -192,12 +196,16 @@ export default function PartnerPage() {
           {/* 3. DESCRIPTION */}
           <AnimatedSection className="mb-8">
             <div className="rounded-[26px] border border-stone-100 bg-cream-50 p-7 shadow-soft md:p-9">
+              <p className="mb-3 text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-700">
+                Partner selezionato
+              </p>
               <p className="mb-4 text-center text-base leading-relaxed text-stone-600">
-                <strong className="font-semibold text-stone-800">San Bartolomeo al Mare</strong> offre una{" "}
-                <strong className="font-semibold text-stone-800">soluzione indipendente</strong> per chi cerca una vera{" "}
-                <strong className="font-semibold text-emerald-700">casa al mare</strong>, con più{" "}
-                <strong className="font-semibold text-stone-800">privacy</strong>, autonomia e ritmi liberi, a pochi passi
-                dall&apos;<strong className="font-semibold text-stone-800">atmosfera della costa ligure</strong>.
+                <strong className="font-semibold text-stone-800">San Bartolomeo al Mare</strong> entra nella nostra selezione
+                come riferimento per chi desidera una vera <strong className="font-semibold text-emerald-700">casa al mare</strong>,
+                con il valore di una <strong className="font-semibold text-stone-800">soluzione indipendente</strong> e il piacere
+                di vivere la costa con più <strong className="font-semibold text-stone-800">privacy</strong>, autonomia e libertà.
+                Un partner pensato per chi cerca un soggiorno essenziale ma curato, immerso nell&apos;
+                <strong className="font-semibold text-stone-800">atmosfera della Liguria</strong>.
               </p>
             </div>
           </AnimatedSection>
