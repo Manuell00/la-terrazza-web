@@ -136,21 +136,36 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                 <h2 className="mb-5 font-serif text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
                   {room.name}
                 </h2>
-                <p className="mx-auto max-w-2xl text-base leading-relaxed text-stone-500 md:text-lg">
-                  {lang === "it" ? (
-                    <>
-                      <span className="font-semibold text-stone-800">{room.name}</span> è pensata per chi cerca{" "}
-                      <span className="font-semibold text-emerald-700">comfort autentico</span>, ritmi lenti e un&apos;atmosfera che invita davvero a fermarsi. Tra{" "}
-                      <span className="font-semibold text-stone-800">luce naturale</span>, dettagli curati e la calma del paesaggio, ogni soggiorno acquista un tono più intimo e rilassato.
-                    </>
-                  ) : (
-                    <>
-                      <span className="font-semibold text-stone-800">{room.name}</span> is designed for guests looking for{" "}
-                      <span className="font-semibold text-emerald-700">authentic comfort</span>, slower rhythms and a setting that genuinely invites you to pause. Between{" "}
-                      <span className="font-semibold text-stone-800">natural light</span>, thoughtful details and the calm of the landscape, each stay feels more intimate and restorative.
-                    </>
-                  )}
-                </p>
+                <div className="mx-auto max-w-2xl text-stone-500">
+                  <p className="text-base leading-relaxed md:hidden">
+                    {lang === "it" ? (
+                      <>
+                        <span className="font-semibold text-stone-800">{room.name}</span> unisce{" "}
+                        <span className="font-semibold text-emerald-700">comfort autentico</span>, calma e dettagli curati per un soggiorno più intimo e rilassato.
+                      </>
+                    ) : (
+                      <>
+                        <span className="font-semibold text-stone-800">{room.name}</span> blends{" "}
+                        <span className="font-semibold text-emerald-700">authentic comfort</span>, calm and thoughtful details for a more relaxed stay.
+                      </>
+                    )}
+                  </p>
+                  <p className="hidden text-base leading-relaxed md:block md:text-lg">
+                    {lang === "it" ? (
+                      <>
+                        <span className="font-semibold text-stone-800">{room.name}</span> è pensata per chi cerca{" "}
+                        <span className="font-semibold text-emerald-700">comfort autentico</span>, ritmi lenti e un&apos;atmosfera che invita davvero a fermarsi. Tra{" "}
+                        <span className="font-semibold text-stone-800">luce naturale</span>, dettagli curati e la calma del paesaggio, ogni soggiorno acquista un tono più intimo e rilassato.
+                      </>
+                    ) : (
+                      <>
+                        <span className="font-semibold text-stone-800">{room.name}</span> is designed for guests looking for{" "}
+                        <span className="font-semibold text-emerald-700">authentic comfort</span>, slower rhythms and a setting that genuinely invites you to pause. Between{" "}
+                        <span className="font-semibold text-stone-800">natural light</span>, thoughtful details and the calm of the landscape, each stay feels more intimate and restorative.
+                      </>
+                    )}
+                  </p>
+                </div>
               </AnimatedSection>
 
               {/* Features */}
