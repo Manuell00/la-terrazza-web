@@ -231,7 +231,10 @@ function PartnerSection({
 
         {/* 1 — TITLE */}
         <AnimatedSection className="mb-10 text-center">
-          <h2 className="font-serif text-3xl font-semibold text-stone-800 md:text-5xl">{title}</h2>
+          <div className="inline-flex flex-col items-center">
+            <h2 className="font-serif text-3xl font-semibold tracking-[-0.03em] text-stone-800 md:text-5xl">{title}</h2>
+            <span className="mt-3 h-[3px] w-20 rounded-full bg-[linear-gradient(90deg,rgba(16,185,129,0.2),rgba(16,185,129,0.9),rgba(16,185,129,0.2))] shadow-[0_8px_20px_-8px_rgba(16,185,129,0.65)]" />
+          </div>
           <p className="mt-2 text-base font-medium text-emerald-700">{tagline}</p>
         </AnimatedSection>
 
