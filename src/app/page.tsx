@@ -287,7 +287,7 @@ export default function HomePage() {
 
         <div className="container relative mx-auto px-4">
           <AnimatedSection>
-            <div className="mx-auto max-w-2xl rounded-[30px] bg-stone-900 px-6 py-8 md:px-10 md:py-10">
+            <div className="mx-auto max-w-2xl rounded-[30px] bg-transparent px-6 py-8 md:bg-stone-900 md:px-10 md:py-10">
               <p className="section-label mb-5 text-emerald-400">Pronti ad accoglierti</p>
               <h2 className="page-hero-title mb-4 text-3xl text-white md:text-5xl">
                 La tua prossima fuga inizia qui
