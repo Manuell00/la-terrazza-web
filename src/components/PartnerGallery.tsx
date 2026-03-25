@@ -66,6 +66,8 @@ export default function PartnerGallery({
             src={featuredImage}
             alt={`${alt} principale`}
             fill
+            sizes="(max-width: 768px) 100vw, 900px"
+            quality={84}
             className={`${featuredMode === "contain" ? "object-contain p-4 md:p-6" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-[1.05]`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-950/28 via-stone-950/10 to-transparent opacity-0 transition-all duration-500 ease-out group-hover:opacity-100" />
@@ -86,6 +88,8 @@ export default function PartnerGallery({
                 src={src}
                 alt={`${alt} ${i + 2}`}
                 fill
+                sizes="(max-width: 768px) 33vw, 280px"
+                quality={80}
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
               />
               <div className="premium-image-overlay" />
@@ -135,6 +139,7 @@ export default function PartnerGallery({
                       src={lightboxImages[selected]}
                       alt={`${alt} ${selected + 1}`}
                       fill
+                      quality={88}
                       className="object-contain"
                       sizes="100vw"
                     />

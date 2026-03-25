@@ -111,11 +111,12 @@ function HeroIllustration({
       >
         <div className="absolute inset-0 overflow-hidden rounded-[28px]">
           <Image
-            src="/images/hero-generated-house.jpg"
-            alt="Illustrazione hero della struttura"
+            src="/images/seo/affittacamere-cantarana-piemonte-hero.jpg"
+            alt="La Terrazza Affittacamere a Cantarana, Asti in Piemonte"
             fill
             priority
-            quality={100}
+            quality={88}
+            sizes={compact ? "100vw" : "(max-width: 1024px) 100vw, 52vw"}
             className="scale-[0.985] object-cover transition-transform duration-[1800ms] ease-out"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.02),rgba(19,29,20,0.12))]" />

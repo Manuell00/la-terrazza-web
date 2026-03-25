@@ -28,8 +28,10 @@ export default function RoomCard({ room, index }: Props) {
           <div className="relative h-72 overflow-hidden flex-shrink-0">
             <Image
               src={room.coverImage}
-              alt={room.name}
+              alt={`${room.name} - La Terrazza Affittacamere a Cantarana, Asti`}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 420px"
+              quality={84}
               className="object-cover premium-image-hover"
             />
             <div className="premium-image-overlay" />

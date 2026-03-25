@@ -81,7 +81,15 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
       {/* ── Room Hero ── */}
       <section className="relative flex h-[65vh] min-h-[440px] items-end overflow-hidden">
         <div className="absolute inset-0">
-          <Image src={room.coverImage} alt={room.name} fill priority className="object-cover" quality={90} />
+          <Image
+            src={room.coverImage}
+            alt={`${room.name} - soggiorno a La Terrazza Affittacamere, Cantarana`}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+            quality={86}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-950/88 via-stone-950/34 to-stone-950/18" />
         </div>
 
@@ -324,8 +332,10 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
               >
                 <Image
                   src={r.coverImage}
-                  alt={r.name}
+                  alt={`${r.name} - La Terrazza Affittacamere a Cantarana`}
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  quality={82}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950/82 via-stone-950/30 to-transparent" />

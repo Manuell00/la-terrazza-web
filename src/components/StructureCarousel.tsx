@@ -5,12 +5,12 @@ import Image from "next/image";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
 
 const images = [
-  { src: "/images/struttura/struttura-3.jpg", alt: "La Terrazza — hall" },
-  { src: "/images/struttura/struttura-5.jpg", alt: "La Terrazza — ambienti comuni" },
-  { src: "/images/struttura/struttura-6.jpg", alt: "La Terrazza — terrazza" },
-  { src: "/images/camera-luna/luna-1.jpg", alt: "Camera Luna" },
-  { src: "/images/camera-sole/sole-1.jpg", alt: "Camera Sole" },
-  { src: "/images/struttura/struttura-4.jpg", alt: "La Terrazza — esterno" },
+  { src: "/images/struttura/struttura-3.jpg", alt: "Ingresso e ambienti de La Terrazza Affittacamere a Cantarana" },
+  { src: "/images/struttura/struttura-5.jpg", alt: "Spazi comuni del B&B La Terrazza vicino Asti" },
+  { src: "/images/struttura/struttura-6.jpg", alt: "Terrazza panoramica de La Terrazza Affittacamere in Piemonte" },
+  { src: "/images/camera-luna/luna-1.jpg", alt: "Camera Luna de La Terrazza Affittacamere a Cantarana" },
+  { src: "/images/camera-sole/sole-1.jpg", alt: "Camera Sole de La Terrazza Affittacamere in Piemonte" },
+  { src: "/images/struttura/struttura-4.jpg", alt: "Esterno de La Terrazza Affittacamere tra le colline del Piemonte" },
 ];
 
 export default function StructureCarousel() {
@@ -56,6 +56,8 @@ export default function StructureCarousel() {
               src={images[current].src}
               alt={images[current].alt}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 960px"
+              quality={84}
               className="object-cover pointer-events-none transition-transform duration-700 ease-out"
               priority={current === 0}
             />

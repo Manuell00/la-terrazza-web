@@ -13,15 +13,29 @@ import { reviews } from "@/data/reviews";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "La Terrazza Affittacamere | Guesthouse in Cantarana, Asti",
+  title: "Guesthouse in Cantarana | B&B near Asti | Stay in Piedmont",
   description:
-    "A countryside guesthouse in Cantarana, Asti. Three distinctive rooms, breakfast included, nature and quiet. Book your stay in Piedmont.",
-  keywords: siteConfig.seo.keywords.join(", "),
+    "English-friendly guesthouse in Cantarana, a B&B near Asti for a stay in Piedmont among vineyards, breakfast included and quiet countryside views.",
+  keywords: [
+    "guesthouse Cantarana",
+    "B&B near Asti",
+    "stay in Piedmont",
+    "Monferrato accommodation",
+    "countryside stay Asti",
+  ].join(", "),
+  alternates: {
+    canonical: "/en",
+    languages: {
+      it: "/",
+      en: "/en",
+      "x-default": "/",
+    },
+  },
   openGraph: {
-    title: "La Terrazza Affittacamere — Cantarana, Asti",
-    description: "Three distinctive rooms among the vineyards of Piedmont. Nature, quiet and authentic hospitality.",
-    images: [{ url: "/images/struttura/struttura-2.jpg" }],
-    locale: "en_GB",
+    title: "Guesthouse in Cantarana | Stay in Piedmont",
+    description: "An English-friendly countryside stay near Asti, among the vineyards of Piedmont.",
+    images: [{ url: "/images/seo/bb-asti-la-terrazza-struttura.jpg" }],
+    locale: "en_US",
     type: "website",
   },
 };
@@ -39,17 +53,17 @@ const highlights = [
 
 export default function EnglishHomePage() {
   return (
-    <main>
+    <main lang="en">
       <Hero />
 
-      <section className="relative overflow-hidden bg-white py-20 md:py-28">
+      <section aria-labelledby="en-home-story-title" className="relative overflow-hidden bg-white py-20 md:py-28">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-cream-50 to-transparent" />
         <div className="container mx-auto px-4">
           <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
             <AnimatedSection direction="right" className="order-1 text-center md:order-2 md:text-left">
               <div className="rounded-[30px] border border-stone-100 bg-cream-50/80 p-7 shadow-soft backdrop-blur-sm md:p-9">
                 <p className="section-label">Our story</p>
-                <h2 className="mb-5 font-serif text-[2.3rem] font-semibold leading-[0.95] tracking-[-0.03em] text-stone-800 md:text-5xl">
+                <h2 id="en-home-story-title" className="mb-5 font-serif text-[2.3rem] font-semibold leading-[0.95] tracking-[-0.03em] text-stone-800 md:text-5xl">
                   A special place.
                 </h2>
                 <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
@@ -59,6 +73,11 @@ export default function EnglishHomePage() {
                     <span className="font-semibold text-emerald-700">Luna</span>,{" "}
                     <span className="font-semibold text-emerald-700">Stella</span>{" "}and{" "}
                     <span className="font-semibold text-emerald-700">Sole</span>. Three different moods, one promise: leaving with a smile.
+                  </p>
+                  <p>
+                    If you are looking for a <span className="font-semibold text-stone-900">guesthouse in Cantarana</span>, a
+                    {" "}<span className="font-semibold text-stone-900">B&amp;B near Asti</span> or a
+                    {" "}<span className="font-semibold text-stone-900">stay in Piedmont</span> surrounded by vineyards and quiet countryside, La Terrazza is designed for that slower kind of escape.
                   </p>
                 </div>
                 <div className="mt-8 flex justify-center md:justify-start">
@@ -73,9 +92,11 @@ export default function EnglishHomePage() {
               <div className="relative">
                 <div className="group relative h-72 overflow-hidden rounded-[24px] shadow-elevated md:h-[460px]">
                   <Image
-                    src="/images/struttura/struttura-3.jpg"
-                    alt="La Terrazza property"
+                    src="/images/seo/bb-asti-la-terrazza-struttura.jpg"
+                    alt="La Terrazza guesthouse in Cantarana near Asti, Piedmont"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={88}
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-stone-900/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -97,11 +118,11 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
-      <section className="bg-cream-50 py-20 md:py-28">
+      <section aria-labelledby="en-home-highlights-title" className="bg-cream-50 py-20 md:py-28">
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Why choose us</p>
-            <h2 className="font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
+            <h2 id="en-home-highlights-title" className="font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
               What makes La Terrazza feel different.
             </h2>
           </AnimatedSection>
@@ -119,11 +140,11 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section aria-labelledby="en-home-rooms-title" className="bg-white py-20 md:py-28">
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Our rooms</p>
-            <h2 className="mb-3 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
+            <h2 id="en-home-rooms-title" className="mb-3 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">
               Three rooms, three moods.
             </h2>
             <p className="text-stone-400">Each room has its own personality. Choose the one that feels right for your stay.</p>
@@ -134,11 +155,11 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
-      <section className="bg-cream-50 py-16">
+      <section aria-labelledby="en-home-structure-title" className="bg-cream-50 py-16">
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-10 max-w-xl text-center">
             <p className="section-label">The property</p>
-            <h2 className="font-serif text-[2rem] font-semibold leading-[0.98] tracking-[-0.03em] text-stone-800 md:text-3xl">Scroll to discover it.</h2>
+            <h2 id="en-home-structure-title" className="font-serif text-[2rem] font-semibold leading-[0.98] tracking-[-0.03em] text-stone-800 md:text-3xl">Scroll to discover it.</h2>
           </AnimatedSection>
           <AnimatedSection className="mx-auto max-w-3xl">
             <StructureCarousel />
@@ -146,11 +167,11 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section aria-labelledby="en-home-reviews-title" className="bg-white py-20 md:py-28">
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-14 max-w-2xl text-center">
             <p className="section-label">Reviews</p>
-            <h2 className="mb-5 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">What our guests say.</h2>
+            <h2 id="en-home-reviews-title" className="mb-5 font-serif text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-5xl">What our guests say.</h2>
           </AnimatedSection>
           <div className="mx-auto hidden max-w-6xl md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5">
             {reviews.map((review, i) => <ReviewCard key={review.id} review={review} index={i} />)}
@@ -161,11 +182,11 @@ export default function EnglishHomePage() {
 
       <PetFriendly />
 
-      <section className="bg-cream-50 py-20 md:py-28">
+      <section aria-labelledby="en-home-map-title" className="bg-cream-50 py-20 md:py-28">
         <div className="container mx-auto px-4">
           <AnimatedSection className="mx-auto mb-12 max-w-2xl text-center">
             <p className="section-label">How to reach us</p>
-            <h2 className="font-serif text-[2.15rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
+            <h2 id="en-home-map-title" className="font-serif text-[2.15rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
               Vineyards, quiet and scenic roads.
             </h2>
             <p className="mx-auto mt-4 hidden max-w-xl text-sm leading-relaxed text-stone-500 md:block md:text-base">

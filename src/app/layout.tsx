@@ -28,11 +28,14 @@ export const metadata: Metadata = {
     template: "%s | La Terrazza Affittacamere",
   },
   description:
-    "Affittacamere nel cuore della campagna astigiana. Tre camere esclusive — Luna, Stella e Sole — circondati dalla natura del Monferrato. Colazione inclusa, parcheggio gratuito.",
+    "Affittacamere a Cantarana, B&B vicino Asti e soggiorno in Piemonte tra vigne, quiete e colazione inclusa. Tre camere esclusive nel Monferrato.",
   keywords: [
     "La Terrazza Affittacamere",
+    "affittacamere Cantarana",
     "B&B Cantarana",
     "Bed and Breakfast Asti",
+    "B&B Asti",
+    "soggiorno Piemonte",
     "affittacamere Piemonte",
     "agriturismo Asti",
     "vacanze campagna Piemonte",
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
     "Camera Stella Asti",
     "Camera Sole Asti",
   ],
-  metadataBase: new URL("https://www.laterrazza-affittacamere.it"),
+  metadataBase: new URL("https://la-terrazza-web.vercel.app"),
   authors: [{ name: "La Terrazza Affittacamere" }],
   creator: "La Terrazza Affittacamere",
   openGraph: {
@@ -49,25 +52,32 @@ export const metadata: Metadata = {
     siteName: "La Terrazza Affittacamere",
     title: "La Terrazza Affittacamere — Cantarana, Asti",
     description:
-      "Tre camere esclusive tra i vigneti del Piemonte. Natura, relax e ospitalità autentica a Cantarana (Asti).",
+      "Affittacamere a Cantarana, B&B vicino Asti e soggiorno in Piemonte tra i vigneti del Monferrato.",
     images: [
       {
-        url: "/images/struttura/struttura-1.jpg",
+        url: "/images/seo/bb-asti-la-terrazza-struttura.jpg",
         width: 1200,
         height: 630,
-        alt: "La Terrazza Affittacamere - Cantarana, Asti",
+        alt: "La Terrazza Affittacamere a Cantarana, Asti in Piemonte",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "La Terrazza Affittacamere — Cantarana, Asti",
-    description: "Tre camere esclusive tra i vigneti del Piemonte.",
-    images: ["/images/struttura/struttura-1.jpg"],
+    description: "Affittacamere a Cantarana, B&B vicino Asti e soggiorno in Piemonte tra natura e quiete.",
+    images: ["/images/seo/bb-asti-la-terrazza-struttura.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: [
@@ -89,10 +99,10 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "BedAndBreakfast",
     name: "La Terrazza Affittacamere",
-    logo: "https://www.laterrazza-affittacamere.it/icon-512.png",
+    logo: "https://la-terrazza-web.vercel.app/icon-512.png",
     description:
-      "Affittacamere immerso nella campagna di Cantarana (Asti), Piemonte. Tre camere esclusive con colazione inclusa.",
-    url: "https://www.laterrazza-affittacamere.it",
+      "Affittacamere a Cantarana, B&B vicino Asti e soggiorno in Piemonte tra vigneti, natura e colazione inclusa.",
+    url: "https://la-terrazza-web.vercel.app",
     telephone: "+39 351 378 0768",
     email: "houselaterrazza@gmail.com",
     address: {
@@ -115,9 +125,13 @@ export default function RootLayout({
       { "@type": "LocationFeatureSpecification", name: "Colazione inclusa", value: true },
       { "@type": "LocationFeatureSpecification", name: "Aria condizionata", value: true },
     ],
+    sameAs: [
+      "https://www.instagram.com/house_laterrazza",
+      "https://www.facebook.com/share/18JmJpuNoU/",
+    ],
     image: [
-      "/images/struttura/struttura-1.jpg",
-      "/images/struttura/struttura-2.jpg",
+      "/images/seo/bb-asti-la-terrazza-struttura.jpg",
+      "/images/seo/affittacamere-cantarana-piemonte-hero.jpg",
     ],
   };
 
