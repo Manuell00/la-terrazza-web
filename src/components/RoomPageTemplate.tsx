@@ -357,13 +357,13 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                 href={siteConfig.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto btn-primary px-8 py-4 text-base"
+                className="btn-primary inline-flex w-full max-w-[18rem] items-center justify-center px-7 py-3.5 text-sm sm:w-auto sm:max-w-none"
               >
                 {WA_ICON} {lang === "it" ? "Verifica disponibilità" : "Check availability"}
               </a>
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/18"
+                className="inline-flex w-full max-w-[18rem] items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/18 sm:w-auto sm:max-w-none"
               >
                 📞 {lang === "it" ? "Chiama per prenotare" : "Call to book"}
               </a>
