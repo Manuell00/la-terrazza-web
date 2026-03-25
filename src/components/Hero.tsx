@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { siteConfig } from "@/data/siteConfig";
@@ -19,6 +18,42 @@ const trustItems = [
   { label: "Piemonte autentico", value: "Tra vigne e silenzio" },
 ];
 
+function HeroIllustration({ compact = false }: { compact?: boolean }) {
+  return (
+    <div className={`relative overflow-hidden rounded-[34px] border border-white/70 bg-[linear-gradient(180deg,#f5efe5_0%,#e6efe2_100%)] shadow-[0_34px_110px_-46px_rgba(28,25,23,0.32)] ${compact ? "h-[420px]" : "h-[560px]"}`}>
+      <div className="absolute inset-x-8 top-8 h-24 rounded-full bg-white/45 blur-2xl" />
+      <div className="absolute left-[-10%] top-[14%] h-36 w-36 rounded-full bg-emerald-200/70 blur-2xl" />
+      <div className="absolute right-[-8%] top-[8%] h-44 w-44 rounded-full bg-stone-200/80 blur-3xl" />
+
+      <div className="absolute inset-x-6 bottom-8 top-20 rounded-[28px] bg-[linear-gradient(180deg,#dbe9d8_0%,#f7f2e7_100%)]">
+        <div className="absolute bottom-0 left-0 right-0 h-[38%] bg-[linear-gradient(180deg,#b8cfb1_0%,#8fad84_100%)]" />
+        <div className="absolute left-[8%] top-[14%] h-16 w-16 rounded-full bg-white/55" />
+        <div className="absolute right-[12%] top-[11%] h-11 w-11 rounded-full bg-white/40" />
+
+        <div className="absolute left-[10%] bottom-[24%] h-[42%] w-[48%] rounded-t-[34px] rounded-b-[18px] bg-[#f8f3eb] shadow-[0_18px_40px_-24px_rgba(28,25,23,0.45)]">
+          <div className="absolute left-[12%] right-[12%] top-0 h-[18%] rounded-t-[28px] bg-[#8d654f]" style={{ clipPath: "polygon(0% 100%, 50% 0%, 100% 100%)" }} />
+          <div className="absolute left-[18%] bottom-[16%] h-[46%] w-[22%] rounded-[12px] bg-[#c7dabc]" />
+          <div className="absolute left-[44%] bottom-[16%] h-[46%] w-[22%] rounded-[12px] bg-[#c7dabc]" />
+          <div className="absolute left-[70%] bottom-[16%] h-[46%] w-[12%] rounded-[10px] bg-[#d8c2a7]" />
+        </div>
+
+        <div className="absolute right-[10%] bottom-[22%] flex w-[26%] flex-col gap-3">
+          <div className="rounded-[18px] border border-white/55 bg-white/75 px-4 py-3 backdrop-blur-sm">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-700">Check-in</p>
+            <p className="mt-1 text-sm font-semibold text-stone-800">Accoglienza rapida</p>
+          </div>
+          <div className="rounded-[18px] border border-white/55 bg-stone-900 px-4 py-3 text-white shadow-[0_18px_40px_-24px_rgba(28,25,23,0.65)]">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-emerald-300">La Terrazza</p>
+            <p className="mt-1 text-sm font-semibold">Tre camere, un ritmo lento</p>
+          </div>
+        </div>
+
+        <div className="absolute inset-x-8 bottom-6 h-[2px] rounded-full bg-white/55" />
+      </div>
+    </div>
+  );
+}
+
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -35,20 +70,7 @@ export default function Hero() {
 
       <div className="md:hidden">
         <div className="relative flex min-h-[700px] items-end overflow-hidden">
-          <motion.div className="absolute inset-0 z-0" style={{ y: imageY }}>
-            <Image
-              src="/images/struttura/struttura-1.jpg"
-              alt="La Terrazza Affittacamere — panorama e natura del Monferrato"
-              fill
-              priority
-              quality={100}
-              className="object-cover scale-[1.04]"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,18,16,0.18),rgba(18,18,16,0.38),rgba(18,18,16,0.76))]" />
-            <div className="absolute inset-x-5 bottom-12 top-[28%] rounded-[32px] border border-white/10 bg-[linear-gradient(180deg,rgba(12,10,9,0.08),rgba(12,10,9,0.36),rgba(12,10,9,0.68))] backdrop-blur-[2px]" />
-          </motion.div>
-
-          <div className="relative z-10 w-full px-4 pb-14">
+          <div className="relative z-10 w-full px-4 pb-14 pt-28">
             <motion.div
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,6 +97,16 @@ export default function Hero() {
                 {WA_ICON}
                 Scrivici ora
               </a>
+
+              <motion.div
+                initial={{ opacity: 0, y: 28 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="mt-10"
+                style={{ y: imageY }}
+              >
+                <HeroIllustration compact />
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -164,20 +196,7 @@ export default function Hero() {
               className="relative h-[660px]"
               style={{ y: imageY }}
             >
-              <div className="absolute inset-x-6 top-4 h-[calc(100%-2.5rem)] rounded-[42px] bg-[linear-gradient(180deg,rgba(255,255,255,0.65),rgba(255,255,255,0.28))] blur-2xl" />
-
-              <div className="absolute inset-x-0 top-8 overflow-hidden rounded-[36px] border border-white/80 bg-white p-4 shadow-[0_34px_110px_-46px_rgba(28,25,23,0.46)]">
-                <div className="relative h-[560px] overflow-hidden rounded-[28px]">
-                  <Image
-                    src="/images/struttura/struttura-1.jpg"
-                    alt="Vista della struttura La Terrazza"
-                    fill
-                    quality={100}
-                    className="object-cover transition-transform duration-700 hover:scale-[1.02]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/26 via-stone-950/4 to-transparent" />
-                </div>
-              </div>
+              <HeroIllustration />
 
               <div className="absolute bottom-0 left-[-1.5rem] max-w-[18rem] rounded-[28px] border border-stone-200 bg-white px-5 py-5 shadow-[0_28px_84px_-40px_rgba(28,25,23,0.42)]">
                 <p className="text-xs font-semibold uppercase tracking-[0.26em] text-emerald-700">La Terrazza</p>
