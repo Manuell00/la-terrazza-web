@@ -110,7 +110,7 @@ function HeroIllustration({ compact = false }: { compact?: boolean }) {
           variants={floatingCardVariants}
           initial="hidden"
           animate="visible"
-          className={compact ? "absolute right-[7%] bottom-[16%] flex w-[38%] flex-col gap-2.5" : "absolute right-[10%] bottom-[20%] flex w-[30%] flex-col gap-3"}
+          className={compact ? "absolute inset-x-[10%] bottom-[21%] flex flex-col gap-2.5" : "absolute right-[10%] bottom-[20%] flex w-[30%] flex-col gap-3"}
         >
           <div className={`${compact ? "rounded-[16px] px-3 py-2.5" : "rounded-[18px] px-4 py-3"} border border-white/55 bg-white/75 text-center backdrop-blur-sm`}>
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">Check-in</p>
@@ -135,7 +135,7 @@ function HeroIllustration({ compact = false }: { compact?: boolean }) {
               variants={floatingCardVariants}
               initial="hidden"
               animate="visible"
-              className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/4 rounded-[20px] border border-white/90 bg-white/92 px-3.5 py-3 text-center text-stone-900 shadow-[0_20px_60px_-30px_rgba(28,25,23,0.32)] backdrop-blur-xl"
+              className="absolute right-[5%] top-[3%] rounded-[20px] border border-white/90 bg-white/92 px-3.5 py-3 text-center text-stone-900 shadow-[0_20px_60px_-30px_rgba(28,25,23,0.32)] backdrop-blur-xl"
             >
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">Recensioni</p>
               <p className="mt-1.5 text-xl font-semibold leading-none">{siteConfig.rating}/5</p>
@@ -147,7 +147,7 @@ function HeroIllustration({ compact = false }: { compact?: boolean }) {
               variants={floatingCardVariants}
               initial="hidden"
               animate="visible"
-              className="absolute bottom-0 left-1/2 w-[15.5rem] -translate-x-1/2 translate-y-1/4 rounded-[24px] border border-stone-200 bg-white px-4 py-4 text-center shadow-[0_24px_70px_-34px_rgba(28,25,23,0.34)]"
+              className="absolute bottom-[4%] left-1/2 w-[15.5rem] -translate-x-1/2 rounded-[24px] border border-stone-200 bg-white px-4 py-4 text-center shadow-[0_24px_70px_-34px_rgba(28,25,23,0.34)]"
             >
               <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">La Terrazza</p>
               <p className="mt-2 font-serif text-xl leading-[0.95] text-stone-900">
