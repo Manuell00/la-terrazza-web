@@ -274,18 +274,21 @@ function PartnerSection({
                 )}
               </div>
 
-              <div className="mx-auto flex h-full min-h-[15rem] w-full max-w-[12rem] flex-col items-center justify-center">
-                <div className="w-full rounded-[28px] border border-stone-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f7f6f2_100%)] p-4 text-center shadow-[0_24px_60px_-34px_rgba(28,25,23,0.32)]">
-                  <div className="relative mx-auto flex h-28 w-28 items-center justify-center overflow-hidden rounded-full border border-stone-200 bg-[radial-gradient(circle_at_30%_30%,#fef7ed_0%,#ecfdf5_45%,#d6efe3_100%)] shadow-[0_18px_40px_-24px_rgba(28,25,23,0.35)]">
-                    <div className="absolute inset-4 rounded-full border border-white/60" />
-                    <div className="absolute left-[28%] top-[24%] h-6 w-6 rounded-full bg-emerald-100/80 blur-sm" />
-                    <div className="absolute right-[24%] bottom-[26%] h-8 w-8 rounded-full bg-stone-200/70 blur-md" />
+              <div className="mx-auto flex h-full min-h-[15rem] w-full max-w-[13rem] flex-col items-center justify-center">
+                <div className="w-full rounded-[30px] border border-stone-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f6f5f0_48%,#eef4ef_100%)] p-4 text-center shadow-[0_26px_70px_-38px_rgba(28,25,23,0.34)]">
+                  <div className="relative mx-auto flex h-[7.4rem] w-[7.4rem] items-center justify-center overflow-hidden rounded-full border border-stone-200/90 bg-[radial-gradient(circle_at_30%_30%,#fff8ef_0%,#eef8f1_42%,#d8ece0_100%)] shadow-[0_20px_44px_-24px_rgba(28,25,23,0.34)]">
+                    <div className="absolute inset-[0.9rem] rounded-full border border-white/70" />
+                    <div className="absolute inset-[1.35rem] rounded-full border border-emerald-100/70" />
+                    <div className="absolute left-[24%] top-[22%] h-7 w-7 rounded-full bg-white/80 blur-sm" />
+                    <div className="absolute right-[22%] bottom-[23%] h-9 w-9 rounded-full bg-emerald-100/70 blur-md" />
                     <div className="relative z-10 flex flex-col items-center text-center">
-                      <span className="text-xl">📍</span>
-                      <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-lg shadow-[0_10px_22px_-14px_rgba(28,25,23,0.45)]">
+                        📍
+                      </span>
+                      <span className="mt-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">
                         {locationLabel}
                       </span>
-                      <span className="mt-1 max-w-[5rem] text-[11px] font-medium leading-tight text-stone-700">
+                      <span className="mt-1 max-w-[5.75rem] text-[11px] font-medium leading-tight text-stone-700">
                         {locationSub}
                       </span>
                     </div>
@@ -294,9 +297,9 @@ function PartnerSection({
                     href={locationHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-outline mt-4 w-full justify-center"
+                    className="btn-outline mt-4 min-h-[2.85rem] w-full justify-center gap-2 px-3 text-[13px]"
                   >
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-stone-800 text-white">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-stone-800 text-white">
                       <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                       </svg>
