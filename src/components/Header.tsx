@@ -93,7 +93,11 @@ export default function Header() {
             {/* Hamburger (mobile) */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="rounded-xl border border-stone-200 bg-white p-2.5 text-stone-700 shadow-soft transition-all hover:bg-stone-50 lg:hidden"
+              className={`rounded-xl border p-2.5 shadow-soft transition-all duration-300 lg:hidden ${
+                menuOpen
+                  ? "border-emerald-200/80 bg-emerald-50/85 text-emerald-800 shadow-[0_14px_36px_-18px_rgba(22,163,74,0.45)] backdrop-blur-md"
+                  : "border-emerald-100/80 bg-emerald-50/65 text-stone-700 shadow-[0_12px_30px_-18px_rgba(22,163,74,0.24)] backdrop-blur-md hover:bg-emerald-50/85 hover:text-emerald-800"
+              }`}
               aria-label={menuOpen ? (lang === "it" ? "Chiudi menu" : "Close menu") : (lang === "it" ? "Apri menu" : "Open menu")}
             >
               <div className="flex w-6 flex-col gap-1.5">
