@@ -146,7 +146,7 @@ function TrustStrip({ text, items }: { text: string; items: readonly string[] })
             {items.map((item) => (
               <span
                 key={item}
-                className="inline-flex items-center gap-1.5 rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700"
+                className="inline-flex min-w-[10.75rem] items-center justify-center gap-1.5 rounded-full border border-emerald-100 bg-emerald-50 px-4 py-2 text-center text-xs font-semibold text-emerald-700"
               >
                 <span className="h-1 w-1 rounded-full bg-emerald-500" />
                 {item}
