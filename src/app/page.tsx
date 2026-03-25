@@ -201,7 +201,7 @@ export default function HomePage() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-stone-500 md:text-base">
               Arrivare a La Terrazza significa entrare gradualmente in un paesaggio più lento,
-              fatto di colline morbide, luce aperta e un Piemonte che si fa subito sentire.
+              fatto di colline morbide, luce aperta e un <span className="font-semibold text-stone-800">Piemonte</span> che si fa subito sentire.
             </p>
           </AnimatedSection>
 
@@ -209,14 +209,13 @@ export default function HomePage() {
             <div className="overflow-hidden rounded-[32px] border border-stone-200 bg-white p-3 shadow-[0_30px_100px_-46px_rgba(28,25,23,0.28)] md:p-4">
               <div className="mb-4 grid gap-3 md:grid-cols-3">
                 {[
-                  { icon: "📍", title: "Cantarana, Asti", text: "Una posizione raccolta, immersa nel verde." },
-                  { icon: "🚗", title: "Arrivo semplice", text: "Comoda da raggiungere in auto tra le colline." },
-                  { icon: "🌿", title: "Atmosfera autentica", text: "Il paesaggio cambia ritmo appena arrivi." },
+                  { icon: "📍", title: "Cantarana, Asti" },
+                  { icon: "🚗", title: "Arrivo semplice" },
+                  { icon: "🌿", title: "Atmosfera autentica" },
                 ].map((item) => (
                   <div key={item.title} className="rounded-[22px] border border-stone-100 bg-cream-50 px-4 py-4 text-center">
                     <p className="text-xl">{item.icon}</p>
                     <p className="mt-2 text-sm font-semibold text-stone-800">{item.title}</p>
-                    <p className="mt-1 text-xs leading-relaxed text-stone-500">{item.text}</p>
                   </div>
                 ))}
               </div>
