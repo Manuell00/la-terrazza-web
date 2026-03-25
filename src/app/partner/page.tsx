@@ -223,7 +223,7 @@ export default function PartnerPage() {
       <section className="bg-stone-900 py-20 text-center">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <p className="section-label text-emerald-400">Lavoriamo insieme</p>
+            <p className="section-label mb-5 -translate-y-1 text-emerald-400">Lavoriamo insieme</p>
             <h2 className="mb-4 font-serif text-3xl text-white md:text-4xl">
               Vuoi collaborare con noi?
             </h2>
