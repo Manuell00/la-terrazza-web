@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { createPortal } from "react-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface Props {
   featuredImage: string;
@@ -120,13 +121,24 @@ export default function PartnerGallery({
               </button>
 
               <div className="relative mx-auto flex h-[78vh] w-full items-center justify-center overflow-hidden rounded-[30px] border border-white/10 bg-stone-950 shadow-2xl">
-                <Image
-                  src={lightboxImages[selected]}
-                  alt={`${alt} ${selected + 1}`}
-                  fill
-                  className="object-contain"
-                  sizes="100vw"
-                />
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={lightboxImages[selected]}
+                    initial={{ opacity: 0, x: 28, scale: 0.985 }}
+                    animate={{ opacity: 1, x: 0, scale: 1 }}
+                    exit={{ opacity: 0, x: -28, scale: 0.985 }}
+                    transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={lightboxImages[selected]}
+                      alt={`${alt} ${selected + 1}`}
+                      fill
+                      className="object-contain"
+                      sizes="100vw"
+                    />
+                  </motion.div>
+                </AnimatePresence>
               </div>
 
               <button
