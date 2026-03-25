@@ -41,7 +41,7 @@ export default function PrenotaPage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <AnimatedSection>
-            <div className="mx-auto max-w-3xl rounded-[32px] border border-white/12 bg-stone-950/38 px-6 py-8 shadow-[0_30px_90px_-45px_rgba(0,0,0,0.75)] backdrop-blur-md md:px-10 md:py-10">
+            <div className="mx-auto max-w-3xl rounded-[32px] border border-white/12 bg-stone-950/48 px-6 py-8 shadow-[0_30px_90px_-45px_rgba(0,0,0,0.75)] backdrop-blur-md md:px-10 md:py-10">
               <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-emerald-400">
                 Prenota il tuo soggiorno
               </p>
