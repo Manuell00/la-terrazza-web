@@ -199,7 +199,7 @@ export default function HomePage() {
             <h2 className="font-serif text-[2.15rem] font-semibold leading-[0.96] tracking-[-0.03em] text-stone-800 md:text-4xl">
               Tra vigne, quiete e strade panoramiche.
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-stone-500 md:text-base">
+            <p className="mx-auto mt-4 hidden max-w-xl text-sm leading-relaxed text-stone-500 md:block md:text-base">
               Arrivare a La Terrazza significa entrare gradualmente in un paesaggio più lento,
               fatto di colline morbide, luce aperta e un <span className="font-semibold text-stone-800">Piemonte</span> che si fa subito sentire.
             </p>
@@ -207,7 +207,7 @@ export default function HomePage() {
 
           <AnimatedSection className="mx-auto max-w-5xl">
             <div className="overflow-hidden rounded-[32px] border border-stone-200 bg-white p-3 shadow-[0_30px_100px_-46px_rgba(28,25,23,0.28)] md:p-4">
-              <div className="mb-4 grid gap-3 md:grid-cols-3">
+              <div className="mb-4 hidden gap-3 md:grid md:grid-cols-3">
                 {[
                   { icon: "📍", title: "Cantarana, Asti" },
                   { icon: "🚗", title: "Arrivo semplice" },
