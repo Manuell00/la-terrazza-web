@@ -192,22 +192,26 @@ const content = {
 /* ─── Trust Strip ────────────────────────────────────────────────── */
 function TrustStrip({ text, items }: { text: string; items: readonly string[] }) {
   return (
-    <AnimatedSection className="bg-stone-50 border-y border-stone-100">
-      <div className="container mx-auto max-w-4xl px-4 py-6">
-        <div className="flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
-          <p className="max-w-lg text-sm font-medium leading-relaxed text-stone-600">
+    <AnimatedSection className="border-y border-stone-100 bg-[linear-gradient(180deg,#fbfbf8_0%,#f6faf6_100%)]">
+      <div className="container mx-auto max-w-4xl px-4 py-6 md:py-7">
+        <div className="rounded-[28px] border border-white/80 bg-white/82 px-5 py-5 shadow-[0_24px_70px_-42px_rgba(28,25,23,0.20)] backdrop-blur-sm md:px-7">
+          <div className="flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
+            <p className="max-w-lg text-sm font-medium leading-relaxed text-stone-600">
             {text}
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 md:flex-nowrap md:justify-end">
-            {items.map((item) => (
-              <span
-                key={item}
-                className="inline-flex min-w-[10.75rem] items-center justify-center gap-1.5 rounded-full border border-emerald-100 bg-emerald-50 px-4 py-2 text-center text-xs font-semibold text-emerald-700"
-              >
-                <span className="h-1 w-1 rounded-full bg-emerald-500" />
-                {item}
-              </span>
-            ))}
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 md:flex-nowrap md:justify-end">
+              {items.map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex min-w-[11.2rem] items-center justify-center gap-2 rounded-full border border-emerald-200/70 bg-[linear-gradient(180deg,#f8fdf9_0%,#eef9f0_100%)] px-4 py-2.5 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-800 shadow-[0_18px_40px_-28px_rgba(22,163,74,0.32)]"
+                >
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-[10px] shadow-[0_8px_18px_-12px_rgba(22,163,74,0.35)]">
+                    ✦
+                  </span>
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
