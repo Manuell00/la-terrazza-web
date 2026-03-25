@@ -107,7 +107,7 @@ const translatedRooms = {
       longDescription: "La Camera Stella brilla di luce propria. Tonalità calde, tessuti morbidi, dettagli curati uno a uno. È la camera dei sogni per chi vuole sentirsi speciale. Aprendo la finestra al mattino, l'aria profumata di Piemonte entra come un benvenuto silenzioso.",
       features: [
         { icon: "🛏️", label: "Letto matrimoniale" },
-        { icon: "🚿", label: "Bagno privato" },
+        { icon: "🚿", label: "Doccia in camera" },
         { icon: "❄️", label: "Aria condizionata" },
         { icon: "📶", label: "Wi-Fi gratuito" },
         { icon: "🌅", label: "Vista panoramica" },
@@ -184,7 +184,7 @@ const translatedRooms = {
       longDescription: "Stella Room shines with its own character. Warm tones, soft fabrics and carefully selected details create a refined, welcoming atmosphere. Open the window in the morning and the Piedmont air arrives gently, setting the tone for a slower day.",
       features: [
         { icon: "🛏️", label: "Double bed" },
-        { icon: "🚿", label: "Private bathroom" },
+        { icon: "🚿", label: "Shower in the room" },
         { icon: "❄️", label: "Air conditioning" },
         { icon: "📶", label: "Free Wi-Fi" },
         { icon: "🌅", label: "Panoramic view" },
