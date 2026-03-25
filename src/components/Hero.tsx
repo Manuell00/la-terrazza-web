@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { siteConfig } from "@/data/siteConfig";
@@ -26,18 +27,19 @@ function HeroIllustration({ compact = false }: { compact?: boolean }) {
       <div className="absolute right-[-8%] top-[8%] h-44 w-44 rounded-full bg-stone-200/80 blur-3xl" />
 
       <div className="absolute inset-x-6 bottom-8 top-20 rounded-[28px] bg-[linear-gradient(180deg,#dbe9d8_0%,#f7f2e7_100%)]">
-        <div className="absolute bottom-0 left-0 right-0 h-[38%] bg-[linear-gradient(180deg,#b8cfb1_0%,#8fad84_100%)]" />
-        <div className="absolute left-[8%] top-[14%] h-16 w-16 rounded-full bg-white/55" />
-        <div className="absolute right-[12%] top-[11%] h-11 w-11 rounded-full bg-white/40" />
-
-        <div className="absolute left-[10%] bottom-[24%] h-[42%] w-[48%] rounded-t-[34px] rounded-b-[18px] bg-[#f8f3eb] shadow-[0_18px_40px_-24px_rgba(28,25,23,0.45)]">
-          <div className="absolute left-[12%] right-[12%] top-0 h-[18%] rounded-t-[28px] bg-[#8d654f]" style={{ clipPath: "polygon(0% 100%, 50% 0%, 100% 100%)" }} />
-          <div className="absolute left-[18%] bottom-[16%] h-[46%] w-[22%] rounded-[12px] bg-[#c7dabc]" />
-          <div className="absolute left-[44%] bottom-[16%] h-[46%] w-[22%] rounded-[12px] bg-[#c7dabc]" />
-          <div className="absolute left-[70%] bottom-[16%] h-[46%] w-[12%] rounded-[10px] bg-[#d8c2a7]" />
+        <div className="absolute inset-0 overflow-hidden rounded-[28px]">
+          <Image
+            src="/images/hero-generated-house.jpg"
+            alt="Illustrazione hero della struttura"
+            fill
+            priority
+            quality={100}
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.02),rgba(19,29,20,0.12))]" />
         </div>
 
-        <div className="absolute right-[10%] bottom-[22%] flex w-[26%] flex-col gap-3">
+        <div className="absolute right-[10%] bottom-[22%] flex w-[30%] flex-col gap-3">
           <div className="rounded-[18px] border border-white/55 bg-white/75 px-4 py-3 backdrop-blur-sm">
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-700">Check-in</p>
             <p className="mt-1 text-sm font-semibold text-stone-800">Accoglienza rapida</p>
