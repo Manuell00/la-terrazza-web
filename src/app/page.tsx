@@ -89,7 +89,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-stone-900/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 </div>
                 {/* Rating badge */}
-                <div className="absolute -bottom-5 -right-4 rounded-[18px] border border-stone-100 bg-white p-4 shadow-elevated md:-bottom-6 md:-right-6">
+                <div className="absolute -bottom-5 right-2 rounded-[18px] border border-stone-100 bg-white p-4 shadow-elevated md:-bottom-6 md:-right-6">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50">
                       <span className="text-lg">⭐</span>
