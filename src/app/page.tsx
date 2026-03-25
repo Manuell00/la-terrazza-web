@@ -46,7 +46,8 @@ export default function HomePage() {
       <Hero />
 
       {/* ── Presentation ── */}
-      <section className="bg-white py-20 md:py-28">
+      <section className="relative overflow-hidden bg-white py-20 md:py-28">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-cream-50 to-transparent" />
         <div className="container mx-auto px-4">
           <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
 
@@ -79,24 +80,26 @@ export default function HomePage() {
 
             {/* Text */}
             <AnimatedSection direction="right" className="text-center md:text-left">
-              <p className="section-label">La nostra storia</p>
-              <h2 className="mb-5 font-serif text-[2.3rem] font-semibold leading-[0.95] tracking-[-0.03em] text-stone-800 md:text-5xl">
-                Un posto che<br />si sente speciale.
-              </h2>
-              <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
-                <p>Siamo a Cantarana, nel cuore dell&apos;Astigiano, tra i vigneti del Monferrato. Un posto dove la natura detta i ritmi e il cielo la sera è uno spettacolo.</p>
-                <p>
-                  <span className="font-semibold text-stone-900">Tre camere</span>:{" "}
-                  <span className="font-semibold text-emerald-700">Luna</span>,{" "}
-                  <span className="font-semibold text-emerald-700">Stella</span>{" "}e{" "}
-                  <span className="font-semibold text-emerald-700">Sole</span>.
-                  {" "}Tre caratteri diversi, una sola promessa: andarsene con un sorriso.
-                </p>
-              </div>
-              <div className="mt-8 flex justify-center md:justify-start">
-                <Link href="/prenota" className="btn-outline text-sm px-6 py-3">
-                  Scopri le nostre camere →
-                </Link>
+              <div className="rounded-[30px] border border-stone-100 bg-cream-50/80 p-7 shadow-soft backdrop-blur-sm md:p-9">
+                <p className="section-label">La nostra storia</p>
+                <h2 className="mb-5 font-serif text-[2.3rem] font-semibold leading-[0.95] tracking-[-0.03em] text-stone-800 md:text-5xl">
+                  Un posto che<br />si sente speciale.
+                </h2>
+                <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
+                  <p>Siamo a Cantarana, nel cuore dell&apos;Astigiano, tra i vigneti del Monferrato. Un posto dove la natura detta i ritmi e il cielo la sera è uno spettacolo.</p>
+                  <p>
+                    <span className="font-semibold text-stone-900">Tre camere</span>:{" "}
+                    <span className="font-semibold text-emerald-700">Luna</span>,{" "}
+                    <span className="font-semibold text-emerald-700">Stella</span>{" "}e{" "}
+                    <span className="font-semibold text-emerald-700">Sole</span>.
+                    {" "}Tre caratteri diversi, una sola promessa: andarsene con un sorriso.
+                  </p>
+                </div>
+                <div className="mt-8 flex justify-center md:justify-start">
+                  <Link href="/prenota" className="btn-outline text-sm px-6 py-3">
+                    Scopri le nostre camere →
+                  </Link>
+                </div>
               </div>
             </AnimatedSection>
           </div>
@@ -227,42 +230,88 @@ export default function HomePage() {
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="relative overflow-hidden py-28 md:py-36">
-        <div className="absolute inset-0">
-          <Image src="/images/struttura/struttura-3.jpg" alt="La Terrazza" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/72 to-stone-950/88" />
-        </div>
-        <div className="relative z-10 container mx-auto px-4 text-center">
+      <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f7f2e8_100%)] py-24 md:py-32">
+        <div className="container mx-auto px-4">
           <AnimatedSection>
-            <p className="section-label text-emerald-400">Pronto a partire?</p>
-            <h2 className="mb-5 font-serif text-4xl font-semibold leading-tight text-white md:text-6xl">
-              Il tuo relax inizia qui.
-            </h2>
-            <p className="mx-auto mb-10 max-w-lg text-base leading-relaxed text-stone-300 md:text-lg">
-              Scrivici su WhatsApp per disponibilità, domande o richieste speciali.
-              Risposta garantita entro pochi minuti.
-            </p>
-            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <a
-                href={siteConfig.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-8 py-4 text-base font-semibold text-white shadow-[0_16px_48px_-16px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500"
-              >
-                {WA_ICON} Scrivici su WhatsApp
-              </a>
-              <Link
-                href="/prenota"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/18"
-              >
-                Controlla disponibilità
-              </Link>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-stone-800/90 border border-white/10 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-700"
-              >
-                📞 Chiama per prenotare
-              </a>
+            <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[34px] border border-stone-200 bg-white shadow-[0_32px_100px_-46px_rgba(28,25,23,0.32)] md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
+              <div className="bg-stone-900 px-7 py-10 text-center text-white md:px-12 md:py-14 md:text-left">
+                <p className="section-label !border-white/10 !bg-white/[0.08] !text-emerald-300">Pronto a partire?</p>
+                <h2 className="mb-5 font-serif text-4xl font-semibold leading-[0.95] tracking-[-0.04em] text-white md:text-6xl">
+                  Il tuo relax inizia qui.
+                </h2>
+                <p className="max-w-xl text-base leading-relaxed text-stone-300 md:text-lg">
+                  Un soggiorno pensato per rallentare, respirare meglio e sentirsi accolti.
+                  Contattaci nel modo che preferisci e costruiamo insieme la tua prossima pausa in Piemonte.
+                </p>
+
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
+                  <Link
+                    href="/prenota"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-8 py-4 text-base font-semibold text-white shadow-[0_16px_48px_-16px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500"
+                  >
+                    Controlla disponibilità
+                  </Link>
+                  <a
+                    href={siteConfig.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/16 bg-white/10 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/16"
+                  >
+                    {WA_ICON} Scrivici su WhatsApp
+                  </a>
+                  <a
+                    href={`tel:${siteConfig.phone}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-stone-800 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-700"
+                  >
+                    📞 Chiama per prenotare
+                  </a>
+                </div>
+
+                <div className="mt-10 grid gap-3 text-left sm:grid-cols-3">
+                  {[
+                    "Tre camere con carattere",
+                    "Risposta veloce e diretta",
+                    "Posizione immersa nel verde",
+                  ].map((item) => (
+                    <div key={item} className="rounded-[20px] border border-white/8 bg-white/[0.06] px-4 py-4 text-sm text-stone-200 backdrop-blur-sm">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid gap-3 bg-cream-50 p-4 md:grid-cols-2 md:grid-rows-2 md:p-5">
+                <div className="relative min-h-[220px] overflow-hidden rounded-[24px] border border-white bg-white shadow-soft md:row-span-2">
+                  <Image
+                    src="/images/struttura/struttura-1.jpg"
+                    alt="Esterno La Terrazza"
+                    fill
+                    quality={100}
+                    className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="relative min-h-[160px] overflow-hidden rounded-[24px] border border-white bg-white shadow-soft">
+                  <Image
+                    src="/images/camera-stella/stella-2.jpg"
+                    alt="Dettaglio Camera Stella"
+                    fill
+                    quality={100}
+                    className="object-cover transition-transform duration-700 hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="relative flex min-h-[160px] flex-col justify-between overflow-hidden rounded-[24px] border border-stone-200 bg-white p-5 shadow-soft">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700">La Terrazza</p>
+                    <h3 className="mt-3 font-serif text-3xl leading-[0.95] text-stone-900">
+                      Ospitalità
+                      <span className="block text-stone-500">con ritmo lento</span>
+                    </h3>
+                  </div>
+                  <p className="text-sm leading-relaxed text-stone-500">
+                    Linee più pulite, immagini meglio incorniciate e una gerarchia visiva finalmente più solida.
+                  </p>
+                </div>
+              </div>
             </div>
           </AnimatedSection>
         </div>

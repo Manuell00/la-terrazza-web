@@ -7,152 +7,221 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { siteConfig } from "@/data/siteConfig";
 
 const WA_ICON = (
-  <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+  <svg className="h-5 w-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
   </svg>
 );
 
+const trustItems = [
+  { label: `${siteConfig.rating}/5 rating`, value: "Ospiti verificati" },
+  { label: "Tre camere", value: "Luna, Stella, Sole" },
+  { label: "Risposta veloce", value: "Anche su WhatsApp" },
+  { label: "Piemonte autentico", value: "Tra vigne e silenzio" },
+];
+
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  const cardY = useTransform(scrollYProgress, [0, 1], ["0%", "-4%"]);
 
   return (
-    <section ref={ref} className="relative flex h-screen min-h-[680px] items-end overflow-hidden">
-      {/* Parallax background */}
-      <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        <Image
-          src="/images/struttura/struttura-2.jpg"
-          alt="La Terrazza Affittacamere — panorama e natura del Monferrato"
-          fill
-          priority
-          quality={100}
-          className="object-cover scale-[1.04]"
-        />
-        {/* Subtle vignette top */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.06),transparent_50%)]" />
-        {/* Left gradient — stronger for text legibility on desktop */}
-        <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(8,12,8,0.82)_0%,rgba(8,12,8,0.54)_42%,rgba(8,12,8,0.18)_70%,rgba(8,12,8,0.12)_100%)]" />
-        {/* Bottom-to-top gradient for CTA area */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/88 via-stone-950/28 to-transparent md:from-stone-950/82 md:via-stone-950/18" />
-        {/* Mobile: centered reading panel */}
-        <div className="absolute inset-x-4 bottom-10 top-[22%] rounded-[30px] bg-[linear-gradient(180deg,rgba(12,10,9,0.18),rgba(12,10,9,0.58),rgba(12,10,9,0.78))] backdrop-blur-[2px] md:hidden" />
-      </motion.div>
+    <section ref={ref} className="relative overflow-hidden bg-[linear-gradient(180deg,#f7f2e8_0%,#fcfaf6_58%,#ffffff_100%)]">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-[-12%] top-[-8%] h-[24rem] w-[24rem] rounded-full bg-emerald-100/70 blur-3xl" />
+        <div className="absolute right-[-8%] top-[8%] h-[26rem] w-[26rem] rounded-full bg-stone-200/80 blur-3xl" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+      </div>
 
-      {/* Content */}
-      <motion.div className="relative z-10 w-full pb-14 md:pb-20" style={{ opacity }}>
-        <div className="container mx-auto px-4">
-          {/* Centered on mobile, left-aligned on desktop */}
-          <div className="mx-auto max-w-xl text-center md:mx-0 md:max-w-3xl md:text-left">
+      <div className="md:hidden">
+        <div className="relative flex min-h-[700px] items-end overflow-hidden">
+          <motion.div className="absolute inset-0 z-0" style={{ y: imageY }}>
+            <Image
+              src="/images/struttura/struttura-2.jpg"
+              alt="La Terrazza Affittacamere — panorama e natura del Monferrato"
+              fill
+              priority
+              quality={100}
+              className="object-cover scale-[1.04]"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,18,16,0.15),rgba(18,18,16,0.55),rgba(18,18,16,0.82))]" />
+            <div className="absolute inset-x-4 bottom-10 top-[22%] rounded-[30px] bg-[linear-gradient(180deg,rgba(12,10,9,0.16),rgba(12,10,9,0.52),rgba(12,10,9,0.76))] backdrop-blur-[2px]" />
+          </motion.div>
 
-            {/* Location badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/90 backdrop-blur-sm"
-            >
-              <span className="text-base">📍</span>
-              <span className="tracking-wide">Cantarana, Asti — Piemonte</span>
-            </motion.div>
-
-            {/* ── MOBILE headline ── */}
-            <motion.h1
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.8 }}
-              className="md:hidden font-serif text-[2.6rem] font-semibold leading-[1.0] tracking-[-0.03em] text-white [text-shadow:0_8px_32px_rgba(0,0,0,0.6)]"
-            >
-              Un soggiorno
-              <span className="mt-1 block text-stone-100/92">davvero unico.</span>
-            </motion.h1>
-
-            {/* ── DESKTOP headline ── */}
-            <motion.h1
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.8 }}
-              className="hidden md:block font-serif text-[5.5rem] font-semibold leading-[0.9] tracking-[-0.04em] text-white [text-shadow:0_16px_48px_rgba(0,0,0,0.5)]"
-            >
-              Respira il silenzio
-              <span className="mt-2 block text-stone-100/90 md:mt-1">e lasciati accogliere.</span>
-            </motion.h1>
-
-            {/* Sub-copy */}
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.75 }}
-              className="mt-5 hidden max-w-sm text-base leading-relaxed text-stone-100/85 sm:max-w-lg sm:text-lg md:block md:max-w-xl md:text-xl"
-            >
-              Tre camere esclusive tra i vigneti del Monferrato. Stacca la spina, respira e lasciati accogliere con la calma autentica del Piemonte.
-            </motion.p>
-
-            {/* CTAs — HIDDEN on mobile, visible from md+ */}
+          <div className="relative z-10 w-full px-4 pb-14">
             <motion.div
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65, duration: 0.65 }}
-              className="mt-8 hidden md:flex md:flex-row md:items-start gap-3"
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="mx-auto max-w-xl text-center"
             >
-              <a
-                href={siteConfig.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-7 py-4 text-base font-semibold text-white shadow-[0_16px_48px_-16px_rgba(22,163,74,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500 hover:shadow-[0_20px_52px_-16px_rgba(22,163,74,0.9)]"
-              >
-                {WA_ICON}
-                Verifica disponibilità su WhatsApp
-              </a>
-              <Link
-                href="/prenota"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/12 px-7 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
-              >
-                Controlla disponibilità
-              </Link>
-            </motion.div>
-
-            {/* Trust signals — 2-col grid on mobile, 4-col on md */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.85, duration: 0.7 }}
-              className="mt-7 grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-4 md:max-w-2xl"
-            >
-              {[
-                { icon: "★", text: `${siteConfig.rating}/5 rating` },
-                { icon: "✓", text: "Risposta veloce" },
-                { icon: "🔒", text: "Prenotazione sicura" },
-                { icon: "🍳", text: "Colazione inclusa" },
-              ].map((t) => (
-                <span
-                  key={t.text}
-                  className="inline-flex items-center justify-center gap-1.5 rounded-2xl border border-white/12 bg-white/10 px-3 py-2.5 text-xs text-white/90 backdrop-blur-sm sm:px-4 sm:py-3 sm:text-sm"
-                >
-                  <span className="text-emerald-300">{t.icon}</span>
-                  {t.text}
-                </span>
-              ))}
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/90 backdrop-blur-sm">
+                <span className="text-base">📍</span>
+                <span className="tracking-wide">Cantarana, Asti — Piemonte</span>
+              </div>
+              <h1 className="font-serif text-[2.65rem] font-semibold leading-[0.98] tracking-[-0.04em] text-white [text-shadow:0_10px_34px_rgba(0,0,0,0.55)]">
+                Un soggiorno
+                <span className="mt-1 block text-stone-100/92">davvero unico.</span>
+              </h1>
+              <div className="mt-7 grid grid-cols-2 gap-2 sm:gap-3">
+                {trustItems.map((item) => (
+                  <span
+                    key={item.label}
+                    className="rounded-2xl border border-white/12 bg-white/10 px-3 py-3 text-xs text-white/90 backdrop-blur-sm"
+                  >
+                    <span className="block font-semibold text-white">{item.label}</span>
+                    <span className="mt-0.5 block text-stone-200/78">{item.value}</span>
+                  </span>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 sm:flex"
-      >
-        <span className="text-white/40 text-[10px] tracking-[0.3em] uppercase">Scopri</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-          className="w-px h-8 bg-white/25 rounded-full"
-        />
-      </motion.div>
+      <div className="hidden md:block">
+        <div className="container relative mx-auto px-4 pb-16 pt-36 lg:pt-40">
+          <div className="grid min-h-[760px] items-center gap-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] lg:gap-14">
+            <motion.div
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              className="relative z-10"
+              style={{ y: cardY }}
+            >
+              <div className="max-w-2xl rounded-[36px] border border-white/80 bg-white/88 p-8 shadow-[0_28px_90px_-38px_rgba(28,25,23,0.38)] backdrop-blur-xl lg:p-10">
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800">
+                  <span className="text-base">📍</span>
+                  Cantarana, Asti — Piemonte
+                </div>
+
+                <motion.h1
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.12, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                  className="font-serif text-[4.8rem] font-semibold leading-[0.88] tracking-[-0.05em] text-stone-900 xl:text-[5.5rem]"
+                >
+                  Un rifugio
+                  <span className="block text-emerald-800">che sa di quiete.</span>
+                </motion.h1>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.22, duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-6 max-w-xl text-lg leading-relaxed text-stone-600"
+                >
+                  Tre camere curate con sensibilità contemporanea, panorami aperti sui vigneti e
+                  un&apos;ospitalità pensata per rallentare il ritmo. La natura resta presente, ma il
+                  design torna finalmente protagonista.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.32, duration: 0.68, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-8 flex flex-wrap gap-3"
+                >
+                  <Link
+                    href="/prenota"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-stone-900 px-7 py-4 text-base font-semibold text-white shadow-[0_18px_44px_-20px_rgba(28,25,23,0.75)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-stone-800"
+                  >
+                    Controlla disponibilità
+                  </Link>
+                  <a
+                    href={siteConfig.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-7 py-4 text-base font-semibold text-white shadow-[0_16px_48px_-18px_rgba(22,163,74,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500"
+                  >
+                    {WA_ICON}
+                    Scrivici su WhatsApp
+                  </a>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.42, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-10 grid gap-3 sm:grid-cols-2"
+                >
+                  {trustItems.map((item) => (
+                    <div
+                      key={item.label}
+                      className="rounded-[22px] border border-stone-100 bg-stone-50/90 px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-100 hover:bg-white"
+                    >
+                      <p className="text-sm font-semibold text-stone-800">{item.label}</p>
+                      <p className="mt-1 text-sm text-stone-500">{item.value}</p>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 36 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.95, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="relative h-[700px]"
+              style={{ y: imageY }}
+            >
+              <div className="absolute inset-x-10 top-4 h-[calc(100%-3rem)] rounded-[42px] border border-white/70 bg-white/55 shadow-[0_28px_84px_-42px_rgba(28,25,23,0.36)] backdrop-blur-md" />
+
+              <div className="absolute left-0 top-20 w-[76%] overflow-hidden rounded-[34px] border border-white/80 bg-white p-3 shadow-[0_32px_100px_-42px_rgba(28,25,23,0.5)]">
+                <div className="relative h-[430px] overflow-hidden rounded-[26px]">
+                  <Image
+                    src="/images/struttura/struttura-4.jpg"
+                    alt="Vista della struttura La Terrazza"
+                    fill
+                    quality={100}
+                    className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/24 via-transparent to-transparent" />
+                </div>
+              </div>
+
+              <div className="absolute right-0 top-0 w-[43%] overflow-hidden rounded-[28px] border border-white/80 bg-white p-3 shadow-[0_28px_90px_-40px_rgba(28,25,23,0.45)]">
+                <div className="relative h-[240px] overflow-hidden rounded-[22px]">
+                  <Image
+                    src="/images/camera-sole/sole-2.jpg"
+                    alt="Dettaglio Camera Sole"
+                    fill
+                    quality={100}
+                    className="object-cover transition-transform duration-700 hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="px-2 pb-1 pt-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.26em] text-emerald-700">Camera Sole</p>
+                  <p className="mt-2 font-serif text-xl leading-none text-stone-900">Luce naturale, atmosfera morbida</p>
+                </div>
+              </div>
+
+              <div className="absolute bottom-3 right-10 w-[50%] overflow-hidden rounded-[28px] border border-white/80 bg-stone-900 p-3 text-white shadow-[0_26px_84px_-42px_rgba(28,25,23,0.72)]">
+                <div className="relative h-[180px] overflow-hidden rounded-[22px]">
+                  <Image
+                    src="/images/camera-luna/luna-2.jpg"
+                    alt="Dettaglio Camera Luna"
+                    fill
+                    quality={100}
+                    className="object-cover opacity-92 transition-transform duration-700 hover:scale-[1.04]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/68 via-stone-950/16 to-transparent" />
+                </div>
+                <div className="grid grid-cols-[1fr_auto] items-end gap-3 px-2 pb-1 pt-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.26em] text-emerald-300">Accoglienza autentica</p>
+                    <p className="mt-2 font-serif text-2xl leading-none">Tre camere, tre atmosfere</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.06] px-3 py-2 text-right backdrop-blur-sm">
+                    <p className="text-lg font-semibold">{siteConfig.rating}/5</p>
+                    <p className="text-[11px] text-stone-300">{siteConfig.reviewCount}+ recensioni</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
