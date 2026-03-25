@@ -73,7 +73,7 @@ export default function PrenotaPage() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-950/65 to-transparent" />
-                    <div className="absolute bottom-4 left-4">
+                    <div className="absolute inset-x-4 bottom-4 text-center">
                       <h3 className="font-serif text-xl font-semibold text-white">
                         <span className="mr-2">{room.symbol}</span>
                         {room.name}
@@ -81,7 +81,7 @@ export default function PrenotaPage() {
                       <p className="text-sm text-stone-200/80 font-light">{room.subtitle}</p>
                     </div>
                   </div>
-                  <div className="flex flex-1 flex-col p-5">
+                  <div className="flex flex-1 flex-col p-5 text-center">
                     <p className="mb-4 flex-1 text-sm leading-relaxed text-stone-500">{room.description}</p>
                     <div className="mb-4 border-t border-stone-100 pt-4 text-center">
                       <p className="mb-0.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
