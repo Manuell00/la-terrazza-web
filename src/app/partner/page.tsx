@@ -46,25 +46,34 @@ export default function PartnerPage() {
       {/* ── Page Hero ── */}
       <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto px-4 text-center">
-          <AnimatedSection>
-            <p className="section-label">La nostra rete</p>
-            <h1 className="mb-5 font-serif text-4xl font-semibold leading-tight text-stone-800 md:text-6xl">
+          <AnimatedSection className="mb-3">
+            <p className="section-label">
+              La nostra rete
+            </p>
+          </AnimatedSection>
+          <AnimatedSection delay={0.08} className="mb-5">
+            <h1 className="font-serif text-4xl font-semibold leading-tight text-stone-800 md:text-6xl">
               I nostri partner.
             </h1>
+          </AnimatedSection>
+          <AnimatedSection delay={0.16}>
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-stone-400 md:text-lg">
               Strutture selezionate con cura, accomunate dalla stessa filosofia:
               accoglienza autentica, ritmo lento e luoghi capaci di raccontare il territorio.
             </p>
-            <div className="mx-auto mt-10 max-w-xl rounded-[30px] border border-stone-100 bg-gradient-to-br from-white via-cream-50 to-emerald-50/40 p-4 shadow-[0_30px_90px_-46px_rgba(28,25,23,0.32)]">
+          </AnimatedSection>
+          <AnimatedSection delay={0.24} className="mx-auto mt-10 max-w-xl rounded-[30px] border border-stone-100 bg-gradient-to-br from-white via-cream-50 to-emerald-50/40 p-4 shadow-[0_30px_90px_-46px_rgba(28,25,23,0.32)]">
               <div className="grid items-center gap-4 rounded-[24px] bg-white/72 p-3 backdrop-blur-sm md:grid-cols-[1.05fr_0.95fr] md:p-4">
                 <div className="relative aspect-[1.04] overflow-hidden rounded-[22px] bg-cream-50">
-                  <Image
-                    src="/images/partner-intro.png"
-                    alt="Visual dedicato ai partner de La Terrazza Affittacamere"
-                    fill
-                    quality={100}
-                    className="object-cover"
-                  />
+                  <AnimatedSection delay={0.34} direction="none" className="absolute inset-0">
+                    <Image
+                      src="/images/partner-intro.png"
+                      alt="Visual dedicato ai partner de La Terrazza Affittacamere"
+                      fill
+                      quality={100}
+                      className="object-cover"
+                    />
+                  </AnimatedSection>
                 </div>
                 <div className="px-2 text-center md:text-left">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-emerald-700">
@@ -80,7 +89,6 @@ export default function PartnerPage() {
                   </p>
                 </div>
               </div>
-            </div>
           </AnimatedSection>
         </div>
       </section>
