@@ -98,9 +98,9 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="text-center md:text-left"
+            className="text-center"
           >
-            <div className="mx-auto max-w-2xl rounded-[30px] border border-white/12 bg-stone-950/34 px-6 py-6 shadow-[0_24px_70px_-34px_rgba(0,0,0,0.7)] backdrop-blur-md md:mx-0 md:px-8 md:py-7">
+            <div className="mx-auto max-w-2xl rounded-[30px] border border-white/12 bg-stone-950/34 px-6 py-6 shadow-[0_24px_70px_-34px_rgba(0,0,0,0.7)] backdrop-blur-md md:px-8 md:py-7">
               <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/12 px-4 py-1.5 text-sm text-white backdrop-blur-sm">
                 {room.highlight}
               </span>
@@ -108,7 +108,7 @@ export default function RoomPageTemplate({ room, otherRooms }: Props) {
                 <span className="mr-3">{room.symbol}</span>
                 {room.name}
               </h1>
-              <p className="mx-auto max-w-xl text-xl text-stone-100/88 font-light md:mx-0">{room.subtitle}</p>
+              <p className="mx-auto max-w-xl text-xl text-stone-100/88 font-light">{room.subtitle}</p>
             </div>
           </motion.div>
         </div>
