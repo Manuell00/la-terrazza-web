@@ -62,9 +62,9 @@ const content = {
       tagline: "Il comfort di casa, il calore dell'ospitalità",
       label: "Partner selezionato",
       description:
-        "Abbiamo scelto MaRoSa House per la sua capacità di unire il calore di una vera casa con il carattere autentico della Liguria. Posizione strategica tra Rapallo, Santa Margherita Ligure e Portofino — non una camera d'albergo, ma uno spazio tutto tuo dove sentirti davvero a casa.",
+        "MaRoSa House è una casa vacanze in posizione strategica tra Rapallo, Santa Margherita Ligure e Portofino. Una soluzione curata e professionale, pensata per chi vuole vivere la Riviera Ligure con comfort, autonomia e stile.",
       descSecondary:
-        "Eleganza discreta, atmosfera familiare e quella cura per i dettagli che si vede e si sente. Un posto pensato per farti stare bene, dal primo all'ultimo minuto.",
+        "Una gestione attenta, ambienti ordinati e un'accoglienza affidabile: il tipo di soggiorno che funziona davvero, dal weekend breve alla vacanza più rilassata.",
       locationLabel: "Posizione",
       locationSub: "Rapallo Riviera Ligure",
       locationHref: "https://www.google.com/maps/search/?api=1&query=Rapallo%2C%20Liguria",
@@ -110,9 +110,9 @@ const content = {
       tagline: "Home comfort, the warmth of true hospitality",
       label: "Selected partner",
       description:
-        "We chose MaRoSa House for its ability to blend the warmth of a real home with authentic Ligurian character. Perfectly located between Rapallo, Santa Margherita Ligure, and Portofino — not a hotel room, but a space that feels genuinely yours from the first evening.",
+        "MaRoSa House is a holiday home in a strategic position between Rapallo, Santa Margherita Ligure and Portofino. A polished, professionally managed stay for guests who want comfort, independence and the atmosphere of the Ligurian Riviera.",
       descSecondary:
-        "Understated elegance, a welcoming atmosphere, and attention to detail you can both see and feel. Designed to make you feel good from the first moment to the last.",
+        "Reliable hosting, well-kept interiors and a stay that works beautifully whether you are planning a short break or a slower holiday by the coast.",
       locationLabel: "Location",
       locationSub: "Rapallo Ligurian Riviera",
       locationHref: "https://www.google.com/maps/search/?api=1&query=Rapallo%2C%20Liguria",
