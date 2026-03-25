@@ -33,10 +33,7 @@ export default function EnglishBookPage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <AnimatedSection>
-            <div className="relative isolate mx-auto max-w-3xl overflow-hidden rounded-[30px] border border-white/14 px-6 py-8 shadow-[0_28px_80px_-34px_rgba(0,0,0,0.72)] md:px-10 md:py-10">
-              <div className="absolute inset-0 -z-10 bg-[rgba(12,10,9,0.46)]" />
-              <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.01)_100%)]" />
-              <div className="absolute inset-0 -z-10 backdrop-blur-xl" />
+            <div className="mx-auto max-w-3xl rounded-[30px] border border-white/12 bg-stone-950/34 px-6 py-8 shadow-[0_24px_70px_-34px_rgba(0,0,0,0.7)] backdrop-blur-md md:px-10 md:py-10">
               <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-emerald-400">Book your stay</p>
               <h1 className="page-hero-title mb-5 text-[2.4rem] text-white sm:text-5xl md:text-6xl text-balance">
                 Your escape starts here.
