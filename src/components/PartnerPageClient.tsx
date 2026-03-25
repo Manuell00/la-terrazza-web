@@ -84,7 +84,7 @@ const content = {
       locationSub: "San Bartolomeo al Mare",
       locationHref: "https://www.google.com/maps/search/?api=1&query=San%20Bartolomeo%20al%20Mare%2C%20Liguria",
       cta1: "Scopri l'appartamento",
-      cta2: "Guarda disponibilità",
+      cta2: "Verifica disponibilità",
       ctaPhone: "Chiama per informazioni",
     },
     cta: {
@@ -132,7 +132,7 @@ const content = {
       locationSub: "San Bartolomeo al Mare",
       locationHref: "https://www.google.com/maps/search/?api=1&query=San%20Bartolomeo%20al%20Mare%2C%20Liguria",
       cta1: "Explore the property",
-      cta2: "Check availability",
+      cta2: "Verify availability",
       ctaPhone: "Call for information",
     },
     cta: {
