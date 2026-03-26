@@ -128,23 +128,55 @@ function HeroIllustration({
           variants={floatingCardVariants}
           initial="hidden"
           animate="visible"
-          className={compact ? "absolute inset-x-[10%] bottom-[21%] flex flex-col gap-2.5" : "absolute bottom-[8%] right-[5%] flex w-[28%] flex-col gap-3"}
+          className={compact ? "absolute inset-x-[10%] bottom-[21%] flex flex-col gap-2.5" : "absolute left-[5%] top-[7%] w-[24%]"}
         >
           <div className={`${compact ? "rounded-[16px] px-3 py-2.5" : "rounded-[18px] px-4 py-3"} border border-white/55 bg-white/75 text-center backdrop-blur-sm`}>
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">Check-in</p>
             <p className={`${compact ? "mt-1 text-[12px]" : "mt-1 text-sm"} font-semibold text-stone-800`}>{checkin}</p>
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div className={`${compact ? "rounded-[16px] px-2.5 py-2.5" : "rounded-[18px] px-3 py-3"} border border-white/55 bg-white/78 text-center backdrop-blur-sm`}>
-              <p className={compact ? "text-base" : "text-lg"}>🐾</p>
-              <p className={`${compact ? "mt-1 text-[10px]" : "mt-1 text-[11px]"} font-semibold text-stone-800`}>{breakfast}</p>
-            </div>
-            <div className={`${compact ? "rounded-[16px] px-2.5 py-2.5" : "rounded-[18px] px-3 py-3"} border border-white/55 bg-white/78 text-center backdrop-blur-sm`}>
-              <p className={compact ? "text-base" : "text-lg"}>🚗</p>
-              <p className={`${compact ? "mt-1 text-[10px]" : "mt-1 text-[11px]"} font-semibold text-stone-800`}>{parking}</p>
-            </div>
+        </motion.div>
+
+        <motion.div
+          custom={0.52}
+          variants={floatingCardVariants}
+          initial="hidden"
+          animate="visible"
+          className={compact ? "hidden" : "absolute bottom-[8%] right-[4%] grid w-[26%] grid-cols-2 gap-3"}
+        >
+          <div className="rounded-[18px] border border-white/55 bg-white/78 px-3 py-3 text-center backdrop-blur-sm">
+            <p className="text-lg">🐾</p>
+            <p className="mt-1 text-[11px] font-semibold text-stone-800">{breakfast}</p>
+          </div>
+          <div className="rounded-[18px] border border-white/55 bg-white/78 px-3 py-3 text-center backdrop-blur-sm">
+            <p className="text-lg">🚗</p>
+            <p className="mt-1 text-[11px] font-semibold text-stone-800">{parking}</p>
           </div>
         </motion.div>
+
+        {compact && (
+          <motion.div
+            custom={0.45}
+            variants={floatingCardVariants}
+            initial="hidden"
+            animate="visible"
+            className="absolute inset-x-[10%] bottom-[21%] flex flex-col gap-2.5"
+          >
+            <div className="rounded-[16px] border border-white/55 bg-white/75 px-3 py-2.5 text-center backdrop-blur-sm">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">Check-in</p>
+              <p className="mt-1 text-[12px] font-semibold text-stone-800">{checkin}</p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="rounded-[16px] border border-white/55 bg-white/78 px-2.5 py-2.5 text-center backdrop-blur-sm">
+                <p className="text-base">🐾</p>
+                <p className="mt-1 text-[10px] font-semibold text-stone-800">{breakfast}</p>
+              </div>
+              <div className="rounded-[16px] border border-white/55 bg-white/78 px-2.5 py-2.5 text-center backdrop-blur-sm">
+                <p className="text-base">🚗</p>
+                <p className="mt-1 text-[10px] font-semibold text-stone-800">{parking}</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         {compact && (
           <motion.div
