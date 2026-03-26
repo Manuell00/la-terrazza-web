@@ -128,7 +128,7 @@ function HeroIllustration({
           variants={floatingCardVariants}
           initial="hidden"
           animate="visible"
-          className={compact ? "absolute inset-x-[10%] bottom-[21%] flex flex-col gap-2.5" : "absolute left-[5%] top-[7%] w-[24%]"}
+          className={compact ? "absolute inset-x-[10%] bottom-[21%] flex flex-col gap-2.5" : "absolute left-[5%] top-[3.5%] w-[24%]"}
         >
           <div className={`${compact ? "rounded-[16px] px-3 py-2.5" : "rounded-[18px] px-4 py-3"} border border-white/55 bg-white/75 text-center backdrop-blur-sm`}>
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">Check-in</p>
@@ -141,7 +141,7 @@ function HeroIllustration({
           variants={floatingCardVariants}
           initial="hidden"
           animate="visible"
-          className={compact ? "hidden" : "absolute bottom-[8%] right-[4%] grid w-[26%] grid-cols-2 gap-3"}
+          className={compact ? "hidden" : "absolute left-1/2 top-[3.8%] grid w-[26%] -translate-x-1/2 grid-cols-2 gap-3"}
         >
           <div className="rounded-[18px] border border-white/55 bg-white/78 px-3 py-3 text-center backdrop-blur-sm">
             <p className="text-lg">🐾</p>
@@ -372,7 +372,7 @@ export default function Hero() {
                 variants={floatingCardVariants}
                 initial="hidden"
                 animate="visible"
-                className="absolute bottom-4 left-[-1.5rem] flex w-[18.5rem] items-center justify-center rounded-[28px] border border-stone-200 bg-white px-5 py-5 text-center shadow-[0_28px_84px_-40px_rgba(28,25,23,0.42)]"
+                className="absolute bottom-4 left-1/2 flex w-[18.5rem] -translate-x-1/2 items-center justify-center rounded-[28px] border border-stone-200 bg-white px-5 py-5 text-center shadow-[0_28px_84px_-40px_rgba(28,25,23,0.42)]"
               >
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.26em] text-stone-500">La Terrazza</p>
