@@ -66,9 +66,12 @@ export default function PetFriendly() {
           {/* ── Content column ── */}
           <AnimatedSection direction="right" className="text-center md:text-left">
 
-            <p className="mb-6 text-base leading-relaxed text-stone-500 md:text-lg">
-              {t.petDesc}
-            </p>
+            <div className="mb-6 flex items-start justify-center gap-4 md:justify-start">
+              <span className="mt-1 hidden h-14 w-[3px] rounded-full bg-[linear-gradient(180deg,rgba(16,185,129,0.9),rgba(16,185,129,0.18))] md:block" />
+              <p className="max-w-xl text-base leading-relaxed text-stone-500 md:text-lg">
+                {t.petDesc}
+              </p>
+            </div>
 
             {/* Feature cards grid */}
             <div className="grid grid-cols-2 gap-3">

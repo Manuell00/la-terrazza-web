@@ -128,7 +128,7 @@ function HeroIllustration({
           variants={floatingCardVariants}
           initial="hidden"
           animate="visible"
-          className={compact ? "absolute inset-x-[10%] bottom-[21%] flex flex-col gap-2.5" : "absolute right-[10%] bottom-[20%] flex w-[30%] flex-col gap-3"}
+          className={compact ? "absolute inset-x-[10%] bottom-[21%] flex flex-col gap-2.5" : "absolute bottom-[8%] right-[5%] flex w-[28%] flex-col gap-3"}
         >
           <div className={`${compact ? "rounded-[16px] px-3 py-2.5" : "rounded-[18px] px-4 py-3"} border border-white/55 bg-white/75 text-center backdrop-blur-sm`}>
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">Check-in</p>

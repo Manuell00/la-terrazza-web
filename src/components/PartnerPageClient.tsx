@@ -574,7 +574,7 @@ export default function PartnerPageClient() {
         cta2Href={`mailto:casamare.sanbart@gmail.com?subject=${encodeURIComponent(lang === "it" ? "Verifica disponibilità San Bartolomeo al Mare" : "Availability request San Bartolomeo al Mare")}`}
         cta2TrackLabel="San Bartolomeo - Email"
         cta3Text={c.sanBartolomeo.ctaPhone}
-        cta3Href={`tel:${sanBartPhone}`}
+        cta3Href={`tel:+${sanBartPhone}`}
       />
 
       {/* ── Collaboration CTA ── */}

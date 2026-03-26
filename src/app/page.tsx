@@ -66,13 +66,13 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
 
             {/* Text */}
-            <AnimatedSection direction="right" className="order-1 text-center md:order-2 md:text-left">
+            <AnimatedSection direction="right" className="order-1 text-center md:order-2 md:text-center">
               <div className="rounded-[30px] border border-stone-100 bg-cream-50/80 p-7 shadow-soft backdrop-blur-sm md:p-9">
                 <p className="section-label">La nostra storia</p>
                 <h2 id="home-story-title" className="section-title-xl mb-5 text-[2.3rem]">
                   Un posto speciale
                 </h2>
-                <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
+                <div className="mx-auto max-w-2xl space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
                   <p>Siamo a Cantarana d&apos;Asti, in una posizione strategica nel cuore del Piemonte, a metà strada tra le affascinanti colline delle Langhe, la vivace città di Torino e il suggestivo territorio dell&apos;Astigiano. Un punto di partenza ideale per esplorare paesaggi, sapori e tradizioni uniche. Immersi nella tranquillità della campagna, ma a breve distanza dalle principali mete della zona.</p>
                   <p>
                     <span className="font-semibold text-stone-900">Tre camere</span>:{" "}
@@ -85,7 +85,7 @@ export default function HomePage() {
                     Se desideri scoprire le zone più caratteristiche del <span className="font-semibold text-stone-900">Piemonte</span> lontano dal caos cittadino e immerso nella natura e nella tranquillità, La Terrazza è la scelta ideale per vivere un&apos;esperienza accogliente e rilassante.
                   </p>
                 </div>
-                <div className="mt-8 flex justify-center md:justify-start">
+                <div className="mt-8 flex justify-center">
                   <Link href="/prenota" className="btn-outline text-sm px-6 py-3">
                     Scopri le nostre camere →
                   </Link>
