@@ -101,7 +101,7 @@ export default function RootLayout({
     name: "La Terrazza Affittacamere",
     logo: "https://la-terrazza-web.vercel.app/icon-512.png",
     description:
-      "Affittacamere a Cantarana, B&B vicino Asti e soggiorno in Piemonte tra vigneti, natura e colazione inclusa.",
+      "Affittacamere a Cantarana, B&B vicino Asti e soggiorno in Piemonte tra vigneti, natura, welcome kit e parcheggio gratuito.",
     url: "https://la-terrazza-web.vercel.app",
     telephone: "+39 351 378 0768",
     email: "houselaterrazza@gmail.com",
@@ -122,7 +122,7 @@ export default function RootLayout({
     amenityFeature: [
       { "@type": "LocationFeatureSpecification", name: "Wi-Fi gratuito", value: true },
       { "@type": "LocationFeatureSpecification", name: "Parcheggio gratuito", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Colazione inclusa", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Welcome kit", value: true },
       { "@type": "LocationFeatureSpecification", name: "Aria condizionata", value: true },
     ],
     sameAs: [

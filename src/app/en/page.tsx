@@ -43,11 +43,11 @@ export const metadata: Metadata = {
 const rooms = getRooms("en");
 
 const highlights = [
-  { icon: "🌿", title: "Surrounded by nature", desc: "Monferrato vineyards, open countryside and a slower rhythm from the moment you arrive." },
+  { icon: "🌾", title: "Countryside setting", desc: "Monferrato vineyards, open countryside and a slower rhythm from the moment you arrive." },
   { icon: "🌅", title: "Light & views", desc: "Morning light, sunsets and panoramic moments that shape the whole stay." },
   { icon: "🛏️", title: "Authentic comfort", desc: "Soft beds, carefully prepared rooms and a guest experience that feels personal." },
-  { icon: "🍳", title: "Breakfast included", desc: "A relaxed start to the day with breakfast already part of the experience." },
-  { icon: "🔇", title: "Real quiet", desc: "A calm countryside setting for guests who want to switch off properly." },
+  { icon: "🎁", title: "Welcome kit", desc: "A thoughtful welcome that makes your arrival feel easier." },
+  { icon: "🏡", title: "Family hospitality", desc: "Warm, personal hosting with genuine attention to detail." },
   { icon: "💬", title: "Fast response", desc: "Direct contact and quick replies when you need information or availability." },
 ];
 
@@ -67,17 +67,15 @@ export default function EnglishHomePage() {
                   A special place.
                 </h2>
                 <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
-                  <p>We are in Cantarana, in the heart of the Asti countryside, among the vineyards of Monferrato. A place where nature sets the pace and the evening sky becomes part of the stay.</p>
+                  <p>We are in Cantarana d&apos;Asti, in a strategic position in the heart of Piedmont, halfway between the rolling Langhe hills, the lively city of Turin and the character of the Asti area. An ideal base for exploring landscapes, flavours and local traditions, surrounded by the calm of the countryside yet close to the main destinations of the region.</p>
                   <p>
                     <span className="font-semibold text-stone-900">Three rooms</span>:{" "}
                     <span className="font-semibold text-emerald-700">Luna</span>,{" "}
                     <span className="font-semibold text-emerald-700">Stella</span>{" "}and{" "}
-                    <span className="font-semibold text-emerald-700">Sole</span>. Three different moods, one promise: leaving with a smile.
+                    <span className="font-semibold text-emerald-700">Sole</span>. Two ideas: leaving with the desire to come back.
                   </p>
                   <p>
-                    If you are looking for a <span className="font-semibold text-stone-900">guesthouse in Cantarana</span>, a
-                    {" "}<span className="font-semibold text-stone-900">B&amp;B near Asti</span> or a
-                    {" "}<span className="font-semibold text-stone-900">stay in Piedmont</span> surrounded by vineyards and quiet countryside, La Terrazza is designed for that slower kind of escape.
+                    If you want to discover the most characteristic areas of <span className="font-semibold text-stone-900">Piedmont</span>, away from the noise of the city and surrounded by nature and quiet, La Terrazza is the ideal choice for a welcoming and relaxing stay.
                   </p>
                 </div>
                 <div className="mt-8 flex justify-center md:justify-start">

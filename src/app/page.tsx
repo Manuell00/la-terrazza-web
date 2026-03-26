@@ -15,7 +15,7 @@ import { siteConfig } from "@/data/siteConfig";
 export const metadata: Metadata = {
   title: "Affittacamere Cantarana | B&B Asti | Soggiorno Piemonte",
   description:
-    "Affittacamere a Cantarana e B&B vicino Asti per un soggiorno in Piemonte tra Monferrato, colazione inclusa, parcheggio gratuito e tre camere esclusive.",
+    "Affittacamere a Cantarana e B&B vicino Asti per un soggiorno in Piemonte tra Monferrato, welcome kit, parcheggio gratuito e tre camere esclusive.",
   keywords: [
     ...siteConfig.seo.keywords,
     "affittacamere Cantarana",
@@ -40,11 +40,11 @@ export const metadata: Metadata = {
 };
 
 const highlights = [
-  { icon: "🌿", title: "Natura selvaggia", desc: "Circondati dai vigneti del Monferrato. Qui il verde è protagonista." },
+  { icon: "🌾", title: "Campagna", desc: "Colline, vigne e quiete vera: il ritmo cambia appena arrivi." },
   { icon: "🌅", title: "Alba e tramonto", desc: "Panorami che tolgono il fiato. Nessun filtro necessario." },
   { icon: "🛏️", title: "Comfort autentico", desc: "Letti morbidi, biancheria di qualità, bagni privati." },
-  { icon: "🍳", title: "Colazione inclusa", desc: "Prodotti locali, dolci fatti in casa ogni mattina." },
-  { icon: "🔇", title: "Silenzio totale", desc: "Solo il vento tra le foglie e il canto degli uccelli." },
+  { icon: "🎁", title: "Welcome kit", desc: "Un'accoglienza curata fin dal primo momento del soggiorno." },
+  { icon: "🏡", title: "Ospitalità familiare", desc: "Un'accoglienza semplice, presente e davvero attenta." },
   { icon: "💬", title: "Risposta veloce", desc: "Risposta garantita entro pochi minuti su WhatsApp." },
 ];
 
@@ -73,18 +73,16 @@ export default function HomePage() {
                   Un posto speciale
                 </h2>
                 <div className="space-y-4 text-sm leading-relaxed text-stone-500 md:text-base">
-                  <p>Siamo a Cantarana, nel cuore dell&apos;Astigiano, tra i vigneti del Monferrato. Un posto dove la natura detta i ritmi e il cielo la sera è uno spettacolo.</p>
+                  <p>Siamo a Cantarana d&apos;Asti, in una posizione strategica nel cuore del Piemonte, a metà strada tra le affascinanti colline delle Langhe, la vivace città di Torino e il suggestivo territorio dell&apos;Astigiano. Un punto di partenza ideale per esplorare paesaggi, sapori e tradizioni uniche. Immersi nella tranquillità della campagna, ma a breve distanza dalle principali mete della zona.</p>
                   <p>
                     <span className="font-semibold text-stone-900">Tre camere</span>:{" "}
                     <span className="font-semibold text-emerald-700">Luna</span>,{" "}
                     <span className="font-semibold text-emerald-700">Stella</span>{" "}e{" "}
                     <span className="font-semibold text-emerald-700">Sole</span>.
-                    {" "}Tre caratteri diversi, una sola promessa: andarsene con un sorriso.
+                    {" "}Due punti: andarsene con la voglia di tornare.
                   </p>
                   <p>
-                    Se stai cercando un <span className="font-semibold text-stone-900">affittacamere a Cantarana</span>, un
-                    {" "}<span className="font-semibold text-stone-900">B&amp;B ad Asti</span> o un
-                    {" "}<span className="font-semibold text-stone-900">soggiorno in Piemonte</span> tra quiete, colline e ospitalità autentica, La Terrazza è pensata proprio per questo.
+                    Se desideri scoprire le zone più caratteristiche del <span className="font-semibold text-stone-900">Piemonte</span> lontano dal caos cittadino e immerso nella natura e nella tranquillità, La Terrazza è la scelta ideale per vivere un&apos;esperienza accogliente e rilassante.
                   </p>
                 </div>
                 <div className="mt-8 flex justify-center md:justify-start">

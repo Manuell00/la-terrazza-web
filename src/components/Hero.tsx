@@ -110,16 +110,17 @@ function HeroIllustration({
         className="absolute inset-x-0 bottom-0 top-0 rounded-[34px]"
       >
         <div className="absolute inset-0 overflow-hidden rounded-[28px]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#f6faf7_0%,#eef4ef_45%,#e4ebe5_100%)]" />
           <Image
-            src="/images/seo/affittacamere-cantarana-piemonte-hero.jpg"
-            alt="La Terrazza Affittacamere a Cantarana, Asti in Piemonte"
+            src="/images/logo/logo.jpg"
+            alt="Logo La Terrazza Affittacamere"
             fill
             priority
-            quality={88}
+            quality={92}
             sizes={compact ? "100vw" : "(max-width: 1024px) 100vw, 52vw"}
-            className="scale-[0.985] object-cover transition-transform duration-[1800ms] ease-out"
+            className={`transition-transform duration-[1800ms] ease-out ${compact ? "object-contain p-6" : "object-contain p-10"}`}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.02),rgba(19,29,20,0.12))]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04),rgba(19,29,20,0.08))]" />
         </div>
 
         <motion.div
@@ -135,7 +136,7 @@ function HeroIllustration({
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div className={`${compact ? "rounded-[16px] px-2.5 py-2.5" : "rounded-[18px] px-3 py-3"} border border-white/55 bg-white/78 text-center backdrop-blur-sm`}>
-              <p className={compact ? "text-base" : "text-lg"}>🍳</p>
+              <p className={compact ? "text-base" : "text-lg"}>🐾</p>
               <p className={`${compact ? "mt-1 text-[10px]" : "mt-1 text-[11px]"} font-semibold text-stone-800`}>{breakfast}</p>
             </div>
             <div className={`${compact ? "rounded-[16px] px-2.5 py-2.5" : "rounded-[18px] px-3 py-3"} border border-white/55 bg-white/78 text-center backdrop-blur-sm`}>

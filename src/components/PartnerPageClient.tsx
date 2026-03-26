@@ -60,7 +60,7 @@ const content = {
     marosa: {
       badge: "Casa vacanze",
       title: "MaRoSa House",
-      tagline: "Il comfort di casa, il calore dell'ospitalità",
+      tagline: "Rapallo (Genova)",
       label: "Partner selezionato",
       description:
         "MaRoSa House è una casa vacanze in posizione strategica tra Rapallo, Santa Margherita Ligure e Portofino. Una soluzione curata e professionale, pensata per chi vuole vivere la Riviera Ligure con comfort, autonomia e stile.",
@@ -71,6 +71,7 @@ const content = {
       descriptionHighlights: [
         "casa vacanze",
         "Rapallo",
+        "Genova",
         "Santa Margherita Ligure",
         "Portofino",
         "Riviera Ligure",
@@ -79,32 +80,32 @@ const content = {
         "stile",
       ],
       locationLabel: "Posizione",
-      locationSub: "Rapallo Riviera Ligure",
+      locationSub: "Rapallo (Genova)",
       locationHref: "https://www.google.com/maps/search/?api=1&query=Rapallo%2C%20Liguria",
       cta1: "Vai al sito",
       ctaWa: "Chiama per informazioni",
     },
     sanBartolomeo: {
       badge: "Appartamento privato",
-      title: "San Bartolomeo",
-      tagline: "Tra storia e natura, un posto tutto per te",
+      title: "San Bartolomeo al Mare",
+      tagline: "San Bartolomeo al Mare (IM)",
       label: "Partner selezionato",
       description:
-        "San Bartolomeo al Mare entra nella nostra selezione come riferimento per chi desidera una vera casa al mare. Un appartamento indipendente, spazioso e curato, dove vivere la Liguria con la libertà e la privacy che solo una soluzione privata può offrire.",
+        "A 80 metri dalla spiaggia di San Bartolomeo al Mare, una soluzione accurata e pronta da vivere, perfetta per godersi la Liguria in totale relax. Ambiente accogliente e ben organizzato, con tutti i comfort pensati per il benessere quotidiano. La vicinanza alla spiaggia rende ogni giornata semplice e piacevole, senza bisogno di spostamenti. Completa la proprietà un comodo garage, ideale per vivere la vacanza senza pensieri.",
       descSecondary:
-        "Perfetto per famiglie o coppie che vogliono vivere il territorio con ritmi propri, senza rinunciare al comfort. La struttura parla da sola.",
+        "Gestita da Superhost, è una soluzione pratica e curata per chi cerca una casa al mare davvero facile da vivere.",
       mobileDescription:
-        "Una vera casa al mare a San Bartolomeo al Mare: indipendente, curata e pensata per vivere la Liguria con più libertà.",
+        "A 80 metri dalla spiaggia, una casa al mare curata e pronta da vivere, con garage comodo e gestione Superhost.",
       descriptionHighlights: [
         "San Bartolomeo al Mare",
-        "casa al mare",
-        "appartamento indipendente",
         "Liguria",
-        "libertà",
-        "privacy",
+        "80 metri dalla spiaggia",
+        "garage",
+        "Superhost",
+        "relax",
       ],
       locationLabel: "Posizione",
-      locationSub: "San Bartolomeo al Mare",
+      locationSub: "San Bartolomeo al Mare (IM)",
       locationHref: "https://www.google.com/maps/search/?api=1&query=San%20Bartolomeo%20al%20Mare%2C%20Liguria",
       cta1: "Scopri l'appartamento",
       cta2: "Verifica disponibilità",
@@ -130,7 +131,7 @@ const content = {
     marosa: {
       badge: "Holiday Home",
       title: "MaRoSa House",
-      tagline: "Home comfort, the warmth of true hospitality",
+      tagline: "Rapallo (Genoa)",
       label: "Selected partner",
       description:
         "MaRoSa House is a holiday home in a strategic position between Rapallo, Santa Margherita Ligure and Portofino. A polished, professionally managed stay for guests who want comfort, independence and the atmosphere of the Ligurian Riviera.",
@@ -141,6 +142,7 @@ const content = {
       descriptionHighlights: [
         "holiday home",
         "Rapallo",
+        "Genoa",
         "Santa Margherita Ligure",
         "Portofino",
         "comfort",
@@ -148,32 +150,32 @@ const content = {
         "Ligurian Riviera",
       ],
       locationLabel: "Location",
-      locationSub: "Rapallo Ligurian Riviera",
+      locationSub: "Rapallo (Genoa)",
       locationHref: "https://www.google.com/maps/search/?api=1&query=Rapallo%2C%20Liguria",
       cta1: "Visit website",
       ctaWa: "Call for information",
     },
     sanBartolomeo: {
       badge: "Private Apartment",
-      title: "San Bartolomeo",
-      tagline: "Between history and nature, a place all your own",
+      title: "San Bartolomeo al Mare",
+      tagline: "San Bartolomeo al Mare (IM)",
       label: "Selected partner",
       description:
-        "San Bartolomeo al Mare joins our selection as the ideal destination for those seeking a true seaside retreat. An independent, spacious, and thoughtfully furnished apartment — offering the privacy and freedom that only a private property can deliver.",
+        "Just 80 metres from the beach in San Bartolomeo al Mare, this well-prepared apartment is ready to enjoy and ideal for a relaxed stay on the Ligurian coast. The interiors are welcoming, well organised and equipped with everything needed for everyday comfort. Being so close to the beach makes each day simple and enjoyable, while a private garage helps make the whole holiday easier.",
       descSecondary:
-        "Perfect for couples or families who want to experience the Ligurian coast at their own pace, without compromising on comfort. The space speaks for itself.",
+        "Managed by Superhost hosts, it is a practical and polished seaside stay designed to feel easy from the start.",
       mobileDescription:
-        "A true seaside home in San Bartolomeo al Mare: independent, comfortable and ideal for a more private Ligurian stay.",
+        "Just 80 metres from the beach, with private garage and Superhost management for an easy Ligurian stay.",
       descriptionHighlights: [
         "San Bartolomeo al Mare",
-        "seaside retreat",
-        "independent",
-        "private property",
-        "privacy",
-        "freedom",
+        "80 metres from the beach",
+        "Ligurian coast",
+        "private garage",
+        "Superhost",
+        "comfort",
       ],
       locationLabel: "Location",
-      locationSub: "San Bartolomeo al Mare",
+      locationSub: "San Bartolomeo al Mare (IM)",
       locationHref: "https://www.google.com/maps/search/?api=1&query=San%20Bartolomeo%20al%20Mare%2C%20Liguria",
       cta1: "Explore the property",
       cta2: "Verify availability",
@@ -456,6 +458,7 @@ export default function PartnerPageClient() {
   const { lang } = useLanguage();
   const c = content[lang];
   const marosaPhone = "3383232007";
+  const sanBartPhone = "393460124744";
 
   return (
     <main className="pt-20">
@@ -568,10 +571,10 @@ export default function PartnerPageClient() {
         lightboxImages={sanBartolomeoImages}
         featuredMode="contain"
         cta2Text={c.sanBartolomeo.cta2}
-        cta2Href={siteConfig.whatsapp}
-        cta2TrackLabel="San Bartolomeo - WhatsApp"
+        cta2Href={`mailto:casamare.sanbart@gmail.com?subject=${encodeURIComponent(lang === "it" ? "Verifica disponibilità San Bartolomeo al Mare" : "Availability request San Bartolomeo al Mare")}`}
+        cta2TrackLabel="San Bartolomeo - Email"
         cta3Text={c.sanBartolomeo.ctaPhone}
-        cta3Href={`tel:${siteConfig.phone}`}
+        cta3Href={`tel:${sanBartPhone}`}
       />
 
       {/* ── Collaboration CTA ── */}

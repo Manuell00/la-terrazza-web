@@ -230,7 +230,7 @@ export default function PrenotaPage() {
               Preferisci parlare con noi?
             </h2>
             <p className="mx-auto max-w-lg text-stone-400">
-              Siamo disponibili ogni giorno dalle 8 alle 22. Rispondiamo entro pochi minuti.
+              Rispondiamo entro pochi minuti per aiutarti a scegliere la soluzione più adatta.
             </p>
           </AnimatedSection>
 

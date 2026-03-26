@@ -21,12 +21,15 @@ interface Props {
 }
 
 const amenityIcons: Record<string, string> = {
-  "Lenzuola di qualità": "🧺",
   "Asciugamani inclusi": "🛁",
   "TV smart": "📺",
   "Pulizie giornaliere": "✨",
   "Parcheggio gratuito": "🚗",
   "Stazione di ricarica per auto elettriche": "🔌",
+  "Stazione di ricarica su richiesta a pagamento": "🔌",
+  "Stazione di ricarica per auto elettriche su richiesta a pagamento": "🔌",
+  "Charging station available on request for a fee": "🔌",
+  "Electric car charging available on request for a fee": "🔌",
 };
 
 const AirbnbLogo = () => (
