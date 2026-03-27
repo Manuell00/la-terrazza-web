@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Guesthouse in Cantarana | Stay in Piedmont",
     description: "An English-friendly countryside stay near Asti, among the vineyards of Piedmont.",
-    images: [{ url: "/images/seo/bb-asti-la-terrazza-struttura.jpg" }],
+    images: [{ url: "/images/logo/logo.jpg", width: 1200, height: 1200, alt: "La Terrazza Affittacamere logo" }],
     locale: "en_US",
     type: "website",
   },

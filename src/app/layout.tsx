@@ -55,10 +55,10 @@ export const metadata: Metadata = {
       "Affittacamere a Cantarana, B&B vicino Asti e soggiorno in Piemonte tra i vigneti del Monferrato.",
     images: [
       {
-        url: "/images/seo/bb-asti-la-terrazza-struttura.jpg",
+        url: "/images/logo/logo.jpg",
         width: 1200,
-        height: 630,
-        alt: "La Terrazza Affittacamere a Cantarana, Asti in Piemonte",
+        height: 1200,
+        alt: "Logo La Terrazza Affittacamere",
       },
     ],
   },
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "La Terrazza Affittacamere — Cantarana, Asti",
     description: "Affittacamere a Cantarana, B&B vicino Asti e soggiorno in Piemonte tra natura e quiete.",
-    images: ["/images/seo/bb-asti-la-terrazza-struttura.jpg"],
+    images: ["/images/logo/logo.jpg"],
   },
   robots: {
     index: true,
@@ -130,8 +130,8 @@ export default function RootLayout({
       "https://www.facebook.com/share/18JmJpuNoU/",
     ],
     image: [
+      "/images/logo/logo.jpg",
       "/images/seo/bb-asti-la-terrazza-struttura.jpg",
-      "/images/seo/affittacamere-cantarana-piemonte-hero.jpg",
     ],
   };
 

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Affittacamere Cantarana | B&B Asti | La Terrazza",
     description: "Soggiorno in Piemonte tra vigne, quiete e ospitalità autentica a Cantarana, vicino Asti.",
-    images: [{ url: "/images/seo/bb-asti-la-terrazza-struttura.jpg" }],
+    images: [{ url: "/images/logo/logo.jpg", width: 1200, height: 1200, alt: "Logo La Terrazza Affittacamere" }],
     locale: "it_IT",
     type: "website",
   },
