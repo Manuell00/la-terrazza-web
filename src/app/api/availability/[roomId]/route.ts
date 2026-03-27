@@ -1,18 +1,15 @@
 import { NextResponse } from "next/server";
 
-// iCal URL per ogni camera — inserire gli URL reali da Airbnb/Booking
+// iCal URL per ogni camera
 const ICAL_URLS: Record<string, string[]> = {
   luna: [
-    // process.env.ICAL_LUNA_AIRBNB || "",
-    // process.env.ICAL_LUNA_BOOKING || "",
+    "https://www.airbnb.com/calendar/ical/1360802067191927878.ics?t=f0110ccb83904bcbbe603e2b869aa4ae&locale=it",
   ],
   stella: [
-    // process.env.ICAL_STELLA_AIRBNB || "",
-    // process.env.ICAL_STELLA_BOOKING || "",
+    "https://www.airbnb.com/calendar/ical/1360851292351796993.ics?t=057a49306c3f403185be5ef00a4304f6&locale=it",
   ],
   sole: [
-    // process.env.ICAL_SOLE_AIRBNB || "",
-    // process.env.ICAL_SOLE_BOOKING || "",
+    "https://www.airbnb.com/calendar/ical/1360860375665572777.ics?t=87b4a422e3f04347951c40fb7ebdf57a&locale=it",
   ],
 };
 
