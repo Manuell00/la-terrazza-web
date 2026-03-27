@@ -125,40 +125,33 @@ function HeroIllustration({
 
         {compact && (
           <motion.div
-            custom={0.45}
+            custom={0.38}
             variants={floatingCardVariants}
             initial="hidden"
             animate="visible"
-            className="absolute inset-x-[10%] bottom-[21%] flex flex-col gap-2.5"
+            className="absolute left-1/2 top-[3%] -translate-x-1/2 rounded-[20px] border border-white/90 bg-white/92 px-3.5 py-3 text-center text-stone-900 shadow-[0_20px_60px_-30px_rgba(28,25,23,0.32)] backdrop-blur-xl"
           >
-            <div className="rounded-[16px] border border-white/55 bg-white/75 px-3 py-2.5 text-center backdrop-blur-sm">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">Check-in</p>
-              <p className="mt-1 text-[12px] font-semibold text-stone-800">{checkin}</p>
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-[16px] border border-white/55 bg-white/78 px-2.5 py-2.5 text-center backdrop-blur-sm">
-                <p className="text-base">🐾</p>
-                <p className="mt-1 text-[10px] font-semibold text-stone-800">{breakfast}</p>
-              </div>
-              <div className="rounded-[16px] border border-white/55 bg-white/78 px-2.5 py-2.5 text-center backdrop-blur-sm">
-                <p className="text-base">🚗</p>
-                <p className="mt-1 text-[10px] font-semibold text-stone-800">{parking}</p>
-              </div>
-            </div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">{reviewsLabel}</p>
+            <p className="mt-1.5 text-xl font-semibold leading-none">{siteConfig.rating}/5</p>
+            <p className="mt-1 text-[11px] text-stone-500">{reviewsCount}</p>
           </motion.div>
         )}
 
         {compact && (
           <motion.div
-            custom={0.38}
+            custom={0.42}
             variants={floatingCardVariants}
             initial="hidden"
             animate="visible"
-            className="absolute right-[5%] top-[3%] rounded-[20px] border border-white/90 bg-white/92 px-3.5 py-3 text-center text-stone-900 shadow-[0_20px_60px_-30px_rgba(28,25,23,0.32)] backdrop-blur-xl"
+            className="absolute bottom-[5%] left-1/2 flex w-[14.5rem] -translate-x-1/2 items-center justify-center rounded-[24px] border border-stone-200 bg-white/95 px-4 py-4 text-center shadow-[0_24px_70px_-34px_rgba(28,25,23,0.38)] backdrop-blur-xl"
           >
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">{reviewsLabel}</p>
-            <p className="mt-1.5 text-xl font-semibold leading-none">{siteConfig.rating}/5</p>
-            <p className="mt-1 text-[11px] text-stone-500">{reviewsCount}</p>
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">La Terrazza</p>
+              <p className="mt-2 font-serif text-[1.35rem] leading-[0.95] text-stone-900">
+                {roomsCard}
+                <span className="block text-stone-500">{roomsCardSub}</span>
+              </p>
+            </div>
           </motion.div>
         )}
 
