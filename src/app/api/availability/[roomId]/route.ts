@@ -4,12 +4,18 @@ import { NextResponse } from "next/server";
 const ICAL_URLS: Record<string, string[]> = {
   luna: [
     "https://www.airbnb.com/calendar/ical/1360802067191927878.ics?t=f0110ccb83904bcbbe603e2b869aa4ae&locale=it",
+    "https://ical.booking.com/v1/export?t=bcf0750f-426b-415c-8e6e-90ad094c6845",
+    "https://www.bed-and-breakfast.it/export_calendar.cfm?id=38899&s=1774723113&t=E6704ADFCAED65B34F8B0DDFE3FCF2F63C533A49CEB5E7FFBC7364F6E29D1001&roomID=119262",
   ],
   stella: [
     "https://www.airbnb.com/calendar/ical/1360851292351796993.ics?t=057a49306c3f403185be5ef00a4304f6&locale=it",
+    "https://ical.booking.com/v1/export?t=0a94840d-2439-4a5b-974a-ed9973d37527",
+    "https://www.bed-and-breakfast.it/export_calendar.cfm?id=38899&s=1774723113&t=E6704ADFCAED65B34F8B0DDFE3FCF2F63C533A49CEB5E7FFBC7364F6E29D1001&roomID=119264",
   ],
   sole: [
     "https://www.airbnb.com/calendar/ical/1360860375665572777.ics?t=87b4a422e3f04347951c40fb7ebdf57a&locale=it",
+    "https://ical.booking.com/v1/export?t=3a0c8715-c820-421d-9dfd-e219f7e5d055",
+    "https://www.bed-and-breakfast.it/export_calendar.cfm?id=38899&s=1774723113&t=E6704ADFCAED65B34F8B0DDFE3FCF2F63C533A49CEB5E7FFBC7364F6E29D1001&roomID=119265",
   ],
 };
 
