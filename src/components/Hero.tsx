@@ -129,7 +129,7 @@ function HeroIllustration({
             variants={floatingCardVariants}
             initial="hidden"
             animate="visible"
-            className="absolute left-1/2 top-[3%] -translate-x-1/2 rounded-[20px] border border-white/90 bg-white/92 px-3.5 py-3 text-center text-stone-900 shadow-[0_20px_60px_-30px_rgba(28,25,23,0.32)] backdrop-blur-xl"
+            className="absolute top-[3%] left-0 right-0 mx-auto w-fit rounded-[20px] border border-white/90 bg-white/92 px-3.5 py-3 text-center text-stone-900 shadow-[0_20px_60px_-30px_rgba(28,25,23,0.32)] backdrop-blur-xl"
           >
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">{reviewsLabel}</p>
             <p className="mt-1.5 text-xl font-semibold leading-none">{siteConfig.rating}/5</p>
@@ -143,11 +143,11 @@ function HeroIllustration({
             variants={floatingCardVariants}
             initial="hidden"
             animate="visible"
-            className="absolute bottom-[5%] left-1/2 flex w-[14.5rem] -translate-x-1/2 items-center justify-center rounded-[24px] border border-stone-200 bg-white/95 px-4 py-4 text-center shadow-[0_24px_70px_-34px_rgba(28,25,23,0.38)] backdrop-blur-xl"
+            className="absolute bottom-[3%] left-0 right-0 mx-auto flex w-[13.25rem] items-center justify-center rounded-[22px] border border-stone-200 bg-white/95 px-3.5 py-3.5 text-center shadow-[0_24px_70px_-34px_rgba(28,25,23,0.38)] backdrop-blur-xl"
           >
             <div>
               <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">La Terrazza</p>
-              <p className="mt-2 font-serif text-[1.35rem] leading-[0.95] text-stone-900">
+              <p className="mt-1.5 font-serif text-[1.18rem] leading-[0.95] text-stone-900">
                 {roomsCard}
                 <span className="block text-stone-500">{roomsCardSub}</span>
               </p>
