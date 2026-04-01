@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "Camera Stella Asti",
     "Camera Sole Asti",
   ],
-  metadataBase: new URL("https://la-terrazza-web.vercel.app"),
+  metadataBase: new URL("https://laterrazzaaffittacamere.com"),
   authors: [{ name: "La Terrazza Affittacamere" }],
   creator: "La Terrazza Affittacamere",
   openGraph: {
@@ -99,10 +99,10 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "BedAndBreakfast",
     name: "La Terrazza Affittacamere",
-    logo: "https://la-terrazza-web.vercel.app/icon-512.png",
+    logo: "https://laterrazzaaffittacamere.com/icon-512.png",
     description:
       "Affittacamere a Cantarana, B&B vicino Asti e soggiorno in Piemonte tra vigneti, natura, welcome kit e parcheggio gratuito.",
-    url: "https://la-terrazza-web.vercel.app",
+    url: "https://laterrazzaaffittacamere.com",
     telephone: "+39 351 378 0768",
     email: "houselaterrazza@gmail.com",
     address: {
