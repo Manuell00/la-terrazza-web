@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Camera Luna | La Terrazza Affittacamere — Cantarana, Asti",
   description:
     "Camera Luna: un rifugio di pace con letto matrimoniale, bagno privato e vista sulla campagna piemontese. Prenota su Airbnb o Booking.com.",
+  alternates: {
+    canonical: "/camere/luna",
+    languages: {
+      it: "/camere/luna",
+      en: "/en/rooms/luna",
+    },
+  },
   openGraph: {
     title: "Camera Luna — La Terrazza Affittacamere",
     description:

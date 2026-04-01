@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Camera Stella | La Terrazza Affittacamere — Cantarana, Asti",
   description:
     "Camera Stella: luminosa e accogliente, con vista panoramica sui vigneti del Piemonte. Perfetta per una fuga romantica. Prenota ora.",
+  alternates: {
+    canonical: "/camere/stella",
+    languages: {
+      it: "/camere/stella",
+      en: "/en/rooms/stella",
+    },
+  },
   openGraph: {
     title: "Camera Stella — La Terrazza Affittacamere",
     description:

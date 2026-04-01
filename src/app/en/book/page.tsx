@@ -8,6 +8,13 @@ import { siteConfig } from "@/data/siteConfig";
 export const metadata: Metadata = {
   title: "Book | La Terrazza Affittacamere",
   description: "Book your stay at La Terrazza Affittacamere. Available via Airbnb, Booking.com and direct WhatsApp contact.",
+  alternates: {
+    canonical: "/en/book",
+    languages: {
+      it: "/prenota",
+      en: "/en/book",
+    },
+  },
 };
 
 const rooms = getRooms("en");

@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Camera Sole | La Terrazza Affittacamere — Cantarana, Asti",
   description:
     "Camera Sole: la più luminosa. Ampie finestre, colori chiari e un risveglio indimenticabile tra le colline del Piemonte. Prenota su Airbnb.",
+  alternates: {
+    canonical: "/camere/sole",
+    languages: {
+      it: "/camere/sole",
+      en: "/en/rooms/sole",
+    },
+  },
   openGraph: {
     title: "Camera Sole — La Terrazza Affittacamere",
     description:

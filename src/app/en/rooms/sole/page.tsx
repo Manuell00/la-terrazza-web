@@ -4,7 +4,14 @@ import { getRoomById, getRooms } from "@/data/rooms";
 
 export const metadata: Metadata = {
   title: "Sole Room | La Terrazza Affittacamere",
-  description: "Sole Room: the brightest room in the property, with natural light, breakfast included and a relaxed atmosphere.",
+  description: "Sole Room: the brightest room in the property, with natural light, welcome kit and a relaxed atmosphere.",
+  alternates: {
+    canonical: "/en/rooms/sole",
+    languages: {
+      it: "/camere/sole",
+      en: "/en/rooms/sole",
+    },
+  },
   openGraph: {
     title: "Sole Room — La Terrazza Affittacamere",
     description: "Start every day beautifully. The brightest room at La Terrazza.",

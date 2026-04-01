@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   title: "Prenota | La Terrazza Affittacamere — Cantarana, Asti",
   description:
     "Prenota il tuo soggiorno a La Terrazza Affittacamere. Disponibile su Airbnb, Booking.com e per prenotazione diretta su WhatsApp.",
+  alternates: {
+    canonical: "/prenota",
+    languages: {
+      it: "/prenota",
+      en: "/en/book",
+    },
+  },
 };
 
 const WA_ICON = (
