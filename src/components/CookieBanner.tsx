@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Script from "next/script";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-P6Z6TKYEWR";
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
